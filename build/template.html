@@ -523,14 +523,21 @@ function turn(dir){
   if(!_hintSeen){_hintSeen=true;try{localStorage.setItem('kulm-hint-seen','1');}catch(e){}document.documentElement.classList.add('hint-off');}
   if(reduced()){jumpTo(target);return;}
   var book=bk();animating=true;
-  /* Destination page waits beneath at 0deg; the current page flips away in the
-     direction of travel — left for next, right for prev — revealing it. Same
-     shape both ways, so both directions animate smoothly (no backface gap). */
-  var inn=pages[target];inn.style.display='block';inn.style.transform='rotateY(0deg)';inn.style.zIndex=1;inn.style.willChange='transform';
-  var out=pages[cur];out.style.zIndex=2;out.style.willChange='transform';
-  void book.offsetWidth;
-  out.style.transform=(dir>0?'rotateY(-180deg)':'rotateY(180deg)');
-  var mover=out;
+  var mover;
+  if(dir>0){
+    /* next: current page turns away to the left, revealing the next beneath */
+    var inn=pages[target];inn.style.display='block';inn.style.transform='rotateY(0deg)';inn.style.zIndex=1;inn.style.willChange='transform';
+    var out=pages[cur];out.style.zIndex=2;out.style.willChange='transform';
+    void book.offsetWidth;
+    out.style.transform='rotateY(-180deg)';mover=out;
+  }else{
+    /* prev: the previous page unfolds back in from the left spine onto the
+       current one (reverse of the forward turn, stays visible throughout). */
+    var out2=pages[cur];out2.style.zIndex=1;out2.style.willChange='transform';
+    var inn2=pages[target];inn2.style.display='block';inn2.style.zIndex=2;inn2.style.transform='rotateY(-90deg)';inn2.style.willChange='transform';
+    void book.offsetWidth;
+    inn2.style.transform='rotateY(0deg)';mover=inn2;
+  }
   var finished=false;
   function done(){
     if(finished)return;finished=true;
@@ -608,10 +615,6 @@ try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('port
 
 /* contents & country-index jumps (delegate on book) */
 document.getElementById('book').addEventListener('click',function(e){
-  /* Hidden "home" button for staff: the small gold ✦ in the page footer jumps
-     back to the cover. Unlabelled so guests don't discover it. */
-  var home=e.target.closest('.run-foot .orn');
-  if(home){if(_lpFired){_lpFired=false;return;}jumpTo(0);return;}
   var crow=e.target.closest('.cidx-row');
   if(crow){var pg=parseInt(crow.dataset.page,10);if(!isNaN(pg))setPage(pg,false);return;}
   var row=e.target.closest('.toc-row');
@@ -624,18 +627,31 @@ document.getElementById('searchBtn').addEventListener('click',openSearch);
 document.getElementById('ovlClose').addEventListener('click',closeSearch);
 document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
 
-/* Staff-Geste: LANGDRUCK auf das ✦ (Fußzeile) aktualisiert die Karte aus vinify.
-   Kurzes Tippen = zurück zum Cover (siehe book-click). Beides unbeschriftet. */
+/* Footer ✦ = versteckter Staff-Knopf. KURZ tippen → zurück zum Cover;
+   LANG drücken (~0,7 s) → Karte aus vinify aktualisieren. Bewusst über Pointer-
+   Events (nicht 'click') gelöst — auf iPad feuert 'click' bei minimaler Finger-
+   bewegung nicht zuverlässig. */
 (function(){
-  var book=document.getElementById('book'),lpT=null;
-  function start(e){
-    if(!(e.target.closest&&e.target.closest('.run-foot .orn')))return;
+  var book=document.getElementById('book'),lpT=null,onOrn=false,moved=false,longFired=false,x0=0,y0=0;
+  book.addEventListener('pointerdown',function(e){
+    onOrn=!!(e.target.closest&&e.target.closest('.run-foot .orn'));
+    moved=false;longFired=false;
+    if(!onOrn)return;
+    x0=e.clientX;y0=e.clientY;
     clearTimeout(lpT);
-    lpT=setTimeout(function(){_lpFired=true;liveUpdate();},650);
+    lpT=setTimeout(function(){longFired=true;liveUpdate();},700);
+  });
+  book.addEventListener('pointermove',function(e){
+    if(!onOrn)return;
+    if(Math.abs(e.clientX-x0)>10||Math.abs(e.clientY-y0)>10){moved=true;clearTimeout(lpT);}
+  });
+  function end(){
+    if(!onOrn)return;onOrn=false;clearTimeout(lpT);
+    if(longFired||moved)return;   /* Aktualisieren lief bzw. es war ein Wisch */
+    jumpTo(0);                    /* kurzer Tap → Cover */
   }
-  function cancel(){clearTimeout(lpT);}
-  book.addEventListener('pointerdown',start);
-  ['pointerup','pointermove','pointercancel','pointerleave'].forEach(function(ev){book.addEventListener(ev,cancel);});
+  book.addEventListener('pointerup',end);
+  book.addEventListener('pointercancel',function(){onOrn=false;clearTimeout(lpT);});
 })();
 
 var searchEl=document.getElementById('search'),st;
