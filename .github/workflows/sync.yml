@@ -1,0 +1,47 @@
+name: Sync Weinkarte from vinify
+
+# Runs automatically every 30 minutes, and can be started by hand from the
+# Actions tab ("Run workflow"). It re-fetches the live vinify list, rebuilds
+# index.html and — only if something actually changed — commits & pushes it,
+# which makes GitHub Pages redeploy. The sommelier never touches this; he just
+# edits wines in vinify.app as usual.
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # alle 30 Minuten (UTC)
+  workflow_dispatch:          # manueller Start-Knopf im Actions-Tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-weinkarte
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build index.html from vinify
+        run: node build/build.mjs
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "weinkarte-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- index.html; then
+            echo "Keine Änderungen in der Weinkarte."
+          else
+            git add index.html
+            git commit -m "Auto-Sync Weinkarte aus vinify"
+            git push
+            echo "Weinkarte aktualisiert und veröffentlicht."
+          fi
