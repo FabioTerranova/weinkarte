@@ -59,7 +59,7 @@
   .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
     background:radial-gradient(130% 100% at 50% -10%,var(--paper-2),var(--paper-3) 70%);
     perspective:2400px;overflow:hidden;touch-action:none}
-  .book{position:relative;width:min(93vw,680px);height:min(92vh,960px);transform-style:preserve-3d}
+  .book{position:relative;width:min(94vw,1000px);height:min(90vh,1400px);transform-style:preserve-3d}
   .book.no-anim .page{transition:none!important}
 
   .page{position:absolute;inset:0;background:var(--paper);border-radius:2px 7px 7px 2px;
@@ -82,7 +82,7 @@
     color:var(--gold);padding-bottom:9px;margin-bottom:12px;border-bottom:1px solid var(--line);flex:none}
   .page-body{flex:1;overflow:hidden;min-height:0}
   .run-foot{flex:none;display:flex;align-items:center;justify-content:center;gap:12px;padding-top:12px;color:var(--gold-soft)}
-  .run-foot .orn{font-size:11px;opacity:.8}
+  .run-foot .orn{font-size:11px;opacity:.8;padding:12px 22px;margin:-12px -22px;position:relative;z-index:6;cursor:default;-webkit-tap-highlight-color:transparent}
   .run-foot .folio{font-family:var(--sans);font-size:11px;letter-spacing:.12em;color:var(--muted);font-variant-numeric:tabular-nums}
 
   /* ---------- Cover page ---------- */
@@ -678,6 +678,10 @@ buildOvlFilters();runSearch();
 
 /* contents & country-index jumps (delegate on book) */
 document.getElementById('book').addEventListener('click',function(e){
+  /* Hidden "home" button for staff: the small gold ✦ in the page footer jumps
+     back to the cover. Unlabelled so guests don't discover it. */
+  var home=e.target.closest('.run-foot .orn');
+  if(home){jumpTo(0);return;}
   var crow=e.target.closest('.cidx-row');
   if(crow){var pg=parseInt(crow.dataset.page,10);if(!isNaN(pg))setPage(pg,false);return;}
   var row=e.target.closest('.toc-row');
