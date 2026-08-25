@@ -1,0 +1,638 @@
+<title>Kulm Hotel St. Moritz — Wine List</title>
+<style>
+  :root{
+    --paper:#F4EEE1; --paper-2:#EDE5D3; --paper-3:#E3D8C1;
+    --ink:#2B221B; --muted:#87765F; --faint:#A6957C;
+    --line:#DACFB8; --line-2:#C9BB9E;
+    --gold:#9C7A31; --gold-soft:#B4964F;
+    --accent:#6E1F2B; --accent-2:#8A2A38;
+    --shadow:0 2px 6px rgba(50,34,18,.10),0 26px 60px rgba(50,34,18,.20);
+    --serif:"Hoefler Text","Iowan Old Style",Georgia,"Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    --ctrl-h:0px; --grain:.05;
+  }
+  :root[data-theme="light"]{
+    --paper:#F4EEE1;--paper-2:#EDE5D3;--paper-3:#E3D8C1;--ink:#2B221B;--muted:#87765F;--faint:#A6957C;
+    --line:#DACFB8;--line-2:#C9BB9E;--gold:#9C7A31;--gold-soft:#B4964F;--accent:#6E1F2B;--accent-2:#8A2A38;
+    --shadow:0 2px 6px rgba(50,34,18,.10),0 26px 60px rgba(50,34,18,.20);--grain:.05;
+  }
+  :root[data-theme="dark"]{
+    --paper:#1C1712;--paper-2:#241D15;--paper-3:#2C231A;--ink:#ECE2D1;--muted:#A6977F;--faint:#7A6C58;
+    --line:#382C1D;--line-2:#463A26;
+    --gold:#C6A25C;--gold-soft:#AC8C47;--accent:#D68A9A;--accent-2:#E1A0AE;
+    --shadow:0 2px 6px rgba(0,0,0,.4),0 30px 70px rgba(0,0,0,.55);--grain:.055;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme]){
+      --paper:#1C1712;--paper-2:#241D15;--paper-3:#2C231A;--ink:#ECE2D1;--muted:#A6977F;--faint:#7A6C58;
+      --line:#382C1D;--line-2:#463A26;--gold:#C6A25C;--gold-soft:#AC8C47;--accent:#D68A9A;--accent-2:#E1A0AE;
+      --shadow:0 2px 6px rgba(0,0,0,.4),0 30px 70px rgba(0,0,0,.55);--grain:.055;
+    }
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;overflow:hidden}
+  body{
+    background:var(--paper-3);color:var(--ink);
+    font-family:var(--serif);font-size:18px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    -webkit-touch-callout:none;
+  }
+  ::selection{background:var(--accent);color:var(--paper)}
+  .sans{font-family:var(--sans)}
+
+  /* ---------- Stage & Book ---------- */
+  .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(130% 100% at 50% -10%,var(--paper-2),var(--paper-3) 70%);
+    perspective:2400px;overflow:hidden;touch-action:none}
+  .book{position:relative;width:min(93vw,680px);height:min(92vh,960px);transform-style:preserve-3d}
+  .book.no-anim .page{transition:none!important}
+
+  .page{position:absolute;inset:0;background:var(--paper);border-radius:2px 7px 7px 2px;
+    box-shadow:var(--shadow);transform-origin:left center;backface-visibility:hidden;
+    transition:transform .62s cubic-bezier(.30,.66,.28,1);overflow:hidden;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    background-blend-mode:multiply;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme]) .page{background-blend-mode:screen}}
+  :root[data-theme="dark"] .page{background-blend-mode:screen}
+  .page::before{content:"";position:absolute;left:0;top:0;bottom:0;width:34px;z-index:3;pointer-events:none;
+    background:linear-gradient(90deg,rgba(40,24,8,.16),rgba(40,24,8,.03) 60%,transparent)}
+  .page::after{content:"";position:absolute;right:0;top:0;bottom:0;width:20px;z-index:3;pointer-events:none;
+    background:linear-gradient(270deg,rgba(40,24,8,.07),transparent)}
+  .page-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;
+    padding:clamp(30px,4.6vw,52px) clamp(26px,4.6vw,50px)}
+
+  /* running head / foot for wine pages */
+  .run-head{font-family:var(--sans);text-align:center;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--gold);padding-bottom:9px;margin-bottom:12px;border-bottom:1px solid var(--line);flex:none}
+  .page-body{flex:1;overflow:hidden;min-height:0}
+  .run-foot{flex:none;display:flex;align-items:center;justify-content:center;gap:12px;padding-top:12px;color:var(--gold-soft)}
+  .run-foot .orn{font-size:11px;opacity:.8}
+  .run-foot .folio{font-family:var(--sans);font-size:11px;letter-spacing:.12em;color:var(--muted);font-variant-numeric:tabular-nums}
+
+  /* ---------- Cover page ---------- */
+  .cover-inner{align-items:center;justify-content:center;text-align:center}
+  .cover-frame{position:relative;width:100%;max-width:440px;padding:clamp(28px,6vw,52px) clamp(20px,5vw,40px);
+    border:1px solid var(--gold-soft);outline:2px double var(--gold-soft);outline-offset:6px}
+  .est{font-family:var(--sans);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin:0 0 20px}
+  .crest{width:clamp(124px,33vw,172px);display:block;margin:0 auto 6px;color:#7C5E24;line-height:0}
+  .crest svg{width:100%;height:auto;display:block}
+  @media (prefers-color-scheme:dark){:root:not([data-theme]) .crest{color:#C9A55E}}
+  :root[data-theme="dark"] .crest{color:#C9A55E}
+  :root[data-theme="light"] .crest{color:#7C5E24}
+  .cover h1{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(44px,13vw,80px);
+    line-height:.94;margin:14px 0 4px}
+  .cover .place{font-family:var(--sans);text-transform:uppercase;letter-spacing:.3em;font-size:11.5px;color:var(--muted);margin:10px 0 0}
+  .fleuron{display:flex;align-items:center;justify-content:center;gap:13px;color:var(--gold);margin:22px auto 18px;max-width:230px}
+  .fleuron::before,.fleuron::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold-soft))}
+  .fleuron::after{background:linear-gradient(90deg,var(--gold-soft),transparent)}
+  .fleuron span{font-size:16px}
+  .cover .tagline{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:15px;margin:0}
+  .turn-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:var(--sans);
+    font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);z-index:4}
+
+  /* ---------- Contents page ---------- */
+  .contents-inner{}
+  .sec-eyebrow{font-family:var(--sans);text-align:center;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin:0 0 5px}
+  .ct-h{font-family:var(--serif);font-weight:400;font-style:italic;text-align:center;font-size:clamp(32px,7vw,46px);margin:0 0 6px}
+  .contents-rule{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--gold);margin:4px auto 20px;max-width:180px}
+  .contents-rule::before,.contents-rule::after{content:"";height:1px;flex:1;background:var(--gold-soft);opacity:.55}
+  .contents-rule span{font-size:13px}
+  ol.toc{list-style:none;margin:0;padding:0;flex:1;min-height:0;overflow:auto;counter-reset:c;
+    display:flex;flex-direction:column;justify-content:center;gap:2px}
+  ol.toc::-webkit-scrollbar{display:none}
+  .toc-row{display:flex;align-items:baseline;gap:14px;text-decoration:none;color:var(--ink);padding:11px 4px;
+    border-bottom:1px solid var(--line);cursor:pointer}
+  .toc-row:last-child{border-bottom:0}
+  .toc-row .rn{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:19px;min-width:2.6em}
+  .toc-row .nm{font-family:var(--serif);font-size:clamp(19px,4vw,25px);white-space:nowrap}
+  .toc-row .ld{flex:1;border-bottom:1.5px dotted var(--gold-soft);transform:translateY(-5px);opacity:.65;min-width:16px}
+  .toc-row .ct{font-family:var(--sans);font-size:12.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:.03em}
+  .toc-row:active{background:var(--paper-2)}
+  ol.cidx-list{display:grid;grid-template-columns:1fr;align-content:center;gap:0 46px;padding-top:6px}
+  ol.cidx-list.two{grid-template-columns:1fr 1fr}
+  .cidx-row{padding:10px 4px}
+  .cidx-row .nm{color:var(--accent);font-size:clamp(18px,3.4vw,23px)}
+  ol.cidx-list.two .cidx-row .nm{font-size:clamp(16px,3vw,20px)}
+  ol.cidx-list.two .cidx-row{padding:8px 4px}
+  .ct-foot{flex:none;text-align:center;font-family:var(--sans);font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint);padding-top:16px}
+
+  /* ---------- Chapter opener page ---------- */
+  .opener-inner{align-items:center;justify-content:center;text-align:center}
+  .op-num{font-family:var(--sans);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+  .op-title{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(38px,10vw,66px);
+    margin:14px 0 16px;color:var(--accent)}
+  .op-meta{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold-soft);max-width:260px}
+  .op-meta::before,.op-meta::after{content:"";height:1px;flex:1;background:var(--gold-soft);opacity:.5}
+  .op-meta span{font-family:var(--sans);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- Wine rows ---------- */
+  .grp-head{display:flex;align-items:center;gap:12px;padding:2px 0 7px;margin-top:6px}
+  .grp-head:first-child{margin-top:0}
+  .grp-head .reg{font-family:var(--sans);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.17em;color:var(--ink);white-space:nowrap}
+  .grp-head .reg .cont{color:var(--faint);font-weight:600;font-style:italic;text-transform:none;letter-spacing:.02em}
+  .grp-head .hr{flex:1;height:1px;background:linear-gradient(90deg,var(--gold-soft),var(--line) 60%,transparent)}
+  .grp-head .gc{font-family:var(--sans);font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
+  ul.wines{list-style:none;margin:0;padding:0}
+  li.wine{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:2px 16px;padding:9px 2px;border-bottom:1px solid var(--line)}
+  .w-main{min-width:0}
+  .w-producer{font-family:var(--serif);font-size:18px;line-height:1.25}
+  .w-name{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:15px;line-height:1.3;margin-top:1px}
+  .w-meta{display:flex;flex-wrap:wrap;gap:5px 11px;margin-top:4px;align-items:center}
+  .w-vintage{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
+  .w-region{font-family:var(--sans);font-size:11px;letter-spacing:.03em;color:var(--faint)}
+  .badge{font-family:var(--sans);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);
+    border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:4px;padding:1.5px 6px;
+    background:color-mix(in srgb,var(--accent) 7%,transparent)}
+  .w-right{text-align:right;white-space:nowrap}
+  .w-price{font-family:var(--sans);font-weight:700;font-size:16px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .w-price .cur{font-size:10px;font-weight:600;color:var(--faint);margin-right:2px}
+  .w-code{font-family:var(--sans);font-size:10px;letter-spacing:.05em;color:var(--faint);font-variant-numeric:tabular-nums;margin-top:2px}
+  mark{background:color-mix(in srgb,var(--gold-soft) 45%,transparent);color:inherit;border-radius:2px;padding:0 1px}
+
+  /* ---------- Chrome ---------- */
+  .chrome{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:30;
+    display:flex;align-items:center;gap:6px;padding:6px;border-radius:100px;
+    background:color-mix(in srgb,var(--paper) 82%,transparent);border:1px solid var(--line-2);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 6px 22px rgba(40,24,8,.16)}
+  .cbtn{font-family:var(--sans);height:38px;min-width:38px;padding:0 12px;border:0;background:transparent;color:var(--ink);
+    cursor:pointer;font-size:12.5px;font-weight:600;letter-spacing:.03em;border-radius:100px;display:inline-flex;align-items:center;gap:7px}
+  .cbtn:hover{background:var(--paper-2)}
+  .cbtn svg{width:17px;height:17px}
+  .cbtn.icon{padding:0;justify-content:center}
+  @keyframes kh-spin{to{transform:rotate(360deg)}}
+  #syncBtn.spin svg{animation:kh-spin .8s linear infinite;transform-origin:50% 50%}
+  #syncBtn.spin{color:var(--gold)}
+  .toast{position:fixed;left:50%;bottom:70px;transform:translate(-50%,8px);z-index:40;
+    font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.02em;
+    padding:11px 20px;border-radius:100px;background:var(--ink);color:var(--paper);
+    border:1px solid var(--gold-soft);box-shadow:0 8px 26px rgba(40,24,8,.28);
+    opacity:0;pointer-events:none;transition:opacity .28s ease,transform .28s ease;white-space:nowrap;max-width:90vw}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  .toast.err{border-color:var(--accent)}
+  .toast.ok{border-color:var(--gold)}
+  .pageind{font-family:var(--sans);font-size:11.5px;color:var(--muted);letter-spacing:.04em;padding:0 10px;
+    min-width:118px;text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .divx{width:1px;height:22px;background:var(--line-2)}
+
+  .nav{position:fixed;top:50%;transform:translateY(-50%);z-index:25;width:46px;height:64px;border:0;cursor:pointer;
+    background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;opacity:.5;transition:opacity .2s}
+  .nav:hover{opacity:1;color:var(--accent)}
+  .nav svg{width:30px;height:30px}
+  .nav.prev{left:max(4px,calc(50vw - 400px))}
+  .nav.next{right:max(4px,calc(50vw - 400px))}
+  .nav[disabled]{opacity:.12;pointer-events:none}
+
+  /* ---------- Search overlay ---------- */
+  .ovl{position:fixed;inset:0;z-index:80;background:color-mix(in srgb,var(--paper-3) 60%,rgba(20,12,4,.5));
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;flex-direction:column;align-items:center}
+  .ovl.show{display:flex}
+  .ovl-panel{width:min(94vw,640px);margin-top:min(9vh,80px);display:flex;flex-direction:column;max-height:82vh;
+    background:var(--paper);border:1px solid var(--line-2);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+  .ovl-top{display:flex;align-items:center;gap:12px;padding:0 16px;height:56px;border-bottom:1px solid var(--line)}
+  .ovl-top svg{width:20px;height:20px;color:var(--faint);flex:none}
+  .ovl-top input{flex:1;border:0;outline:0;background:transparent;font-family:var(--serif);font-size:19px;color:var(--ink)}
+  .ovl-top input::placeholder{color:var(--faint);font-style:italic}
+  .ovl-top .x{border:0;background:transparent;color:var(--muted);font-size:26px;cursor:pointer;padding:2px 6px}
+  .ovl-filters{display:flex;gap:7px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .chip{font-family:var(--sans);border:1px solid var(--line-2);background:var(--paper-2);color:var(--muted);
+    border-radius:100px;padding:6px 13px;font-size:12.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+  .chip:hover{border-color:var(--gold)}.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .fsep{width:100%;height:0}
+  .flabel{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--faint);font-weight:700;align-self:center;margin-right:2px}
+  .ovl-results{overflow:auto;padding:6px 0}
+  .res{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:baseline;padding:11px 18px;cursor:pointer;border-bottom:1px solid var(--line)}
+  .res:hover{background:var(--paper-2)}
+  .res .rp{font-family:var(--serif);font-size:17px}
+  .res .rn{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:14px}
+  .res .rtag{font-family:var(--sans);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+  .res .rpr{font-family:var(--sans);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .res .rpr .cur{font-size:9.5px;color:var(--faint);margin-right:2px}
+  .res-empty{text-align:center;padding:50px 20px;color:var(--muted);font-style:italic}
+  .res-more{text-align:center;padding:14px;font-family:var(--sans);font-size:12px;color:var(--faint)}
+
+  @media (max-width:600px){
+    .cbtn .lbl{display:none}.cbtn{padding:0;min-width:36px}
+    .pageind{min-width:96px;font-size:11px}
+    .nav{width:38px}.nav svg{width:26px;height:26px}
+  }
+  @media (prefers-reduced-motion:reduce){.page{transition:none!important}*{scroll-behavior:auto!important}}
+</style>
+
+<div class="stage">
+  <div class="book" id="book"></div>
+</div>
+
+<button class="nav prev" id="prevBtn" aria-label="Previous page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+<button class="nav next" id="nextBtn" aria-label="Next page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+
+<div class="chrome">
+  <button class="cbtn" id="contentsBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span class="lbl">Contents</span></button>
+  <div class="divx"></div>
+  <div class="pageind" id="pageInd">Cover</div>
+  <div class="divx"></div>
+  <button class="cbtn icon" id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></button>
+  <button class="cbtn icon" id="syncBtn" aria-label="Weinkarte aktualisieren" title="Weinkarte aktualisieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v5h-5"/></svg></button>
+  <button class="cbtn icon" id="themeBtn" aria-label="Light or dark"></button>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="ovl" id="overlay">
+  <div class="ovl-panel">
+    <div class="ovl-top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      <input id="search" type="search" autocomplete="off" placeholder="Search wine, producer, region, vintage&hellip;">
+      <button class="x" id="ovlClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="ovl-filters" id="ovlFilters"></div>
+    <div class="ovl-results" id="results"></div>
+  </div>
+</div>
+
+<script>
+/*__DATA__*/
+const CREST_SVG="<svg id=\"Ebene_1\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" viewBox=\"0 0 703.37 576.52\">\n  \n  <defs>\n    <style>\n      .st0 {\n        fill: currentColor;\n      }\n    </style>\n  </defs>\n  <path class=\"st0\" d=\"M39.22,351.93v1.95h31.16v-1.95c-5.82.21-9.4-3.67-16.04-11.03l-23.8-25.54,19.41-19.19c7.25-7.15,9.4-7.45,15.52-7.97v-1.95h-26.76v1.95c5.01.21,6.95.4,6.95,3.17,0,3.46-2.96,6.23-26.05,26.95v-20.93c0-7.57,1.43-8.68,9.4-9.19v-1.95H0v1.95c6.95.52,9.19,1.22,9.19,9.19v44.23c0,8.37-1.22,9.9-9.19,10.3v1.95h28.81v-1.95c-7.96-.4-9.19-2.03-9.19-9.18v-19.11l2.66-2.14,10.83,10.72c3.47,3.48,13.28,13.99,13.28,17.16,0,2.24-1.73,2.35-7.15,2.54Z\"/>\n  <path class=\"st0\" d=\"M84.35,297.39v31.86c0,6.13,0,26.05,25.34,26.05s26.45-19.21,26.45-27.37v-26.66c0-10.72,1.74-12.25,9.6-13.07v-1.95h-23.7v1.95c7.15.4,9.6,2.14,9.6,13.07v27.58c0,8.28-1.02,11.64-2.35,13.9-2.96,4.8-8.78,8.07-16.75,8.07-17.77,0-17.77-14.2-17.77-20.74v-32.69c0-7.25,1.22-8.58,9.29-9.19v-1.95h-28.9v1.95c7.76.52,9.19,1.63,9.19,9.19Z\"/>\n  <path class=\"st0\" d=\"M212.01,336.1h-2.55c-5.82,13.38-12.36,13.8-27.68,13.8-8.48,0-10.32-.11-10.32-4.2v-48.3c0-8.07,2.55-8.79,9.5-9.19v-1.95h-28.81v1.95c6.44.52,8.89,1.13,8.89,9.19v45.36c0,7.86-2.35,8.78-8.89,9.18v1.95h54.95l4.9-17.78Z\"/>\n  <path class=\"st0\" d=\"M304.93,288.2v-1.95h-20.33l-22.57,51.59-23.6-51.59h-20.22v1.95c7.55.4,9.7,1.22,9.7,9.19v41.46c0,11.05-2.15,12.58-9.91,13.07v1.95h24.01v-1.95c-7.45-.31-9.6-2.54-9.6-13.07v-40.75h.21l25.43,55.77h1.42l25.95-58.13h.2v45.87c0,8.37-1.33,9.9-9.29,10.3v1.95h28.6v-1.95c-6.54-.4-8.88-1.32-8.88-9.18v-45.36c0-8.07,2.45-8.68,8.88-9.19Z\"/>\n  <path class=\"st0\" d=\"M422.62,288.2v-1.95h-28.4v1.95c7.56.61,8.99,1.63,8.99,9.19v19.82h-30.95v-19.82c0-7.25,1.22-8.58,8.98-9.19v-1.95h-28.39v1.95c7.56.61,8.99,1.63,8.99,9.19v44.23c0,7.66-.41,9.9-8.99,10.3v1.95h28.39v-1.95c-7.96-.5-8.98-2.45-8.98-9.18v-21.04h30.95v19.92c0,7.66-.41,9.9-8.99,10.3v1.95h28.4v-1.95c-7.97-.5-8.99-2.45-8.99-9.18v-45.36c0-7.25,1.22-8.58,8.99-9.19Z\"/>\n  <path class=\"st0\" d=\"M464.98,284.83c-16.75,0-33.4,11.85-33.4,35.34,0,21.75,14.92,35.13,33.4,35.13s33.4-13.38,33.4-35.13c0-23.49-16.65-35.34-33.4-35.34ZM464.98,351.62c-11.34,0-21.75-9.08-21.75-31.56s11.34-31.56,21.75-31.56,21.76,8.28,21.76,31.56-10.42,31.56-21.76,31.56Z\"/>\n  <path class=\"st0\" d=\"M505.93,286.25l-.61,17.37h2.45c2.25-11.14,5.01-13.07,16.25-13.07h5.51v51.07c0,7.55-.31,9.9-9.6,10.3v1.95h29.83v-1.95c-8.58-.31-9.81-2.24-9.81-9.18v-52.2h5.51c11.24,0,14.1,1.84,16.24,13.07h2.46l-.61-17.37h-57.61Z\"/>\n  <path class=\"st0\" d=\"M609.87,349.99c-15.22,0-15.22-.1-15.22-4.3v-25.33l15.73.21c8.48.1,10.01,1.53,11.24,9.71h2.34v-23.7h-2.34c-1.13,7.25-2.15,9.71-11.24,9.71h-15.73v-22.69c0-3.46,1.22-3.46,3.37-3.46h13.79c11.34,0,13.99,1.63,15.52,10.72h2.55l-.31-14.62h-54.24v1.95c6.44.52,8.89,1.13,8.89,9.19v45.36c0,7.86-2.35,8.78-8.89,9.18v1.95h55.15l4.6-17.26h-2.86c-4.49,10.32-9.6,13.38-22.36,13.38Z\"/>\n  <path class=\"st0\" d=\"M700.82,336.1c-5.82,13.38-12.36,13.8-27.68,13.8-8.48,0-10.32-.11-10.32-4.2v-48.3c0-8.07,2.55-8.79,9.5-9.19v-1.95h-28.81v1.95c6.44.52,8.89,1.13,8.89,9.19v45.36c0,7.86-2.35,8.78-8.89,9.18v1.95h54.95l4.9-17.78h-2.55Z\"/>\n  <g>\n    <path class=\"st0\" d=\"M185.33,472.15c0,3.88,3.48,5.52,5.62,5.52s5.72-1.74,5.72-5.52c0-3.16-2.65-5.81-5.72-5.81s-5.62,2.54-5.62,5.81Z\"/>\n    <path class=\"st0\" d=\"M78.8,421.19c0-6.34,5.21-9.5,10.31-9.5,10.73,0,17.27,9.19,19,17.57h2.55l-2.25-21.75h-2.14c-.2,1.11-.72,3.46-3.57,3.46-2.55,0-8.07-3.46-14.2-3.46-9.19,0-18.48,5.72-18.48,17.36,0,10.11,6.54,14.6,15.93,20.01,15.01,8.79,16.65,12.27,16.65,18.08s-4.08,11.34-12.25,11.34c-13.79,0-19-13.27-20.94-18.07h-2.35l3.07,21.64h2.25c0-1.63,1.02-3.37,3.16-3.37,3.07,0,8.07,3.48,15.83,3.48,14.61,0,21.56-9.81,21.56-18.48,0-20.95-34.12-22.99-34.12-38.3Z\"/>\n    <path class=\"st0\" d=\"M181.4,408.92h-57.61l-.61,17.37h2.45c2.25-11.14,5.01-13.07,16.25-13.07h5.51v51.07c0,7.55-.31,9.9-9.6,10.3v1.95h29.83v-1.95c-8.58-.31-9.81-2.24-9.81-9.18v-52.2h5.51c11.24,0,14.1,1.84,16.24,13.07h2.46l-.61-17.37Z\"/>\n    <path class=\"st0\" d=\"M267.18,460.51l-23.6-51.59h-20.22v1.95c7.55.4,9.7,1.22,9.7,9.19v41.46c0,11.05-2.15,12.58-9.91,13.07v1.95h24.01v-1.95c-7.45-.31-9.6-2.54-9.6-13.07v-40.75h.21l25.43,55.77h1.42l25.95-58.13h.2v45.87c0,8.37-1.33,9.9-9.29,10.3v1.95h28.6v-1.95c-6.54-.4-8.88-1.32-8.88-9.18v-45.36c0-8.07,2.45-8.68,8.88-9.19v-1.95h-20.33l-22.57,51.59Z\"/>\n    <path class=\"st0\" d=\"M351.51,407.51c-16.75,0-33.4,11.83-33.4,35.34,0,21.75,14.92,35.13,33.4,35.13s33.4-13.38,33.4-35.13c0-23.51-16.65-35.34-33.4-35.34ZM351.51,474.29c-11.34,0-21.75-9.08-21.75-31.56s11.34-31.56,21.75-31.56,21.76,8.28,21.76,31.56-10.42,31.56-21.76,31.56Z\"/>\n    <path class=\"st0\" d=\"M427.67,443.96c5.21-1.01,18.48-3.46,18.48-17.15,0-15.73-16.85-17.89-25.95-17.89h-28.19v1.95c7.15.71,8.68,1.63,8.68,9.19v44.23c0,7.66-.41,9.81-8.68,10.3v1.95h28.29v-1.95c-8.17-.4-9.19-2.33-9.19-9.18v-20.13l5.72-.21,24.3,31.46h16.45v-1.95c-4.19-.19-6.64-2.03-8.89-4.8l-21.04-25.84ZM411.12,441.51v-25.12c0-2.96.92-3.69,6.34-3.69,4.19,0,17.57.31,17.57,13.9,0,14.6-15.32,14.81-23.9,14.91Z\"/>\n    <path class=\"st0\" d=\"M492.49,410.87v-1.95h-30.34v1.95c8.48.4,9.91,1.63,9.91,9.19v45.36c0,7.25-1.22,8.98-9.91,9.18v1.95h30.34v-1.95c-7.56-.19-10.01-1.22-10.01-9.18v-45.36c0-8.18,2.55-8.89,10.01-9.19Z\"/>\n    <path class=\"st0\" d=\"M500.87,408.92l-.61,17.37h2.45c2.25-11.14,5.01-13.07,16.24-13.07h5.52v51.07c0,7.55-.31,9.9-9.6,10.3v1.95h29.83v-1.95c-8.58-.31-9.81-2.24-9.81-9.18v-52.2h5.51c11.23,0,14.1,1.84,16.24,13.07h2.46l-.61-17.37h-57.61Z\"/>\n    <path class=\"st0\" d=\"M606.22,472.67h-26.24l44.13-62.2v-1.55h-53.73l-2.04,17.47h2.66c1.33-6.84,2.55-13.59,17.16-13.59h22.57l-44.64,62.22v1.53h57.61l2.45-17.99h-2.34c-2.25,7.47-4.19,14.1-17.57,14.1Z\"/>\n  </g>\n  <path class=\"st0\" d=\"M557.94,202.18c-2.68-1.79-17.22-.82-20.41-.82,4.54,3.44,7.88,5.09,9.99,13.36,1.4,5.51-2.94,11.84-10.41,11.2-6.74-.58-11.35-7.52-14.05-11.87-1.87-3.02-3.33-6.29-5.18-9.32-5.11-8.39-13.91-15.6-23.59-17.87-11.37-2.66-23.31-1.78-34.83-1.01,11.92-11.93,28.74-35.78,10.4-49.93-7.28-5.62-18.99-6.64-27.34-2.98-8.15,3.57-11.18,11.48-12.18,19.73h16.32c-.67-5.55-.32-19.09,8.42-18.42,10.5.81,9.25,12.81,5.93,19.34-4.13,8.13-12.18,14.87-18.24,21.52-8.53,9.35-15.92,19.67-13.63,33.18,3.17,18.65,20.42,23.02,36.83,21.33,7.87-.81,15.65-4.72,19.17-12.16,4.07-8.58,2.72-18.97-3.93-25.62,2.94,0,8.42,5.58,10.6,8.15,1.74,2.05,3.33,4.25,5,6.36,5.76,7.26,10.76,14.5,19.11,19.08,5.27,2.89,22.28,7.19,34.27,4.04,4.72-1.24,9.78-3.81,11.74-8.44,2.14-5.04,1.74-15.99-3.99-18.85ZM455.65,226.67c-7.1,0-11.4-7.06-11.9-13.33-.66-8.23,4.03-13.73,8.64-19.86.36,3.61,1.57,6.51,5.2,6.76,2.03.14,5.39-.66,3.71-2.34-1.84-1.84-4.35,1.6-4.29-3.33.05-4.76,4.43-4.3,7.15-2.63,14.44,8.86,9.83,34.73-8.51,34.73Z\"/>\n  <polygon class=\"st0\" points=\"280.35 546.17 274.62 528.03 268.76 546.17 249.39 546.17 265.18 557.91 259.04 576.52 274.62 565.06 290.19 576.52 284.13 557.91 299.77 546.17 280.35 546.17\"/>\n  <polygon class=\"st0\" points=\"349.61 546.17 343.88 528.03 338 546.17 318.64 546.17 334.43 557.91 328.29 576.52 343.88 565.06 359.44 576.52 353.38 557.91 369.01 546.17 349.61 546.17\"/>\n  <polygon class=\"st0\" points=\"211.32 546.17 205.58 528.03 199.72 546.17 180.35 546.17 196.15 557.91 190.01 576.52 205.58 565.06 221.16 576.52 215.1 557.91 230.73 546.17 211.32 546.17\"/>\n  <polygon class=\"st0\" points=\"420.81 546.17 415.07 528.03 409.21 546.17 389.84 546.17 405.63 557.91 399.49 576.52 415.07 565.06 430.65 576.52 424.57 557.91 440.21 546.17 420.81 546.17\"/>\n  <polygon class=\"st0\" points=\"490.4 546.17 484.66 528.03 478.79 546.17 459.44 546.17 475.21 557.91 469.07 576.52 484.66 565.06 500.23 576.52 494.15 557.91 509.82 546.17 490.4 546.17\"/>\n  <path class=\"st0\" d=\"M281.52,16.93v36.16h126.82V16.9c3.69-.99,6.46-4.22,6.46-8.23,0-4.79-3.88-8.67-8.67-8.67s-8.67,3.88-8.67,8.67c0,3.88,2.59,7.05,6.11,8.16-.32,8.15-.96,11.25-4.46,16.79-1.67,3.06-4.2,4.56-7.71,4.56-2.94,0-5.47-1.21-7.11-3.37-3.35-5.04-4.64-8.6-5.3-18,3.44-1.15,5.97-4.3,5.97-8.13,0-4.79-3.88-8.67-8.67-8.67s-8.67,3.88-8.67,8.67c0,3.91,2.63,7.08,6.18,8.17-.33,7.67-1.01,11.05-4.11,16.12-2.38,3.55-5.22,5.21-8.95,5.21-3.22,0-6.65-1.76-8.32-4.27-1.23-2.16-2.39-4.2-3.01-7.22-1.13-3.69-1.7-5.77-2.01-9.85,3.53-1.1,6.14-4.27,6.14-8.16,0-4.79-3.88-8.67-8.67-8.67s-8.67,3.88-8.67,8.67c0,3.92,2.65,7.11,6.22,8.18-.39,2.72-1.82,11.71-4.36,16.46-1.38,2.59-5.56,4.86-8.92,4.86-3.1,0-6.29-1.99-8.33-5.2-3.17-5.18-3.85-8.05-4.66-16.02,3.83-.9,6.74-4.18,6.74-8.28,0-4.79-3.88-8.67-8.67-8.67s-8.67,3.88-8.67,8.67c0,3.71,2.35,6.82,5.63,8.06-.65,8.85-1.92,12.39-4.99,17.13-1.97,2.81-4.19,4.01-7.43,4.01-3.04,0-5.93-1.61-7.7-4.27-3.12-5.39-3.83-7.45-4.66-16.82,3.39-1.18,5.86-4.31,5.86-8.11,0-4.79-3.88-8.67-8.67-8.67s-8.67,3.88-8.67,8.67c0,4.06,2.85,7.31,6.61,8.26Z\"/>\n  <path class=\"st0\" d=\"M260.3,208.29c2.29-13.51-5.1-23.82-13.63-33.18-6.06-6.65-14.11-13.4-18.24-21.52-3.32-6.53-4.57-18.53,5.93-19.34,8.74-.67,9.09,12.87,8.42,18.42h16.32c-.99-8.24-4.03-16.16-12.18-19.73-8.35-3.66-20.05-2.64-27.34,2.98-18.34,14.15-1.52,38,10.4,49.93-11.52-.77-23.46-1.66-34.84,1.01-9.68,2.27-18.48,9.48-23.59,17.87-1.85,3.03-3.31,6.31-5.18,9.32-2.7,4.35-7.31,11.29-14.05,11.87-7.47.64-11.82-5.69-10.41-11.2,2.11-8.27,5.45-9.92,9.99-13.36-3.19,0-17.73-.97-20.41.82-5.73,2.87-6.13,13.81-3.99,18.85,1.96,4.63,7.02,7.2,11.74,8.44,12,3.15,29-1.15,34.27-4.04,8.35-4.58,13.35-11.82,19.11-19.08,1.67-2.11,3.27-4.31,5-6.36,2.18-2.57,7.66-8.15,10.6-8.15-6.65,6.65-8,17.03-3.93,25.62,3.53,7.44,11.3,11.35,19.17,12.16,16.41,1.7,33.67-2.68,36.83-21.33ZM245.69,213.33c-.5,6.27-4.8,13.33-11.9,13.33-18.33,0-22.95-25.87-8.51-34.73,2.72-1.67,7.09-2.13,7.15,2.63.06,4.94-2.45,1.49-4.29,3.33-1.68,1.68,1.68,2.48,3.71,2.34,3.63-.25,4.84-3.15,5.2-6.76,4.61,6.12,9.29,11.63,8.64,19.86Z\"/>\n  <g>\n    <path class=\"st0\" d=\"M360.95,170.05l1.41-14.1c.02-.1.13-.15.14-.26.25-2.47-1.56-4.67-4.02-4.92-2.47-.25-4.67,1.56-4.92,4.02-.01.11.09.18.09.28l-1.41,14.09,8.71.87Z\"/>\n    <path class=\"st0\" d=\"M357.96,199.98l1.41-14.09c.02-.1.13-.15.14-.26.25-2.47-1.56-4.67-4.02-4.92-2.47-.25-4.67,1.56-4.92,4.02-.01.11.09.18.09.28l-1.41,14.09,8.71.87Z\"/>\n    <path class=\"st0\" d=\"M355.71,223.27l1.41-14.09c.02-.1.13-.15.14-.26.25-2.47-1.56-4.67-4.02-4.92-2.47-.25-4.67,1.56-4.92,4.02-.01.11.09.18.09.28l-1.41,14.09,8.71.87Z\"/>\n    <path class=\"st0\" d=\"M361.81,112.61c-1.69-.17-3.25,1.52-3.47,3.78,0,.1.06.16.05.25l-1.28,12.87,5.97.6,1.28-12.87c.01-.09.09-.14.1-.24.23-2.25-.96-4.22-2.66-4.39Z\"/>\n    <path class=\"st0\" d=\"M336.62,104.11c-1-1.26-2.11-2.4-3.33-3.44-.4-.34-.8-.7-1.23-1.01-.66-.49-1.35-.93-2.06-1.35-.12-.07-.22-.16-.34-.22-.23-.13-.49-.23-.72-.35-1.22-.65-2.5-1.18-3.83-1.62-.58-.19-1.14-.39-1.74-.54-.59-.14-1.18-.25-1.79-.35-1.52-.27-3.07-.46-4.63-.46-8.46,0-16.02,4.53-20.25,11.79-2.11,3.63-3.33,8.16-3.33,12.39,0,1.71.21,3.36.52,4.97,0,.04.01.08.02.12,1.37,6.87,5.45,12.66,11.55,16.07,3.62,2.12,7.86,3.33,12.09,3.33,1.66,0,3.28-.22,4.87-.55.09-.02.17-.04.26-.05,2.99-.65,5.8-1.84,8.31-3.49.14-.09.27-.18.41-.27,2.97-2.03,5.51-4.64,7.31-7.72,1.14-1.94,1.9-4.07,2.39-6.27.49-1.92.83-3.9.83-5.98,0-5.56-1.95-10.62-5.1-14.71-.07-.09-.15-.18-.22-.27ZM333.59,105.34c1.21,1.51,1.52,2.12,2.42,4.23-4.23,1.51-5.75,2.42-8.76,3.63l-1.82.9v-.6l8.16-8.16ZM326.94,100.2c2.42,1.21,2.72,1.51,4.23,3.02-1.81,1.51-3.02,2.72-3.93,3.63-1.82,2.42-3.33,3.63-4.24,4.23l-.3.3c.61-1.82,1.21-3.33,1.52-4.23,1.51-3.33,2.72-6.35,2.72-6.95ZM319.38,98.08c2.12,0,2.72.3,4.84.91l-4.84,12.09v-13ZM311.76,98.76l2-.55c.43-.08.88-.08,1.31-.13h.99v12.7l-5.13-11.76c.27-.09.55-.18.82-.26ZM304.8,102.28c.7-.52,1.28-.89,2.06-1.4.35-.21.71-.4,1.07-.58,1.52,3.39,4.79,12.3,4.49,12.3,0,0-6.89-8.09-8.44-9.65.27-.23.53-.45.81-.67ZM299.13,108.96s.02-.07.02-.1c.7-1.26,1.51-2.44,2.44-3.53h.26c.61.9,7.86,7.86,7.86,8.16v.3l-10.58-4.23v-.61ZM297.02,117.12c0-2.11,0-2.42.9-4.53l10.88,4.83h-11.78v-.3ZM296.71,120.75h12.09l-11.18,4.53c-.61-1.81-.61-2.42-.91-4.53ZM298.83,128.31l10.28-4.23.61.3-7.86,8.47c-1.81-1.82-2.11-2.42-3.02-4.54ZM307.51,137.65l-3.54-3c1.52-1.21,7.86-7.86,8.47-7.86v.61s-.3.6-.61,1.51c-.3.89-3.23,7.06-3.89,8.97-.14-.08-.29-.15-.43-.23ZM311.22,139.19v-.61c.3-1.51,1.21-3.63,2.72-6.65.61-.91.91-2.11,1.82-3.63l.3,11.79c-2.42-.3-2.72-.3-4.84-.9ZM311.22,119.09c0-3.58,2.9-6.48,6.48-6.48s6.48,2.9,6.48,6.48-2.9,6.48-6.48,6.48-6.48-2.9-6.48-6.48ZM319.68,140.1h-.6l.29-12.39.3.6,4.24,10.58c-1.82.91-2.42,1.21-4.24,1.21ZM330.19,136.21c-.72.53-1.48.97-2.27,1.41-.32.13-.64.26-.98.36-.61-1.82-.91-3.03-1.52-3.93-1.51-3.63-2.42-5.74-2.72-6.35v-.91c1.52,1.51,8.16,7.86,8.16,8.16,0,.43-.29.85-.68,1.26ZM333.59,132.84c-1.21-1.21-2.42-2.12-3.02-3.02-2.11-1.81-3.62-3.32-4.23-4.23-.3,0-.61-.6-1.21-1.51l10.88,4.54c-.6,1.81-.9,2.42-2.42,4.23ZM338.42,121.05c0,1.82,0,2.42-.9,4.54l-12.1-4.83h13v.3ZM337.52,112.59c.9,2.11.9,2.72.9,4.53v.61l-11.78-.91c1.51-.3,2.72-.91,3.33-1.21,4.23-1.81,6.34-3.02,6.95-3.02h.61Z\"/>\n    <path class=\"st0\" d=\"M408.26,63.22h-127.08v112.49c0,4.89.61,9.64,1.67,14.22.32,1.49.7,2.97,1.15,4.43.03.11.06.22.1.32.08.24.14.49.22.73,2.67,8.56,6.65,16.32,11.79,22.97,10.58,13.6,26.9,20.86,47.76,20.86.15,0,.27-.02.42-.02.15,0,.29.02.43.02,2.18,0,4.34-.11,6.47-.33,21.83-1.57,36.49-10.4,47.39-28.39,2.71-4.6,4.64-8.97,5.9-13.52,2.4-6.68,3.77-13.83,3.77-21.3v-6.59s0-105.89,0-105.89ZM289.24,176.87l10.07-7.28,8.6-6.22,4.66,5.73,15.85,19.51,9.28-6.02-.9,10.54-14.26,9.56-13.34-17.62-17.12,8.24c-1.74-5.18-2.72-10.69-2.84-16.42ZM344.71,231.25c-2.68,0-5.3-.26-7.89-.63l2.5-29.76,2.11-26h1.82l27.21,2.72-2.12,22.67-2.79,26.9c-6.44,2.62-13.47,4.1-20.85,4.1ZM373.19,148.56l-1.73,18.37-.69,7.33h-1.81l-26.9-2.42.31-3.84,1.8-22.16,29.02,2.72ZM351.73,134.35l2.12-26.6,16.32,1.51-2.12,26.3-16.32-1.21ZM372.08,196.94l1.12-14.72,7.16,5.68,19.89-12.55v.36c0,12.88-4.45,24.72-11.83,34.15l-16.34-12.92ZM380.5,179.9l-6.3-4.91.32-3.52c.11-1.29.25-2.9.4-4.67.66-7.66,1.59-18.24,1.59-18.24l7.26.3c-3.63-3.63-12.1-12.39-12.1-13.3s1.81-22.06,1.81-22.06c0-.91.61-1.82,1.82-4.23-3.33-3.33-4.24-5.14-4.54-8.77l-.29-6.04c0-1.73-.64-3.38-1.62-4.79-.62-.9-1.71-1.08-2.36-1.8-.36-.4-.3-1.08-.72-1.42-.08-.07-.18-.12-.27-.17l.77-5.5,2.3.32.26-1.88-2.3-.32.27-1.95-2.21-.31-.27,1.95-2.3-.32-.26,1.88,2.3.32-.77,5.5h-.39v.02q-.9.3-1.21,1.21c-3.93,2.12-4.84,3.63-5.75,7.56-1.81,7.56-2.42,8.77-3.93,9.97-.9.61-1.81,1.51-3.02,2.12l.91,5.44s-1.51,21.77-2.72,22.67l-13.3,9.37q.3.3.91.3s4.53.61,6.05.61l-1.96,22.89-.47,5.52-.06.76-8.66,5.51-9.39-11.1-12.24-14.46-18.89,14.22v-96.36h111.07v95.52l-19.75,12.17Z\"/>\n  </g>\n</svg>";
+
+var nf=new Intl.NumberFormat('de-CH');
+function fmtPrice(p){return (p==null)?"&mdash;":nf.format(p);}
+function roman(n){var m=[["M",1000],["CM",900],["D",500],["CD",400],["C",100],["XC",90],["L",50],["XL",40],["X",10],["IX",9],["V",5],["IV",4],["I",1]],r="";for(var i=0;i<m.length;i++){while(n>=m[i][1]){r+=m[i][0];n-=m[i][1];}}return r;}
+function sizeLabel(v){if(v==0.375)return"Half 37.5cl";if(v==0.5)return"50cl";if(v==0.7)return"70cl";if(v==1.5)return"Magnum 1.5L";if(v==3)return"D. Magnum 3L";if(v==6)return"Imperial 6L";return"";}
+function pretty(name){return name==='Rose'?'Rosé':name;}
+function plural(n,word){return n+' '+word+(n===1?'':'s');}
+function esc(s){return (s||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function fold(s){return (s||"").toLowerCase().normalize("NFD").replace(new RegExp("[̀-ͯ]","g"),"");}
+function el(html){var d=document.createElement('div');d.innerHTML=html;return d.firstElementChild;}
+
+/* ---- live-refresh support: vinify source + shared transform (inlined) ---- */
+var VINIFY_URL="https://vinify.app/pdf-wine-list/570277";
+/*__TRANSFORM__*/
+
+/* pre-pass: ids, counts, uids, haystack — wrapped so it can re-run on refresh */
+var ALLW=[],uid=0,TOTAL=0;
+function preprocess(){
+  ALLW=[];uid=0;
+  DATA.categories.forEach(function(cat,ci){
+    cat.id="cat-"+ci;cat.rn=roman(ci+1);cat.count=0;cat.display=pretty(cat.name);
+    cat.countryOrder=[];var _seen={};
+    cat.groups.forEach(function(g){
+      cat.count+=g.wines.length;
+      if(!_seen[g.co]){_seen[g.co]={name:g.co,count:0};cat.countryOrder.push(_seen[g.co]);}
+      _seen[g.co].count+=g.wines.length;
+      g.wines.forEach(function(w){
+        w.uid=uid++;w.cat=cat.name;w.catDisplay=cat.display;
+        w.hay=fold([w.p,w.n,w.co,w.re,w.v,cat.name,w.code].join(" "));
+        ALLW.push(w);
+      });
+    });
+  });
+  TOTAL=ALLW.length;
+}
+var LASTRAW=JSON.stringify(DATA); /* clean baseline BEFORE annotation, for change detection */
+preprocess();
+
+/* ---------- live refresh from vinify (the "Aktualisieren" button) ---------- */
+function toast(msg,kind){
+  var t=document.getElementById('toast');if(!t)return;
+  t.textContent=msg;t.className='toast show'+(kind?' '+kind:'');
+  clearTimeout(toast._t);toast._t=setTimeout(function(){t.className='toast';},2800);
+}
+var syncing=false;
+function liveUpdate(){
+  if(syncing)return;
+  var btn=document.getElementById('syncBtn');
+  syncing=true;if(btn)btn.classList.add('spin');
+  toast('Aktualisiere …');
+  fetch(VINIFY_URL,{cache:'no-store'}).then(function(r){
+    if(!r.ok)throw new Error('http '+r.status);return r.text();
+  }).then(function(html){
+    var nu=vinifyToData(extractNextData(html));
+    var total=0;nu.categories.forEach(function(c){c.groups.forEach(function(g){total+=g.wines.length;});});
+    if(total<100)throw new Error('sanity: only '+total+' wines');
+    var fresh=JSON.stringify(nu),changed=(fresh!==LASTRAW);LASTRAW=fresh;
+    DATA.title=nu.title;DATA.currency=nu.currency;DATA.categories=nu.categories;
+    DATA.countries=nu.countries;DATA.volumes=nu.volumes;DATA.priceMin=nu.priceMin;DATA.priceMax=nu.priceMax;
+    preprocess();paginate();buildOvlFilters();runSearch();jumpTo(0);
+    toast(changed?'Weinkarte aktualisiert ✓':'Bereits aktuell ✓','ok');
+  }).catch(function(e){
+    toast('Keine Verbindung – später erneut','err');
+  }).then(function(){
+    syncing=false;if(btn)btn.classList.remove('spin');
+  });
+}
+
+/* node builders */
+function wineHTML(w,q){
+  var showName=w.n&&fold(w.n)!==fold(w.p||"");
+  var prod=q?hl(esc(w.p||""),q):esc(w.p||""),name=(showName?(q?hl(esc(w.n),q):esc(w.n)):"");
+  var badge=(w.vol&&w.vol!=0.75&&w.vol!=0.7)?'<span class="badge">'+sizeLabel(w.vol)+'</span>':'';
+  var vint='<span class="w-vintage">'+(w.v?w.v:'NV')+'</span>';
+  var region=w.re?'<span class="w-region">'+esc(w.re)+'</span>':'';
+  return '<li class="wine" data-uid="'+w.uid+'"><div class="w-main">'+
+    (prod?'<div class="w-producer">'+prod+'</div>':'')+
+    (name?'<div class="w-name">'+name+'</div>':'')+
+    '<div class="w-meta">'+vint+region+badge+'</div></div>'+
+    '<div class="w-right"><div class="w-price"><span class="cur">CHF</span>'+fmtPrice(w.pr)+'</div>'+
+    (w.code?'<div class="w-code">Art. '+esc(w.code)+'</div>':'')+'</div></li>';
+}
+function wineNode(w){return el('<ul class="wines" style="margin:0">'+wineHTML(w)+'</ul>').firstElementChild;}
+function groupHeadNode(g,cont){
+  return el('<div class="grp-head"><span class="reg">'+esc(g.name)+(cont?' <span class="cont">(cont.)</span>':'')+'</span><span class="hr"></span><span class="gc">'+g.wines.length+'</span></div>');
+}
+function hl(text,q){if(!q)return text;var f=fold(text),i=f.indexOf(fold(q));if(i<0)return text;return text.slice(0,i)+'<mark>'+text.slice(i,i+q.length)+'</mark>'+text.slice(i+q.length);}
+
+/* ---------- static front-matter pages ---------- */
+function coverPage(){
+  var p=el('<div class="page"><div class="page-inner cover-inner cover"></div></div>');
+  var f=el('<div class="cover-frame"></div>');
+  f.innerHTML='<p class="est">Since 1856</p>'+
+    '<span class="crest" role="img" aria-label="Kulm Hotel St. Moritz">'+CREST_SVG+'</span>'+
+    '<h1>Wine List</h1>'+
+    '<p class="place">Kulm Hotel &middot; St. Moritz</p>'+
+    '<div class="fleuron"><span>&#10022;</span></div>'+
+    '<p class="tagline">Seven hundred references from the world&rsquo;s great cellars</p>';
+  p.querySelector('.cover-inner').appendChild(f);
+  p.querySelector('.cover-inner').insertAdjacentHTML('beforeend','<div class="turn-hint">Swipe or tap &rsaquo; to turn the page</div>');
+  return p;
+}
+function contentsPage(){
+  var p=el('<div class="page"><div class="page-inner contents-inner">'+
+    '<p class="sec-eyebrow">The Cellar</p><h2 class="ct-h">Contents</h2>'+
+    '<div class="contents-rule"><span>&#10022;</span></div>'+
+    '<ol class="toc" id="toc"></ol>'+
+    '<div class="ct-foot">All prices in CHF &middot; VAT included &middot; <span style="text-transform:none;letter-spacing:0">*</span> only 1&ndash;2 bottles available</div></div></div>');
+  var toc=p.querySelector('#toc');
+  DATA.categories.forEach(function(cat){
+    var row=el('<a class="toc-row" data-cat="'+cat.id+'"><span class="rn">'+cat.rn+'</span>'+
+      '<span class="nm">'+esc(cat.display)+'</span><span class="ld"></span><span class="ct">'+plural(cat.count,'wine')+'</span></a>');
+    toc.appendChild(row);
+  });
+  return p;
+}
+function openerPage(cat){
+  return el('<div class="page" data-chapter="'+esc(cat.display)+'"><div class="page-inner opener-inner">'+
+    '<div class="op-num">Chapter '+cat.rn+'</div>'+
+    '<h2 class="op-title">'+esc(cat.display)+'</h2>'+
+    '<div class="op-meta"><span>'+plural(cat.count,'reference')+'</span></div></div></div>');
+}
+function countryIndexPage(cat){
+  return el('<div class="page" data-chapter="'+esc(cat.display)+'"><div class="page-inner contents-inner">'+
+    '<p class="sec-eyebrow">Chapter '+cat.rn+' &middot; '+esc(cat.display)+'</p>'+
+    '<h2 class="ct-h">By Country</h2>'+
+    '<div class="contents-rule"><span>&#10022;</span></div>'+
+    '<ol class="toc cidx-list'+(cat.countryOrder.length>6?' two':'')+'"></ol>'+
+    '<div class="ct-foot">Tap a country to jump</div></div></div>');
+}
+function winePageShell(chapter,folio){
+  var p=el('<div class="page" data-chapter="'+esc(chapter)+'"><div class="page-inner">'+
+    '<div class="run-head"></div><div class="page-body"></div>'+
+    '<div class="run-foot"><span class="orn">&#10022;</span><span class="folio"></span></div></div></div>');
+  p.querySelector('.run-head').textContent=chapter;
+  p.querySelector('.folio').textContent=folio;
+  return p;
+}
+
+/* ---------- pagination (measured) ---------- */
+var pages=[],chapterFirstPage={},pageOfUid={};
+function paginate(){
+  var book=document.getElementById('book');
+  book.innerHTML='';pages=[];chapterFirstPage={};pageOfUid={};
+
+  var cover=coverPage(),contents=contentsPage();
+  pages.push(cover);pages.push(contents);
+
+  var probe=winePageShell('Sample','0');probe.style.visibility='hidden';book.appendChild(probe);
+  var pbody=probe.querySelector('.page-body');
+  var runhead=probe.querySelector('.run-head');
+  var folio=0;
+  var built=[]; // content page descriptors after front matter
+  var cidxRecs=[]; // {el,cat} country-index pages to fill after pagination
+  var countryFirst={}; // cat.id -> {country -> absolute page index}
+
+  function flush(chapter){
+    if(!pbody.firstChild)return;
+    folio++;
+    var shell=winePageShell(chapter,folio);
+    var body=shell.querySelector('.page-body');
+    while(pbody.firstChild)body.appendChild(pbody.firstChild);
+    built.push(shell);
+  }
+
+  DATA.categories.forEach(function(cat){
+    chapterFirstPage[cat.id]=2+built.length; // opener page index
+    built.push(openerPage(cat));
+    countryFirst[cat.id]={};
+    if(cat.countryOrder.length>=2){ var ci=countryIndexPage(cat); cidxRecs.push({el:ci,cat:cat}); built.push(ci); }
+    runhead.textContent=cat.display;
+    var curCountry=null;
+    cat.groups.forEach(function(g){
+      if(g.co!==curCountry){ /* every new country starts on a fresh page */
+        if(pbody.firstChild)flush(cat.display);
+        curCountry=g.co;
+        countryFirst[cat.id][g.co]=2+built.length;
+      }
+      var head=groupHeadNode(g,false);
+      pbody.appendChild(head);
+      if(pbody.scrollHeight>pbody.clientHeight+1){pbody.removeChild(head);flush(cat.display);pbody.appendChild(head);}
+      var winesHere=0;
+      g.wines.forEach(function(w){
+        var node=wineNode(w);
+        pbody.appendChild(node);
+        if(pbody.scrollHeight>pbody.clientHeight+1){
+          pbody.removeChild(node);
+          if(winesHere===0){ if(pbody.lastChild)pbody.removeChild(pbody.lastChild); flush(cat.display); pbody.appendChild(groupHeadNode(g,false)); }
+          else { flush(cat.display); pbody.appendChild(groupHeadNode(g,true)); }
+          pbody.appendChild(node);winesHere=0;
+        }
+        winesHere++;
+        pageOfUid[w.uid]=2+built.length; // page currently being filled
+      });
+    });
+    flush(cat.display);
+  });
+  book.removeChild(probe);
+
+  /* fill country-index pages now that country->page is known */
+  cidxRecs.forEach(function(rec){
+    var cat=rec.cat,html='';
+    cat.countryOrder.forEach(function(c){
+      var pg=countryFirst[cat.id][c.name];
+      html+='<a class="toc-row cidx-row" data-page="'+pg+'"><span class="nm">'+esc(c.name)+'</span>'+
+        '<span class="ld"></span><span class="ct">'+plural(c.count,'wine')+'</span></a>';
+    });
+    rec.el.querySelector('.cidx-list').innerHTML=html;
+  });
+
+  built.forEach(function(pg){pages.push(pg);});
+  pages.forEach(function(pg,i){pg.dataset.idx=i;book.appendChild(pg);});
+  N=pages.length;
+  if(cur>=N)cur=N-1;
+}
+
+/* ---------- flip (2-page window) ---------- */
+var cur=0,N=0,animating=false;
+function bk(){return document.getElementById('book');}
+function reduced(){return window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;}
+function jumpTo(idx){
+  idx=Math.max(0,Math.min(N-1,idx));
+  var book=bk();book.classList.add('no-anim');
+  for(var i=0;i<pages.length;i++){var p=pages[i];p.style.display=(i===idx)?'block':'none';p.style.transform='rotateY(0deg)';p.style.zIndex=(i===idx)?2:0;}
+  void book.offsetWidth;book.classList.remove('no-anim');
+  cur=idx;animating=false;updateChrome();
+}
+function turn(dir){
+  if(animating)return;
+  var target=cur+dir;if(target<0||target>=N)return;
+  if(reduced()){jumpTo(target);return;}
+  var book=bk();animating=true;
+  var mover; /* the page whose rotation we animate */
+  if(dir>0){ /* next: current turns away to the left, revealing target beneath */
+    var inn=pages[target];inn.style.display='block';inn.style.transform='rotateY(0deg)';inn.style.zIndex=1;
+    var out=pages[cur];out.style.zIndex=2;
+    void book.offsetWidth;out.style.transform='rotateY(-180deg)';mover=out;
+  }else{ /* prev: target sweeps in from the left onto the top */
+    var inn2=pages[target];inn2.style.display='block';inn2.style.transform='rotateY(-180deg)';inn2.style.zIndex=2;
+    var out2=pages[cur];out2.style.zIndex=1;
+    void book.offsetWidth;inn2.style.transform='rotateY(0deg)';mover=inn2;
+  }
+  var finished=false;
+  function done(){
+    if(finished)return;finished=true;
+    mover.removeEventListener('transitionend',onEnd);
+    jumpTo(target);
+  }
+  function onEnd(e){if(e.propertyName==='transform')done();}
+  mover.addEventListener('transitionend',onEnd);
+  setTimeout(done,760);
+}
+function go(delta){turn(delta);}
+function setPage(idx,instant){
+  idx=Math.max(0,Math.min(N-1,idx));
+  if(!instant&&Math.abs(idx-cur)===1)turn(idx-cur);else jumpTo(idx);
+}
+function updateChrome(){
+  document.getElementById('prevBtn').disabled=(cur<=0);
+  document.getElementById('nextBtn').disabled=(cur>=N-1);
+  var ind=document.getElementById('pageInd'),label;
+  if(cur===0)label='Cover';
+  else if(cur===1)label='Contents';
+  else{
+    var chap='';var body=pages[cur].querySelector('.run-head');
+    if(body&&body.textContent)chap=body.textContent;
+    else{var op=pages[cur].querySelector('.op-title');chap=op?op.textContent:'';}
+    label=chap+'  ·  '+(cur-1)+' / '+(N-2);
+  }
+  ind.textContent=label;
+}
+
+/* ---------- theme ---------- */
+function applyTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  try{localStorage.setItem('kulm-theme',t);}catch(e){}
+  document.getElementById('themeBtn').innerHTML=t==='dark'
+    ?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/></svg>'
+    :'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>';
+}
+
+/* ---------- search ---------- */
+var sstate={country:"all"};
+function buildOvlFilters(){
+  var box=document.getElementById('ovlFilters');
+  var h='<span class="flabel">Country</span><button class="chip on" data-v="all">All</button>';
+  DATA.countries.forEach(function(c){h+='<button class="chip" data-v="'+esc(c)+'">'+esc(c)+'</button>';});
+  box.innerHTML=h;
+  box.addEventListener('click',function(e){var b=e.target.closest('.chip');if(!b)return;sstate.country=b.dataset.v;box.querySelectorAll('.chip').forEach(function(x){x.classList.toggle('on',x===b);});runSearch();});
+}
+function runSearch(){
+  var q=fold(document.getElementById('search').value.trim());
+  var box=document.getElementById('results');
+  var matches=ALLW.filter(function(w){
+    if(sstate.country!="all"&&w.co!=sstate.country)return false;
+    if(q&&w.hay.indexOf(q)<0)return false;
+    return true;
+  });
+  if(!q&&sstate.country=="all"){box.innerHTML='<div class="res-empty">Type to search across all '+TOTAL+' wines &mdash; or pick a country above.</div>';return;}
+  if(!matches.length){box.innerHTML='<div class="res-empty">No wines match your search.</div>';return;}
+  var cap=matches.slice(0,160);
+  box.innerHTML=cap.map(function(w){
+    return '<div class="res" data-uid="'+w.uid+'"><div><div class="rp">'+esc(w.p||'')+'</div>'+
+      (w.n?'<div class="rn">'+esc(w.n)+'</div>':'')+
+      '<div class="rtag">'+esc(w.catDisplay)+' &middot; '+esc(w.co||'')+(w.v?(' &middot; '+w.v):'')+(w.code?(' &middot; Art. '+esc(w.code)):'')+'</div></div>'+
+      '<div class="rpr"><span class="cur">CHF</span>'+fmtPrice(w.pr)+'</div></div>';
+  }).join("")+(matches.length>cap.length?'<div class="res-more">Showing first '+cap.length+' of '+matches.length+' &mdash; refine your search.</div>':'');
+}
+function openSearch(){document.getElementById('overlay').classList.add('show');setTimeout(function(){document.getElementById('search').focus();},50);}
+function closeSearch(){document.getElementById('overlay').classList.remove('show');}
+
+/* ---------- init ---------- */
+(function(){var s;try{s=localStorage.getItem('kulm-theme');}catch(e){}applyTheme(s||((window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light'));})();
+paginate();
+jumpTo(0);
+buildOvlFilters();runSearch();
+
+/* contents & country-index jumps (delegate on book) */
+document.getElementById('book').addEventListener('click',function(e){
+  var crow=e.target.closest('.cidx-row');
+  if(crow){var pg=parseInt(crow.dataset.page,10);if(!isNaN(pg))setPage(pg,false);return;}
+  var row=e.target.closest('.toc-row');
+  if(row&&row.dataset.cat){if(chapterFirstPage[row.dataset.cat]!=null)setPage(chapterFirstPage[row.dataset.cat],false);return;}
+});
+
+/* nav */
+document.getElementById('prevBtn').addEventListener('click',function(){go(-1);});
+document.getElementById('nextBtn').addEventListener('click',function(){go(1);});
+document.getElementById('contentsBtn').addEventListener('click',function(){setPage(1,false);});
+document.getElementById('searchBtn').addEventListener('click',openSearch);
+document.getElementById('ovlClose').addEventListener('click',closeSearch);
+document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
+document.getElementById('themeBtn').addEventListener('click',function(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');});
+document.getElementById('syncBtn').addEventListener('click',liveUpdate);
+
+var searchEl=document.getElementById('search'),st;
+searchEl.addEventListener('input',function(){clearTimeout(st);st=setTimeout(runSearch,110);});
+document.getElementById('results').addEventListener('click',function(e){
+  var r=e.target.closest('.res');if(!r)return;
+  var p=pageOfUid[r.dataset.uid];
+  if(p!=null){closeSearch();setPage(p,true);}
+});
+
+/* keyboard */
+document.addEventListener('keydown',function(e){
+  if(document.getElementById('overlay').classList.contains('show')){if(e.key==='Escape')closeSearch();return;}
+  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(1);}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(-1);}
+  else if(e.key==='Home')setPage(0,true);
+  else if(e.key==='End')setPage(N-1,true);
+});
+
+/* swipe (touch) + drag (mouse) to turn pages */
+var stageEl=document.querySelector('.stage');
+function fromCtrl(t){return t&&t.closest&&t.closest('.chrome,.nav,.ovl');}
+var tsx=null,tsy=null;
+stageEl.addEventListener('touchstart',function(e){if(e.touches.length!==1||fromCtrl(e.target)){tsx=null;return;}tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;},{passive:true});
+stageEl.addEventListener('touchend',function(e){
+  if(tsx===null)return;var dx=e.changedTouches[0].clientX-tsx,dy=e.changedTouches[0].clientY-tsy;
+  if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.2){if(dx<0)go(1);else go(-1);}
+  tsx=null;tsy=null;
+},{passive:true});
+var mdx=null,mdy=null;
+stageEl.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||fromCtrl(e.target)){mdx=null;return;}mdx=e.clientX;mdy=e.clientY;});
+stageEl.addEventListener('pointerup',function(e){
+  if(mdx===null||e.pointerType!=='mouse')return;var dx=e.clientX-mdx,dy=e.clientY-mdy;
+  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.2){if(dx<0)go(1);else go(-1);}
+  mdx=null;
+});
+
+/* re-paginate on resize/orientation */
+var rt;function relayout(){clearTimeout(rt);rt=setTimeout(function(){
+  var keepChapter=(cur>=2)?(pages[cur].dataset.chapter||''):null;
+  var keepFront=cur<2?cur:null;
+  paginate();
+  if(keepFront!=null)cur=keepFront;
+  else if(keepChapter){for(var id in chapterFirstPage){if(DATA.categories.filter(function(c){return c.id===id&&c.display===keepChapter;}).length){cur=chapterFirstPage[id];break;}}}
+  if(cur>=N)cur=N-1;
+  jumpTo(cur);
+},250);}
+window.addEventListener('resize',relayout);
+window.addEventListener('orientationchange',relayout);
+</script>
