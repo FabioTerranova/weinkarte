@@ -63,8 +63,22 @@
   /* ---------- Stage & Book ---------- */
   .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
     background:radial-gradient(130% 100% at 50% -10%,var(--paper-2),var(--paper-3) 70%);
-    perspective:2400px;overflow:hidden;touch-action:none}
-  .book{position:relative;width:min(94vw,1000px);height:min(90vh,1400px);transform-style:preserve-3d}
+    perspective:2400px;overflow:hidden;touch-action:none;padding-right:42px}
+  .book{position:relative;width:min(92vw,980px);height:min(90vh,1400px);transform-style:preserve-3d}
+  /* Kapitel-Griffregister am rechten Rand (vertikale Tabs, wie ein Buchregister) */
+  .tabrail{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:25;
+    display:flex;flex-direction:column;gap:5px;align-items:flex-end;pointer-events:none}
+  .tab{pointer-events:auto;writing-mode:vertical-rl;text-orientation:mixed;
+    font-family:var(--sans);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);background:color-mix(in srgb,var(--paper) 90%,transparent);
+    border:1px solid var(--line-2);border-right:0;border-radius:7px 0 0 7px;
+    padding:13px 6px;cursor:pointer;display:flex;align-items:center;gap:9px;white-space:nowrap;
+    box-shadow:-2px 2px 9px rgba(40,24,8,.10);
+    transition:padding .18s ease,background .18s ease,color .18s ease;
+    -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .tab .trn{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--gold-soft)}
+  .tab.on{background:var(--gold);color:var(--paper);border-color:var(--gold);padding-left:11px}
+  .tab.on .trn{color:var(--paper)}
   .book.no-anim .page{transition:none!important}
 
   .page{position:absolute;inset:0;background:var(--paper);border-radius:2px 7px 7px 2px;
@@ -274,6 +288,7 @@
   <div class="divx"></div>
   <button class="cbtn icon" id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></button>
 </div>
+<div class="tabrail" id="tabrail" aria-label="Kapitel"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="rotate-note" aria-hidden="true">
   <svg class="rn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="19" rx="1.8"/><path d="M4.5 8.5A8 8 0 0 1 8 4.8"/><path d="M2.6 8.6 4.5 8.5l-.1 1.9"/><path d="M19.5 15.5A8 8 0 0 1 16 19.2"/><path d="M21.4 15.4 19.5 15.5l.1-1.9"/></svg>
@@ -365,7 +380,7 @@ function liveUpdate(){
     var fresh=JSON.stringify(nu),changed=(fresh!==LASTRAW);LASTRAW=fresh;
     DATA.title=nu.title;DATA.currency=nu.currency;DATA.categories=nu.categories;
     DATA.countries=nu.countries;DATA.volumes=nu.volumes;DATA.priceMin=nu.priceMin;DATA.priceMax=nu.priceMax;
-    preprocess();paginate();buildOvlFilters();runSearch();jumpTo(0);
+    preprocess();paginate();buildOvlFilters();buildTabs();runSearch();jumpTo(0);
     toast(changed?'Weinkarte aktualisiert ✓':'Bereits aktuell ✓','ok');
   }).catch(function(e){
     toast('Keine Verbindung – später erneut','err');
@@ -576,16 +591,35 @@ function setPage(idx,instant){
   if(!instant&&Math.abs(idx-cur)===1)turn(idx-cur);else jumpTo(idx);
 }
 function updateChrome(){
-  var ind=document.getElementById('pageInd'),label;
+  var ind=document.getElementById('pageInd'),label,chap='';
   if(cur===0)label='Cover';
   else if(cur===1)label='Contents';
   else{
-    var chap='';var body=pages[cur].querySelector('.run-head');
+    var body=pages[cur].querySelector('.run-head');
     if(body&&body.textContent)chap=body.textContent;
     else{var op=pages[cur].querySelector('.op-title');chap=op?op.textContent:'';}
     label=chap+'  ·  '+(cur-1)+' / '+(N-2);
   }
   ind.textContent=label;
+  updateTabs(chap);
+}
+/* ---------- chapter thumb-index (right edge) ---------- */
+function shortLabel(disp){return disp.replace(/\s*wine$/i,'');} /* "White wine"->"White" */
+function buildTabs(){
+  var rail=document.getElementById('tabrail'),h='';
+  DATA.categories.forEach(function(cat){
+    h+='<button class="tab" data-cat="'+cat.id+'" aria-label="'+esc(cat.display)+'">'+
+       '<span class="trn">'+cat.rn+'</span><span class="tnm">'+esc(shortLabel(cat.display))+'</span></button>';
+  });
+  rail.innerHTML=h;
+}
+function updateTabs(chapDisplay){
+  var tabs=document.querySelectorAll('#tabrail .tab');
+  for(var i=0;i<tabs.length;i++){
+    var t=tabs[i],cat=null;
+    DATA.categories.forEach(function(c){if(c.id===t.dataset.cat)cat=c;});
+    t.classList.toggle('on',!!(cat&&chapDisplay&&cat.display===chapDisplay));
+  }
 }
 
 /* ---------- theme (fest hell — Dunkelmodus entfernt) ---------- */
@@ -649,7 +683,7 @@ applyTheme('light'); /* fester heller „Papier"-Look (Dunkelmodus entfernt) */
 try{if(localStorage.getItem('kulm-hint-seen')){_hintSeen=true;document.documentElement.classList.add('hint-off');}}catch(e){}
 paginate();
 jumpTo(0);
-buildOvlFilters();runSearch();
+buildOvlFilters();buildTabs();runSearch();
 /* Nur Hochformat: im installierten App-Modus zusätzlich hart sperren (best effort;
    die CSS-Aufforderung greift überall, das hier zusätzlich auf Android/Chrome). */
 try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('portrait').catch(function(){});}catch(e){}
@@ -669,6 +703,10 @@ document.getElementById('ovlClose').addEventListener('click',closeSearch);
 document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
 document.getElementById('menuClose').addEventListener('click',closeMenu);
 document.getElementById('menuOverlay').addEventListener('click',function(e){if(e.target===this)closeMenu();});
+document.getElementById('tabrail').addEventListener('click',function(e){
+  var tab=e.target.closest('.tab');
+  if(tab&&tab.dataset.cat&&chapterFirstPage[tab.dataset.cat]!=null)setPage(chapterFirstPage[tab.dataset.cat],true);
+});
 document.getElementById('menuList').addEventListener('click',function(e){
   var chap=e.target.closest('.toc-row');
   if(chap&&chap.dataset.cat){if(chapterFirstPage[chap.dataset.cat]!=null){closeMenu();setPage(chapterFirstPage[chap.dataset.cat],true);}return;}
@@ -723,7 +761,7 @@ document.addEventListener('keydown',function(e){
 
 /* swipe (touch) + drag (mouse) to turn pages */
 var stageEl=document.querySelector('.stage');
-function fromCtrl(t){return t&&t.closest&&t.closest('.chrome,.nav,.ovl');}
+function fromCtrl(t){return t&&t.closest&&t.closest('.chrome,.nav,.ovl,.tabrail');}
 var tsx=null,tsy=null;
 stageEl.addEventListener('touchstart',function(e){if(e.touches.length!==1||fromCtrl(e.target)){tsx=null;return;}tsx=e.touches[0].clientX;tsy=e.touches[0].clientY;},{passive:true});
 stageEl.addEventListener('touchend',function(e){
