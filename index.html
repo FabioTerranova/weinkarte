@@ -45,13 +45,18 @@
   }
 
   *{box-sizing:border-box}
-  html,body{height:100%;margin:0;overflow:hidden}
+  html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none;
+    touch-action:manipulation;                 /* kills double-tap-to-zoom */
+    -webkit-user-select:none;user-select:none} /* guests can't select text  */
   body{
     background:var(--paper-3);color:var(--ink);
     font-family:var(--serif);font-size:18px;line-height:1.5;
     -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-    -webkit-touch-callout:none;
+    -webkit-touch-callout:none;                 /* no long-press callout menu */
+    -webkit-tap-highlight-color:transparent;
   }
+  /* the search field is the one place typing & selection must still work */
+  #search{-webkit-user-select:text;user-select:text}
   ::selection{background:var(--accent);color:var(--paper)}
   .sans{font-family:var(--sans)}
 
@@ -64,7 +69,7 @@
 
   .page{position:absolute;inset:0;background:var(--paper);border-radius:2px 7px 7px 2px;
     box-shadow:var(--shadow);transform-origin:left center;backface-visibility:hidden;
-    transition:transform .85s cubic-bezier(.34,.62,.24,1);overflow:hidden;
+    transition:transform 1.1s cubic-bezier(.28,.08,.20,1);overflow:hidden;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
     background-blend-mode:multiply;
   }
@@ -574,7 +579,7 @@ function paginate(){
 
 /* ---------- flip (2-page window) ---------- */
 var cur=0,N=0,animating=false,_finish=null;
-var FLIP_MS=850; /* muss zur CSS-Transition (.page transition) passen */
+var FLIP_MS=1100; /* muss zur CSS-Transition (.page transition) passen */
 function bk(){return document.getElementById('book');}
 function reduced(){return window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;}
 function jumpTo(idx){
@@ -745,6 +750,23 @@ var rt;function relayout(){clearTimeout(rt);rt=setTimeout(function(){
 },250);}
 window.addEventListener('resize',relayout);
 window.addEventListener('orientationchange',relayout);
+
+/* ---------- guest-proofing (kiosk hardening) ---------- */
+/* Block pinch-zoom on iOS Safari (it ignores user-scalable=no in a tab). */
+['gesturestart','gesturechange','gestureend'].forEach(function(ev){
+  document.addEventListener(ev,function(e){e.preventDefault();},{passive:false});
+});
+/* Block any multi-finger gesture (pinch) while still allowing 1-finger scroll. */
+document.addEventListener('touchmove',function(e){if(e.touches.length>1)e.preventDefault();},{passive:false});
+/* No right-click / long-press context menu. */
+document.addEventListener('contextmenu',function(e){e.preventDefault();});
+
+/* Kiosk idle reset: after IDLE_MS with no interaction, return to the cover so
+   the next guest starts fresh. Set IDLE_MS=0 to disable. */
+var IDLE_MS=300000,_idleT;
+function resetIdle(){if(!IDLE_MS)return;clearTimeout(_idleT);_idleT=setTimeout(function(){closeSearch();if(cur!==0)jumpTo(0);},IDLE_MS);}
+['touchstart','pointerdown','keydown'].forEach(function(ev){document.addEventListener(ev,resetIdle,{passive:true});});
+resetIdle();
 </script>
 </body>
 </html>
