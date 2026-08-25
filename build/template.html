@@ -140,6 +140,16 @@
   .toc-row .nm{font-family:var(--serif);font-size:clamp(19px,4vw,25px);white-space:nowrap}
   .toc-row .ld{flex:1;border-bottom:1.5px dotted var(--gold-soft);transform:translateY(-5px);opacity:.65;min-width:16px}
   .toc-row .ct{font-family:var(--sans);font-size:12.5px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:.03em}
+  /* menu overlay (Inhaltsverzeichnis als Overlay) */
+  .ovl-title{flex:1;font-family:var(--serif);font-size:19px;color:var(--ink)}
+  #menuList{padding:4px 16px 14px}
+  #menuList .toc-row{border-top:1px solid var(--line)}
+  #menuList .toc-row:first-child{border-top:0}
+  .menu-crow{display:flex;align-items:baseline;gap:12px;text-decoration:none;padding:7px 4px 7px 40px;cursor:pointer}
+  .menu-crow .cnm{font-family:var(--serif);font-size:16px;color:var(--ink)}
+  .menu-crow .cld{flex:1;border-bottom:1px dotted var(--line-2);transform:translateY(-4px);min-width:12px;opacity:.7}
+  .menu-crow .cct{font-family:var(--sans);font-size:11.5px;color:var(--faint);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .menu-crow:active,.toc-row:active,.res:active,.cidx-row:active{background:var(--paper-2)}
   .toc-row:active{background:var(--paper-2)}
   ol.cidx-list{display:grid;grid-template-columns:1fr;align-content:center;gap:0 46px;padding-top:6px}
   ol.cidx-list.two{grid-template-columns:1fr 1fr}
@@ -280,6 +290,16 @@
     </div>
     <div class="ovl-filters" id="ovlFilters"></div>
     <div class="ovl-results" id="results"></div>
+  </div>
+</div>
+<div class="ovl" id="menuOverlay">
+  <div class="ovl-panel">
+    <div class="ovl-top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+      <div class="ovl-title">Contents</div>
+      <button class="x" id="menuClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="ovl-results" id="menuList"></div>
   </div>
 </div>
 
@@ -426,7 +446,7 @@ function winePageShell(chapter,folio){
 }
 
 /* ---------- pagination (measured) ---------- */
-var pages=[],chapterFirstPage={},pageOfUid={};
+var pages=[],chapterFirstPage={},pageOfUid={},countryFirst={};
 function paginate(){
   var book=document.getElementById('book');
   book.innerHTML='';pages=[];chapterFirstPage={};pageOfUid={};
@@ -440,7 +460,7 @@ function paginate(){
   var folio=0;
   var built=[]; // content page descriptors after front matter
   var cidxRecs=[]; // {el,cat} country-index pages to fill after pagination
-  var countryFirst={}; // cat.id -> {country -> absolute page index}
+  countryFirst={}; // cat.id -> {country -> absolute page index} (global for the menu overlay)
 
   function flush(chapter){
     if(!pbody.firstChild)return;
@@ -603,6 +623,27 @@ function runSearch(){
 function openSearch(){document.getElementById('overlay').classList.add('show');setTimeout(function(){document.getElementById('search').focus();},50);}
 function closeSearch(){document.getElementById('overlay').classList.remove('show');}
 
+/* ---------- contents/countries as a dismissible overlay menu ----------
+   Opening it doesn't move the book — jump to an entry, or close (×) and you're
+   exactly where you were. */
+function buildMenu(){
+  var box=document.getElementById('menuList'),h='';
+  DATA.categories.forEach(function(cat){
+    h+='<a class="toc-row" data-cat="'+cat.id+'"><span class="rn">'+cat.rn+'</span>'+
+       '<span class="nm">'+esc(cat.display)+'</span><span class="ld"></span>'+
+       '<span class="ct">'+plural(cat.count,'wine')+'</span></a>';
+    cat.countryOrder.forEach(function(c){
+      var pg=(countryFirst[cat.id]||{})[c.name];
+      if(pg==null)return;
+      h+='<a class="menu-crow" data-page="'+pg+'"><span class="cnm">'+esc(c.name)+'</span>'+
+         '<span class="cld"></span><span class="cct">'+c.count+'</span></a>';
+    });
+  });
+  box.innerHTML=h;
+}
+function openMenu(){buildMenu();document.getElementById('menuOverlay').classList.add('show');}
+function closeMenu(){document.getElementById('menuOverlay').classList.remove('show');}
+
 /* ---------- init ---------- */
 applyTheme('light'); /* fester heller „Papier"-Look (Dunkelmodus entfernt) */
 try{if(localStorage.getItem('kulm-hint-seen')){_hintSeen=true;document.documentElement.classList.add('hint-off');}}catch(e){}
@@ -622,10 +663,18 @@ document.getElementById('book').addEventListener('click',function(e){
 });
 
 /* nav (Pfeile & Dunkelmodus entfernt — Blättern per Wisch, Inhaltsverzeichnis & Suche) */
-document.getElementById('contentsBtn').addEventListener('click',function(){setPage(1,false);});
+document.getElementById('contentsBtn').addEventListener('click',openMenu);
 document.getElementById('searchBtn').addEventListener('click',openSearch);
 document.getElementById('ovlClose').addEventListener('click',closeSearch);
 document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
+document.getElementById('menuClose').addEventListener('click',closeMenu);
+document.getElementById('menuOverlay').addEventListener('click',function(e){if(e.target===this)closeMenu();});
+document.getElementById('menuList').addEventListener('click',function(e){
+  var chap=e.target.closest('.toc-row');
+  if(chap&&chap.dataset.cat){if(chapterFirstPage[chap.dataset.cat]!=null){closeMenu();setPage(chapterFirstPage[chap.dataset.cat],true);}return;}
+  var crow=e.target.closest('.menu-crow');
+  if(crow){var pg=parseInt(crow.dataset.page,10);if(!isNaN(pg)){closeMenu();setPage(pg,true);}return;}
+});
 
 /* Footer ✦ = versteckter Staff-Knopf. KURZ tippen → zurück zum Cover;
    LANG drücken (~0,7 s) → Karte aus vinify aktualisieren. Bewusst über Pointer-
@@ -664,6 +713,7 @@ document.getElementById('results').addEventListener('click',function(e){
 
 /* keyboard */
 document.addEventListener('keydown',function(e){
+  if(document.getElementById('menuOverlay').classList.contains('show')){if(e.key==='Escape')closeMenu();return;}
   if(document.getElementById('overlay').classList.contains('show')){if(e.key==='Escape')closeSearch();return;}
   if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(1);}
   else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(-1);}
@@ -715,7 +765,7 @@ document.addEventListener('contextmenu',function(e){e.preventDefault();});
 /* Kiosk idle reset: after IDLE_MS with no interaction, return to the cover so
    the next guest starts fresh. Set IDLE_MS=0 to disable. */
 var IDLE_MS=300000,_idleT;
-function resetIdle(){if(!IDLE_MS)return;clearTimeout(_idleT);_idleT=setTimeout(function(){closeSearch();if(cur!==0)jumpTo(0);},IDLE_MS);}
+function resetIdle(){if(!IDLE_MS)return;clearTimeout(_idleT);_idleT=setTimeout(function(){closeSearch();closeMenu();if(cur!==0)jumpTo(0);},IDLE_MS);}
 ['touchstart','pointerdown','keydown'].forEach(function(ev){document.addEventListener(ev,resetIdle,{passive:true});});
 resetIdle();
 </script>
