@@ -73,14 +73,16 @@
     font-family:var(--serif);font-style:italic;font-size:15px;cursor:pointer;
     box-shadow:-2px 2px 10px rgba(40,24,8,.13);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
     display:flex;align-items:center;justify-content:center;transition:background .18s ease,color .18s ease}
-  .tabdock.open .tabtoggle{background:var(--gold);color:var(--paper);border-color:var(--gold)}
+  .tabtoggle svg{width:16px;height:16px}
+  .tabdock.open #tabToggle{background:var(--gold);color:var(--paper);border-color:var(--gold)}
   .tabrail{display:none;flex-direction:column;gap:5px;align-items:flex-end;max-height:80vh;overflow:auto}
   .tabdock.open .tabrail{display:flex}
   .tab{pointer-events:auto;writing-mode:vertical-rl;text-orientation:mixed;
-    font-family:var(--sans);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    height:124px;justify-content:center;
+    font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
     color:var(--gold);background:color-mix(in srgb,var(--paper) 92%,transparent);
     border:1px solid var(--line-2);border-right:0;border-radius:7px 0 0 7px;
-    padding:12px 6px;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;
+    padding:10px 6px;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;
     box-shadow:-2px 2px 9px rgba(40,24,8,.10);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
   .tab .trn{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--gold-soft)}
   .tab.on{background:var(--gold);color:var(--paper);border-color:var(--gold)}
@@ -287,14 +289,8 @@
   <div class="book" id="book"></div>
 </div>
 
-<div class="chrome">
-  <button class="cbtn" id="contentsBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg><span class="lbl">Contents</span></button>
-  <div class="divx"></div>
-  <div class="pageind" id="pageInd">Cover</div>
-  <div class="divx"></div>
-  <button class="cbtn icon" id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></button>
-</div>
 <div class="tabdock" id="tabdock">
+  <button class="tabtoggle tt-search" id="searchBtnR" aria-label="Suche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></button>
   <button class="tabtoggle" id="tabToggle" aria-label="Kapitel-Register" aria-expanded="false"><span id="ttRn">&#10086;</span></button>
   <div class="tabrail" id="tabrail" aria-label="Kapitel"></div>
 </div>
@@ -688,16 +684,12 @@ function setPage(idx,instant){
   if(!instant&&Math.abs(idx-cur)===1)turn(idx-cur);else jumpTo(idx);
 }
 function updateChrome(){
-  var ind=document.getElementById('pageInd'),label,chap='';
-  if(cur===0)label='Cover';
-  else if(cur===1)label='Contents';
-  else{
+  var chap='';
+  if(cur>=2){
     var body=pages[cur].querySelector('.run-head');
     if(body&&body.textContent)chap=body.textContent;
     else{var op=pages[cur].querySelector('.op-title');chap=op?op.textContent:'';}
-    label=chap+'  ·  '+(cur-1)+' / '+(N-2);
   }
-  ind.textContent=label;
   updateTabs(chap);
 }
 /* ---------- chapter register (expandable right-edge symbol) ---------- */
@@ -801,8 +793,7 @@ document.getElementById('book').addEventListener('click',function(e){
 });
 
 /* nav (Pfeile & Dunkelmodus entfernt — Blättern per Wisch, Inhaltsverzeichnis & Suche) */
-document.getElementById('contentsBtn').addEventListener('click',openMenu);
-document.getElementById('searchBtn').addEventListener('click',openSearch);
+document.getElementById('searchBtnR').addEventListener('click',openSearch);
 document.getElementById('ovlClose').addEventListener('click',closeSearch);
 document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
 document.getElementById('menuClose').addEventListener('click',closeMenu);
