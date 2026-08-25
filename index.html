@@ -63,21 +63,27 @@
   /* ---------- Stage & Book ---------- */
   .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
     background:radial-gradient(130% 100% at 50% -10%,var(--paper-2),var(--paper-3) 70%);
-    perspective:2400px;overflow:hidden;touch-action:none;padding-right:42px}
-  .book{position:relative;width:min(92vw,980px);height:min(90vh,1400px);transform-style:preserve-3d}
-  /* Kapitel-Griffregister am rechten Rand (vertikale Tabs, wie ein Buchregister) */
-  .tabrail{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:25;
-    display:flex;flex-direction:column;gap:5px;align-items:flex-end;pointer-events:none}
+    perspective:2400px;overflow:hidden;touch-action:none;padding-right:34px}
+  .book{position:relative;width:min(93vw,1000px);height:min(90vh,1400px);transform-style:preserve-3d}
+  /* Kapitel-Register: kleines Symbol am rechten Rand, klappt die Kapitel aus */
+  .tabdock{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:26;
+    display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+  .tabtoggle{pointer-events:auto;width:34px;height:52px;border:1px solid var(--line-2);border-right:0;
+    border-radius:9px 0 0 9px;background:color-mix(in srgb,var(--paper) 90%,transparent);color:var(--gold);
+    font-family:var(--serif);font-style:italic;font-size:15px;cursor:pointer;
+    box-shadow:-2px 2px 10px rgba(40,24,8,.13);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+    display:flex;align-items:center;justify-content:center;transition:background .18s ease,color .18s ease}
+  .tabdock.open .tabtoggle{background:var(--gold);color:var(--paper);border-color:var(--gold)}
+  .tabrail{display:none;flex-direction:column;gap:5px;align-items:flex-end;max-height:80vh;overflow:auto}
+  .tabdock.open .tabrail{display:flex}
   .tab{pointer-events:auto;writing-mode:vertical-rl;text-orientation:mixed;
     font-family:var(--sans);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--gold);background:color-mix(in srgb,var(--paper) 90%,transparent);
+    color:var(--gold);background:color-mix(in srgb,var(--paper) 92%,transparent);
     border:1px solid var(--line-2);border-right:0;border-radius:7px 0 0 7px;
-    padding:13px 6px;cursor:pointer;display:flex;align-items:center;gap:9px;white-space:nowrap;
-    box-shadow:-2px 2px 9px rgba(40,24,8,.10);
-    transition:padding .18s ease,background .18s ease,color .18s ease;
-    -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-  .tab .trn{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--gold-soft)}
-  .tab.on{background:var(--gold);color:var(--paper);border-color:var(--gold);padding-left:11px}
+    padding:12px 6px;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;
+    box-shadow:-2px 2px 9px rgba(40,24,8,.10);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .tab .trn{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--gold-soft)}
+  .tab.on{background:var(--gold);color:var(--paper);border-color:var(--gold)}
   .tab.on .trn{color:var(--paper)}
   .book.no-anim .page{transition:none!important}
 
@@ -288,7 +294,10 @@
   <div class="divx"></div>
   <button class="cbtn icon" id="searchBtn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></button>
 </div>
-<div class="tabrail" id="tabrail" aria-label="Kapitel"></div>
+<div class="tabdock" id="tabdock">
+  <button class="tabtoggle" id="tabToggle" aria-label="Kapitel-Register" aria-expanded="false"><span id="ttRn">&#10086;</span></button>
+  <div class="tabrail" id="tabrail" aria-label="Kapitel"></div>
+</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="rotate-note" aria-hidden="true">
   <svg class="rn-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="19" rx="1.8"/><path d="M4.5 8.5A8 8 0 0 1 8 4.8"/><path d="M2.6 8.6 4.5 8.5l-.1 1.9"/><path d="M19.5 15.5A8 8 0 0 1 16 19.2"/><path d="M21.4 15.4 19.5 15.5l.1-1.9"/></svg>
@@ -326,7 +335,8 @@ var nf=new Intl.NumberFormat('de-CH');
 function fmtPrice(p){return (p==null)?"&mdash;":nf.format(p);}
 function roman(n){var m=[["M",1000],["CM",900],["D",500],["CD",400],["C",100],["XC",90],["L",50],["XL",40],["X",10],["IX",9],["V",5],["IV",4],["I",1]],r="";for(var i=0;i<m.length;i++){while(n>=m[i][1]){r+=m[i][0];n-=m[i][1];}}return r;}
 function sizeLabel(v){if(v==0.375)return"Half 37.5cl";if(v==0.5)return"50cl";if(v==0.7)return"70cl";if(v==1.5)return"Magnum 1.5L";if(v==3)return"D. Magnum 3L";if(v==6)return"Imperial 6L";return"";}
-function pretty(name){return name==='Rose'?'Rosé':name;}
+var CAT_DISPLAY={'Sparkling':'Sparkling Wine','White wine':'White Wine','Rose':'Rosé Wine','Red wine':'Red Wine','Sweet wine':'Sweet Wine','Cider':'Cider','Alcohol free':'Alcohol-Free'};
+function pretty(name){return CAT_DISPLAY[name]||name;}
 function plural(n,word){return n+' '+word+(n===1?'':'s');}
 function esc(s){return (s||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
 function fold(s){return (s||"").toLowerCase().normalize("NFD").replace(new RegExp("[̀-ͯ]","g"),"");}
@@ -690,24 +700,30 @@ function updateChrome(){
   ind.textContent=label;
   updateTabs(chap);
 }
-/* ---------- chapter thumb-index (right edge) ---------- */
-function shortLabel(disp){return disp.replace(/\s*wine$/i,'');} /* "White wine"->"White" */
+/* ---------- chapter register (expandable right-edge symbol) ---------- */
 function buildTabs(){
   var rail=document.getElementById('tabrail'),h='';
   DATA.categories.forEach(function(cat){
     h+='<button class="tab" data-cat="'+cat.id+'" aria-label="'+esc(cat.display)+'">'+
-       '<span class="trn">'+cat.rn+'</span><span class="tnm">'+esc(shortLabel(cat.display))+'</span></button>';
+       '<span class="trn">'+cat.rn+'</span><span class="tnm">'+esc(cat.display)+'</span></button>';
   });
   rail.innerHTML=h;
 }
 function updateTabs(chapDisplay){
-  var tabs=document.querySelectorAll('#tabrail .tab');
+  var tabs=document.querySelectorAll('#tabrail .tab'),activeRn=null;
   for(var i=0;i<tabs.length;i++){
     var t=tabs[i],cat=null;
     DATA.categories.forEach(function(c){if(c.id===t.dataset.cat)cat=c;});
-    t.classList.toggle('on',!!(cat&&chapDisplay&&cat.display===chapDisplay));
+    var on=!!(cat&&chapDisplay&&cat.display===chapDisplay);
+    t.classList.toggle('on',on);
+    if(on)activeRn=cat.rn;
   }
+  var ttRn=document.getElementById('ttRn');
+  if(ttRn)ttRn.innerHTML=activeRn||'&#10086;';
 }
+function tabsOpen(){var d=document.getElementById('tabdock');d.classList.add('open');document.getElementById('tabToggle').setAttribute('aria-expanded','true');}
+function tabsClose(){var d=document.getElementById('tabdock');d.classList.remove('open');document.getElementById('tabToggle').setAttribute('aria-expanded','false');}
+function tabsToggle(){document.getElementById('tabdock').classList.contains('open')?tabsClose():tabsOpen();}
 
 /* ---------- theme (fest hell — Dunkelmodus entfernt) ---------- */
 function applyTheme(t){
@@ -769,8 +785,9 @@ function closeMenu(){document.getElementById('menuOverlay').classList.remove('sh
 applyTheme('light'); /* fester heller „Papier"-Look (Dunkelmodus entfernt) */
 try{if(localStorage.getItem('kulm-hint-seen')){_hintSeen=true;document.documentElement.classList.add('hint-off');}}catch(e){}
 paginate();
+buildTabs();
 jumpTo(0);
-buildOvlFilters();buildTabs();runSearch();
+buildOvlFilters();runSearch();
 /* Nur Hochformat: im installierten App-Modus zusätzlich hart sperren (best effort;
    die CSS-Aufforderung greift überall, das hier zusätzlich auf Android/Chrome). */
 try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('portrait').catch(function(){});}catch(e){}
@@ -790,9 +807,13 @@ document.getElementById('ovlClose').addEventListener('click',closeSearch);
 document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
 document.getElementById('menuClose').addEventListener('click',closeMenu);
 document.getElementById('menuOverlay').addEventListener('click',function(e){if(e.target===this)closeMenu();});
+document.getElementById('tabToggle').addEventListener('click',tabsToggle);
 document.getElementById('tabrail').addEventListener('click',function(e){
   var tab=e.target.closest('.tab');
-  if(tab&&tab.dataset.cat&&chapterFirstPage[tab.dataset.cat]!=null)setPage(chapterFirstPage[tab.dataset.cat],true);
+  if(tab&&tab.dataset.cat&&chapterFirstPage[tab.dataset.cat]!=null){tabsClose();setPage(chapterFirstPage[tab.dataset.cat],true);}
+});
+document.addEventListener('click',function(e){
+  if(document.getElementById('tabdock').classList.contains('open')&&!e.target.closest('#tabdock'))tabsClose();
 });
 document.getElementById('menuList').addEventListener('click',function(e){
   var chap=e.target.closest('.toc-row');
@@ -801,31 +822,26 @@ document.getElementById('menuList').addEventListener('click',function(e){
   if(crow){var pg=parseInt(crow.dataset.page,10);if(!isNaN(pg)){closeMenu();setPage(pg,true);}return;}
 });
 
-/* Footer ✦ = versteckter Staff-Knopf. KURZ tippen → zurück zum Cover;
-   LANG drücken (~0,7 s) → Karte aus vinify aktualisieren. Bewusst über Pointer-
-   Events (nicht 'click') gelöst — auf iPad feuert 'click' bei minimaler Finger-
-   bewegung nicht zuverlässig. */
+/* Footer ✦ = versteckter Staff-Knopf. KURZ tippen → zurück zum Cover; LANG
+   drücken (~0,55 s) → aus vinify aktualisieren. Erkennung über Druckdauer beim
+   Loslassen (kein Timer) + großzügige Bewegungstoleranz, damit ein winziges
+   Fingerzittern den Tap nicht als Wisch verwirft (klappt jetzt beim 1. Mal). */
 (function(){
-  var book=document.getElementById('book'),lpT=null,onOrn=false,moved=false,longFired=false,x0=0,y0=0;
+  var book=document.getElementById('book'),onOrn=false,moved=false,downT=0,x0=0,y0=0;
   book.addEventListener('pointerdown',function(e){
     onOrn=!!(e.target.closest&&e.target.closest('.run-foot .orn'));
-    moved=false;longFired=false;
     if(!onOrn)return;
-    x0=e.clientX;y0=e.clientY;
-    clearTimeout(lpT);
-    lpT=setTimeout(function(){longFired=true;liveUpdate();},700);
+    moved=false;downT=e.timeStamp||0;x0=e.clientX;y0=e.clientY;
   });
   book.addEventListener('pointermove',function(e){
-    if(!onOrn)return;
-    if(Math.abs(e.clientX-x0)>10||Math.abs(e.clientY-y0)>10){moved=true;clearTimeout(lpT);}
+    if(onOrn&&(Math.abs(e.clientX-x0)>24||Math.abs(e.clientY-y0)>24))moved=true;
   });
-  function end(){
-    if(!onOrn)return;onOrn=false;clearTimeout(lpT);
-    if(longFired||moved)return;   /* Aktualisieren lief bzw. es war ein Wisch */
-    jumpTo(0);                    /* kurzer Tap → Cover */
-  }
-  book.addEventListener('pointerup',end);
-  book.addEventListener('pointercancel',function(){onOrn=false;clearTimeout(lpT);});
+  book.addEventListener('pointerup',function(e){
+    if(!onOrn)return;onOrn=false;
+    if(moved)return;                          /* war ein Wisch */
+    if((e.timeStamp||0)-downT>=550)liveUpdate(); /* langer Druck → aktualisieren */
+    else jumpTo(0);                            /* kurzer Tap → Cover */
+  });
 })();
 
 var searchEl=document.getElementById('search'),st;
@@ -838,6 +854,7 @@ document.getElementById('results').addEventListener('click',function(e){
 
 /* keyboard */
 document.addEventListener('keydown',function(e){
+  if(document.getElementById('tabdock').classList.contains('open')){if(e.key==='Escape')tabsClose();return;}
   if(document.getElementById('menuOverlay').classList.contains('show')){if(e.key==='Escape')closeMenu();return;}
   if(document.getElementById('overlay').classList.contains('show')){if(e.key==='Escape')closeSearch();return;}
   if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(1);}
@@ -890,7 +907,7 @@ document.addEventListener('contextmenu',function(e){e.preventDefault();});
 /* Kiosk idle reset: after IDLE_MS with no interaction, return to the cover so
    the next guest starts fresh. Set IDLE_MS=0 to disable. */
 var IDLE_MS=300000,_idleT;
-function resetIdle(){if(!IDLE_MS)return;clearTimeout(_idleT);_idleT=setTimeout(function(){closeSearch();closeMenu();if(cur!==0)jumpTo(0);},IDLE_MS);}
+function resetIdle(){if(!IDLE_MS)return;clearTimeout(_idleT);_idleT=setTimeout(function(){closeSearch();closeMenu();tabsClose();if(cur!==0)jumpTo(0);},IDLE_MS);}
 ['touchstart','pointerdown','keydown'].forEach(function(ev){document.addEventListener(ev,resetIdle,{passive:true});});
 resetIdle();
 </script>
