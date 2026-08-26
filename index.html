@@ -824,8 +824,9 @@ document.getElementById('tabrail').addEventListener('click',function(e){
   var chap=e.target.closest('.tab[data-cat]');
   if(chap&&chap.dataset.cat){
     var cat=catById(chap.dataset.cat);
-    if(cat&&cat.countryOrder.length>1){tabLevel=cat.id;renderTabs();}      /* mehrere Länder → Länderauswahl */
-    else if(chapterFirstPage[chap.dataset.cat]!=null){tabsClose();setPage(chapterFirstPage[chap.dataset.cat],true);} /* nur 1 Land → direkt springen */
+    if(chapterFirstPage[chap.dataset.cat]!=null)setPage(chapterFirstPage[chap.dataset.cat],true); /* zur Kapitelseite springen */
+    if(cat&&cat.countryOrder.length>1){tabLevel=cat.id;renderTabs();} /* …und die Länder ausklappen (Register bleibt offen) */
+    else tabsClose(); /* nur 1 Land → nichts weiter zu wählen, schließen */
   }
 });
 document.addEventListener('click',function(e){
