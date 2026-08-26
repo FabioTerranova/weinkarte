@@ -68,7 +68,7 @@
   /* Kapitel-Register: kleines Symbol am rechten Rand, klappt die Kapitel aus */
   .tabdock{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:26;
     display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-  .tabtoggle{pointer-events:auto;width:34px;height:52px;border:1px solid var(--line-2);border-right:0;
+  .tabtoggle{pointer-events:auto;width:32px;height:46px;border:1px solid var(--line-2);border-right:0;
     border-radius:9px 0 0 9px;background:color-mix(in srgb,var(--paper) 90%,transparent);color:var(--gold);
     font-family:var(--serif);font-style:italic;font-size:15px;cursor:pointer;
     box-shadow:-2px 2px 10px rgba(40,24,8,.13);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
@@ -78,17 +78,17 @@
   .tabrail{display:none;flex-direction:column;gap:5px;align-items:flex-end;max-height:80vh;overflow:auto}
   .tabdock.open .tabrail{display:flex}
   .tab{pointer-events:auto;writing-mode:vertical-rl;text-orientation:mixed;
-    height:124px;justify-content:center;
-    font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    height:98px;justify-content:center;
+    font-family:var(--sans);font-size:8.5px;letter-spacing:.09em;text-transform:uppercase;
     color:var(--gold);background:color-mix(in srgb,var(--paper) 92%,transparent);
-    border:1px solid var(--line-2);border-right:0;border-radius:7px 0 0 7px;
-    padding:10px 6px;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;
-    box-shadow:-2px 2px 9px rgba(40,24,8,.10);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-  .tab .trn{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--gold-soft)}
+    border:1px solid var(--line-2);border-right:0;border-radius:6px 0 0 6px;
+    padding:8px 5px;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;
+    box-shadow:-2px 2px 8px rgba(40,24,8,.10);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .tab .trn{font-family:var(--serif);font-style:italic;font-size:11px;color:var(--gold-soft)}
   .tab.on{background:var(--gold);color:var(--paper);border-color:var(--gold)}
   .tab.on .trn{color:var(--paper)}
   /* Länder-Ebene: automatische Höhe (kürzere Namen = kürzere Tabs) + Zurück-Tab */
-  .tab.ctab,.tab.tab-back{height:auto;min-height:52px;font-size:10px}
+  .tab.ctab,.tab.tab-back{height:auto;min-height:46px;font-size:9px}
   .tab-back{color:var(--gold-soft);background:color-mix(in srgb,var(--paper) 82%,transparent);letter-spacing:.06em}
   .book.no-anim .page{transition:none!important}
 
@@ -293,7 +293,6 @@
 </div>
 
 <div class="tabdock" id="tabdock">
-  <button class="tabtoggle tt-search" id="searchBtnR" aria-label="Suche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></button>
   <button class="tabtoggle" id="tabToggle" aria-label="Kapitel-Register" aria-expanded="false"><span id="ttRn">&#10086;</span></button>
   <div class="tabrail" id="tabrail" aria-label="Kapitel"></div>
 </div>
@@ -724,7 +723,6 @@ document.getElementById('book').addEventListener('click',function(e){
 });
 
 /* nav (Pfeile & Dunkelmodus entfernt — Blättern per Wisch, Inhaltsverzeichnis & Suche) */
-document.getElementById('searchBtnR').addEventListener('click',openSearch);
 document.getElementById('ovlClose').addEventListener('click',closeSearch);
 document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeSearch();});
 document.getElementById('menuClose').addEventListener('click',closeMenu);
