@@ -11,7 +11,10 @@ import { vinifyToData, extractNextData } from './transform.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..');
-const VINIFY_URL = 'https://vinify.app/pdf-wine-list/570277';
+// The /en/ locale prefix forces English. vinify is a Next.js i18n app
+// (locales en+nb); WITHOUT /en/ the edge auto-detects and can serve Norwegian
+// (e.g. to the US GitHub runner) — which is what once baked a Norwegian list.
+const VINIFY_URL = 'https://vinify.app/en/pdf-wine-list/570277';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
 
 function countWines(data) {
@@ -19,7 +22,7 @@ function countWines(data) {
 }
 
 async function main() {
-  const res = await fetch(VINIFY_URL, { headers: { 'User-Agent': UA }, redirect: 'follow' });
+  const res = await fetch(VINIFY_URL, { headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9' }, redirect: 'follow' });
   if (!res.ok) throw new Error('vinify fetch failed: HTTP ' + res.status);
   const html = await res.text();
 
@@ -29,6 +32,13 @@ async function main() {
   const total = countWines(data);
   if (total < 100) throw new Error('Sanity check failed: only ' + total + ' wines parsed');
   if (data.categories.length < 3) throw new Error('Sanity check failed: only ' + data.categories.length + ' categories');
+
+  // Language gate: refuse to publish anything but the English list (guards
+  // against vinify serving another locale). Category names must be English.
+  const names = data.categories.map((c) => c.name);
+  if (!names.includes('Red wine') || !names.includes('Sparkling')) {
+    throw new Error('Language check failed — expected English categories, got: ' + names.join(', '));
+  }
 
   // Inline the shared transform into the page (strip the ES-module export line).
   let transformSrc = await readFile(join(HERE, 'transform.mjs'), 'utf8');

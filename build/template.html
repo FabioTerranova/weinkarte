@@ -341,7 +341,7 @@ function fold(s){return (s||"").toLowerCase().normalize("NFD").replace(new RegEx
 function el(html){var d=document.createElement('div');d.innerHTML=html;return d.firstElementChild;}
 
 /* ---- live-refresh support: vinify source + shared transform (inlined) ---- */
-var VINIFY_URL="https://vinify.app/pdf-wine-list/570277";
+var VINIFY_URL="https://vinify.app/en/pdf-wine-list/570277"; /* /en/ erzwingt Englisch */
 /*__TRANSFORM__*/
 
 /* pre-pass: ids, counts, uids, haystack — wrapped so it can re-run on refresh */
