@@ -87,6 +87,9 @@
   .tab .trn{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--gold-soft)}
   .tab.on{background:var(--gold);color:var(--paper);border-color:var(--gold)}
   .tab.on .trn{color:var(--paper)}
+  /* Länder-Ebene: automatische Höhe (kürzere Namen = kürzere Tabs) + Zurück-Tab */
+  .tab.ctab,.tab.tab-back{height:auto;min-height:52px;font-size:10px}
+  .tab-back{color:var(--gold-soft);background:color-mix(in srgb,var(--paper) 82%,transparent);letter-spacing:.06em}
   .book.no-anim .page{transition:none!important}
 
   .page{position:absolute;inset:0;background:var(--paper);border-radius:2px 7px 7px 2px;
@@ -690,31 +693,46 @@ function updateChrome(){
     if(body&&body.textContent)chap=body.textContent;
     else{var op=pages[cur].querySelector('.op-title');chap=op?op.textContent:'';}
   }
-  updateTabs(chap);
+  curChap=chap;
+  refreshTabs();
 }
-/* ---------- chapter register (expandable right-edge symbol) ---------- */
-function buildTabs(){
+/* ---------- chapter register (expandable right-edge symbol, 2 levels) ----------
+   Level 'chapters' → tap a chapter reveals its countries (level = that cat.id) →
+   tap a country to jump. '‹' returns to chapters. */
+var curChap='',tabLevel='chapters';
+function catById(id){var f=null;DATA.categories.forEach(function(c){if(c.id===id)f=c;});return f;}
+function renderTabs(){
   var rail=document.getElementById('tabrail'),h='';
-  DATA.categories.forEach(function(cat){
-    h+='<button class="tab" data-cat="'+cat.id+'" aria-label="'+esc(cat.display)+'">'+
-       '<span class="trn">'+cat.rn+'</span><span class="tnm">'+esc(cat.display)+'</span></button>';
-  });
-  rail.innerHTML=h;
-}
-function updateTabs(chapDisplay){
-  var tabs=document.querySelectorAll('#tabrail .tab'),activeRn=null;
-  for(var i=0;i<tabs.length;i++){
-    var t=tabs[i],cat=null;
-    DATA.categories.forEach(function(c){if(c.id===t.dataset.cat)cat=c;});
-    var on=!!(cat&&chapDisplay&&cat.display===chapDisplay);
-    t.classList.toggle('on',on);
-    if(on)activeRn=cat.rn;
+  if(tabLevel==='chapters'){
+    DATA.categories.forEach(function(cat){
+      h+='<button class="tab" data-cat="'+cat.id+'" aria-label="'+esc(cat.display)+'">'+
+         '<span class="trn">'+cat.rn+'</span><span class="tnm">'+esc(cat.display)+'</span></button>';
+    });
+  }else{
+    var cat=catById(tabLevel);
+    if(cat){
+      h+='<button class="tab tab-back" data-back="1" aria-label="Zurück zu den Kapiteln"><span class="tnm">&#8249;&nbsp; '+esc(cat.display)+'</span></button>';
+      cat.countryOrder.forEach(function(c){
+        var pg=(countryFirst[cat.id]||{})[c.name];
+        if(pg==null)return;
+        h+='<button class="tab ctab" data-page="'+pg+'" aria-label="'+esc(c.name)+'"><span class="tnm">'+esc(c.name)+'</span></button>';
+      });
+    }
   }
-  var ttRn=document.getElementById('ttRn');
-  if(ttRn)ttRn.innerHTML=activeRn||'&#10086;';
+  rail.innerHTML=h;
+  refreshTabs();
 }
-function tabsOpen(){var d=document.getElementById('tabdock');d.classList.add('open');document.getElementById('tabToggle').setAttribute('aria-expanded','true');}
-function tabsClose(){var d=document.getElementById('tabdock');d.classList.remove('open');document.getElementById('tabToggle').setAttribute('aria-expanded','false');}
+function buildTabs(){tabLevel='chapters';renderTabs();}
+function refreshTabs(){ /* aktives Kapitel markieren + Symbol-Zahl setzen */
+  var activeCat=null;
+  DATA.categories.forEach(function(c){if(curChap&&c.display===curChap)activeCat=c;});
+  var tabs=document.querySelectorAll('#tabrail .tab[data-cat]');
+  for(var i=0;i<tabs.length;i++)tabs[i].classList.toggle('on',!!(activeCat&&tabs[i].dataset.cat===activeCat.id));
+  var ttRn=document.getElementById('ttRn');
+  if(ttRn)ttRn.innerHTML=activeCat?activeCat.rn:'&#10086;';
+}
+function tabsOpen(){tabLevel='chapters';renderTabs();var d=document.getElementById('tabdock');d.classList.add('open');document.getElementById('tabToggle').setAttribute('aria-expanded','true');}
+function tabsClose(){var d=document.getElementById('tabdock');d.classList.remove('open');document.getElementById('tabToggle').setAttribute('aria-expanded','false');tabLevel='chapters';}
 function tabsToggle(){document.getElementById('tabdock').classList.contains('open')?tabsClose():tabsOpen();}
 
 /* ---------- theme (fest hell — Dunkelmodus entfernt) ---------- */
@@ -800,8 +818,17 @@ document.getElementById('menuClose').addEventListener('click',closeMenu);
 document.getElementById('menuOverlay').addEventListener('click',function(e){if(e.target===this)closeMenu();});
 document.getElementById('tabToggle').addEventListener('click',tabsToggle);
 document.getElementById('tabrail').addEventListener('click',function(e){
-  var tab=e.target.closest('.tab');
-  if(tab&&tab.dataset.cat&&chapterFirstPage[tab.dataset.cat]!=null){tabsClose();setPage(chapterFirstPage[tab.dataset.cat],true);}
+  e.stopPropagation(); /* sonst schließt der Außen-Klick-Handler beim Neu-Rendern */
+  var back=e.target.closest('.tab-back');
+  if(back){tabLevel='chapters';renderTabs();return;}
+  var ctab=e.target.closest('.ctab');
+  if(ctab){var pg=parseInt(ctab.dataset.page,10);if(!isNaN(pg)){tabsClose();setPage(pg,true);}return;}
+  var chap=e.target.closest('.tab[data-cat]');
+  if(chap&&chap.dataset.cat){
+    var cat=catById(chap.dataset.cat);
+    if(cat&&cat.countryOrder.length>1){tabLevel=cat.id;renderTabs();}      /* mehrere Länder → Länderauswahl */
+    else if(chapterFirstPage[chap.dataset.cat]!=null){tabsClose();setPage(chapterFirstPage[chap.dataset.cat],true);} /* nur 1 Land → direkt springen */
+  }
 });
 document.addEventListener('click',function(e){
   if(document.getElementById('tabdock').classList.contains('open')&&!e.target.closest('#tabdock'))tabsClose();
