@@ -839,12 +839,12 @@ document.getElementById('menuList').addEventListener('click',function(e){
   if(crow){var pg=parseInt(crow.dataset.page,10);if(!isNaN(pg)){closeMenu();setPage(pg,true);}return;}
 });
 
-/* Footer ✦ = versteckter Staff-Knopf. KURZ tippen → zurück zum Cover; LANG
-   drücken (~0,55 s) → aus vinify aktualisieren. Erkennung über Druckdauer beim
-   Loslassen (kein Timer) + großzügige Bewegungstoleranz, damit ein winziges
-   Fingerzittern den Tap nicht als Wisch verwirft (klappt jetzt beim 1. Mal). */
+/* Footer ✦ = versteckter Staff-Knopf. DOPPELT tippen → zurück zum Cover; LANG
+   drücken (~0,55 s) → aus vinify aktualisieren; einzelner Tap macht nichts.
+   Doppeltipp ist auf dem iPad zuverlässiger als der Einzel-Tap (zwei bewusste
+   Taps) und verhindert versehentliches Auslösen durch Gäste. */
 (function(){
-  var book=document.getElementById('book'),onOrn=false,moved=false,downT=0,x0=0,y0=0;
+  var book=document.getElementById('book'),onOrn=false,moved=false,downT=0,x0=0,y0=0,lastUp=0;
   book.addEventListener('pointerdown',function(e){
     onOrn=!!(e.target.closest&&e.target.closest('.run-foot .orn'));
     if(!onOrn)return;
@@ -855,9 +855,11 @@ document.getElementById('menuList').addEventListener('click',function(e){
   });
   book.addEventListener('pointerup',function(e){
     if(!onOrn)return;onOrn=false;
-    if(moved)return;                          /* war ein Wisch */
-    if((e.timeStamp||0)-downT>=550)liveUpdate(); /* langer Druck → aktualisieren */
-    else jumpTo(0);                            /* kurzer Tap → Cover */
+    if(moved)return;                                   /* war ein Wisch */
+    var up=e.timeStamp||0;
+    if(up-downT>=550){lastUp=0;liveUpdate();return;}   /* langer Druck → aktualisieren */
+    if(up-lastUp<=500){lastUp=0;jumpTo(0);}            /* zweiter Tap → Cover */
+    else lastUp=up;                                    /* erster Tap → auf zweiten warten */
   });
 })();
 
