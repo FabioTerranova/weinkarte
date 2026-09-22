@@ -1,20 +1,24 @@
 /* ============================================================================
    Kulm Weinkarte — build step (run by the scheduled GitHub Action).
-   Fetches the live vinify list, transforms it, inlines the shared transform,
-   and writes ../index.html (what GitHub Pages serves to the tablets).
-   No dependencies — uses Node's built-in fetch (Node 18+).
+   Fetches the master list from the Google Sheet (published as CSV), transforms
+   it, inlines the shared transform, and writes ../index.html (what GitHub Pages
+   serves to the tablets). No dependencies — uses Node's built-in fetch.
+
+   The list used to come from vinify.app; that partnership ended, so the master
+   is now a Google Sheet the sommelier edits directly. Sheet id below; it is
+   shared "Anyone with the link -> Viewer" so this CSV export is fetchable
+   without auth. To move the sheet to another account later, only change SHEET_ID
+   here AND in template.html (var SHEET_CSV_URL).
    ============================================================================ */
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { vinifyToData, extractNextData } from './transform.mjs';
+import { csvToData } from './transform.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..');
-// The /en/ locale prefix forces English. vinify is a Next.js i18n app
-// (locales en+nb); WITHOUT /en/ the edge auto-detects and can serve Norwegian
-// (e.g. to the US GitHub runner) — which is what once baked a Norwegian list.
-const VINIFY_URL = 'https://vinify.app/en/pdf-wine-list/570277';
+const SHEET_ID = '1eOj2ut2PYIvco68Q7OLe1V29CYtBL3IUfZ6ehcBb_U8';
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
 
 function countWines(data) {
@@ -22,22 +26,28 @@ function countWines(data) {
 }
 
 async function main() {
-  const res = await fetch(VINIFY_URL, { headers: { 'User-Agent': UA, 'Accept-Language': 'en-US,en;q=0.9' }, redirect: 'follow' });
-  if (!res.ok) throw new Error('vinify fetch failed: HTTP ' + res.status);
-  const html = await res.text();
+  const res = await fetch(SHEET_CSV_URL, { headers: { 'User-Agent': UA }, redirect: 'follow' });
+  if (!res.ok) throw new Error('sheet fetch failed: HTTP ' + res.status);
+  const csv = await res.text();
 
-  const data = vinifyToData(extractNextData(html));
+  // Guard: make sure we got the CSV, not an HTML error/login page.
+  const firstLine = csv.split(/\r?\n/, 1)[0] || '';
+  if (!/^Category,Country,Region,Producer,Wine,Vintage,Volume,Price,ArtCode/.test(firstLine)) {
+    throw new Error('Unexpected sheet response (not the wine CSV). First line: ' + firstLine.slice(0, 120));
+  }
+
+  const data = csvToData(csv);
 
   // Sanity gate: never publish a broken/empty list over a good one.
   const total = countWines(data);
   if (total < 100) throw new Error('Sanity check failed: only ' + total + ' wines parsed');
   if (data.categories.length < 3) throw new Error('Sanity check failed: only ' + data.categories.length + ' categories');
 
-  // Language gate: refuse to publish anything but the English list (guards
-  // against vinify serving another locale). Category names must be English.
+  // Content gate: expected English category names must be present (also catches
+  // a wrong/renamed sheet or a mangled fetch before it can overwrite a good build).
   const names = data.categories.map((c) => c.name);
   if (!names.includes('Red wine') || !names.includes('Sparkling')) {
-    throw new Error('Language check failed — expected English categories, got: ' + names.join(', '));
+    throw new Error('Content check failed — expected categories missing, got: ' + names.join(', '));
   }
 
   // Inline the shared transform into the page (strip the ES-module export line).

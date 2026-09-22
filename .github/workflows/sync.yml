@@ -1,10 +1,10 @@
-name: Sync Weinkarte from vinify
+name: Sync Weinkarte from Google Sheet
 
 # Runs automatically every 30 minutes, and can be started by hand from the
-# Actions tab ("Run workflow"). It re-fetches the live vinify list, rebuilds
-# index.html and — only if something actually changed — commits & pushes it,
-# which makes GitHub Pages redeploy. The sommelier never touches this; he just
-# edits wines in vinify.app as usual.
+# Actions tab ("Run workflow"). It re-fetches the master Google Sheet (published
+# as CSV), rebuilds index.html and — only if something actually changed —
+# commits & pushes it, which makes GitHub Pages redeploy. The sommelier never
+# touches this; he just edits wines in the Google Sheet as usual.
 
 on:
   schedule:
@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Build index.html from vinify
+      - name: Build index.html from Google Sheet
         run: node build/build.mjs
 
       - name: Commit & push if changed
@@ -41,7 +41,7 @@ jobs:
             echo "Keine Änderungen in der Weinkarte."
           else
             git add index.html
-            git commit -m "Auto-Sync Weinkarte aus vinify"
+            git commit -m "Auto-Sync Weinkarte aus Google Sheet"
             git push
             echo "Weinkarte aktualisiert und veröffentlicht."
           fi

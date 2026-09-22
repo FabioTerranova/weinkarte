@@ -1,0 +1,748 @@
+﻿Category,Country,Region,Producer,Wine,Vintage,Volume,Price,ArtCode
+Sparkling,France,Champagne,Billecart-Salmon,"Brut ""Réserve""",,0.75,165,3081
+Sparkling,France,Champagne,Billecart-Salmon,"""Le Blanc de Blancs"" Extra Brut",,0.75,235,3082
+Sparkling,France,Champagne,Billecart-Salmon,Billecart-Salmon Brut Rosé,,0.75,265,3064
+Sparkling,France,Champagne,Billecart-Salmon,"""Cuvée Louis Salmon"" Brut Blancs de Blancs",2012,0.75,430,3084
+Sparkling,France,Champagne,Billecart-Salmon,Elisabeth Salmon Brut Rose,2013,0.75,500,3083
+Sparkling,France,Champagne,Bollinger,Special Cuvée,,0.75,220,3021
+Sparkling,France,Champagne,Bruno Paillard,Première Cuvée Extra-Brut,,0.75,175,3030
+Sparkling,France,Champagne,Bruno Paillard,"""Blanc des Blancs"" Grand Cru",,0.75,260,3062
+Sparkling,France,Champagne,Bruno Paillard,NPU Nec Plus Ultra,2009,0.75,615,8787
+Sparkling,France,Champagne,Dom Pérignon,Dom Pérignon,2013,0.75,500,3008
+Sparkling,France,Champagne,Dom Pérignon,Rosé,2008,0.75,750,3011
+Sparkling,France,Champagne,Dom Pérignon,Dom Pérignon - MAGNUM,2010,1.5,1250,3009
+Sparkling,France,Champagne,Dom Pérignon,Plénitude P3,1993,0.75,6370,8568
+Sparkling,France,Champagne,Dom Ruinart,Dom Ruinart Rosé,2009,0.75,585,8566
+Sparkling,France,Champagne,G.H. Mumm,Cuvée R. Lalou Prestige Brut,1999,0.75,450,3027
+Sparkling,France,Champagne,Gosset,Grand Réserve Brut,,0.75,165,8788
+Sparkling,France,Champagne,Gosset,Grand Rosé Brut,,0.75,175,3054
+Sparkling,France,Champagne,Gosset,Grand Blanc de Blancs Brut,,0.75,205,8789
+Sparkling,France,Champagne,Gosset,Celebris Brut,2008,0.75,395,8790
+Sparkling,France,Champagne,Jacquesson,Cuvee N° 747,,0.75,235,8569
+Sparkling,France,Champagne,Jacquesson,Cuvée N° 747 - MAGNUM,,1.5,435,8570
+Sparkling,France,Champagne,Krug,"""Grande Cuvée” - Brut - HALF bt.",,0.375,290,3014
+Sparkling,France,Champagne,Krug,"""Grande Cuvée"" - Brut 172ème Édition",,0.75,480,3024
+Sparkling,France,Champagne,Krug,Brut Rosé - 27ème Édition,,0.75,720,3026
+Sparkling,France,Champagne,Krug,"""Grande Cuvée"" - Brut 169ème édition - MAGNUM",,0.75,1050,3037
+Sparkling,France,Champagne,Krug,Clos d'Ambonnay,2006,0.75,5640,8567
+Sparkling,France,Champagne,Laurent-Perrier,"""La Cuvée"" Brut",,0.75,180,3048
+Sparkling,France,Champagne,Laurent-Perrier,Cuvée Rosé Brut,,0.75,260,3049
+Sparkling,France,Champagne,Laurent-Perrier,"""La Cuvée"" Brut - MAGNUM",,1.5,360,3031
+Sparkling,France,Champagne,Laurent-Perrier,“Grand Siècle” Itération N°26 Brut,,0.75,380,3050
+Sparkling,France,Champagne,Laurent-Perrier,Cuvée Rosé Brut - MAGNUM,,1.5,520,3028
+Sparkling,France,Champagne,Louis Roederer,Cristal,2009,0.75,670,3036
+Sparkling,France,Champagne,Louis Roederer,Cristal Rosé,2008,0.75,1100,3053
+Sparkling,France,Champagne,Louis Roederer,Cristal - MAGNUM,2007,1.5,1650,3038
+Sparkling,France,Champagne,Moët & Chandon,Grand Vintage,2015,0.75,210,3003
+Sparkling,France,Champagne,Moët & Chandon,Rosé Grand Vintage,2013,0.75,250,3007
+Sparkling,France,Champagne,Moët & Chandon,Grand Vintage - MAGNUM,2006,1.5,440,3061
+Sparkling,France,Champagne,Perrier-Jouët,Grand Brut,,0.75,200,3058
+Sparkling,France,Champagne,Perrier-Jouët,Blason Rosé - Brut,,0.75,220,3029
+Sparkling,France,Champagne,Perrier-Jouët,Blanc de Blancs - Brut,,0.75,260,3071
+Sparkling,France,Champagne,Perrier-Jouët,Belle Époque,2014,0.75,480,3020
+Sparkling,France,Champagne,Perrier-Jouët,Belle Époque Rosé,2006,0.75,490,3057
+Sparkling,France,Champagne,Perrier-Jouët,Belle Époque Brut - MAGNUM,2007,1.5,880,3041
+Sparkling,France,Champagne,Ruinart,Brut Rosé - HALF bt.,,0.375,115,3065
+Sparkling,France,Champagne,Ruinart,"""R"" de Ruinart Brut",,0.75,170,3010
+Sparkling,France,Champagne,Ruinart,Rosé,,0.75,210,3066
+Sparkling,France,Champagne,Ruinart,Blanc de Blancs,,0.75,220,3005
+Sparkling,France,Champagne,Ruinart,"""R"" de Ruinart Brut - MAGNUM",,1.5,380,3033
+Sparkling,France,Champagne,Ruinart,Blanc de Blancs - MAGNUM,,1.5,450,3039
+Sparkling,France,Champagne,Ruinart,Brut Rosé - MAGNUM,,1.5,450,3059
+Sparkling,France,Champagne,Salon,Cuvée 'S' Le Mesnil - Blanc de Blancs - Brut,2015,0.75,2380,8565
+Sparkling,France,Champagne,Ulysse Collin,"""Les Maillons"" Blanc de Noirs Extra Brut - 48 mois sur lie, dégorgement 2025",2020,0.75,495,8791
+Sparkling,France,Champagne,Ulysse Collin,"""Les Pierrieres"" Blanc de Blancs Extra Brut - 24 mois sur lit, dégorgement 2025",2020,0.75,560,8792
+Sparkling,France,Champagne,Ulysse Collin,"""Les Enfers"" Blanc de Blancs Extra Brut - 72 mois sur lit, dégorgement 2025",2017,0.75,755,8794
+Sparkling,France,Champagne,Veuve Clicquot,“Carte Jaune” - Brut,,0.75,160,3006
+Sparkling,France,Champagne,Veuve Clicquot,“Carte Jaune” - Brut,,1.5,325,3015
+Sparkling,France,Champagne,Veuve Clicquot,La Grande Dame Rosé,1998,0.75,620,3017
+Sparkling,Italy,Lombardy,Bellavista,Alma Assemblage 2 Brut - Franciacorta DOCG,,0.75,135,3046
+Sparkling,Italy,Lombardy,Ca' Del Bosco,Cuvée Prestige - 46ème Edition Extra-Brut,,0.75,135,3067
+Sparkling,Italy,Lombardy,Ca' Del Bosco,Annamaria Clementi Riserva Dos. Zéro - Franciacorta DOCG,2016,0.75,365,8571
+Sparkling,Italy,Veneto,Antica Quercia,"""Matiú"" - Conegliano Valdobbiadene Prosecco Superiore DOCG Brut",,0.75,105,9135
+Sparkling,Italy,Veneto,Sommariva,Prosecco Superiore Conegliano Valdobbiadene Brut DOCG,,0.75,80,7969
+Sparkling,Italy,Trentino Alto Adige,Ferrari,Maximum Blanc de Blancs - Trento DOC,,0.75,130,3043
+Sparkling,Switzerland,Graubunden,Obrecht,Extra Brut Rosé,,0.75,130,8572
+Sparkling,Switzerland,Graubunden,Obrecht,Brut Nature Blanc,,0.75,160,8573
+Sparkling,England,Sussex,Nyetimber Limited,Nyetimber Classic Cuvée,,0.75,160,3068
+Sparkling,England,Sussex,Nyetimber Limited,Rosé,,0.75,195,3072
+White wine,Switzerland,Graubunden,Andrea Lauber,Freisamer,2019,0.75,95,1216
+White wine,Switzerland,Graubunden,Christian Hermann,Chardonnay - HALF bt.,2024,0.375,75,4202
+White wine,Switzerland,Graubunden,Christian Hermann,Chardonnay,2024,0.75,90,1217
+White wine,Switzerland,Graubunden,Christian Hermann,Riesling,2023,0.75,90,1206
+White wine,Switzerland,Graubunden,Christian Hermann,Chardonnay - MAGNUM,2022,1.5,285,6202
+White wine,Switzerland,Graubunden,Donatsch,"Chardonnay ""Passion""",2024,0.75,185,1245
+White wine,Switzerland,Graubunden,Donatsch,"Completer ""Malanserrebe""",2024,0.75,265,1211
+White wine,Switzerland,Graubunden,Donatsch,"""Unique"" Chardonnay Malans",2020,0.75,320,1240
+White wine,Switzerland,Graubunden,Donatsch,"""Unique"" Chardonnay Malans",2016,0.75,335,8798
+White wine,Switzerland,Graubunden,Eichholz,Chardonnay,2019,0.75,160,1243
+White wine,Switzerland,Graubunden,Fromm,Malanser Pinot Blanc,2024,0.75,120,8800
+White wine,Switzerland,Graubunden,Gantenbein,Chardonnay,2023,0.75,380,8796
+White wine,Switzerland,Graubunden,Gantenbein,Chardonnay,2016,0.75,380,1213
+White wine,Switzerland,Graubunden,Georg Schlegel,Riesling Sylvaner,2024,0.75,65,1204
+White wine,Switzerland,Graubunden,Georg Schlegel,Pinot Gris,2024,0.75,95,1226
+White wine,Switzerland,Graubunden,Liesch,Chardonnay - Malanser,2021,0.75,100,1227
+White wine,Switzerland,Graubunden,Möhr-Niggli Weingut,Viognier,2021,0.75,135,1239
+White wine,Switzerland,Graubunden,Thürer Weine,Riesling-Silvaner,2024,0.75,120,1255
+White wine,Switzerland,Graubunden,Thürer Weine,Fumé Blanc,2025,0.75,155,1256
+White wine,Switzerland,Graubunden,Wegelin,Scadena - Weissburgunder,2023,0.75,145,8801
+White wine,Switzerland,Graubunden,Wegelin,Bothmarhalde - Chardonnay,2023,0.75,155,8802
+White wine,Switzerland,Graubunden,Wegelin,Frassa - Chardonnay,2023,0.75,240,8803
+White wine,Switzerland,Graubunden,Weingut Obrecht,Riesling – Silvaner Schiefer,2024,0.75,80,1224
+White wine,Switzerland,Graubunden,Weingut Obrecht,Chardonnay,2019,0.75,150,1222
+White wine,Switzerland,Thurgau,Weingut Lenz,Cuvée 1844 Grüner Veltliner,2018,0.75,95,1249
+White wine,Switzerland,Ticino,Castello Luigi,Chardonnay,2018,0.75,290,1229
+White wine,Switzerland,Ticino,Castello di Morcote,Bianco - Merlot-Chardonnay,2021,0.75,150,1215
+White wine,Switzerland,Ticino,Guido Brivio,Bianco Rovere - Merlot Ticino DOC,2024,0.75,120,1218
+White wine,Switzerland,Ticino,Guido Brivio,Bianco Rovere - Merlot Ticino DOC - MAGNUM,2022,1.5,250,6201
+White wine,Switzerland,Neuchatel,Domaine Ruedin by Jacques Tatasciore,Chasselas,2022,0.75,65,1244
+White wine,Switzerland,Neuchatel,Domaine Ruedin by Jacques Tatasciore,"Chasselas  ""Les Chaux""",2022,0.75,90,1233
+White wine,Switzerland,Vaud,Domaine Blaise Duboux,Dézaley Haut de Pierre Vieilles Vignes Grand Cru,2022,0.75,135,8809
+White wine,Switzerland,Vaud,Domaine la Colombe,Féchy La Colombe,2021,0.75,50,8808
+White wine,Switzerland,Vaud,H. Badoux,"Aigle ""les Murailles"" - Vin Chablais AOC",2023,0.7,70,1209
+White wine,Switzerland,Vaud,H. Badoux,"Aigle ""les Murailles"" - Vin Chablais AOC",2022,1.5,150,6203
+White wine,Switzerland,Valais,Histoire D’Enfer,Petite Arvine Réserve,2019,0.75,170,1232
+White wine,Switzerland,Valais,Historie d'Enfer,Humagne Blanche Réserve,2023,0.75,140,8804
+White wine,Switzerland,Valais,Historie d'Enfer,Petite Arvine Réserve Vieilles Vignes,2022,0.75,160,8805
+White wine,Switzerland,Valais,Jean-René Germanier,"""Clos de la Couta"" Heida",2016,0.75,100,1228
+White wine,Switzerland,Valais,Marie-Thérèse Chappaz,Grain Arvine de Fully,2022,0.75,200,8807
+White wine,Switzerland,Valais,Marie-Thérèse Chappaz,Assemblage Blanc,2023,0.75,215,8806
+White wine,Switzerland,Valais,Provins Valais Mundi,Eclat,2015,0.75,219,1238
+White wine,Austria,Niederösterreich,Weingut Bruendlmayer,Grüner Veltliner Lamm 1. Lage ÖTW 2022 - Kamptal Reserve,2022,0.75,190,8878
+White wine,Austria,Niederösterreich,Weingut Franz Hirtzberger,Weißburgunder Smaragd Steinporz,2023,0.75,235,8610
+White wine,Austria,Niederösterreich,Weingut Franz Hirtzberger,Grüner Veltliner Smaragd Honivogl,2023,0.75,370,8611
+White wine,Austria,Niederösterreich,Weingut Knoll,“Loibner” - Smaragd Grüner Veltliner - MAGNUM,2011,1.5,420,6801
+White wine,Austria,Steiermark,Neumeister,Sauvignon Blanc Ried Klausen,2022,0.75,115,8879
+White wine,Austria,Steiermark,Neumeister,Sauvignon Blanc Ried Moarfeitl,2022,0.75,150,8880
+White wine,Germany,Rheinhessen,Dreissigacker,"""Kolibri"" - Riesling Auslese - Rheinhessen",2017,0.75,100,1819
+White wine,Germany,Rheinhessen,Dreissigacker,Wunderwerk Riesling,2019,0.75,170,8872
+White wine,Germany,Rheinhessen,Dreissigacker,Kirchspiel,2014,0.75,890,8873
+White wine,Germany,Rheingau,Prinz von Hessen,Riesling Classic,2024,0.75,70,1807
+White wine,Germany,Rheingau,Prinz von Hessen,"""Dachsfilet"" Riesling Trocken",2020,0.75,95,1814
+White wine,Germany,Rheingau,Weingut Robert Weil,Kiedrich Gräfenberg Riesling Grosses Gewächs,2022,0.75,190,8874
+White wine,Germany,Rheingau,Weingut Robert Weil,Monte Nostrum Riesling,2022,0.75,260,8875
+White wine,Germany,Rheingau,Weingut Robert Weil,Monte Vacano Riesling,2021,0.75,645,8876
+White wine,Germany,Mosel,C. von Schubert,"""Maximin Grünhäuser Abtsberg” - Spätlese Riesling",2019,0.75,95,1808
+White wine,Germany,Mosel,Karthäuserhof,"""Bruno"" Riesling",2023,0.75,80,9220
+White wine,Germany,Mosel,Maximin Grünhaus,Abtsberg Kabinett Nr. 50 *,2022,0.75,350,8870
+White wine,Germany,Mosel,Maximin Grünhaus,Abtsberg Riesling Auslese 64 * - HALF bt.,2018,0.375,465,8871
+White wine,Germany,Mosel,Van Volxem,Riesling Alte Reben Mosel,2023,0.75,90,1822
+White wine,Germany,Mosel-Saar-Ruwer,Maximin Grünhaus,Riesling Abtsberg Großes Gewächs,2022,0.75,140,8869
+White wine,Germany,Nahe,"Donnhöff, G.C.",“Felsenberg” - Riesling,2019,0.75,180,1816
+White wine,France,Alsace,Domaine Rossignol-Trapet,Beblenheim Gewürztraminer,2022,0.75,80,8849
+White wine,France,Alsace,Domaine Rossignol-Trapet,Schoenenbourg Riesling Grand Cru,2016,0.75,175,8850
+White wine,France,Alsace,Domaine Trimbach,“Clos St. Hune” - Riesling,2011,0.75,440,1462
+White wine,France,Loire,Domaine De L'Abbaye,Sancerre,2024,0.75,80,8855
+White wine,France,Loire,Domaine De L'Abbaye,Pouilly-Fumé,2024,0.75,85,1477
+White wine,France,Loire,Domaine Guiberteau,"""Breze"" - Saumur",2018,0.75,170,1450
+White wine,France,Loire,Domaine Huet,Vouvray Le Mont - Moelleux Première Trie,2016,0.75,210,3808
+White wine,France,Loire,Domaine Huet,Vouvray Le Mont - Moelleux Première Trie,2003,0.75,370,9071
+White wine,France,Loire,Domaine Vacheron,Sancerre,2023,0.75,120,8856
+White wine,France,Loire,Domaine Vacheron,"Sancerre ""Les Romains""",2022,0.75,160,8857
+White wine,France,Loire,Gaston Huet,Vouvray 'Le Mont' Sec,2023,0.75,140,8853
+White wine,France,Loire,Ladoucette,Pouilly Fume,2023,0.75,125,1417
+White wine,France,Loire,Ladoucette,"Pouilly Fumé ""Baron de L""",2022,0.75,230,1412
+White wine,France,Loire,Ladoucette,Ladoucette Pouilly-Fumé,2022,1.5,290,6533
+White wine,France,Loire,Ladoucette,"Pouilly Fumé ""Baron de L"" - MAGNUM",2019,1.5,480,6401
+White wine,France,Loire,Nicolas Joly,Les Vieux Clos - Savennières,2023,0.75,145,8851
+White wine,France,Loire,Nicolas Joly,Clos de La Coulée de Serrant,2023,0.75,255,8852
+White wine,France,Burgundy,Arnaud Baillot,Chassagne-Montrachet,2023,0.75,245,8835
+White wine,France,Burgundy,Arnaud Baillot,Meursault,2023,0.75,245,8836
+White wine,France,Burgundy,Arnaud Baillot,Puligny-Montrachet,2023,0.75,280,8837
+White wine,France,Burgundy,Domaine A. & P. De Villaine,Bouzeron Aligoté,2023,0.75,100,1416
+White wine,France,Burgundy,Domaine A. & P. De Villaine,Rully 1er Cru “Rabourcé”,2019,0.75,225,1467
+White wine,France,Burgundy,Domaine Comte Georges de Vogüé,Musigny Blanc Grand Cru,2020,0.75,2200,1471
+White wine,France,Burgundy,Domaine François Carillon,Bourgogne Cote d'Or Chardonnay,2023,0.75,120,8814
+White wine,France,Burgundy,Domaine François Carillon,Puligny-Montrachet,2022,0.75,235,1442
+White wine,France,Burgundy,Domaine François Carillon,"Puligny-Montrachet 1er Cru  ""Les Champs Gain""",2023,0.75,335,8817
+White wine,France,Burgundy,Domaine François Carillon,Puligny-Montrachet - MAGNUM,2023,1.5,490,8816
+White wine,France,Burgundy,Domaine Gérard Duplessis,"Chablis Premier Cru ""Fourchaume""",2020,0.75,160,8578
+White wine,France,Burgundy,Domaine Jean Collet & Fils,"Chablis 1er Cru ""Montée de Tonnerre""",2023,0.75,170,8579
+White wine,France,Burgundy,Domaine Leflaive,Mâcon-Igé,2021,0.75,120,1414
+White wine,France,Burgundy,Domaine Leflaive,Mâcon-Verzé,2023,0.75,135,1478
+White wine,France,Burgundy,Domaine Leflaive,Pouilly-Fuissé,2019,0.75,200,1455
+White wine,France,Burgundy,Domaine Leflaive,Auxey-Duresses,2023,0.75,205,8819
+White wine,France,Burgundy,Domaine Leflaive,Bourgogne Blanc,2023,0.75,250,8820
+White wine,France,Burgundy,Domaine Leflaive,"Pouilly-Fuissé ""Sur La Roche"" 1er Cru",2021,0.75,260,8844
+White wine,France,Burgundy,Domaine Leflaive,Puligny-Montrachet,2020,0.75,490,8821
+White wine,France,Burgundy,Domaine Leflaive,"Puligny-Montrachet 1er Cru ""Les Pucelles""",2018,0.75,900,1436
+White wine,France,Burgundy,Domaine Leflaive,"Puligny-Montrachet 1er Cru ""Les Pucelles"" *",2022,0.75,1260,8823
+White wine,France,Burgundy,Domaine Leflaive,Bienvenues-Bâtard-Montrachet Grand Cru,2018,0.75,1550,1402
+White wine,France,Burgundy,Domaine Leflaive,Bâtard-Montrachet Grand cru,2019,0.75,1950,1438
+White wine,France,Burgundy,Domaine Leflaive,Bâtard-Montrachet Grand cru,2023,0.75,2525,8826
+White wine,France,Burgundy,Domaine Leflaive,Chevalier-Montrachet Grand Cru,2022,0.75,2775,8825
+White wine,France,Burgundy,Domaine Mathias,"Pouilly-Fuissé ""Aux Quarts"" 1er Cru",2023,0.75,160,2736
+White wine,France,Burgundy,Domaine Rémi Jobard,"Meursault ""Les Chevalières""",2023,0.75,265,8829
+White wine,France,Burgundy,Domaine Rémi Jobard,Meursault Les Narvaux Blanc,2023,0.75,275,9105
+White wine,France,Burgundy,Domaine Rémi Jobard,"Meursault 1er Cru ""Le Poruzot Dessus""",2022,0.75,370,8828
+White wine,France,Burgundy,Domaine William Fèvre,Chablis Champs Royaux - HALF bt.,2023,0.375,65,4401
+White wine,France,Burgundy,Domaine William Fèvre,Chablis Champs Royaux,2023,0.75,105,8811
+White wine,France,Burgundy,Domaine William Fèvre,"Chablis 1er Cru ""Vaulorent""",2022,0.75,240,8812
+White wine,France,Burgundy,Domaine William Fèvre,Chablis “Bougros” Grand Cru,2013,0.75,260,1409
+White wine,France,Burgundy,Domaine William Fèvre,"Chablis ""Les Clos"" Grand Cru",2022,0.75,355,8813
+White wine,France,Burgundy,Domaine de la Romanée-Conti,Corton-Charlemagne Grand Cru,2023,0.75,3800,9106
+White wine,France,Burgundy,Domaine de la Romanée-Conti,Corton-Charlemagne Grand Cru,2022,0.75,4000,8841
+White wine,France,Burgundy,Domaine de la Romanée-Conti,Corton-Charlemagne Grand Cru,2020,0.75,4500,1473
+White wine,France,Burgundy,Domaine de la Romanée-Conti,Montrachet Grand Cru,2022,0.75,11500,8842
+White wine,France,Burgundy,Domaine de la Romanée-Conti,Montrachet Grand Cru,2020,0.75,11900,1474
+White wine,France,Burgundy,Domaine de l’Arlot,Nuits-Saint-Georges 1er Cru “Clos de l’Arlot”,2018,0.75,290,1429
+White wine,France,Burgundy,Domaine des Lambrays,"Puligny-Montrachet 1er Cru ""Les Folatieres""",2023,0.75,595,8834
+White wine,France,Burgundy,Domaine des Lambrays,"Puligny-Montrachet 1er Cru ""Clos du Cailleret""",2023,0.75,670,8833
+White wine,France,Burgundy,Gilbert Picq et ses Fils,Chablis,2023,0.75,85,1475
+White wine,France,Burgundy,Jean-Louis Chavy,"Puligny-Montrachet 1er Cru ""Clavoillon""",2022,0.75,250,1403
+White wine,France,Burgundy,Jean-Marie Fourrier,"Meursault ""Vieille Vignes"" - Vigne Comte de Chapelle",2022,0.75,335,8838
+White wine,France,Burgundy,Jean-Marie Fourrier,Chassagne Montrachet 1er Cru “Morgeot” Vieille Vigne,2022,0.75,790,1458
+White wine,France,Burgundy,Jean-Marie Fourrier,Corton-Charlemagne Grand Cru,2022,0.75,1525,8839
+White wine,France,Burgundy,Jean-Paul & Benoit Droin,Chablis,2023,0.75,105,1445
+White wine,France,Burgundy,Jean-Paul & Benoit Droin,"Chablis ""Valmur"" Grand Cru",2023,0.75,245,1464
+White wine,France,Burgundy,Jean-Paul & Benoit Droin,"Chablis ""Les Clos - Hommage à Louis"" Grand Cru",2021,0.75,275,1427
+White wine,France,Burgundy,Justin Girardin,Chassagne-Montrachet 1er Cru “Morgeot”,2022,0.75,270,1415
+White wine,France,Burgundy,Laurent Ponsot,Meursault “Cuvée du Pandoréa”,2022,0.75,270,1413
+White wine,France,Burgundy,Lucien Le Moine,"Chassagne-Montrachet 1er Cru ""Morgeot""",2022,0.75,365,8830
+White wine,France,Burgundy,Lucien Le Moine,"Chassagne-Montrachet 1er Cru ""La Romanée""",2022,0.75,370,8832
+White wine,France,Burgundy,Manoir du Capucin,Pouilly-Fuissé “Clos de la Maison” Monopole,2023,0.75,100,1443
+White wine,France,Burgundy,Philippe Pacalet,Meursault - Limozin,2019,0.75,260,1469
+White wine,France,Burgundy,Philippe Pacalet,Meursault,2023,0.75,335,8840
+White wine,France,Burgundy,Rene Vincent Dauvissat,Chablis,2022,0.75,275,8580
+White wine,France,Burgundy,Rene Vincent Dauvissat,"Chablis 1er Cru ""La Forest""",2022,0.75,370,8581
+White wine,France,Burgundy,Rene Vincent Dauvissat,"Chablis ""Les Clos"" Grand Cru",2022,0.75,930,8582
+White wine,France,Bordeaux,Château Cos d'Estournel,Château Cos d'Estournel Blanc -2ème Cru Classé - Saint-Estèphe,2021,0.75,430,2741
+White wine,France,Bordeaux,Château Lespault-Martillac,Château Lespault-Martillac Blanc,2020,0.75,110,8845
+White wine,France,Bordeaux,Château Lynch Bages,Blanc de Lynch-Bages,2017,0.75,240,1460
+White wine,France,Bordeaux,Château Paradis Casseuil,Château Paradis Casseuil Blanc,2024,0.75,80,2737
+White wine,France,Rhône,Alain Voge,Saint Peray “Terres Boisées” *,2014,0.75,120,1437
+White wine,France,Rhône,Domaine Bernard Gripa,"St Joseph ""Le Berceau"" Blanc",2016,0.75,190,1456
+White wine,France,Rhône,Domaine Jean-Louis Chave,"""Blanche"" Hermitage Blanc",2020,0.75,190,8848
+White wine,France,Rhône,Domaine Jean-Louis Chave,L’Hermitage Blanc *,2019,0.75,580,1424
+White wine,France,Rhône,Domaine René Rostaing,"Condrieu ""La Bonnette""",2022,0.75,195,8847
+White wine,France,Rhône,Domaine René Rostaing,"Condrieu ""La Bonnette""",2020,0.75,230,1410
+White wine,France,Rhône,Les Vignerons Ardéchois,Viogner,2021,0.75,60,1406
+White wine,France,Rhône,Rotem & Mounir Saouma,"Châteauneuf-du-Pape ""Magis"" Blanc",2020,0.75,250,8846
+White wine,Italy,Piedmont,Bruno Giacosa,Roero Arneis,2024,0.75,90,1627
+White wine,Italy,Piedmont,Gaja,Rossj-Bass - Langhe DOC,2022,0.75,240,1612
+White wine,Italy,Piedmont,Gaja,Gaia & Rey - Langhe DOC,2022,0.75,590,1621
+White wine,Italy,Piedmont,Monchiero Carbone,"""Recit"" - Roero Arneis DOCG",2022,0.75,70,1640
+White wine,Italy,Piedmont,Poderi Aldo Conterno,Chardonnay Bussiador - Langhe DOC,2022,0.75,245,8592
+White wine,Italy,Piedmont,Vietti,Roero Arneis DOCG,2025,0.75,90,1616
+White wine,Italy,Piedmont,Vigneti Massa,Derthona - Timorasso Colli Tortonesi,2023,0.75,95,1624
+White wine,Italy,Lombardy,Ca' Del Bosco,Corte del Lupo - Curtefranca DOC,2024,0.75,105,1631
+White wine,Italy,Lombardy,Ca' Del Bosco,Selva della Tesa - Chardonnay IGT,2020,0.75,245,8593
+White wine,Italy,Lombardy,Ca' Lojera,Lugana DOC,2023,0.75,65,1607
+White wine,Italy,Lombardy,Tommasi,Le Fornaci - Lugana DOC,2024,0.75,60,1691
+White wine,Italy,Trentino Alto Adige,Alois Lageder,Pinot Grigio - Südtirol-Alto Adige DOC,2024,0.75,65,1626
+White wine,Italy,Trentino Alto Adige,Alois Lageder,"Pinot Grigio ""Porer"" - Vigneti delle Dolomiti IGT",2023,0.75,80,1635
+White wine,Italy,Trentino Alto Adige,Cantina Terlan,"Pinot Bianco ""Vorberg"" -  Alto Adige DOC Riserva",2022,0.75,135,8594
+White wine,Italy,Trentino Alto Adige,Cantina Terlan,"""Quarz"" - Alto Adige Terlaner DOC",2023,0.75,180,1608
+White wine,Italy,Trentino Alto Adige,St. Michael-Eppan,“Fallwind” - Sauvignon Blanc,2024,0.75,65,1638
+White wine,Italy,Trentino-Alto Adige,Weingut & Klosterkellerei Muri Gries,Abtei Muri Weissburgunder Riserva,2022,0.75,115,8860
+White wine,Italy,Friuli Venezia Giulia,Borgo del Tiglio - Maferrari,Collio Chardonnay Etichetta Scura DOC,2022,0.75,230,8595
+White wine,Italy,Friuli Venezia Giulia,Jermann,Sauvignon Blanc - Venezia Giulia IGT,2022,0.75,90,8596
+White wine,Italy,Friuli Venezia Giulia,Jermann,Vintage Tunina - Venezia Giulia IGT,2021,0.75,180,1605
+White wine,Italy,Friuli Venezia Giulia,Venica & Venica,"""Primarûl"" Friulano - Collio DOC",2023,0.75,75,1637
+White wine,Italy,Friuli Venezia Giulia,Venica & Venica,Jésera Pinot Grigio - Collio DOC,2024,0.75,105,8599
+White wine,Italy,Friuli Venezia Giulia,Venica & Venica,Ronco Delle Mele Sauvignon - Collio DOC,2024,0.75,130,1603
+White wine,Italy,Veneto,Roccolo Grassi,"""La Broia"" - Soave DOC",2023,0.75,65,8859
+White wine,Italy,Tuscany,Gagliole,Il Bianco - Toscana IGT,2024,0.75,90,1611
+White wine,Italy,Tuscany,Le Macchiole,Paleo Bianco - Toscana IGT,2023,0.75,235,8597
+White wine,Italy,Umbria,Marchesi Antinori,Cervaro della Sala - Umbria IGT,2023,0.75,240,1632
+White wine,Italy,Marche,Tenuta Tavignano,"""Misco Riserva"" - Verdicchio dei Castelli di Jesi Classico DOCG",2020,0.75,130,8600
+White wine,Italy,Marche,Vignamato,"""Ambrosia"" - Verdicchio dei Castelli di Jesi Riserva Classico DOCG",2022,0.75,85,8862
+White wine,Italy,Abruzzo,Emidio Pepe,Trebbiano d'Abruzzo DOC,2020,0.75,230,8864
+White wine,Italy,Abruzzo,Emidio Pepe,Pecorino Colli Aprutini IGT,2020,0.75,315,8865
+White wine,Italy,Abruzzo,Emidio Pepe,Trebbiano d'Abruzzo DOC,2007,0.75,550,8863
+White wine,Italy,Campania,Salvatore Molettieri,Greco di Tufo DOCG,2023,0.75,85,8601
+White wine,Italy,Campania,Salvatore Molettieri,"""Apianum"" - Fiano di Avellino DOCG",2023,0.75,85,8602
+White wine,Italy,Sicily,Benanti,Etna Bianco DOC,2024,0.75,105,8603
+White wine,Italy,Sicily,Planeta,Chardonnay - Sicilia DOC,2023,0.75,120,8604
+White wine,Spain,Rioja,Bodegas Roda S.A.,Roda I Blanco DOC,2021,0.75,215,8867
+White wine,Spain,Rioja,R. López de Heredia Viña Tondonia,Viña Tondonia Gran Reserva Blanco Rioja,2004,0.75,775,8868
+White wine,US,California,Au Bon Climat,Chardonnay Sanford & Benedict Vineyard,2020,0.75,155,8881
+White wine,US,California,Eisele Vineyard,Sauvignon Blanc,2021,0.75,320,8883
+White wine,US,California,Kistler,"""Les Noisetiers"" - Chardonnay",2023,0.75,240,8884
+White wine,US,California,Mount Eden Vineyards,Chardonnay - Santa Cruz Mountains,2018,0.75,210,1901
+White wine,US,California,Ramey,Chardonnay - Russian River Valley,2023,0.75,160,1903
+White wine,US,California,Shafer,"""Red Shoulder Ranch"" - Chardonnay",2019,0.75,200,1902
+White wine,US,California,Shafer,"""Red Shoulder Ranch"" - Chardonnay",2022,0.75,215,8882
+White wine,Argentina,Mendoza,Achaval Ferrer,Quimera Blanco,2022,0.75,130,8885
+White wine,Argentina,Mendoza,Finca Ambrosía de Tupungato,“Vina Unica” - Chardonnay,2020,0.75,80,9102
+White wine,Argentina,Mendoza,Susana Balbo,Barrel Fermented Torrontés,2022,0.75,105,1906
+White wine,Argentina,Salta,Bodega Amalaya,Blanco de Corte - Torrontes/Riesling,2023,0.75,60,1905
+Rose,Switzerland,Neuchatel,Château d'Auvernier,Œil-de-Perdrix - Neuenburg AOC - HALF bt.,2023,0.375,40,3501
+Rose,Switzerland,Neuchatel,Château d'Auvernier,Œil-de-Perdrix - Neuenburg AOC,2023,0.75,70,3502
+Rose,France,Provence,Château de Pibarnon,Nuances Rosé,2021,0.75,145,8886
+Rose,France,Provence,Château d’Esclans,Whispering Angel - Côtes de Provence Rosé,2025,0.75,70,3508
+Rose,France,Provence,Château d’Esclans,Les Clans,2018,0.75,150,3515
+Rose,France,Provence,Domaines Ott,Château de Selle Rosé,2025,0.75,130,8615
+Red wine,Switzerland,Graubunden,Christian Hermann,Pinot Noir - HALF bt.,2024,0.375,55,5206
+Red wine,Switzerland,Graubunden,Christian Hermann,Fläscher Pinot Noir - MAGNUM,2022,1.5,230,7201
+Red wine,Switzerland,Graubunden,Donatsch,"""Passion"" - Pinot Noir",2022,0.75,175,8890
+Red wine,Switzerland,Graubunden,Donatsch,"""Unique"" - Pinot Noir Malans Graubünden",2022,0.75,335,8891
+Red wine,Switzerland,Graubunden,Eichholz,“Alte Reben” - Pinot Noir,2020,0.75,180,2205
+Red wine,Switzerland,Graubunden,Fromm,Malanser Pinot Noir - Village - HALF bt.,2024,0.375,50,5202
+Red wine,Switzerland,Graubunden,Fromm,"""Selvenen"" Malanser Pinot Noir - HALF bt.",2022,0.375,90,8895
+Red wine,Switzerland,Graubunden,Fromm,Malanser Pinot Noir - Village,2023,0.75,100,2225
+Red wine,Switzerland,Graubunden,Fromm,"""Selvenen"" Malanser Pinot Noir",2022,0.75,150,8897
+Red wine,Switzerland,Graubunden,Fromm,"""Selvenen"" Malanser Pinot Noir",2020,0.75,160,2245
+Red wine,Switzerland,Graubunden,Fromm,"""Benvenuto"" Malanser Pinot Noir - Single Cask",2023,0.75,185,8898
+Red wine,Switzerland,Graubunden,Fromm,"""Michel"" Malanser  Pinot Noir",2022,0.75,220,8899
+Red wine,Switzerland,Graubunden,Fromm,"""Selvenen"" Malanser Pinot Noir - MAGNUM",2022,1.5,280,8896
+Red wine,Switzerland,Graubunden,Fromm,"""Schöpfi"" Malanser Pinot Noir *",2022,0.75,300,8900
+Red wine,Switzerland,Graubunden,Gantenbein,Pinot Noir,2021,0.75,380,8889
+Red wine,Switzerland,Graubunden,Georg Schlegel,"""Pradafant"" - Jeninser Pinot Noir",2020,0.75,140,2203
+Red wine,Switzerland,Graubunden,Georg Schlegel,"""Saliser"" - Pinot Noir",2019,0.75,190,2234
+Red wine,Switzerland,Graubunden,Martina Hermann & Silas Hörler,"""Carsilias"" - Pinot Noir",2020,0.75,180,2241
+Red wine,Switzerland,Graubunden,Möhr-Niggli,"""Pilgrim"" - Pinot Noir  Graubünden",2019,0.75,160,2217
+Red wine,Switzerland,Graubunden,Obrecht,Trocla nera,2023,0.75,105,2207
+Red wine,Switzerland,Graubunden,Obrecht,Monolith,2022,0.75,160,2220
+Red wine,Switzerland,Graubunden,Schloss Salenegg,Blauburgunder Schloss Salenegg,2021,0.75,90,2202
+Red wine,Switzerland,Graubunden,Schloss Salenegg,Blauburgunder Schloss Salenegg - MAGNUM,2020,1.5,195,7205
+Red wine,Switzerland,Graubunden,Sprecher Von Bernegg,"""Vom Lindenwingert"" - Pinot Noir",2019,0.75,120,2249
+Red wine,Switzerland,Graubunden,Sprecher Von Bernegg,"""Vom Pfaffen/Calander"" - Pinot Noir Graubünden",2020,0.75,155,2233
+Red wine,Switzerland,Graubunden,Thomas Studach,Pinot Noir - HALF bt.,2021,0.375,155,8892
+Red wine,Switzerland,Graubunden,Thomas Studach,Pinot Noir,2023,0.75,250,2219
+Red wine,Switzerland,Graubunden,Thomas Studach,Pinot Noir,2019,0.75,250,2219
+Red wine,Switzerland,Graubunden,Thomas Studach,Pinot Noir - MAGNUM,2018,1.5,500,7206
+Red wine,Switzerland,Graubunden,Thürer Weine,Pinot Noir Selection,2024,0.75,120,2368
+Red wine,Switzerland,Graubunden,Thürer Weine,Le Grand Pinot Noir Barrique,2023,0.75,220,2369
+Red wine,Switzerland,Graubunden,Vinigma,Aspermont,2022,0.75,100,2370
+Red wine,Switzerland,Graubunden,Wegelin,"""Bothmarhalde"" Blauburgunder",2022,0.75,145,8902
+Red wine,Switzerland,Graubunden,Wegelin,"""Weisstorkel"" Blauburgunder",2020,0.75,145,8901
+Red wine,Switzerland,Graubunden,Wegelin,"""Scadena"" Blauburgunder",2021,0.75,200,8903
+Red wine,Switzerland,Graubunden,Weingut Daniel & Monika Marugg,"""Bovel"" - Pinot Noir",2022,0.75,120,2265
+Red wine,Switzerland,Graubunden,Weingut Davaz,“Uris” - Pinot Noir,2021,0.75,115,2227
+Red wine,Switzerland,Ticino,Castello Luigi,Castello Luigi Rosso del Ticino - Merlot,2012,0.75,350,2264
+Red wine,Switzerland,Ticino,Catina Settemaggio,“Gamedio” - Galotta,2020,0.75,95,2263
+Red wine,Switzerland,Ticino,Guido Brivio,"""Riflessi d'Epoca"" - Merlot - HALF bt.",2022,0.375,80,5201
+Red wine,Switzerland,Ticino,Guido Brivio,"""Riflessi d'Epoca"" - Merlot",2022,0.75,155,2215
+Red wine,Switzerland,Ticino,Quattromani,Merlot Cuvée,2022,0.75,200,8905
+Red wine,Switzerland,Ticino,Quattromani,Merlot Cuvée - MAGNUM,2019,1.5,335,8906
+Red wine,Switzerland,Ticino,Tenuta Agricola Luigina,“Rosso del Principe” - Merlot,2018,0.75,140,2226
+Red wine,Switzerland,Ticino,Tenuta Luigina,Gemma dell'Est  - Merlot,2019,0.75,225,8904
+Red wine,Switzerland,Ticino,Terreni alla Maggia,Melodia,2019,0.75,115,2266
+Red wine,Switzerland,Neuchatel,Domaine Saint-Sébaste,Clos de la Perrière,2019,0.75,160,2238
+Red wine,Switzerland,Neuchatel,Domaine de la Rochette - Jacques Tatasciore,Les Margiles,2018,0.75,310,2223
+Red wine,Switzerland,Neuchatel,Domaine des Landions,Les Cailloutis,2022,0.75,125,8912
+Red wine,Switzerland,Neuchatel,Domaine des Landions,Les Landions Cortaillod,2023,0.75,175,8913
+Red wine,Switzerland,Neuchatel,Domaine des Landions,Clos du Château,2023,0.75,230,8914
+Red wine,Switzerland,Neuchatel,Louis Bovard,Dézaley Grand Cru - Syrah/Merlot,2018,0.75,130,2210
+Red wine,Switzerland,Valais,Histoire D’Enfer,“L’Enfer du Calcaire” - Cornalin,2016,0.75,200,2243
+Red wine,Switzerland,Valais,Histoire D’Enfer,“L’Enfer du Calcaire” - Cornalin,2020,0.75,220,8908
+Red wine,Switzerland,Valais,Histoire D’Enfer,Syrah - MAGNUM,2010,1.5,320,7204
+Red wine,Switzerland,Valais,Jean-René Germanier,“Réserve” - Humagne Rouge,2015,0.75,125,2208
+Red wine,Switzerland,Valais,Jean-René Germanier,"""Cayas"" - Syrah du Valais Reserve",2016,0.75,170,2214
+Red wine,Switzerland,Valais,La Cave Ardévaz - Famille Boven,Syrah,2023,0.75,85,8907
+Red wine,Switzerland,Valais,Marie-Thérèse Chappaz,Dôle de la Liaudisaz,2024,0.75,115,8909
+Red wine,Switzerland,Valais,Marie-Thérèse Chappaz,Dôle de la Liaudisaz,2018,0.75,120,2209
+Red wine,Switzerland,Valais,Marie-Thérèse Chappaz,"Grain Pinot - ""les dahrres"" vieilles vignes",2023,0.75,150,8910
+Red wine,Switzerland,Valais,Marie-Thérèse Chappaz,Grain Syrah,2023,0.75,260,8911
+Red wine,Germany,Pfalz,M. Schneider,“Rough Cut” - Red Cuvée by Raue & Raue & Macionga,2014,0.75,120,2828
+Red wine,Austria,Burgenland,René Pöckl,Rêve de Jeunesse 22,2001,0.75,215,2830
+Red wine,France,Loire,Domaine Vacheron,"Sancerre Rouge ""Belle Dame""",2019,0.75,130,2423
+Red wine,France,Burgundy,Domaine du Clos de Tart,"""Clos de Tart"" Grand Cru Monopole",2021,0.75,1725,8919
+Red wine,France,Burgundy,Domaine du Clos de Tart,"""Clos de Tart"" Grand Cru Monopole - MAGNUM",2021,1.5,3225,8920
+Red wine,France,Burgundy,Arnaud Baillot,Pommard,2022,0.75,160,8939
+Red wine,France,Burgundy,Arnaud Baillot,Gevrey-Chambertin Vieilles Vignes,2023,0.75,190,8940
+Red wine,France,Burgundy,Arnaud Baillot,Vosne-Romanée,2023,0.75,235,8938
+Red wine,France,Burgundy,Arnaud Baillot,"Volnay 1er Cru ""Les Mitans""",2022,0.75,255,8941
+Red wine,France,Burgundy,Chanson Père & Fils,Pernand-Vergelesses 1er Cru “Les Vergelesses”,2019,0.75,135,2473
+Red wine,France,Burgundy,Chanson Père & Fils,Beaune 1er Cru “Clos des Fèves” Monopole,2017,0.75,280,2456
+Red wine,France,Burgundy,Clos du Moulin aux Moines,"Bourgogne ""Clos de la Perrière"" Monopole",2022,0.75,105,2445
+Red wine,France,Burgundy,Dom. de la Pousse d'Or,Chambolle-Musigny - HALF bt.,2019,0.375,135,5408
+Red wine,France,Burgundy,Domaine Armand Rousseau,"Gevrey-Chambertin ""Clos du Chateau"" Monopole",2020,0.75,1750,2465
+Red wine,France,Burgundy,Domaine Armand Rousseau,"Gevrey-Chambertin 1er Cru ""Lavaux St Jacques""",2019,0.75,2450,2485
+Red wine,France,Burgundy,Domaine Comte Georges de Vogüé,Chambolle-Musigny 1er Cru,2022,0.75,990,8926
+Red wine,France,Burgundy,Domaine Comte Georges de Vogüé,"Musigny ""Cuvee Vieilles Vignes"" Grand Cru",2017,0.75,1880,8928
+Red wine,France,Burgundy,Domaine Comte Georges de Vogüé,"Musigny ""Cuvee Vieilles Vignes"" Grand Cru *",2020,0.75,2000,2430
+Red wine,France,Burgundy,Domaine Comte Georges de Vogüé,Musigny Grand Cru,2022,0.75,2120,8929
+Red wine,France,Burgundy,Domaine Confuron-Cotétidot,Vosne-Romanée,2021,0.75,205,8930
+Red wine,France,Burgundy,Domaine Confuron-Cotétidot,Vosne-Romanée,2020,0.75,250,2458
+Red wine,France,Burgundy,Domaine Confuron-Cotétidot,Clos de Vougeot Grand Cru,2021,0.75,645,8931
+Red wine,France,Burgundy,Domaine Cornu,"Corton Grand Cru ""Le Rognet et Corton""",2021,0.75,290,8970
+Red wine,France,Burgundy,Domaine Jean Tardy & Fils,"Nuits-Saint-Georges ""Au Bas de Combe"" Vieilles Vignes",2023,0.75,290,8932
+Red wine,France,Burgundy,Domaine Rossignol-Trapet,Gevrey-Chambertin Vieilles Vignes,2022,0.75,190,2518
+Red wine,France,Burgundy,Domaine Trapet Père Et Fils,"Gevrey-Chambertin ""Ostrea""",2017,0.75,290,2470
+Red wine,France,Burgundy,Domaine Trapet Père Et Fils,"Gevrey-Chambertin ""Ostrea""",2015,0.75,335,8916
+Red wine,France,Burgundy,Domaine de Courcel,Pommard 1er Cru “Grand Clos des Épenots”,2016,0.75,380,2444
+Red wine,France,Burgundy,Domaine de la Pousse d'Or,Chambolle-Musigny,2022,0.75,260,8921
+Red wine,France,Burgundy,Domaine de la Pousse d'Or,"Volnay 1er Cru ""Les Caillerets""",2022,0.75,270,8922
+Red wine,France,Burgundy,Domaine de la Pousse d'Or,Chambolle-Musigny,2020,0.75,290,2410
+Red wine,France,Burgundy,Domaine de la Pousse d'Or,"Volnay 1er ""Clos des 60 Ouvrées"" Monopole",2022,0.75,310,8923
+Red wine,France,Burgundy,Domaine de la Pousse d'Or,"Volnay 1er ""Clos des 60 Ouvrées"" Monopole",2016,0.75,330,2491
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,"Vosne-Romanée 1er Cru ""Cuvée Duvault- Blochet""",2023,0.75,1800,9107
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Corton Grand Cru,2023,0.75,1900,9108
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,"Vosne-Romanée 1er Cru ""Cuvée Duvault- Blochet""",2022,0.75,1900,9077
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Échézeaux Grand Cru,2023,0.75,2000,9109
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Corton Grand Cru,2022,0.75,2000,9078
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Échézeaux Grand Cru,2022,0.75,2100,9079
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Grands Échézeaux Grand Cru,2023,0.75,2700,9110
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Grands Échézeaux Grand Cru,2022,0.75,2800,9080
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Richebourg Grand Cru,2023,0.75,3400,9111
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Romanée-Saint-Vivant Grand Cru,2022,0.75,3450,9082
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Richebourg Grand Cru,2022,0.75,3500,9081
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Romanée-Saint-Vivant Grand Cru,2020,0.75,3600,2453
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Richebourg Grand Cru,2019,0.75,3900,2524
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Romanée-Saint-Vivant Grand Cru,2019,0.75,3900,2522
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,La Tâche Grand Cru,2023,0.75,4800,9112
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,La Tâche Grand Cru,2022,0.75,4900,9083
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,La Tâche Grand Cru,2019,0.75,5200,2454
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Romanée-Saint-Vivant Grand Cru - MAGNUM,2022,1.5,6950,9085
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Romanée-Conti Grand Cru,2023,0.75,19000,9113
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Romanée-Conti Grand Cru,2022,0.75,19500,9084
+Red wine,France,Burgundy,Domaine de la Romanée-Conti,Romanée-Conti Grand Cru,2020,0.75,20000,2449
+Red wine,France,Burgundy,Domaine des Lambrays,"Morey-Saint-Denis 1er Cru ""Les Loups""",2021,0.75,460,8936
+Red wine,France,Burgundy,Domaine des Lambrays,Clos des Lambrays Grand Cru,2022,0.75,1350,2474
+Red wine,France,Burgundy,Domaine des Lambrays,Clos des Lambrays Grand Cru,2019,0.75,1445,8937
+Red wine,France,Burgundy,Domaine du Clos de Tart,"Morey-Saint-Denis 1er Cru ""La Forge de Tart""",2019,0.75,655,8918
+Red wine,France,Burgundy,Jean-Luc & Eric Burguet,"Gevrey-Chambertin - ""Mes Favorites"" Vieilles Vignes",2021,0.75,185,2479
+Red wine,France,Burgundy,Jean-Luc & Eric Burguet,"Gevrey-Chambertin - ""Mes Favorites"" Vieilles Vignes",2022,0.75,210,8915
+Red wine,France,Burgundy,Jean-Marie Fourrier,Bourgogne Rouge Vieille Vigne,2022,0.75,225,8968
+Red wine,France,Burgundy,Jean-Marie Fourrier,"Pommard 1er Cru ""Les Rugiens"" Vieille Vignes",2022,0.75,520,2467
+Red wine,France,Burgundy,Jean-Marie Fourrier,"Pommard 1er Cru ""Les Saussilles"" Vieille Vignes",2022,0.75,520,8969
+Red wine,France,Burgundy,Justin Girardin,Santenay 1er Cru “Clos Rousseau”,2021,0.75,100,2418
+Red wine,France,Burgundy,Laurent Ponsot,"Beaune 1er Cru ""Cuvée du Noyer""",2021,0.75,225,2480
+Red wine,France,Burgundy,Laurent Ponsot,"Beaune 1er Cru ""Cuvée du Noyer""",2020,0.75,230,8964
+Red wine,France,Burgundy,Laurent Ponsot,"Chambolle-Musigny ""Cuvée de la Violette""",2022,0.75,290,8965
+Red wine,France,Burgundy,Laurent Ponsot,"Chambolle-Musigny 1er Cru Les Charmes ""Cuvée Du Tilleul""",2020,0.75,475,8966
+Red wine,France,Burgundy,Laurent Ponsot,"Griotte-Chambertin Grand Cru ""Cuvee du Saule""",2021,0.75,1505,8967
+Red wine,France,Burgundy,Lucien Le Moine,Bourgogne Rouge,2022,0.75,430,8933
+Red wine,France,Burgundy,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2017,0.75,685,8943
+Red wine,France,Burgundy,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Cazetiers""",2017,0.75,750,8946
+Red wine,France,Burgundy,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2019,0.75,770,8944
+Red wine,France,Burgundy,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2020,0.75,990,8945
+Red wine,France,Burgundy,Olivier Bernstein,Charmes-Chambertin Grand Cru,2014,0.75,1015,8947
+Red wine,France,Burgundy,Olivier Bernstein,Charmes-Chambertin Grand Cru,2017,0.75,1240,8948
+Red wine,France,Burgundy,Olivier Bernstein,Clos de Vougeot Grand Cru,2017,0.75,1240,8950
+Red wine,France,Burgundy,Olivier Bernstein,Charmes-Chambertin Grand Cru,2020,0.75,1455,8949
+Red wine,France,Burgundy,Olivier Bernstein,Clos de Vougeot Grand Cru,2020,0.75,1455,8951
+Red wine,France,Burgundy,Olivier Bernstein,Clos de la Roche Grand Cru,2017,0.75,1455,8952
+Red wine,France,Burgundy,Olivier Bernstein,Bonnes-Mares Grand Cru,2017,0.75,1730,8954
+Red wine,France,Burgundy,Olivier Bernstein,Mazis-Chambertin Grand Cru,2017,0.75,1730,8956
+Red wine,France,Burgundy,Olivier Bernstein,Clos de la Roche Grand Cru,2020,0.75,1805,8953
+Red wine,France,Burgundy,Olivier Bernstein,Bonnes-Mares Grand Cru,2020,0.75,2305,8955
+Red wine,France,Burgundy,Olivier Bernstein,Mazis-Chambertin Grand Cru,2020,0.75,2305,8957
+Red wine,France,Burgundy,Olivier Bernstein,Chambertin Grand Cru,2016,0.75,2355,8961
+Red wine,France,Burgundy,Olivier Bernstein,Chambertin Clos de Bèze Grand Cru,2017,0.75,2605,8958
+Red wine,France,Burgundy,Olivier Bernstein,Chambertin Grand Cru,2017,0.75,2605,8962
+Red wine,France,Burgundy,Olivier Bernstein,Chambertin Clos de Bèze Grand Cru,2019,0.75,2775,8959
+Red wine,France,Burgundy,Olivier Bernstein,Chambertin Clos de Bèze Grand Cru,2020,0.75,3020,8960
+Red wine,France,Burgundy,Olivier Bernstein,Chambertin Grand Cru,2020,0.75,3020,8963
+Red wine,France,Burgundy,Philippe Pacalet,Gevrey-Chambertin,2019,0.75,255,8924
+Red wine,France,Burgundy,Philippe Pacalet,Chambolle-Musigny 1er Cru,2018,0.75,340,2441
+Red wine,France,Burgundy,Philippe Pacalet,Chambolle-Musigny 1er Cru,2019,0.75,440,8925
+Red wine,France,Burgundy,Rene Vincent Dauvissat,Irancy,2022,0.75,155,8622
+Red wine,France,Beaujolais,Lucien Le Moine,Juliénas,2021,0.75,195,8973
+Red wine,France,Bordeaux,Château La Conseillante,Château La Conseillante - Pomerol,2010,0.75,710,2560
+Red wine,France,Bordeaux,Château Montrose,Château Montrose - 2ème Grand Cru Classé Saint-Estèphe,2015,0.75,445,2566
+Red wine,France,Bordeaux,Château Montrose,Château Montrose - 2ème Grand Cru Classé Saint-Estèphe,2018,0.75,530,2568
+Red wine,France,Bordeaux,Chateau Lafleur,Château Grand Village Rouge,2023,0.75,85,8974
+Red wine,France,Bordeaux,Château Angelus,"Château Angelus - Premier Grand Cru Classé ""A"" Saint-Émilion",2015,0.75,1250,2497
+Red wine,France,Bordeaux,Château Batailley,Château Batailley - 5ème Cru Classé Pauillac,2018,0.75,270,2417
+Red wine,France,Bordeaux,Château Beychevelle,Château Beychevelle - 4ème Cru Classé - Saint-Julien,2022,0.75,295,2567
+Red wine,France,Bordeaux,Château Branaire-Ducru,Château Branaire-Ducru – 4e grand cru classé,2009,0.75,350,2536
+Red wine,France,Bordeaux,Château Brane-Cantenac,Baron de Brane - Margaux,2020,0.75,130,2508
+Red wine,France,Bordeaux,Château Calon Ségur,Le Marquis de Calon Ségur - Saint-Estèphe,2018,0.75,150,2401
+Red wine,France,Bordeaux,Château Calon Ségur,Château Calon Ségur - 3ᵉ Grand Cru Classé Saint-Estèphe,2017,0.75,450,2516
+Red wine,France,Bordeaux,Château Cantenac Brown,BriO de Cantenac Brown,2019,0.75,140,2405
+Red wine,France,Bordeaux,Château Cheval Blanc,Château Cheval Blanc - Premier Grand Cru Classé A - Saint-Émilion *,2018,0.75,2350,2446
+Red wine,France,Bordeaux,Château Cos d'Estournel,Château Cos d'Estournel -2ème Cru Classé - Saint-Estèphe,2012,0.75,1200,2425
+Red wine,France,Bordeaux,Château Ducru-Beaucaillou,Château Ducru-Beaucaillou - 2e Cru Classe St-Julien,2018,0.75,630,2439
+Red wine,France,Bordeaux,Château Giscours,Château Giscours - 3ème Cru Classé Margaux - HALF bt.,2018,0.375,170,5412
+Red wine,France,Bordeaux,Château Giscours,Château Giscours - 3ème Cru Classé Margaux,2020,0.75,300,2478
+Red wine,France,Bordeaux,Château Haut-Bailly,Château Haut-Bailly - Pessac-Léognan,2018,0.75,365,2539
+Red wine,France,Bordeaux,Château Haut-Brion,Château Haut-Brion - Premier Cru Classé Pessac-Léognan,2016,0.75,2350,2437
+Red wine,France,Bordeaux,Château Haut-Brion,Château Haut-Brion - Premier Cru Classé Pessac-Léognan,2009,0.75,2950,2432
+Red wine,France,Bordeaux,Château Haut-Marbuzet,Château Haut-Marbuzet - St. Estèphe,2016,0.75,220,2537
+Red wine,France,Bordeaux,Château La Fleur de Gay,Château La Fleur de Gay - Pomerol,2016,0.75,420,2483
+Red wine,France,Bordeaux,Château La Mission Haut-Brion,Château La Mission Haut-Brion - 1er Cru Classé Pessac-Léognan,2021,0.75,480,8656
+Red wine,France,Bordeaux,Château Lafite Rothschild,Château Lafite Rothschild - Premier Cru Classé - Pauillac,1998,0.75,1900,2463
+Red wine,France,Bordeaux,Château Lafite Rothschild,Château Lafite Rothschild - Premier Cru Classé - Pauillac,2003,0.75,2000,2529
+Red wine,France,Bordeaux,Château Lafleur,"Château Lafleur ""Les Perrières""",2020,0.75,275,8975
+Red wine,France,Bordeaux,Château Lafleur,Château Lafleur - Pomerol *,2004,0.75,1200,2421
+Red wine,France,Bordeaux,Château Lafleur,Château Lafleur - Pomerol,2015,0.75,3275,8976
+Red wine,France,Bordeaux,Château Langoa Barton,Château Langoa Barton - Saint Julien Grand Cru Classé,2014,0.75,170,2510
+Red wine,France,Bordeaux,Château Latour,Château Latour - Premier Cru Classé  Pauillac,2008,0.75,1600,2451
+Red wine,France,Bordeaux,Château Le Pin,Château Le Pin,2006,0.75,5300,2527
+Red wine,France,Bordeaux,Château Lespault-Martillac,Château Lespault-Martillac Rouge,2019,0.75,100,2482
+Red wine,France,Bordeaux,Château Lynch Bages,Echo de Lynch-Bages - Pauillac,2017,0.75,190,2499
+Red wine,France,Bordeaux,Château Lynch Bages,Château Lynch Bages - 5ème Cru Classé - Pauillac,2015,0.75,415,2555
+Red wine,France,Bordeaux,Château Lynch Bages,Château Lynch Bages - 5ème Cru Classé - Pauillac - MAGNUM,2016,1.5,855,6865
+Red wine,France,Bordeaux,Château Léoville-Las-Cases,Château Léoville-Las-Cases – 2e grand cru classé - Saint-Julien,1996,0.75,840,2488
+Red wine,France,Bordeaux,Château Léoville-Poyferré,"Château Léoville-Poyferré, 2ème Cru Classé - Saint-Julien",2017,0.75,360,2493
+Red wine,France,Bordeaux,Château Malartic Lagravière,Château Malartic Lagravière Rouge - Pessac-Léognan,2019,0.75,150,2545
+Red wine,France,Bordeaux,Château Margaux,Château Margaux - Premier Cru Classé Margaux,2008,0.75,1650,2507
+Red wine,France,Bordeaux,Château Moncets,Château Moncets - Lalande de Pomerol,2016,0.75,80,2455
+Red wine,France,Bordeaux,Château Mouton Rothschild,Château Mouton Rothschild - Premier Cru Classé Pauillac,2009,0.75,1750,2486
+Red wine,France,Bordeaux,Château Palmer,Château Palmer - 3ème Grand Cru Classé Margaux,2009,0.75,1145,2549
+Red wine,France,Bordeaux,Château Pape Clément,Château Pape Clément - Grand Cru Classé Pessac-Leognan,2017,0.75,390,2450
+Red wine,France,Bordeaux,Château Paradis Casseuil,Château Paradis Casseuil,2022,0.75,80,2540
+Red wine,France,Bordeaux,Château Pavie,Château Pavie - Premier Grand Cru Classé A - Saint-Émilion 2018,2016,0.75,755,2564
+Red wine,France,Bordeaux,Château Phélan Ségur,Frank Phelan - Saint-Estephe,2020,0.75,95,2407
+Red wine,France,Bordeaux,Château Phélan Ségur,Château Phélan Ségur - Saint-Estèphe - MAGNUM,2018,1.5,400,7402
+Red wine,France,Bordeaux,Château Pichon Long. Comtesse de Lalande,Pichon Comtesse Reserve - Pauillac,2022,0.75,220,2427
+Red wine,France,Bordeaux,Château Pichon-Longueville Baron,Château Pichon-Longueville Baron - 2eme Cru Classe Pauillac,2020,0.75,510,2440
+Red wine,France,Bordeaux,Château Pichon-Longueville Baron,Château Pichon-Longueville Baron - 2ème Cru Classé Pauillac,2015,1.5,1150,7408
+Red wine,France,Bordeaux,Château Pontet Canet,Château Pontet Canet - 5ème Grand Cru Classé - Pauillac,2020,0.75,400,2501
+Red wine,France,Bordeaux,Château Prieuré-Lichine,Château Prieuré-Lichine - 4eme Cru Classe Margaux,2016,0.75,190,2512
+Red wine,France,Bordeaux,Château Smith Haut Lafitte,Château Smith Haut Lafitte Rouge - Pessac-Leognan - MAGNUM,2018,1.5,610,6861
+Red wine,France,Bordeaux,Château Sociando-Mallet,Château Sociando-Mallet - Haut-Médoc,2017,0.75,165,2494
+Red wine,France,Bordeaux,Château de Beauregard,Château de Beauregard - Pomerol,2018,0.75,210,2535
+Red wine,France,Bordeaux,Château de Chambrun,Château de Chambrun - Lalande de Pomerol AOC,2020,0.75,135,8978
+Red wine,France,Bordeaux,Château de Chambrun,"Château de Chambrun ""Le Bourg"" Lalande de Pomerol AOC",2019,0.75,290,8979
+Red wine,France,Bordeaux,Château de Valandraud,Château de Valandraud - Saint-Emilion Grand Cru,2018,0.75,550,2428
+Red wine,France,Bordeaux,Château de la Croix,Château de la Croix - Cru Bourgeois Medoc,2017,0.75,85,2442
+Red wine,France,Bordeaux,Château l'Eden,Château l'Eden - Médoc,2016,0.75,70,2452
+Red wine,France,Bordeaux,Château le Puy,"Château le Puy ""Emilien""",2019,0.75,125,2115
+Red wine,France,Bordeaux,Domaine de Chevalier,Domaine de Chevalier - Grand Cru Classé -  Pessac-Léognan,2005,0.75,330,2546
+Red wine,France,Bordeaux,Pétrus,Pétrus - Pomerol,2015,0.75,12375,2561
+Red wine,France,Rhône,Château de Beaucastel,Châteauneuf du Pape AOC,2020,0.75,270,2514
+Red wine,France,Rhône,Domaine André Mathieu,Châteauneuf du Pape AOC - HALF bt.,2019,0.375,75,5411
+Red wine,France,Rhône,Domaine Jean-Louis Chave,Saint-Joseph,2019,0.75,200,2523
+Red wine,France,Rhône,Domaine Jean-Louis Chave,L'Hermitage *,2019,0.75,725,8987
+Red wine,France,Rhône,Domaine Les Pallières – Famille Brunier & K. Lynch,Terrasse du Diable - Gigondas,2021,0.75,125,8988
+Red wine,France,Rhône,Domaine Pichon,"""Allégorie"" - Cornas AOC",2017,0.75,140,2403
+Red wine,France,Rhône,Domaine Pichon,"Côte-Rôtie - ""La Comtesse en Côte Blonde""",2017,0.75,280,2404
+Red wine,France,Rhône,Domaine René Rostaing,"Côte-Rôtie ""Ampodium""",2022,0.75,220,8980
+Red wine,France,Rhône,Domaine René Rostaing,"Côte-Rôtie ""La Landonne""",2022,0.75,425,8981
+Red wine,France,Rhône,Domaine René Rostaing,"Côte-Rôtie ""Cote Blonde""",2022,0.75,490,8982
+Red wine,France,Rhône,Domaine René Rostaing,Côte Rôtie - Côte Brune,2022,0.75,695,8983
+Red wine,France,Rhône,Domaine Vieux Télégraphe,"""Télégramme"" Châteauneuf-du-pape",2022,0.75,145,2443
+Red wine,France,Rhône,Domaine Vieux Télégraphe,"""La Crau"" Châteauneuf-du-pape",2021,0.75,235,8990
+Red wine,France,Rhône,Domaine Vieux Télégraphe,"""La Crau"" Châteauneuf-du-pape *",2018,0.75,260,2460
+Red wine,France,Rhône,Domaine Vieux Télégraphe,"""La Crau"" Châteauneuf-du-pape *",2009,0.75,335,2571
+Red wine,France,Rhône,J.L. Chave Sélection,"Côtes-du-Rhône ""Mon Coeur""",2023,0.75,55,2475
+Red wine,France,Rhône,J.L. Chave Sélection,"""Offerus"" Saint-Joseph",2022,0.75,95,8985
+Red wine,France,Rhône,J.L. Chave Sélection,"Hermitage ""Farconnet""",2021,0.75,190,8986
+Red wine,France,Rhône,Rotem & Mounir Saouma,"""Omnia"" Châteauneuf-du-Pape",2019,0.75,245,8991
+Red wine,France,Rhône,Rotem Mounir Saouma,"""Arioso"" Châteauneuf-du-Pape",2018,0.75,370,8992
+Red wine,France,Languedoc,La Pèira,"""Les Obriers"" - Terrasses du Larzac AC",2022,0.75,90,8996
+Red wine,France,Languedoc,La Pèira,"""La Pèira"" - Terrasses du Larzac AC",2019,0.75,245,8997
+Red wine,France,Languedoc,Thierry Rodriguez,"""Impec!"" - Minervois AOC",2020,0.75,48,2525
+Red wine,France,Provence,Château de Pibarnon,Château de Pibarnon - Bandol Rouge AC,2019,0.75,165,8993
+Red wine,France,Sud Ouest,Château d'Aydie,Château d'Aydie - Famille Laplace Madiran AC,2017,0.75,110,8995
+Red wine,France,Sud Ouest,Clos Triguedina,Clos Triguedina - Cahors AC,2019,0.75,100,8994
+Red wine,Italy,Piedmont,Azelia di Luigi Scavino,Barolo DOCG,2021,0.75,155,8699
+Red wine,Italy,Piedmont,Braida,"Barbera d'Asti DOCG - ""Bricco dell'Uccellone""",2021,0.75,200,8706
+Red wine,Italy,Piedmont,Braida,"Barbera d'Asti DOCG - ""Bricco dell'Uccellone""",2018,0.75,210,2623
+Red wine,Italy,Piedmont,Bruno Giacosa,Barbaresco Rabajà DOCG,2020,0.75,675,8701
+Red wine,Italy,Piedmont,Domenico Clerico,Barolo del Comune di Monforte d'Alba DOCG,2021,0.75,160,8694
+Red wine,Italy,Piedmont,Domenico Clerico,Barolo Ginestra Ciabot Mentin DOCG,2019,0.75,300,8695
+Red wine,Italy,Piedmont,Elvio Cogno,Barbaresco Bordini,2021,0.75,155,9005
+Red wine,Italy,Piedmont,Elvio Cogno,"Barolo ""Ravera"" DOCG",2017,0.75,220,2648
+Red wine,Italy,Piedmont,Elvio Cogno,"Barolo ""Ravera"" DOCG",2018,0.75,235,9006
+Red wine,Italy,Piedmont,F.lli Giacosa,Barbaresco Riserva Basarin “Vigna Gianmatè” DOCG,2019,0.75,140,8700
+Red wine,Italy,Piedmont,Gaja,Sito Moresco - Langhe DOP,2022,0.75,180,2625
+Red wine,Italy,Piedmont,Gaja,"""Sito Moresco"" - Langhe DOP",2019,1.5,400,7613
+Red wine,Italy,Piedmont,Gaja,Barbaresco - DOP,2019,0.75,550,2615
+Red wine,Italy,Piedmont,Giacomo Conterno,"Barbera d'Alba ""Vigna Francia"" Serralunga DOC",2022,0.75,255,8682
+Red wine,Italy,Piedmont,Giacomo Conterno,Barolo Francia Serralunga DOCG,2020,0.75,710,8678
+Red wine,Italy,Piedmont,Giacomo Conterno,Barolo Monfortino Riserva DOCG,2019,0.75,2185,8679
+Red wine,Italy,Piedmont,Gianmarco Ghisolfi,"""La Lisi"" - Barbera D'Alba Superiore DOC",2021,0.75,95,2660
+Red wine,Italy,Piedmont,Giuseppe Cortese,"Barbaresco DOCG ""Rabaja""",2017,0.75,215,2609
+Red wine,Italy,Piedmont,Giuseppe Mascarello,Barbera d'Alba Santo Stefano DOCG,2021,0.75,190,8680
+Red wine,Italy,Piedmont,Giuseppe Mascarello,Barolo Monprivato DOCG,2018,0.75,600,8683
+Red wine,Italy,Piedmont,Marcarini,Barolo Comune di La Morra DOCG,2020,0.75,140,9003
+Red wine,Italy,Piedmont,Marcarini,Barolo Brunate DOCG,2019,0.75,185,9004
+Red wine,Italy,Piedmont,Oddero,Nizza DOCG,2020,0.75,95,2682
+Red wine,Italy,Piedmont,Oddero,Nizza DOCG - Barbera d'Asti Superiore,2022,0.75,110,8998
+Red wine,Italy,Piedmont,Oddero,Barolo DOCG,2019,0.75,160,9000
+Red wine,Italy,Piedmont,Oddero,Barbaresco DOCG Gallina,2020,0.75,175,8999
+Red wine,Italy,Piedmont,Oddero,Barolo Riserva DOCG Bussia Vigna Mondoca,2017,0.75,340,9001
+Red wine,Italy,Piedmont,Oddero,Barolo DOCG Vignarionda Riserva,2016,0.75,645,9002
+Red wine,Italy,Piedmont,Paitin di Pasquero-Elia,Barbaresco DOCG “Sorì Paitin Vecchie Vigne Riserva,2015,0.75,300,2668
+Red wine,Italy,Piedmont,Poderi Aldo Conterno,Quartetto - Langhe Rosso DOC,2022,0.75,140,8702
+Red wine,Italy,Piedmont,Poderi Aldo Conterno,Barbera d'Alba Conca Tre Pile DOC,2021,0.75,140,8704
+Red wine,Italy,Piedmont,Poderi Aldo Conterno,"""Il Favot"" Langhe Nebbiolo DOC",2022,0.75,165,8705
+Red wine,Italy,Piedmont,Poderi Aldo Conterno,Barolo Bussia DOCG,2020,0.75,275,8684
+Red wine,Italy,Piedmont,Produttori del Barbaresco,Barbaresco DOCG,2021,0.75,120,2610
+Red wine,Italy,Piedmont,Rocche Costamagna,"Barolo DOCG ""Rocche Dell Annunziata""",2017,0.75,175,2647
+Red wine,Italy,Piedmont,Vietti,"Barbera d'Alba DOC ""Trevìe""",2023,0.75,80,2691
+Red wine,Italy,Piedmont,Vietti,Dolcetto d'Alba Trevìe DOC,2023,0.75,90,8703
+Red wine,Italy,Piedmont,Vietti,Barbera d'Alba DOC - Vigna Scarrone,2022,0.75,130,8696
+Red wine,Italy,Piedmont,Vietti,"Barolo DOCG ""Castiglione""",2020,0.75,185,8697
+Red wine,Italy,Lombardy,Mamete Prevostini,"""Strata"" Sassella Valtellinaa Superiore DOCG",2022,0.75,90,2606
+Red wine,Italy,Lombardy,Mamete Prevostini,"""Strata"" Sforzato Valtellina Superiore DOCG",2021,0.75,105,2614
+Red wine,Italy,Veneto,Bertani,Amarone della Valpolicella Classico DOC,2008,0.75,485,1744
+Red wine,Italy,Veneto,Dal Forno Romano,Valpolicella Superiore - “Vigneto di Monte Lodoletta”,2013,0.75,240,2698
+Red wine,Italy,Veneto,Dal Forno Romano,Amarone della Valpolicella DOCG - Monte Lodoletta,2017,0.75,700,8710
+Red wine,Italy,Veneto,Quintarelli Giuseppe,Amarone della Valpolicella DOCG Classico *,2017,0.75,720,8707
+Red wine,Italy,Veneto,Quintarelli Giuseppe,Amarone della Valpolicella DOCG Classico Riserva *,2011,0.75,1410,8709
+Red wine,Italy,Veneto,Tommasi,Valpolicella Ripasso Classico Superiore DOC,2022,0.75,85,9009
+Red wine,Italy,Veneto,Tommasi,Amarone della Valpolicella Classico DOCG,2021,0.75,145,9010
+Red wine,Italy,Veneto,Tommasi,Valpolicella Ripasso - MAGNUM,2020,0.75,160,7606
+Red wine,Italy,Veneto,Zymè,"""Kairos"" - Veneto Rosso IGP - HALF bt.",2017,0.375,100,5601
+Red wine,Italy,Veneto,Zymè,"""Kairos"" - Veneto Rosso IGP",2018,0.75,180,2690
+Red wine,Italy,Trentino Alto Adige,Cantina Terlan,"Alto Adige DOC Riserva - Lagrein ""Gries""",2022,0.75,105,9222
+Red wine,Italy,Trentino Alto Adige,Weingut & Klosterkellerei Muri Gries,Lagrein Riserva - Südtirol DOC,2021,0.75,310,9007
+Red wine,Italy,Tuscany,Avignonesi,Grandi Annate - Toscana IGT,2016,0.75,260,2673
+Red wine,Italy,Tuscany,Bibi Graetz,Testamatta - Toscana IGT,2021,0.75,220,9114
+Red wine,Italy,Tuscany,Caccia Piano,Ruit Hora - Bolgheri DOC,2021,0.75,100,9015
+Red wine,Italy,Tuscany,Caccia Piano,Caccia Piano - Bolgheri Superiore DOC,2021,0.75,235,9016
+Red wine,Italy,Tuscany,Campo alla Sughera,"""Adéo"" - Bolgheri DOC",2023,0.75,140,2622
+Red wine,Italy,Tuscany,Campo alla Sughera,"""Arnione"" - Bolgheri Superiore DOC",2021,0.75,225,9096
+Red wine,Italy,Tuscany,Campo alla Sughera,Campo alla Sughera - Toscana IGT,2019,0.75,330,9097
+Red wine,Italy,Tuscany,Castellare di Castellina,"""Il Poggiale"" - Chianti Classico Riserva DOCG",2022,0.75,140,8716
+Red wine,Italy,Tuscany,Castellare di Castellina,I Sodi di San Niccolo - Toscana IGT,2017,0.75,190,2637
+Red wine,Italy,Tuscany,Castello del Terriccio,Lupicaia -Toscana IGT,2014,0.75,290,9103
+Red wine,Italy,Tuscany,Contucci,Mulinvecchio - Vino Nobile di Montepulciano DOCG,2020,0.75,100,9022
+Red wine,Italy,Tuscany,Contucci,Vino Nobile di Montepulciano - Riserva DOCG,2018,0.75,155,9023
+Red wine,Italy,Tuscany,Fattoria Le Pupille,"""Saffredi"" - Toscana IGT",2018,0.75,260,2654
+Red wine,Italy,Tuscany,Fontodi,Fontodi - Chianti Classico DOCG,2021,0.75,95,2657
+Red wine,Italy,Tuscany,Fontodi,"""Flaccianello della Pieve"" - Colli Toscana Centrale IGT",2020,0.75,320,2642
+Red wine,Italy,Tuscany,Fontodi,"""Flaccianello della Pieve"" - Colli Toscana Centrale IGT MAGNUM",2021,1.5,650,7618
+Red wine,Italy,Tuscany,Gagliole,"""Valletta"" - Colli della Toscana Centrale IGT",2020,0.75,80,2655
+Red wine,Italy,Tuscany,Gagliole,Gagliole - Colli della Toscana Centrale IGT,2019,1.5,300,7603
+Red wine,Italy,Tuscany,Gaja,Magari - Ca'Marcanda Bolgheri DOC - HALF bt.,2023,0.375,130,5603
+Red wine,Italy,Tuscany,Gaja,Promis - Toscana IGT,2022,0.75,140,2616
+Red wine,Italy,Tuscany,Isole e Olena,Cepparello IGT,2020,0.75,335,8721
+Red wine,Italy,Tuscany,Le Macchiole,Le Macchiole - Bolgheri Rosso DOC,2024,0.75,90,2601
+Red wine,Italy,Tuscany,Le Macchiole,"""Paleo"" - Toscana IGT",2021,0.75,270,2635
+Red wine,Italy,Tuscany,Le Macchiole,Messorio - Rosso Toscana IGT,2020,0.75,425,8717
+Red wine,Italy,Tuscany,Marchesi Antinori,Brunello di Montalcino DOCG - Pian Delle Vigne,2020,0.75,190,2724
+Red wine,Italy,Tuscany,Marchesi Antinori,Tignanello - Toscana IGT - HALF Bt.,2021,0.375,220,5607
+Red wine,Italy,Tuscany,Marchesi Antinori,Guado Al Tasso,2019,0.75,380,2712
+Red wine,Italy,Tuscany,Marchesi Antinori,Tignanello - Toscana IGT,2021,0.75,420,2640
+Red wine,Italy,Tuscany,Marchesi Antinori,Tignanello - Toscana IGT MAGNUM,2020,1.5,850,7605
+Red wine,Italy,Tuscany,Marchesi Antinori,Solaia,2019,0.75,1100,2624
+Red wine,Italy,Tuscany,Marchesi Antinori,Matarocchio - Tenuta Guado al Tasso,2021,0.75,1155,2714
+Red wine,Italy,Tuscany,Masseto,Masseto,2019,0.75,2800,2651
+Red wine,Italy,Tuscany,Masseto,Masseto,2020,0.75,2900,2659
+Red wine,Italy,Tuscany,Masseto,Masseto - Jéroboam,2005,3,9150,7614
+Red wine,Italy,Tuscany,Masseto,Masseto - Mathusalem,2005,6,21500,7617
+Red wine,Italy,Tuscany,Mastrojanni,Rosso di Montalcino DOC,2023,0.75,95,2699
+Red wine,Italy,Tuscany,Mastrojanni,Brunello di Montalcino DOCG,2019,0.75,175,2683
+Red wine,Italy,Tuscany,Montevertine,"""Pian del Ciampolo"" - Toscana IGT",2023,0.75,135,8731
+Red wine,Italy,Tuscany,Montevertine,Montevertine - Toscana IGT,2018,0.75,180,2664
+Red wine,Italy,Tuscany,Montevertine,"""Le Pergole Torte"" - Toscana IGT",2022,0.75,480,8785
+Red wine,Italy,Tuscany,Petra,Toscana Hebo - Toscana IGT,2022,0.75,70,2695
+Red wine,Italy,Tuscany,Petra,Quercegobbe - Merlot Toscana IGT,2023,0.75,100,8712
+Red wine,Italy,Tuscany,Petra,Toscana Hebo - Toscana IGT,2023,0.75,140,7607
+Red wine,Italy,Tuscany,Planeta,"Bolgheri DOC Stupore - ""Campo alle Comete""",2023,0.75,80,9221
+Red wine,Italy,Tuscany,Poggio Antico,Rosso di Montalcino DOC,2020,0.75,120,8733
+Red wine,Italy,Tuscany,Poggio Antico,Brunello di Montalcino Riserva DOCG,2016,0.75,370,8724
+Red wine,Italy,Tuscany,Ridolfi,Brunello di Montalcino DOCG,2017,0.75,120,9019
+Red wine,Italy,Tuscany,Ridolfi,"Brunello di Montalcino ""Mercatale"" Riserva DOCG",2017,0.75,210,9020
+Red wine,Italy,Tuscany,Ridolfi,"Brunello di Montalcino ""Donna Rebecca"" DOCG",2017,0.75,290,9021
+Red wine,Italy,Tuscany,Rocca Frassinello,Ornello Maremma Toscana DOC,2022,0.75,85,8730
+Red wine,Italy,Tuscany,San Giusto a Rentennano,Chianti Classico DOCG,2022,0.75,80,2641
+Red wine,Italy,Tuscany,San Giusto a Rentennano,"""Le Baròncole"" - Chianti Classico Riserva DOCG",2022,0.75,125,8718
+Red wine,Italy,Tuscany,San Giusto a Rentennano,Percarlo - Toscana IGT,2017,0.75,195,2688
+Red wine,Italy,Tuscany,Silvio Nardi,Brunello di Montalcino DOCG,2018,0.75,130,2656
+Red wine,Italy,Tuscany,Silvio Nardi,"""Manachiara"" Brunello di Montalcino DOCG",2016,0.75,280,9018
+Red wine,Italy,Tuscany,Tenuta Gagliole,"""Balisca"" - Colli della Toscana Centrale IGT",2021,0.75,150,2694
+Red wine,Italy,Tuscany,Tenuta Gagliole,Gagliole,2018,0.75,160,2633
+Red wine,Italy,Tuscany,Tenuta Gagliole,"""Gallule"" Gran Selezione - Chianti DOCG",2018,0.75,190,2627
+Red wine,Italy,Tuscany,Tenuta Gagliole,"""Pecchia"" Gran Selezione",2015,0.75,240,2634
+Red wine,Italy,Tuscany,Tenuta La Massa,La Massa - Toscana IGT,2021,0.75,95,9011
+Red wine,Italy,Tuscany,Tenuta La Massa,La Massa - Toscana IGT - MAGNUM,2021,1.5,190,9101
+Red wine,Italy,Tuscany,Tenuta La Massa,Giorgio Primo - Toscana IGT,2020,0.75,280,9012
+Red wine,Italy,Tuscany,Tenuta La Massa,Asiram,2019,0.75,830,9014
+Red wine,Italy,Tuscany,Tenuta San Guido,Guidalberto - Toscana IGT,2023,0.75,130,2613
+Red wine,Italy,Tuscany,Tenuta San Guido,Sassicaia - HALF bt.,2020,0.375,460,5602
+Red wine,Italy,Tuscany,Tenuta San Guido,Sassicaia,2019,0.75,850,2649
+Red wine,Italy,Tuscany,Tenuta San Guido,Sassicaia - MAGNUM,2019,0.75,1750,7615
+Red wine,Italy,Tuscany,Tenuta di Biserno,Biserno - Toscana IGT,2021,0.75,360,2638
+Red wine,Italy,Tuscany,Tenuta di Biserno,Lodovico - Toscana IGT,2018,0.75,1045,2720
+Red wine,Italy,Tuscany,Tenuta di Biserno,Lodovico - Toscana IGT,2016,0.75,1145,2719
+Red wine,Italy,Tuscany,Tenute dell'Ornellaia,Le Serre Nuove dell'Ornellaia - Bolgheri DOC,2023,0.75,195,2662
+Red wine,Italy,Tuscany,Tenute dell'Ornellaia,Ornellaia - Bolgheri Superiore DOC - HALF bt.,2021,0.375,310,5610
+Red wine,Italy,Tuscany,Tenute dell'Ornellaia,Le Serre Nuove dell'Ornellaia - Bolgheri DOC,2021,1.5,390,7612
+Red wine,Italy,Tuscany,Tenute dell'Ornellaia,Ornellaia,2020,0.75,750,2652
+Red wine,Italy,Tuscany,Tommasi,Poggio al Tufo - Rompicollo Toscana IGT,2021,0.75,60,9008
+Red wine,Italy,Tuscany,Tua Rita,"""Giusto di Notri"" - Toscana IGT",2021,0.75,210,8719
+Red wine,Italy,Tuscany,Tua Rita,"""Redigaffi"" -Toscana IGT",2021,0.75,530,8720
+Red wine,Italy,Umbria,Cantina Briziarelli,Montefalco Sagrantino DOCG,2016,0.75,145,8736
+Red wine,Italy,Abruzzo,Emidio Pepe,Montepulciano d'Abruzzo DOC - bio,2021,0.75,335,9028
+Red wine,Italy,Abruzzo,Emidio Pepe,Montepulciano d'Abruzzo DOC,2020,0.75,335,9027
+Red wine,Italy,Abruzzo,Emidio Pepe,Montepulciano d'Abruzzo DOC - bio,2010,0.75,520,9031
+Red wine,Italy,Abruzzo,Emidio Pepe,Montepulciano d'Abruzzo DOC - bio,2000,0.75,645,9029
+Red wine,Italy,Campania,Silvia Imparato,Montevetrano - Colli di Salerno IGT,2018,0.75,150,9025
+Red wine,Italy,Campania,Silvia Imparato,Montevetrano - Colli di Salerno IGT,2008,0.75,185,9026
+Red wine,Italy,Campania,Silvia Imparato,Montevetrano - Colli di Salerno IGT,2005,0.75,230,9024
+Red wine,Italy,Puglia,Varvaglione,Papale - Primitivo di Manduria DOP,2023,0.75,70,2628
+Red wine,Italy,Puglia,Varvaglione,1921 Riserva - Primitivo di Manduria DOP,2014,0.75,130,9033
+Red wine,Italy,Sicily,Alessandro di Camporeale,"""Kaid"" - Syrah Contrada Mandranova (DOC)",2018,0.75,110,2696
+Red wine,Italy,Sicily,Benanti,Nerello Cappuccio - Terre Siciliane IGT,2021,0.75,135,8741
+Red wine,Italy,Sicily,Benanti,Contrada Monte Serra - Etna Rosso DOC,2022,0.75,160,8743
+Red wine,Italy,Sicily,Benanti,Serra Della Contessa Riserva - Etna Rosso DOC,2017,0.75,355,8742
+Red wine,Italy,Sicily,Cusumano,Terre Siciliane -“Benuara” - MAGNUM,2020,1.5,110,7610
+Red wine,Italy,Sicily,Passopisciaro,Contrada G - Terre Siciliane IGT,2023,0.75,195,8740
+Red wine,Italy,Sicily,Planeta,"""Santa Cecilia” - Nero d’Avola Sicilia Noto DOC",2019,0.75,110,2676
+Red wine,Italy,Sardinia,Agripunica,Barrua -Isola dei Nuraghi IGT,2021,0.75,115,2663
+Red wine,Italy,Sardinia,Antichi Poderi di Jerzu,Josto Miglior - Cannonau di Sardegna DOC Riserva,2021,0.75,115,8737
+Red wine,Italy,Sardinia,Argiolas,Korem - Isola dei Nuraghi IGT,2022,0.75,130,8738
+Red wine,Italy,Sardinia,Cantina Santadi,“Rocca Rubia” - Carignano del Sulcis DOC	- MAGNUM,2018,1.5,150,7611
+Red wine,Spain,Catalonia,Mas Doix,Les Crestes - Priorat DOC,2023,0.75,90,9044
+Red wine,Spain,Catalonia,Mas Doix,Doix Costers de Vinyes Velles - Priorat DOC,2022,0.75,275,9045
+Red wine,Spain,Catalonia,Mas Doix,1902 Tossal D'en Bou Gran Vinya - Gran Vinya Classificada,2021,0.75,645,9099
+Red wine,Spain,Rioja,Abel Mendoza,Grano a Grano - Graciano,2016,0.75,190,2813
+Red wine,Spain,Rioja,Bodegas Roda S.A.,Sela - Rioja DOCa,2022,0.75,80,9036
+Red wine,Spain,Rioja,Bodegas Roda S.A.,Roda Reserva - Rioja DOCa,2022,0.75,115,9037
+Red wine,Spain,Rioja,Bodegas Roda S.A.,Cirsion - Rioja DOCa,2020,0.75,485,9039
+Red wine,Spain,Rioja,R. López de Heredia Viña Tondonia,Tondonia Tinto Reserva Rioja,2012,0.75,140,9040
+Red wine,Spain,Rioja,Remelluri,Reserva Rioja,2017,0.75,100,2810
+Red wine,Spain,Castilla y León,Bodegas Vatan,Tritòn - Toro DO,2022,0.75,75,9034
+Red wine,Spain,Castilla y León,Bodegas Vatan,Vatan - Toro DO,2021,0.75,135,9035
+Red wine,Spain,Castilla y León,Bodegas y Viñedos,"""Alion"" - Ribera del Duero DO",2018,0.75,285,2818
+Red wine,Spain,Castilla y León,Bodegas y Viñedos Pintia,"""Pintia"" - Toro DO",2016,1.5,400,7803
+Red wine,Spain,Castilla y León,Bodegas y Viñedos Vega Sicilia,Valbuena 5.° Ribera del Duero,2016,0.75,460,8745
+Red wine,Spain,Castilla y León,Bodegas y Viñedos Vega Sicilia,Unico - Ribera del Duero DO *,2011,0.75,980,8746
+Red wine,Spain,Castilla y León,Dominio de Pingus,"Ribera del Duero DO - ""Flor De Pingus""",2022,0.75,325,8748
+Red wine,Spain,Castilla y León,Dominio de Pingus,"Ribera del Duero DO - ""Pingus"" *",2017,0.75,1825,8749
+Red wine,Spain,Castilla y León,Raul Perez,"""Valtuille” Cepas Centenarias - Bierzo DO",2008,0.75,150,2812
+Red wine,Spain,Castilla y León,Tr3smano Lagar de Proventus,Tr3smano,2020,0.75,145,9042
+Red wine,Spain,Castilla y León,Tr3smano Lagar de Proventus,Tr3smano TM - Ribera del Duero,2019,0.75,355,9043
+Red wine,Spain,Castilla y León,Viñas del Jaro,Sembro - Ribera Del Duero DO,2023,0.75,65,2809
+Red wine,Spain,Castilla y León,Viñas del Jaro,"""Sembro"" - Ribera Del Duero DO",2022,1.5,130,7616
+Red wine,Spain,Ribera del Duero,Bodegas y Viñedos Vega Sicilia,"Unico “Reserva Especial” - Ribera del Duero DO (2008, 2009, 2010)",,0.75,1500,2807
+Red wine,Portugal,Douro,Casa Ferreirinha,Quinta Leda - Douro DOC,2021,0.75,155,9046
+Red wine,Portugal,Douro,Casa Ferreirinha,Barca Velha - Douro DOC,2015,0.75,1870,9047
+Red wine,Portugal,Douro,Niepoort,22 Batuta - Douro DOC,2022,0.75,225,8750
+Red wine,Portugal,Douro,Quinta de la Rosa,Quinta de la Rosa - Douro,2019,0.75,85,2824
+Red wine,Portugal,Douro,Quinta de la Rosa,Quinta de la Rosa Reserva - Douro,2018,0.75,160,2825
+Red wine,Lebanon,Bekaa Valley,Ixsir,El Ixsir,2015,0.75,160,2904
+Red wine,US,California,Bond,"""Vecina"" - Napa Valley",2017,0.75,1575,9064
+Red wine,US,California,Bond,"""Quella"" - Napa Valley",2020,0.75,1595,9065
+Red wine,US,California,Corison Winery,Sunbasket Vineyard - Cabernet Sauvignon - Napa Valley St. Helena,2019,0.75,565,9063
+Red wine,US,California,Eisele Vineyard,"""Altagracia"" - Cabernet Sauvignon Napa Valley",2019,0.75,380,9060
+Red wine,US,California,Eisele Vineyard,Cabernet Sauvignon - Napa Valley,2014,0.75,970,9061
+Red wine,US,California,Harlan Estate,The Mascot - Cabernet Sauvignon Napa Valley,2020,0.75,345,9055
+Red wine,US,California,Harlan Estate,Harlan Estate - Napa Valley,2019,0.75,2750,9056
+Red wine,US,California,Heitz Cellar,Cabernet Sauvignon - Napa Valley,2018,0.75,245,9057
+Red wine,US,California,Heitz Cellar,Trailside Vineyard - Cabernet Sauvignon Napa Valley,2018,0.75,445,9058
+Red wine,US,California,Heitz Cellar,Martha's Vineyard - Cabernet Sauvignon Napa Valley,2017,0.75,775,9059
+Red wine,US,California,Occidental - S. & C. Kistler,"Bodega Headlands Vineyard ""Cuvee Elizabeth"" - Sonoma Coast",2022,0.75,240,9049
+Red wine,US,California,Ridge Vineyards,"Geyserville - Alexander Valley, Sonoma County",2021,0.75,145,9050
+Red wine,US,California,Ridge Vineyards,Monte Bello - Santa Cruz Mountains,2022,0.75,750,9051
+Red wine,US,California,Shafer,TD-9 - Napa Valley,2021,0.75,205,9052
+Red wine,US,California,Shafer,Relentless - Napa Valley,2019,0.75,230,9053
+Red wine,US,California,Shafer,Hillside Select - Stags Leap District Napa Valley,2018,0.75,835,9054
+Red wine,US,Oregon,Beaux Frères,The Beaux Frères Vineyard Pinot Noir,2022,0.75,230,9048
+Red wine,Argentina,Mendoza,Achaval Ferrer,Finca Bella Vista Mendoza,2019,0.75,255,9066
+Red wine,Argentina,Mendoza,Finca Ambrosía de Tupungato,Pavillon Top - Ambrosia “Vina Unica” - Malbec,2022,0.75,85,2915
+Red wine,Argentina,Mendoza,Finca Ambrosía de Tupungato,“Vina Unica” - Malbec - MAGNUM,2016,1.5,150,7035
+Red wine,Argentina,Mendoza,Susana Balbo,Malbec Signature - Mendoza,2022,0.75,130,1951
+Red wine,Argentina,Mendoza,Terrazas de los Andes,Malbec - Mendoza,2022,0.75,85,1950
+Red wine,Australia,South Australia,Coriole,Willunga 1920 Reserve Shiraz,2018,0.75,155,9068
+Red wine,Australia,South Australia,Penfolds,Bin 128 - Coonawarra Shiraz,2021,0.75,140,8756
+Red wine,Australia,South Australia,Penfolds,"""Grange"" bin 95 - Shiraz *",2016,0.75,1355,8755
+Red wine,Australia,South Australia,Rockford,Basket Press Shiraz Barossa Valley,2019,0.75,150,9067
+Red wine,Portugal,Duoro and Porto,Sogrape Vinhos,Casa Ferreirinha - Reserva Especial,2014,0.75,670,9100
+Sweet wine,Germany,Mosel,Dr. Loosen,Beerenauslese - Riesling - HALF Bt.,2018,0.375,125,3815
+Sweet wine,Germany,Mosel,Joh. Jos. Prüm,“Wehlener Sonnenuhr” Auslese - Riesling,2020,0.75,150,3802
+Sweet wine,Switzerland,Valais,Adrian Mathier,“Gemma” - Ermitage - HALF bt.,2017,0.375,110,3806
+Sweet wine,Switzerland,Valais,Marie-Thérèse Chappaz,"""Grain par Grain"" - Petite Arvine *",2026,0.75,605,9094
+Sweet wine,France,Loire,Domaine Huet,Vouvray Cuvee Constance Moelleux,2018,0.5,370,9072
+Sweet wine,France,Bordeaux,Château d’Yquem,Château d’Yquem - 1er Grand Cru Supérieur - Sauternes - HALF bt.,2010,0.375,750,3811
+Sweet wine,France,Bordeaux,Château d’Yquem,Château d’Yquem - 1er Grand Cru Supérieur - Sauternes,2009,0.75,1500,3813
+Cider,Sweden,Sweden,Brännland Cider,Brännland Iscider - Barrel Aged,2014,0.75,70,3810
+Alcohol free,Switzerland,Zurich,Deux Frères,La Fête Sans,,0.75,80,9118
+Alcohol free,Switzerland,Graubunden,Sparkling Rocco,Apfel Aperitivo Alkoholfrei,,0.75,30,9129
+Alcohol free,Germany,Baden,Saveur Drinks,Yuzu - Elderflower - HALF bt.,,0.375,60,9116
+Alcohol free,Germany,Baden,Saveur Drinks,Lapsang Tea - Blackberry - HALF bt.,,0.375,60,9117
+Alcohol free,Germany,Baden,Saveur Drinks,Sparkling White Tea - Bergamotte,,0.75,90,9115
+Alcohol free,Germany,Mosel,Winninger Sektmanufaktur C-Kloss,"Sparkling Tea Rosé ""Wildblumen-Lavendel""",,0.75,60,9119
+Alcohol free,Germany,Rheingau,Domäne Schloss Johannisberg - Kolonne Null,Gelblack Alcohol-Free Riesling,,0.75,95,9126
+Alcohol free,Denmark,Copenhagen,MURI Drinks,Passing Clouds,,0.75,90,9128
+Alcohol free,France,France,French Bloom,"""Le Blanc""",,0.75,95,3074
+Alcohol free,France,France,French Bloom,"“Le Rosé""",,0.75,120,3075
+Alcohol free,Germany,Germany,Kolonne Null,Sauvignon Blanc Alkoholfreier Wein Bio,2024,0.75,60,9127
