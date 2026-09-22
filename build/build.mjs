@@ -17,7 +17,7 @@ import { csvToData } from './transform.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, '..');
-const SHEET_ID = '1eOj2ut2PYIvco68Q7OLe1V29CYtBL3IUfZ6ehcBb_U8';
+const SHEET_ID = '1x5Rf-p97gt3117i-05JKqHCzhMs0BOwNvgXGnPmsMqA';
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv';
 const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
 
@@ -30,10 +30,10 @@ async function main() {
   if (!res.ok) throw new Error('sheet fetch failed: HTTP ' + res.status);
   const csv = await res.text();
 
-  // Guard: make sure we got the CSV, not an HTML error/login page.
-  const firstLine = csv.split(/\r?\n/, 1)[0] || '';
-  if (!/^Category,Country,Region,Producer,Wine,Vintage,Volume,Price,ArtCode/.test(firstLine)) {
-    throw new Error('Unexpected sheet response (not the wine CSV). First line: ' + firstLine.slice(0, 120));
+  // Guard: make sure we got CSV, not an HTML error/login page (e.g. the sheet
+  // is no longer shared publicly). csvToData then validates the actual content.
+  if (/^\s*<(?:!doctype|html)/i.test(csv)) {
+    throw new Error('Sheet returned HTML, not CSV — is it still shared "Anyone with the link -> Viewer"?');
   }
 
   const data = csvToData(csv);

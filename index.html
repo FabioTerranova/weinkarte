@@ -387,7 +387,7 @@ function fold(s){return (s||"").toLowerCase().normalize("NFD").replace(new RegEx
 function el(html){var d=document.createElement('div');d.innerHTML=html;return d.firstElementChild;}
 
 /* ---- live-refresh support: Google-Sheet CSV source + shared transform (inlined) ---- */
-var SHEET_CSV_URL="https://docs.google.com/spreadsheets/d/1eOj2ut2PYIvco68Q7OLe1V29CYtBL3IUfZ6ehcBb_U8/export?format=csv"; /* Sommelier bearbeitet dieses Sheet; "Jeder mit Link -> Betrachter" */
+var SHEET_CSV_URL="https://docs.google.com/spreadsheets/d/1x5Rf-p97gt3117i-05JKqHCzhMs0BOwNvgXGnPmsMqA/export?format=csv"; /* Sommelier bearbeitet dieses Sheet; "Jeder mit Link -> Betrachter" */
 /* ============================================================================
    Kulm Weinkarte — canonical data transform: Google-Sheet CSV -> DATA
    ----------------------------------------------------------------------------
@@ -400,12 +400,35 @@ var SHEET_CSV_URL="https://docs.google.com/spreadsheets/d/1eOj2ut2PYIvco68Q7OLe1
    The master list now lives in a Google Sheet published as CSV (the vinify
    partnership ended). Columns (header row, matched by NAME):
      Category, Country, Region, Producer, Wine, Vintage, Volume, Price, ArtCode
-   Output DATA is byte-identical in shape to the old vinify build, so nothing
-   downstream (preprocess/paginate/register/search) changes.
+
+   SAFETY: csvToData throws on structurally-bad input (unknown category, or a
+   non-numeric value in a numeric column — the classic "shifted column" mistake).
+   Both callers abort on a throw, so a mangled sheet can NEVER overwrite the last
+   good published list; the tablets simply keep showing the previous version.
    ============================================================================ */
+
+/* the 7 category names the book knows (raw values as stored in the sheet).
+   An unknown category = a typo or a column shift -> refuse to publish. */
+var KNOWN_CATEGORIES = ['Sparkling', 'White wine', 'Rose', 'Red wine', 'Sweet wine', 'Cider', 'Alcohol free'];
 
 function _clean(s) {
   return (s === null || s === undefined) ? '' : String(s).trim();
+}
+
+/* strip Swiss thousands separators / stray spaces so "1'500" parses as 1500 */
+function _stripNum(s) {
+  return _clean(s).replace(/['’  \s]/g, '');
+}
+function _num(s) {
+  s = _stripNum(s);
+  if (s === '') return 0;
+  var v = Number(s);
+  return isNaN(v) ? 0 : v;
+}
+/* true if the raw cell is a clean number after separator-stripping */
+function _isNum(s) {
+  s = _stripNum(s);
+  return s !== '' && !isNaN(Number(s));
 }
 
 /* Minimal RFC-4180 CSV parser -> array of rows (each row an array of fields).
@@ -441,35 +464,52 @@ function parseCsv(text) {
   return out;
 }
 
-function _num(s) {
-  s = _clean(s);
-  if (s === '') return 0;
-  var v = Number(s);
-  return isNaN(v) ? 0 : v;
-}
-
 /* full sheet CSV text -> the DATA structure the page renders from.
-   Categories, groups (country+region), and wines keep their row order. */
+   Categories, groups (country+region), and wines keep their row order.
+   Throws on structurally-invalid input (see SAFETY note above). */
 function csvToData(csvText) {
   var rows = parseCsv(csvText);
   if (!rows.length) throw new Error('empty CSV');
 
-  // Map columns by header name so column order can change safely.
-  var head = rows[0], idx = {};
+  // Find the header row by NAME (it may not be row 0 — an "Anleitung" block can
+  // sit above it). The header is the first row that contains all 9 columns.
+  var required = ['category', 'country', 'region', 'producer', 'wine', 'vintage', 'volume', 'price', 'artcode'];
+  var hdr = -1;
+  for (var hr = 0; hr < rows.length; hr++) {
+    var have = {};
+    for (var hc = 0; hc < rows[hr].length; hc++) have[_clean(rows[hr][hc]).toLowerCase()] = 1;
+    var all = true;
+    for (var rq = 0; rq < required.length; rq++) { if (!have[required[rq]]) { all = false; break; } }
+    if (all) { hdr = hr; break; }
+  }
+  if (hdr < 0) throw new Error('CSV header row not found (need columns: ' + required.join(', ') + ')');
+  var head = rows[hdr], idx = {};
   for (var h = 0; h < head.length; h++) idx[_clean(head[h]).toLowerCase()] = h;
   function col(row, name) { var i = idx[name]; return (i === undefined) ? '' : row[i]; }
-  var required = ['category', 'country', 'region', 'producer', 'wine', 'vintage', 'volume', 'price', 'artcode'];
-  for (var q = 0; q < required.length; q++) {
-    if (idx[required[q]] === undefined) throw new Error('CSV missing column: ' + required[q]);
-  }
+
+  var knownCat = {};
+  for (var kc = 0; kc < KNOWN_CATEGORIES.length; kc++) knownCat[KNOWN_CATEGORIES[kc]] = 1;
 
   var categories = [], catByName = {};
   var lastCat = null, lastGroup = null, lastKey = null;
+  var badCats = {}, badNums = []; // collected problems -> reported together
 
-  for (var i = 1; i < rows.length; i++) {
+  for (var i = hdr + 1; i < rows.length; i++) {
     var row = rows[i];
     var catName = _clean(col(row, 'category'));
-    if (catName === '') continue; // skip stray blank rows
+    if (catName === '') continue; // skip stray blank rows (e.g. an Anleitung spacer)
+
+    if (!knownCat[catName]) badCats[catName] = (badCats[catName] || 0) + 1;
+
+    var priceRaw = _clean(col(row, 'price'));
+    var volRaw = _clean(col(row, 'volume'));
+    var vintRaw = _clean(col(row, 'vintage'));
+    var where = '"' + _clean(col(row, 'producer')) + (_clean(col(row, 'artcode')) ? ' / Art.' + _clean(col(row, 'artcode')) : '') + '"';
+    // a NON-EMPTY value that isn't a number in a numeric column = column shift
+    if (priceRaw !== '' && !_isNum(priceRaw)) badNums.push(where + ' Price="' + priceRaw + '"');
+    if (volRaw !== '' && !_isNum(volRaw)) badNums.push(where + ' Volume="' + volRaw + '"');
+    if (vintRaw !== '' && !_isNum(vintRaw)) badNums.push(where + ' Vintage="' + vintRaw + '"');
+
     var country = _clean(col(row, 'country'));
     var region = _clean(col(row, 'region'));
     // vinify had an EMPTY region when a wine had no sub-region; there the
@@ -477,12 +517,11 @@ function csvToData(csvText) {
     // case, so collapse Region==Country back to an empty region for parity.
     var re = (region === country) ? '' : region;
 
-    var priceRaw = _clean(col(row, 'price'));
     var wine = {
       p: _clean(col(row, 'producer')),
       n: _clean(col(row, 'wine')),
-      v: _num(col(row, 'vintage')),
-      vol: _num(col(row, 'volume')),
+      v: _num(vintRaw),
+      vol: _num(volRaw),
       pr: (priceRaw === '') ? null : _num(priceRaw),
       co: country,
       re: re,
@@ -496,7 +535,7 @@ function csvToData(csvText) {
     }
 
     var groupName = re ? (country + ', ' + re) : country;
-    var key = catName + ' ' + country + ' ' + re;
+    var key = catName + ' ' + country + ' ' + re;
     if (!lastGroup || key !== lastKey) {
       lastGroup = { name: groupName, co: country, wines: [] };
       lastCat.groups.push(lastGroup);
@@ -504,6 +543,18 @@ function csvToData(csvText) {
     }
     lastGroup.wines.push(wine);
   }
+
+  // ---- SAFETY GATE: refuse to publish structurally-broken data ----
+  var problems = [];
+  var badCatNames = Object.keys(badCats);
+  if (badCatNames.length) {
+    problems.push('Unknown category value(s): ' + badCatNames.map(function (n) { return '"' + n + '" (x' + badCats[n] + ')'; }).join(', ') +
+      '. Allowed: ' + KNOWN_CATEGORIES.join(', ') + '.');
+  }
+  if (badNums.length) {
+    problems.push('Non-numeric value in a number column (likely a shifted column): ' + badNums.slice(0, 6).join('; ') + (badNums.length > 6 ? ' … (+' + (badNums.length - 6) + ' more)' : '') + '.');
+  }
+  if (problems.length) throw new Error('Sheet validation failed — ' + problems.join('  |  '));
 
   // derived aggregates (countries drives the search filter; the rest are kept
   // for format parity with the original build).

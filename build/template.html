@@ -387,7 +387,7 @@ function fold(s){return (s||"").toLowerCase().normalize("NFD").replace(new RegEx
 function el(html){var d=document.createElement('div');d.innerHTML=html;return d.firstElementChild;}
 
 /* ---- live-refresh support: Google-Sheet CSV source + shared transform (inlined) ---- */
-var SHEET_CSV_URL="https://docs.google.com/spreadsheets/d/1eOj2ut2PYIvco68Q7OLe1V29CYtBL3IUfZ6ehcBb_U8/export?format=csv"; /* Sommelier bearbeitet dieses Sheet; "Jeder mit Link -> Betrachter" */
+var SHEET_CSV_URL="https://docs.google.com/spreadsheets/d/1x5Rf-p97gt3117i-05JKqHCzhMs0BOwNvgXGnPmsMqA/export?format=csv"; /* Sommelier bearbeitet dieses Sheet; "Jeder mit Link -> Betrachter" */
 /*__TRANSFORM__*/
 
 /* pre-pass: ids, counts, uids, haystack — wrapped so it can re-run on refresh */
