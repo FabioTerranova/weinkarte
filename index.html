@@ -218,14 +218,20 @@
   .wine.is-feature.prod-head .w-prodhead{display:inline-flex;align-items:center;gap:8px}
   .wine.is-feature.prod-head .w-prodhead::after{content:"\2726";font-size:10.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
   /* === /TEST === */
-  /* === Staffel-Layout (Beispiel Sommelier): Art-Nr. links · Name · Jahr rechts · Chf · Preis === */
-  .wine.wine-stag{grid-template-columns:auto minmax(0,1fr) auto auto auto;column-gap:14px;row-gap:2px;align-items:baseline;padding:8px 2px}
-  .wine-stag .x-art{font-family:var(--sans);font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums;letter-spacing:.03em}
-  .wine-stag .x-name{min-width:0}
-  .wine-stag .x-name .nl{font-family:var(--serif);font-size:16px;line-height:1.3;color:var(--ink)}
+  /* === Staffel-Layout (Beispiel Sommelier) ===
+     links: Art-Nr. · Name / Rebsorten   |   rechts: Jahr · Chf · Preis / Klassifikation */
+  .wine.wine-stag{grid-template-columns:1fr auto;column-gap:16px;row-gap:2px;align-items:baseline;padding:8px 2px}
+  .wine-stag .x-left{min-width:0}
+  .wine-stag .x-l1{display:flex;align-items:baseline;gap:10px}
+  .wine-stag .x-art{font-family:var(--sans);font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums;letter-spacing:.03em;flex:none;min-width:2.6em}
+  .wine-stag .nl{font-family:var(--serif);font-size:16px;line-height:1.3;color:var(--ink)}
+  .wine-stag .x-detail{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--muted);margin-top:1px;padding-left:calc(2.6em + 10px)}
+  .wine-stag .x-right{text-align:right;white-space:nowrap}
+  .wine-stag .x-r1{display:flex;align-items:baseline;justify-content:flex-end;gap:9px}
   .wine-stag .x-year{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.03em}
   .wine-stag .x-cur{font-family:var(--sans);font-size:10px;font-style:italic;color:var(--faint)}
-  .wine-stag .x-price{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;text-align:right}
+  .wine-stag .x-price{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;min-width:3.2em}
+  .wine-stag .x-class{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--muted);margin-top:1px}
   .wine-stag .x-prodhead{grid-column:1 / -1;font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink)}
   .wine.is-feature.wine-stag .x-prodhead{display:inline-flex;align-items:center;gap:8px}
   .wine.is-feature.wine-stag .x-prodhead::after{content:"\2726";font-size:10.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
@@ -542,6 +548,11 @@ function csvToData(csvText) {
     // case, so collapse Region==Country back to an empty region for parity.
     var re = (region === country) ? '' : region;
 
+    // Optional columns (sommelier may add these to the sheet later; absent = ''):
+    // "grapes"/"rebsorten" and "classification"/"klassifikation".
+    var grapes = _clean(col(row, 'grapes')) || _clean(col(row, 'rebsorten'));
+    var classif = _clean(col(row, 'classification')) || _clean(col(row, 'klassifikation'));
+
     var wine = {
       p: _clean(col(row, 'producer')),
       n: _clean(col(row, 'wine')),
@@ -552,6 +563,8 @@ function csvToData(csvText) {
       re: re,
       code: _clean(col(row, 'artcode'))
     };
+    if (grapes) wine.gr = grapes;   // kept out of the object when empty to keep the inlined JSON lean
+    if (classif) wine.cl = classif;
 
     if (!lastCat || lastCat.name !== catName) {
       lastCat = catByName[catName];
@@ -670,16 +683,25 @@ function wineHTML(w,q,hideProd,runHead,stag){
   var feat=(w.code&&FEATURE[String(w.code)])?' is-feature':'';
 
   if(stag){
-    // Staffel-Layout nach Sommelier-Beispiel: Art-Nr. links · Name · Jahr rechts · Chf · Preis
+    // Staffel-Layout nach Sommelier-Beispiel:
+    //   links:  Art-Nr. · Name          / darunter Rebsorten
+    //   rechts: Jahr · Chf · Preis       / darunter Klassifikation
     var nameLine=(hp||rh)?name:((prod?prod:'')+(name?(prod?' ':'')+name:'')); // gruppiert: nur Cuvee; sonst Producer + Cuvee
+    var grapes=w.gr?esc(w.gr):'';
+    var classif=w.cl?esc(w.cl):'';
     var prodHeadS=rh?'<div class="x-prodhead">'+prod+'</div>':'';
     return '<li class="wine wine-stag'+feat+(hp?' sub-prod':(rh?' prod-head':''))+'" data-uid="'+w.uid+'">'+
       prodHeadS+
-      '<span class="x-art">'+(w.code?esc(w.code):'')+'</span>'+
-      '<div class="x-name"><span class="nl">'+nameLine+'</span>'+(badge?' '+badge:'')+'</div>'+
-      '<span class="x-year">'+(w.v?w.v:'NV')+'</span>'+
-      '<span class="x-cur">Chf</span>'+
-      '<span class="x-price">'+fmtPrice(w.pr)+'</span>'+
+      '<div class="x-left">'+
+        '<div class="x-l1"><span class="x-art">'+(w.code?esc(w.code):'')+'</span>'+
+          '<span class="nl">'+nameLine+'</span>'+(badge?' '+badge:'')+'</div>'+
+        (grapes?'<div class="x-detail">'+grapes+'</div>':'')+
+      '</div>'+
+      '<div class="x-right">'+
+        '<div class="x-r1"><span class="x-year">'+(w.v?w.v:'NV')+'</span>'+
+          '<span class="x-cur">Chf</span><span class="x-price">'+fmtPrice(w.pr)+'</span></div>'+
+        (classif?'<div class="x-class">'+classif+'</div>':'')+
+      '</div>'+
       '</li>';
   }
 

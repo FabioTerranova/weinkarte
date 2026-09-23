@@ -127,6 +127,11 @@ function csvToData(csvText) {
     // case, so collapse Region==Country back to an empty region for parity.
     var re = (region === country) ? '' : region;
 
+    // Optional columns (sommelier may add these to the sheet later; absent = ''):
+    // "grapes"/"rebsorten" and "classification"/"klassifikation".
+    var grapes = _clean(col(row, 'grapes')) || _clean(col(row, 'rebsorten'));
+    var classif = _clean(col(row, 'classification')) || _clean(col(row, 'klassifikation'));
+
     var wine = {
       p: _clean(col(row, 'producer')),
       n: _clean(col(row, 'wine')),
@@ -137,6 +142,8 @@ function csvToData(csvText) {
       re: re,
       code: _clean(col(row, 'artcode'))
     };
+    if (grapes) wine.gr = grapes;   // kept out of the object when empty to keep the inlined JSON lean
+    if (classif) wine.cl = classif;
 
     if (!lastCat || lastCat.name !== catName) {
       lastCat = catByName[catName];
