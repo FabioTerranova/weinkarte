@@ -25,10 +25,32 @@ function countWines(data) {
   return data.categories.reduce((a, c) => a + c.groups.reduce((b, g) => b + g.wines.length, 0), 0);
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Fetch the sheet with a few retries so a single transient network hiccup on
+// the GitHub runner (bare "fetch failed", or a 5xx from Google) doesn't fail
+// the whole run and page the sommelier. Real problems (sheet unshared, bad
+// content) still throw further down and are caught by the sanity/content gates.
+async function fetchCsv(attempts = 3) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      const res = await fetch(SHEET_CSV_URL, { headers: { 'User-Agent': UA }, redirect: 'follow' });
+      if (!res.ok) throw new Error('sheet fetch failed: HTTP ' + res.status);
+      return await res.text();
+    } catch (e) {
+      lastErr = e;
+      if (i < attempts) {
+        console.warn('Fetch attempt ' + i + '/' + attempts + ' failed (' + e.message + ') — retrying…');
+        await sleep(3000 * i);
+      }
+    }
+  }
+  throw lastErr;
+}
+
 async function main() {
-  const res = await fetch(SHEET_CSV_URL, { headers: { 'User-Agent': UA }, redirect: 'follow' });
-  if (!res.ok) throw new Error('sheet fetch failed: HTTP ' + res.status);
-  const csv = await res.text();
+  const csv = await fetchCsv();
 
   // Guard: make sure we got CSV, not an HTML error/login page (e.g. the sheet
   // is no longer shared publicly). csvToData then validates the actual content.
