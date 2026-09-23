@@ -218,6 +218,18 @@
   .wine.is-feature.prod-head .w-prodhead{display:inline-flex;align-items:center;gap:8px}
   .wine.is-feature.prod-head .w-prodhead::after{content:"\2726";font-size:10.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
   /* === /TEST === */
+  /* === Staffel-Layout (Beispiel Sommelier): Art-Nr. links · Name · Jahr rechts · Chf · Preis === */
+  .wine.wine-stag{grid-template-columns:auto minmax(0,1fr) auto auto auto;column-gap:14px;row-gap:2px;align-items:baseline;padding:8px 2px}
+  .wine-stag .x-art{font-family:var(--sans);font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums;letter-spacing:.03em}
+  .wine-stag .x-name{min-width:0}
+  .wine-stag .x-name .nl{font-family:var(--serif);font-size:16px;line-height:1.3;color:var(--ink)}
+  .wine-stag .x-year{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.03em}
+  .wine-stag .x-cur{font-family:var(--sans);font-size:10px;font-style:italic;color:var(--faint)}
+  .wine-stag .x-price{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;text-align:right}
+  .wine-stag .x-prodhead{grid-column:1 / -1;font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink)}
+  .wine.is-feature.wine-stag .x-prodhead{display:inline-flex;align-items:center;gap:8px}
+  .wine.is-feature.wine-stag .x-prodhead::after{content:"\2726";font-size:10.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
+  /* === /Staffel === */
   .w-meta{display:flex;flex-wrap:wrap;gap:5px 11px;margin-top:4px;align-items:center}
   .w-vintage{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
   .w-region{font-family:var(--sans);font-size:11px;letter-spacing:.03em;color:var(--faint)}
@@ -649,15 +661,30 @@ function liveUpdate(){
 }
 
 /* node builders */
-function wineHTML(w,q,hideProd,runHead){
+function wineHTML(w,q,hideProd,runHead,stag){
   var showName=w.n&&fold(w.n)!==fold(w.p||"");
   var hp=!!hideProd&&showName; // repeated producer: drop the producer line (name stands in)
   var rh=!hp&&!!runHead;       // first wine of a producer run: producer as header, cuvee indented too
   var prod=q?hl(esc(w.p||""),q):esc(w.p||""),name=(showName?(q?hl(esc(w.n),q):esc(w.n)):"");
   var badge=(w.vol&&w.vol!=0.75&&w.vol!=0.7)?'<span class="badge">'+sizeLabel(w.vol)+'</span>':'';
+  var feat=(w.code&&FEATURE[String(w.code)])?' is-feature':'';
+
+  if(stag){
+    // Staffel-Layout nach Sommelier-Beispiel: Art-Nr. links · Name · Jahr rechts · Chf · Preis
+    var nameLine=(hp||rh)?name:((prod?prod:'')+(name?(prod?' ':'')+name:'')); // gruppiert: nur Cuvee; sonst Producer + Cuvee
+    var prodHeadS=rh?'<div class="x-prodhead">'+prod+'</div>':'';
+    return '<li class="wine wine-stag'+feat+(hp?' sub-prod':(rh?' prod-head':''))+'" data-uid="'+w.uid+'">'+
+      prodHeadS+
+      '<span class="x-art">'+(w.code?esc(w.code):'')+'</span>'+
+      '<div class="x-name"><span class="nl">'+nameLine+'</span>'+(badge?' '+badge:'')+'</div>'+
+      '<span class="x-year">'+(w.v?w.v:'NV')+'</span>'+
+      '<span class="x-cur">Chf</span>'+
+      '<span class="x-price">'+fmtPrice(w.pr)+'</span>'+
+      '</li>';
+  }
+
   var vint='<span class="w-vintage">'+(w.v?w.v:'NV')+'</span>';
   var region=w.re?'<span class="w-region">'+esc(w.re)+'</span>':'';
-  var feat=(w.code&&FEATURE[String(w.code)])?' is-feature':'';
   var prodHead=rh?'<div class="w-prodhead">'+prod+'</div>':'';       // full-width producer header row
   var innerProd=(hp||rh)?'':(prod?'<div class="w-producer">'+prod+'</div>':'');
   return '<li class="wine'+feat+(hp?' sub-prod':(rh?' prod-head':''))+'" data-uid="'+w.uid+'">'+
@@ -669,7 +696,7 @@ function wineHTML(w,q,hideProd,runHead){
     '<div class="w-right"><div class="w-price"><span class="cur">CHF</span>'+fmtPrice(w.pr)+'</div>'+
     (w.code?'<div class="w-code">Art. '+esc(w.code)+'</div>':'')+'</div></li>';
 }
-function wineNode(w,hideProd,runHead){return el('<ul class="wines" style="margin:0">'+wineHTML(w,null,hideProd,runHead)+'</ul>').firstElementChild;}
+function wineNode(w,hideProd,runHead,stag){return el('<ul class="wines" style="margin:0">'+wineHTML(w,null,hideProd,runHead,stag)+'</ul>').firstElementChild;}
 
 /* ---------- Featured wine "story" popup (NUR der erste Wein, Art. 3081) ----------
    Inhalt fest hinterlegt & nur an die Artikel-Nr. gekoppelt. Der Sommelier
@@ -839,11 +866,11 @@ function paginate(){
         // Producers danach → dann wird auch sein eigener Titel eingerueckt.
         var nextSame=producerTest&&idx<g.wines.length-1&&fold(w.p||"")===fold(g.wines[idx+1].p||"");
         var runHead=!hideProd&&nextSame;
-        var node=wineNode(w,hideProd,runHead);
+        var node=wineNode(w,hideProd,runHead,producerTest);
         pbody.appendChild(node);
         if(pbody.scrollHeight>pbody.clientHeight+1){
           pbody.removeChild(node);
-          if(hideProd)node=wineNode(w,false,nextSame); // oben auf neuer Seite: Producer (ggf. als Kopf) wieder zeigen
+          if(hideProd)node=wineNode(w,false,nextSame,producerTest); // oben auf neuer Seite: Producer (ggf. als Kopf) wieder zeigen
           if(winesHere===0){ if(pbody.lastChild)pbody.removeChild(pbody.lastChild); flush(cat.display); pbody.appendChild(groupHeadNode(g,false)); }
           else { flush(cat.display); pbody.appendChild(groupHeadNode(g,true)); }
           pbody.appendChild(node);winesHere=0;
