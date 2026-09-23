@@ -209,6 +209,10 @@
   .w-main{min-width:0}
   .w-producer{font-family:var(--serif);font-size:18px;line-height:1.25}
   .w-name{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:15px;line-height:1.3;margin-top:1px}
+  /* === TEST: Producer nur einmal — Folge-Cuvées eingerueckt unter dem Producer === */
+  .wine.sub-prod{padding-top:4px}
+  .wine.sub-prod .w-main{padding-left:16px}
+  /* === /TEST === */
   .w-meta{display:flex;flex-wrap:wrap;gap:5px 11px;margin-top:4px;align-items:center}
   .w-vintage{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
   .w-region{font-family:var(--sans);font-size:11px;letter-spacing:.03em;color:var(--faint)}
@@ -448,21 +452,22 @@ function liveUpdate(){
 }
 
 /* node builders */
-function wineHTML(w,q){
+function wineHTML(w,q,hideProd){
   var showName=w.n&&fold(w.n)!==fold(w.p||"");
+  var hp=!!hideProd&&showName; // only drop the producer line when a name can stand in for it
   var prod=q?hl(esc(w.p||""),q):esc(w.p||""),name=(showName?(q?hl(esc(w.n),q):esc(w.n)):"");
   var badge=(w.vol&&w.vol!=0.75&&w.vol!=0.7)?'<span class="badge">'+sizeLabel(w.vol)+'</span>':'';
   var vint='<span class="w-vintage">'+(w.v?w.v:'NV')+'</span>';
   var region=w.re?'<span class="w-region">'+esc(w.re)+'</span>':'';
   var feat=(w.code&&FEATURE[String(w.code)])?' is-feature':'';
-  return '<li class="wine'+feat+'" data-uid="'+w.uid+'"><div class="w-main">'+
-    (prod?'<div class="w-producer">'+prod+'</div>':'')+
+  return '<li class="wine'+feat+(hp?' sub-prod':'')+'" data-uid="'+w.uid+'"><div class="w-main">'+
+    (hp?'':(prod?'<div class="w-producer">'+prod+'</div>':''))+
     (name?'<div class="w-name">'+name+'</div>':'')+
     '<div class="w-meta">'+vint+region+badge+'</div></div>'+
     '<div class="w-right"><div class="w-price"><span class="cur">CHF</span>'+fmtPrice(w.pr)+'</div>'+
     (w.code?'<div class="w-code">Art. '+esc(w.code)+'</div>':'')+'</div></li>';
 }
-function wineNode(w){return el('<ul class="wines" style="margin:0">'+wineHTML(w)+'</ul>').firstElementChild;}
+function wineNode(w,hideProd){return el('<ul class="wines" style="margin:0">'+wineHTML(w,null,hideProd)+'</ul>').firstElementChild;}
 
 /* ---------- Featured wine "story" popup (NUR der erste Wein, Art. 3081) ----------
    Inhalt fest hinterlegt & nur an die Artikel-Nr. gekoppelt. Der Sommelier
@@ -622,16 +627,23 @@ function paginate(){
       pbody.appendChild(head);
       if(pbody.scrollHeight>pbody.clientHeight+1){pbody.removeChild(head);flush(cat.display);pbody.appendChild(head);}
       var winesHere=0;
+      var prevProd=null; // for producer-run grouping
+      var producerTest=(g===DATA.categories[0].groups[0]); // TEST: nur erste Gruppe (Champagne)
       g.wines.forEach(function(w){
-        var node=wineNode(w);
+        // Producer nur einmal zeigen: bei aufeinanderfolgenden Weinen desselben
+        // Producers auf DERSELBEN Seite (winesHere>0) den Producer-Namen weglassen.
+        var hideProd=producerTest&&winesHere>0&&prevProd!==null&&fold(w.p||"")===prevProd;
+        var node=wineNode(w,hideProd);
         pbody.appendChild(node);
         if(pbody.scrollHeight>pbody.clientHeight+1){
           pbody.removeChild(node);
+          if(hideProd)node=wineNode(w,false); // oben auf neuer Seite: Producer wieder zeigen
           if(winesHere===0){ if(pbody.lastChild)pbody.removeChild(pbody.lastChild); flush(cat.display); pbody.appendChild(groupHeadNode(g,false)); }
           else { flush(cat.display); pbody.appendChild(groupHeadNode(g,true)); }
           pbody.appendChild(node);winesHere=0;
         }
         winesHere++;
+        prevProd=fold(w.p||"");
         pageOfUid[w.uid]=2+built.length; // page currently being filled
       });
     });
