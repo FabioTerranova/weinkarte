@@ -882,7 +882,7 @@ function paginate(){
       if(pbody.scrollHeight>pbody.clientHeight+1){pbody.removeChild(head);flush(cat.display);pbody.appendChild(head);}
       var winesHere=0;
       var prevProd=null; // for producer-run grouping
-      var producerTest=(g===DATA.categories[0].groups[0]); // TEST: nur erste Gruppe (Champagne)
+      var producerTest=true; // Staffel-Layout + Producer-Gruppierung fuer die GANZE Karte
       g.wines.forEach(function(w,idx){
         // Producer nur einmal zeigen: bei aufeinanderfolgenden Weinen desselben
         // Producers auf DERSELBEN Seite (winesHere>0) den Producer-Namen weglassen.
