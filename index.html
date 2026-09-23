@@ -199,6 +199,10 @@
   .grp-head .reg{font-family:var(--sans);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.17em;color:var(--ink);white-space:nowrap}
   .grp-head .reg .cont{color:var(--faint);font-weight:600;font-style:italic;text-transform:none;letter-spacing:.02em}
   .grp-head .hr{flex:1;height:1px;background:linear-gradient(90deg,var(--gold-soft),var(--line) 60%,transparent)}
+  /* === Seite 1: größere Header (Test). Nur erste Inhaltsseite. Werte hier feinjustierbar. === */
+  .page-1 .run-head{font-size:15px}                 /* "Sparkling wine" — am größten */
+  .page-1 .grp-head .reg{font-size:13px}            /* "France" / "Champagne" — größer als Standard, kleiner als run-head */
+  /* === /Seite 1 === */
   .grp-head .gc{font-family:var(--sans);font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
   ul.wines{list-style:none;margin:0;padding:0}
   li.wine{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:2px 16px;padding:9px 2px;border-bottom:1px solid var(--line)}
@@ -702,7 +706,7 @@ function openWineDetail(w){
 }
 function closeWineDetail(){var ov=document.getElementById('wineDetail');ov.classList.remove('show');ov.setAttribute('aria-hidden','true');}
 function groupHeadNode(g,cont){
-  return el('<div class="grp-head"><span class="reg">'+esc(g.name)+(cont?' <span class="cont">(cont.)</span>':'')+'</span><span class="hr"></span><span class="gc">'+g.wines.length+'</span></div>');
+  return el('<div class="grp-head"><span class="reg">'+esc(g.name)+(cont?' <span class="cont">(cont.)</span>':'')+'</span><span class="hr"></span></div>');
 }
 function hl(text,q){if(!q)return text;var f=fold(text),i=f.indexOf(fold(q));if(i<0)return text;return text.slice(0,i)+'<mark>'+text.slice(i,i+q.length)+'</mark>'+text.slice(i+q.length);}
 
@@ -729,7 +733,7 @@ function contentsPage(){
   var toc=p.querySelector('#toc');
   DATA.categories.forEach(function(cat){
     var row=el('<a class="toc-row" data-cat="'+cat.id+'"><span class="rn">'+cat.rn+'</span>'+
-      '<span class="nm">'+esc(cat.display)+'</span><span class="ld"></span><span class="ct">'+plural(cat.count,'wine')+'</span></a>');
+      '<span class="nm">'+esc(cat.display)+'</span><span class="ld"></span><span class="ct"></span></a>');
     toc.appendChild(row);
   });
   return p;
@@ -759,9 +763,15 @@ function winePageShell(chapter,folio){
 
 /* ---------- pagination (measured) ---------- */
 var pages=[],chapterFirstPage={},pageOfUid={},countryFirst={};
+/* Printed page numbers (folios) where each chapter/country begins — shown in the
+   indexes. Distinct from chapterFirstPage/countryFirst, which hold absolute page
+   array indices used for navigation (those count cover/contents/opener pages;
+   folios count only content pages, matching the number printed on the page). */
+var chapterFirstFolio={},countryFirstFolio={};
 function paginate(){
   var book=document.getElementById('book');
   book.innerHTML='';pages=[];chapterFirstPage={};pageOfUid={};
+  chapterFirstFolio={};countryFirstFolio={};
 
   var cover=coverPage(),contents=contentsPage();
   pages.push(cover);pages.push(contents);
@@ -778,6 +788,7 @@ function paginate(){
     if(!pbody.firstChild)return;
     folio++;
     var shell=winePageShell(chapter,folio);
+    if(folio===1)shell.classList.add('page-1'); // first content page — larger headers (test)
     var body=shell.querySelector('.page-body');
     while(pbody.firstChild)body.appendChild(pbody.firstChild);
     built.push(shell);
@@ -785,8 +796,10 @@ function paginate(){
 
   DATA.categories.forEach(function(cat){
     chapterFirstPage[cat.id]=2+built.length; // opener page index
+    chapterFirstFolio[cat.id]=folio+1;       // printed page number of the chapter's first content page
     built.push(openerPage(cat));
     countryFirst[cat.id]={};
+    countryFirstFolio[cat.id]={};
     if(cat.countryOrder.length>=2){ var ci=countryIndexPage(cat); cidxRecs.push({el:ci,cat:cat}); built.push(ci); }
     runhead.textContent=cat.display;
     var curCountry=null;
@@ -795,6 +808,7 @@ function paginate(){
         if(pbody.firstChild)flush(cat.display);
         curCountry=g.co;
         countryFirst[cat.id][g.co]=2+built.length;
+        countryFirstFolio[cat.id][g.co]=folio+1; // printed page number of this country's first page
       }
       var head=groupHeadNode(g,false);
       pbody.appendChild(head);
@@ -823,9 +837,15 @@ function paginate(){
     cat.countryOrder.forEach(function(c){
       var pg=countryFirst[cat.id][c.name];
       html+='<a class="toc-row cidx-row" data-page="'+pg+'"><span class="nm">'+esc(c.name)+'</span>'+
-        '<span class="ld"></span><span class="ct">'+plural(c.count,'wine')+'</span></a>';
+        '<span class="ld"></span><span class="ct">'+countryFirstFolio[cat.id][c.name]+'</span></a>';
     });
     rec.el.querySelector('.cidx-list').innerHTML=html;
+  });
+
+  /* fill the main Contents page numbers now that chapter folios are known */
+  DATA.categories.forEach(function(cat){
+    var s=contents.querySelector('.toc-row[data-cat="'+cat.id+'"] .ct');
+    if(s)s.textContent=chapterFirstFolio[cat.id];
   });
 
   built.forEach(function(pg){pages.push(pg);});
@@ -979,12 +999,12 @@ function buildMenu(){
   DATA.categories.forEach(function(cat){
     h+='<a class="toc-row" data-cat="'+cat.id+'"><span class="rn">'+cat.rn+'</span>'+
        '<span class="nm">'+esc(cat.display)+'</span><span class="ld"></span>'+
-       '<span class="ct">'+plural(cat.count,'wine')+'</span></a>';
+       '<span class="ct">'+(chapterFirstFolio[cat.id]||'')+'</span></a>';
     cat.countryOrder.forEach(function(c){
       var pg=(countryFirst[cat.id]||{})[c.name];
       if(pg==null)return;
       h+='<a class="menu-crow" data-page="'+pg+'"><span class="cnm">'+esc(c.name)+'</span>'+
-         '<span class="cld"></span><span class="cct">'+c.count+'</span></a>';
+         '<span class="cld"></span><span class="cct">'+((countryFirstFolio[cat.id]||{})[c.name]||'')+'</span></a>';
     });
   });
   box.innerHTML=h;
