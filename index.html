@@ -220,18 +220,19 @@
   /* === /TEST === */
   /* === Staffel-Layout (Beispiel Sommelier) ===
      links: Art-Nr. · Name / Rebsorten   |   rechts: Jahr · Chf · Preis / Klassifikation */
-  .wine.wine-stag{grid-template-columns:1fr auto;column-gap:16px;row-gap:2px;align-items:baseline;padding:8px 2px}
-  .wine-stag .x-left{min-width:0}
+  .wine.wine-stag{grid-template-columns:minmax(0,2fr) auto minmax(8px,1fr) auto;column-gap:12px;row-gap:2px;align-items:baseline;padding:8px 2px}
+  .wine-stag .x-left{grid-column:1;min-width:0}
+  .wine-stag .x-yr{grid-column:2}
+  .wine-stag .x-right{grid-column:4;text-align:right;white-space:nowrap}
   .wine-stag .x-l1{display:flex;align-items:baseline;gap:10px}
   .wine-stag .x-art{font-family:var(--sans);font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums;letter-spacing:.03em;flex:none;min-width:2.6em}
   .wine-stag .nl{font-family:var(--serif);font-size:16px;line-height:1.3;color:var(--ink)}
-  .wine-stag .x-detail{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--muted);margin-top:1px;padding-left:calc(2.6em + 10px)}
-  .wine-stag .x-right{text-align:right;white-space:nowrap}
-  .wine-stag .x-r1{display:flex;align-items:baseline;justify-content:flex-end;gap:9px}
+  .wine-stag .x-detail{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--muted);margin-top:2px;padding-left:calc(2.6em + 10px)}
   .wine-stag .x-year{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.03em}
+  .wine-stag .x-r1{display:flex;align-items:baseline;justify-content:flex-end;gap:8px}
   .wine-stag .x-cur{font-family:var(--sans);font-size:10px;font-style:italic;color:var(--faint)}
   .wine-stag .x-price{font-family:var(--sans);font-size:15px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;min-width:3.2em}
-  .wine-stag .x-class{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--muted);margin-top:1px}
+  .wine-stag .x-class{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--muted);margin-top:2px}
   .wine-stag .x-prodhead{grid-column:1 / -1;font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink);margin-bottom:4px}
   .wine.is-feature.wine-stag .x-prodhead{display:inline-flex;align-items:center;gap:8px}
   .wine.is-feature.wine-stag .x-prodhead::after{content:"\2726";font-size:10.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
@@ -687,7 +688,9 @@ function wineHTML(w,q,hideProd,runHead,stag){
     //   links:  Art-Nr. · Name          / darunter Rebsorten
     //   rechts: Jahr · Chf · Preis       / darunter Klassifikation
     var nameLine=(hp||rh)?name:((prod?prod:'')+(name?(prod?' ':'')+name:'')); // gruppiert: nur Cuvee; sonst Producer + Cuvee
-    var grapes=w.gr?esc(w.gr):'';
+    // Zweite Zeile unter dem Namen: Rebsorten, sobald im Sheet gepflegt; sonst
+    // ersatzweise die Region (das, was im alten Layout dort stand).
+    var detail=w.gr?esc(w.gr):(w.re?esc(w.re):'');
     var classif=w.cl?esc(w.cl):'';
     var prodHeadS=rh?'<div class="x-prodhead">'+prod+'</div>':'';
     return '<li class="wine wine-stag'+feat+(hp?' sub-prod':(rh?' prod-head':''))+'" data-uid="'+w.uid+'">'+
@@ -695,11 +698,11 @@ function wineHTML(w,q,hideProd,runHead,stag){
       '<div class="x-left">'+
         '<div class="x-l1"><span class="x-art">'+(w.code?esc(w.code):'')+'</span>'+
           '<span class="nl">'+nameLine+'</span>'+(badge?' '+badge:'')+'</div>'+
-        (grapes?'<div class="x-detail">'+grapes+'</div>':'')+
+        (detail?'<div class="x-detail">'+detail+'</div>':'')+
       '</div>'+
+      '<div class="x-yr"><span class="x-year">'+(w.v?w.v:'NV')+'</span></div>'+
       '<div class="x-right">'+
-        '<div class="x-r1"><span class="x-year">'+(w.v?w.v:'NV')+'</span>'+
-          '<span class="x-cur">Chf</span><span class="x-price">'+fmtPrice(w.pr)+'</span></div>'+
+        '<div class="x-r1"><span class="x-cur">Chf</span><span class="x-price">'+fmtPrice(w.pr)+'</span></div>'+
         (classif?'<div class="x-class">'+classif+'</div>':'')+
       '</div>'+
       '</li>';
