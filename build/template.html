@@ -213,6 +213,10 @@
   .wine.sub-prod{padding-top:4px}
   .wine.sub-prod .w-name,.wine.sub-prod .w-meta,
   .wine.prod-head .w-name,.wine.prod-head .w-meta{padding-left:16px}
+  /* Producer-Kopf als eigene, vollbreite Ueberschrift; Titel + Preis/Art. liegen darunter auf einer Zeile */
+  .wine.prod-head .w-prodhead{grid-column:1 / -1;font-family:var(--serif);font-size:18px;line-height:1.25;color:var(--ink)}
+  .wine.is-feature.prod-head .w-prodhead{display:inline-flex;align-items:center;gap:8px}
+  .wine.is-feature.prod-head .w-prodhead::after{content:"\2726";font-size:10.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
   /* === /TEST === */
   .w-meta{display:flex;flex-wrap:wrap;gap:5px 11px;margin-top:4px;align-items:center}
   .w-vintage{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
@@ -462,8 +466,12 @@ function wineHTML(w,q,hideProd,runHead){
   var vint='<span class="w-vintage">'+(w.v?w.v:'NV')+'</span>';
   var region=w.re?'<span class="w-region">'+esc(w.re)+'</span>':'';
   var feat=(w.code&&FEATURE[String(w.code)])?' is-feature':'';
-  return '<li class="wine'+feat+(hp?' sub-prod':(rh?' prod-head':''))+'" data-uid="'+w.uid+'"><div class="w-main">'+
-    (hp?'':(prod?'<div class="w-producer">'+prod+'</div>':''))+
+  var prodHead=rh?'<div class="w-prodhead">'+prod+'</div>':'';       // full-width producer header row
+  var innerProd=(hp||rh)?'':(prod?'<div class="w-producer">'+prod+'</div>':'');
+  return '<li class="wine'+feat+(hp?' sub-prod':(rh?' prod-head':''))+'" data-uid="'+w.uid+'">'+
+    prodHead+
+    '<div class="w-main">'+
+    innerProd+
     (name?'<div class="w-name">'+name+'</div>':'')+
     '<div class="w-meta">'+vint+region+badge+'</div></div>'+
     '<div class="w-right"><div class="w-price"><span class="cur">CHF</span>'+fmtPrice(w.pr)+'</div>'+
