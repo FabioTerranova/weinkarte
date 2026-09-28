@@ -476,7 +476,7 @@ function liveUpdate(){
 
 /* node builders */
 function wineHTML(w,q,hideProd,runHead,stag){
-  var showName=w.n&&fold(w.n)!==fold(w.p||"");
+  var showName=!!w.n;   // Wein-Name immer zeigen – auch wenn er = Producer ist (jeder Producer hat jetzt eine eigene Kopfzeile)
   var hp=!!hideProd&&showName; // repeated producer: drop the producer line (name stands in)
   var rh=!hp&&!!runHead;       // first wine of a producer run: producer as header, cuvee indented too
   var prod=q?hl(esc(w.p||""),q):esc(w.p||""),name=(showName?(q?hl(esc(w.n),q):esc(w.n)):"");
