@@ -131,6 +131,7 @@ function csvToData(csvText) {
     // "grapes"/"rebsorten" and "classification"/"klassifikation".
     var grapes = _clean(col(row, 'grapes')) || _clean(col(row, 'rebsorten'));
     var classif = _clean(col(row, 'classification')) || _clean(col(row, 'klassifikation'));
+    var descr = _clean(col(row, 'description')) || _clean(col(row, 'beschreibung'));
 
     var wine = {
       p: _clean(col(row, 'producer')),
@@ -144,6 +145,7 @@ function csvToData(csvText) {
     };
     if (grapes) wine.gr = grapes;   // kept out of the object when empty to keep the inlined JSON lean
     if (classif) wine.cl = classif;
+    if (descr) wine.desc = descr;   // extra line under the grapes; absent when empty
 
     if (!lastCat || lastCat.name !== catName) {
       lastCat = catByName[catName];
