@@ -689,15 +689,15 @@ function paginate(){
         // Producer nur einmal zeigen: bei aufeinanderfolgenden Weinen desselben
         // Producers auf DERSELBEN Seite (winesHere>0) den Producer-Namen weglassen.
         var hideProd=producerTest&&winesHere>0&&prevProd!==null&&fold(w.p||"")===prevProd;
-        // Producer-Kopf = zeigt den Producer UND hat mind. eine weitere Cuvee desselben
-        // Producers danach → dann wird auch sein eigener Titel eingerueckt.
-        var nextSame=producerTest&&idx<g.wines.length-1&&fold(w.p||"")===fold(g.wines[idx+1].p||"");
-        var runHead=!hideProd&&nextSame;
+        // Jeder Producer bekommt beim ersten Auftauchen eine eigene Kopfzeile –
+        // auch Producer mit nur EINER Cuvee (z.B. Bollinger). Folgende Cuvees
+        // desselben Producers werden ueber hideProd unterdrueckt.
+        var runHead=!hideProd;
         var node=wineNode(w,hideProd,runHead,producerTest);
         pbody.appendChild(node);
         if(pbody.scrollHeight>pbody.clientHeight+1){
           pbody.removeChild(node);
-          if(hideProd)node=wineNode(w,false,nextSame,producerTest); // oben auf neuer Seite: Producer (ggf. als Kopf) wieder zeigen
+          if(hideProd)node=wineNode(w,false,true,producerTest); // oben auf neuer Seite: Producer wieder als Kopf zeigen
           if(winesHere===0){ if(pbody.lastChild)pbody.removeChild(pbody.lastChild); flush(cat.display); pbody.appendChild(groupHeadNode(g,false)); }
           else { flush(cat.display); pbody.appendChild(groupHeadNode(g,true)); }
           pbody.appendChild(node);winesHere=0;
