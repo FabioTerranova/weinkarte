@@ -37,10 +37,12 @@ jobs:
         run: |
           git config user.name "weinkarte-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- index.html; then
+          # Stage the published page AND the master backup; both only change when
+          # the sheet content actually changes, so no churn on unchanged runs.
+          git add index.html build/master-latest.csv
+          if git diff --cached --quiet; then
             echo "Keine Änderungen in der Weinkarte."
           else
-            git add index.html
             git commit -m "Auto-Sync Weinkarte aus Google Sheet"
             git push
             echo "Weinkarte aktualisiert und veröffentlicht."

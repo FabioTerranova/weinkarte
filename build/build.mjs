@@ -83,7 +83,17 @@ async function main() {
   tpl = tpl.replace('/*__TRANSFORM__*/', transformSrc);
 
   await writeFile(join(ROOT, 'index.html'), tpl);
+
+  // Keep a fresh, full copy of the live master in the repo as a restore point.
+  // Written ONLY after every gate above has passed, so a bad/empty/mislocalized
+  // fetch can never overwrite the good backup. If the Google account or Sheet is
+  // ever lost, the latest master still lives here (and in git history as a
+  // change log). It is byte-stable for unchanged sheet content, so it does not
+  // cause extra commits. Guests never see this file (not referenced by the page).
+  await writeFile(join(HERE, 'master-latest.csv'), csv);
+
   console.log('Built index.html — ' + total + ' wines, ' + data.categories.length + ' categories, ' + data.countries.length + ' countries.');
+  console.log('Wrote master backup — build/master-latest.csv (' + csv.length + ' bytes).');
 }
 
 main().catch((e) => { console.error('BUILD FAILED:', e.message); process.exit(1); });
