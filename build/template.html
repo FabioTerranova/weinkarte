@@ -8,39 +8,40 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Weinkarte">
 <meta name="application-name" content="Weinkarte">
-<meta name="theme-color" content="#1C1712">
+<meta name="theme-color" content="#EEE9D9">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" type="image/png" href="icon-180.png">
 <link rel="manifest" href="manifest.webmanifest">
 <title>Kulm Hotel St. Moritz — Wine List</title>
 <style>
-  :root{
-    --paper:#F4EEE1; --paper-2:#EDE5D3; --paper-3:#E3D8C1;
-    --ink:#2B221B; --muted:#87765F; --faint:#A6957C;
-    --line:#DACFB8; --line-2:#C9BB9E;
-    --gold:#9C7A31; --gold-soft:#B4964F;
-    --accent:#6E1F2B; --accent-2:#8A2A38;
-    --shadow:0 2px 6px rgba(50,34,18,.10),0 26px 60px rgba(50,34,18,.20);
-    --serif:"Hoefler Text","Iowan Old Style",Georgia,"Times New Roman",serif;
-    --sans:system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-    --ctrl-h:0px; --grain:.05;
-  }
-  :root[data-theme="light"]{
-    --paper:#F4EEE1;--paper-2:#EDE5D3;--paper-3:#E3D8C1;--ink:#2B221B;--muted:#87765F;--faint:#A6957C;
-    --line:#DACFB8;--line-2:#C9BB9E;--gold:#9C7A31;--gold-soft:#B4964F;--accent:#6E1F2B;--accent-2:#8A2A38;
-    --shadow:0 2px 6px rgba(50,34,18,.10),0 26px 60px rgba(50,34,18,.20);--grain:.05;
-  }
+  /* ---- Marketing CI fonts (self-hosted, offline-capable) ---- */
+  @font-face{font-family:"GT Alpina";src:url("fonts/GT-Alpina-Standard-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:"GT Alpina";src:url("fonts/GT-Alpina-Standard-Regular-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+  @font-face{font-family:"GT Alpina";src:url("fonts/GT-Alpina-Standard-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:"Euclid Circular B";src:url("fonts/EuclidCircularB-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+
+  /* ---- CI palette (Marketing, 2026): warm paper, black copy, grey meta/price.
+     Only 4 tones. Gold / Bordeaux / muted tones removed — the old var names are
+     kept but collapsed onto the new palette so the whole card follows. All theme
+     blocks share the ONE light palette ("fest hell") so it can never render dark. */
+  :root,
+  :root[data-theme="light"],
   :root[data-theme="dark"]{
-    --paper:#1C1712;--paper-2:#241D15;--paper-3:#2C231A;--ink:#ECE2D1;--muted:#A6977F;--faint:#7A6C58;
-    --line:#382C1D;--line-2:#463A26;
-    --gold:#C6A25C;--gold-soft:#AC8C47;--accent:#D68A9A;--accent-2:#E1A0AE;
-    --shadow:0 2px 6px rgba(0,0,0,.4),0 30px 70px rgba(0,0,0,.55);--grain:.055;
+    --paper:#FCFAF1; --paper-2:#EEE9D9; --paper-3:#EEE9D9;
+    --ink:#000000; --muted:#939598; --faint:#939598;
+    --line:#E3DED0; --line-2:#D8D2C2;
+    --gold:#000000; --gold-soft:#939598;
+    --accent:#000000; --accent-2:#939598;
+    --shadow:0 2px 6px rgba(0,0,0,.07),0 24px 58px rgba(0,0,0,.13);
+    --serif:"GT Alpina",Georgia,"Times New Roman",serif;
+    --sans:"Euclid Circular B",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    --ctrl-h:0px; --grain:.035;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme]){
-      --paper:#1C1712;--paper-2:#241D15;--paper-3:#2C231A;--ink:#ECE2D1;--muted:#A6977F;--faint:#7A6C58;
-      --line:#382C1D;--line-2:#463A26;--gold:#C6A25C;--gold-soft:#AC8C47;--accent:#D68A9A;--accent-2:#E1A0AE;
-      --shadow:0 2px 6px rgba(0,0,0,.4),0 30px 70px rgba(0,0,0,.55);--grain:.055;
+      --paper:#FCFAF1;--paper-2:#EEE9D9;--paper-3:#EEE9D9;--ink:#000000;--muted:#939598;--faint:#939598;
+      --line:#E3DED0;--line-2:#D8D2C2;--gold:#000000;--gold-soft:#939598;--accent:#000000;--accent-2:#939598;
+      --shadow:0 2px 6px rgba(0,0,0,.07),0 24px 58px rgba(0,0,0,.13);--grain:.035;
     }
   }
 
@@ -108,8 +109,8 @@
     padding:clamp(30px,4.6vw,52px) clamp(26px,4.6vw,50px)}
 
   /* running head / foot for wine pages */
-  .run-head{font-family:var(--sans);text-align:center;font-size:19px;letter-spacing:.26em;text-transform:uppercase;
-    color:var(--gold);padding-bottom:9px;margin-bottom:12px;border-bottom:1px solid var(--line);flex:none}
+  .run-head{font-family:var(--serif);text-align:center;font-size:23px;letter-spacing:.01em;text-transform:none;
+    color:var(--ink);padding-bottom:9px;margin-bottom:14px;border-bottom:1px solid var(--line);flex:none}
   .page-body{flex:1;overflow:hidden;min-height:0}
   .run-foot{flex:none;display:flex;align-items:center;justify-content:center;gap:12px;padding-top:12px;color:var(--gold-soft)}
   .run-foot .orn{font-size:12px;opacity:.8;padding:12px 22px;margin:-12px -22px;position:relative;z-index:6;cursor:default;-webkit-tap-highlight-color:transparent}
@@ -120,11 +121,8 @@
   .cover-frame{position:relative;width:100%;max-width:440px;padding:clamp(28px,6vw,52px) clamp(20px,5vw,40px);
     border:1px solid var(--gold-soft);outline:2px double var(--gold-soft);outline-offset:6px}
   .est{font-family:var(--sans);font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin:0 0 20px}
-  .crest{width:clamp(124px,33vw,172px);display:block;margin:0 auto 6px;color:#7C5E24;line-height:0}
+  .crest{width:clamp(124px,33vw,172px);display:block;margin:0 auto 6px;color:var(--ink);line-height:0}
   .crest svg{width:100%;height:auto;display:block}
-  @media (prefers-color-scheme:dark){:root:not([data-theme]) .crest{color:#C9A55E}}
-  :root[data-theme="dark"] .crest{color:#C9A55E}
-  :root[data-theme="light"] .crest{color:#7C5E24}
   .cover h1{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(45px,13vw,81px);
     line-height:.94;margin:14px 0 4px}
   .cover .place{font-family:var(--sans);text-transform:uppercase;letter-spacing:.3em;font-size:12.5px;color:var(--muted);margin:10px 0 0}
@@ -187,8 +185,8 @@
   /* ---------- Chapter opener page ---------- */
   .opener-inner{align-items:center;justify-content:center;text-align:center}
   .op-num{font-family:var(--sans);font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
-  .op-title{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(39px,10vw,67px);
-    margin:14px 0 16px;color:var(--accent)}
+  .op-title{font-family:var(--serif);font-weight:400;font-style:normal;font-size:clamp(40px,10vw,60px);
+    margin:14px 0 16px;color:var(--ink)}
   .op-meta{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold-soft);max-width:260px}
   .op-meta::before,.op-meta::after{content:"";height:1px;flex:1;background:var(--gold-soft);opacity:.5}
   .op-meta span{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
@@ -196,13 +194,18 @@
   /* ---------- Wine rows ---------- */
   .grp-head{display:flex;align-items:center;gap:12px;padding:2px 0 7px;margin-top:6px}
   .grp-head:first-child{margin-top:0}
-  .grp-head .reg{font-family:var(--sans);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.17em;color:var(--ink);white-space:nowrap}
+  .grp-head .reg{font-family:var(--sans);font-weight:500;font-size:18px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink);white-space:nowrap}
   .grp-head .reg .cont{color:var(--faint);font-weight:600;font-style:italic;text-transform:none;letter-spacing:.02em}
-  .grp-head .hr{flex:1;height:1px;background:linear-gradient(90deg,var(--gold-soft),var(--line) 60%,transparent)}
+  .grp-head .hr{flex:1;height:1px;background:linear-gradient(90deg,var(--line-2),var(--line) 60%,transparent)}
   /* Header-Größen (Kapitel-Kopf + Gruppen-Header) gelten jetzt für die ganze Karte (siehe .run-head / .grp-head .reg oben). */
   .grp-head .gc{font-family:var(--sans);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
+  .section-head{text-align:center;font-family:var(--serif);font-weight:400;font-size:30px;color:var(--ink);margin:4px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  .closing-inner{align-items:center;justify-content:center;text-align:center}
+  .closing-block{max-width:460px}
+  .cl-line{font-family:var(--serif);font-size:16px;line-height:1.6;color:var(--ink);margin:0 0 10px}
+  .cl-en{color:var(--faint);font-style:italic;margin-top:18px}
   ul.wines{list-style:none;margin:0;padding:0}
-  li.wine{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:2px 16px;padding:9px 2px;border-bottom:1px solid var(--line)}
+  li.wine{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:2px 16px;padding:9px 2px}
   .w-main{min-width:0}
   .w-producer{font-family:var(--serif);font-size:19px;line-height:1.25}
   .w-name{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:16px;line-height:1.3;margin-top:1px}
@@ -213,7 +216,7 @@
   /* Producer-Kopf als eigene, vollbreite Ueberschrift; Titel + Preis/Art. liegen darunter auf einer Zeile */
   .wine.prod-head .w-prodhead{grid-column:1 / -1;font-family:var(--serif);font-size:19px;line-height:1.25;color:var(--ink)}
   .wine.is-feature.prod-head .w-prodhead{display:inline-flex;align-items:center;gap:8px}
-  .wine.is-feature.prod-head .w-prodhead::after{content:"\2726";font-size:11.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
+  .wine.is-feature.prod-head .w-prodhead::after{content:none}
   /* === /TEST === */
   /* === Staffel-Layout (Beispiel Sommelier) ===
      links: Art-Nr. · Name / Rebsorten   |   rechts: Jahr · Chf · Preis / Klassifikation */
@@ -224,24 +227,22 @@
   .wine-stag .x-right{grid-column:2}
   .wine-stag .x-l1{display:flex;align-items:baseline;gap:10px}
   .wine-stag .x-art{font-family:var(--sans);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums;letter-spacing:.03em;flex:none;min-width:2.6em}
-  .wine-stag .nl{font-family:var(--serif);font-size:17px;line-height:1.3;color:var(--ink)}
+  .wine-stag .nl{font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink)}
   .wine-stag .x-detail{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--muted);margin-top:2px;padding-left:calc(2.6em + 10px + 1.8cm)}
   .wine-stag .x-desc{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--muted);margin-top:0;padding-left:calc(2.6em + 10px + 1.8cm)}
   .wine-stag .x-r1{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
   .wine-stag .x-year{flex:none;width:2.8em;text-align:right;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.03em}
   .wine-stag .x-cur{flex:none;margin-left:auto;font-family:var(--sans);font-size:11px;font-style:italic;color:var(--faint)}
-  .wine-stag .x-price{flex:none;width:3.4em;text-align:right;font-family:var(--sans);font-size:16px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+  .wine-stag .x-price{flex:none;width:3.4em;text-align:right;font-family:var(--serif);font-size:18px;font-weight:500;color:var(--faint);font-variant-numeric:tabular-nums}
   .wine-stag .x-class{text-align:right;font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--muted);margin-top:2px}
   .wine-stag .x-prodhead{grid-column:1 / -1;font-family:var(--serif);font-size:19px;line-height:1.3;color:var(--ink);margin-bottom:4px}
   .wine.is-feature.wine-stag .x-prodhead{display:inline-flex;align-items:center;gap:8px}
-  .wine.is-feature.wine-stag .x-prodhead::after{content:"\2726";font-size:11.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
+  .wine.is-feature.wine-stag .x-prodhead::after{content:none}
   /* === /Staffel === */
   .w-meta{display:flex;flex-wrap:wrap;gap:5px 11px;margin-top:4px;align-items:center}
   .w-vintage{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums}
   .w-region{font-family:var(--sans);font-size:12px;letter-spacing:.03em;color:var(--faint)}
-  .badge{font-family:var(--sans);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);
-    border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:4px;padding:1.5px 6px;
-    background:color-mix(in srgb,var(--accent) 7%,transparent)}
+  .badge{font-family:var(--sans);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--faint)}
   .w-right{text-align:right;white-space:nowrap}
   .w-price{font-family:var(--sans);font-weight:700;font-size:17px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink)}
   .w-price .cur{font-size:11px;font-weight:600;color:var(--faint);margin-right:2px}
@@ -312,7 +313,7 @@
   /* ---------- Wine story (featured wine detail popup) ---------- */
   .wine.is-feature{cursor:pointer}
   .wine.is-feature .w-producer{display:inline-flex;align-items:center;gap:8px}
-  .wine.is-feature .w-producer::after{content:"\2726";font-size:11.5px;color:var(--gold);opacity:.9;flex:none;transform:translateY(-1px)}
+  .wine.is-feature .w-producer::after{content:none}
   .wd-panel{position:relative;width:min(94vw,560px);margin:min(5vh,48px) 0;display:flex;flex-direction:column;max-height:90vh;
     background:var(--paper);border:1px solid var(--line-2);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
   .wd-close{position:absolute;top:10px;right:14px;z-index:3;border:0;background:transparent;color:var(--muted);
@@ -423,12 +424,41 @@ var SHEET_CSV_URL="https://docs.google.com/spreadsheets/d/1x5Rf-p97gt3117i-05JKq
 
 /* pre-pass: ids, counts, uids, haystack — wrapped so it can re-run on refresh */
 var ALLW=[],uid=0,TOTAL=0;
+/* Sondergroessen (Marketing 2026): pro Kapitel wandern Grossflaschen (1.5/3/6 L)
+   und kleine Flaschen (0.375/0.5 L) aus dem normalen Fluss in eigene Bloecke ans
+   ENDE des jeweiligen Kapitels — mit Herkunft (Land/Region) erhalten. 0.75/0.7 L
+   bleiben Standard. Ersetzt den frueheren Inline-Magnum-Badge. */
+function volClass(v){
+  if(v==1.5||v==3||v==6)return 'large';
+  if(v==0.375||v==0.5)return 'small';
+  return 'std';
+}
+function splitFormats(cat){
+  var std=[],large=[],small=[];
+  cat.groups.forEach(function(g){
+    if(g.banner)return; // schon aufgeteilt (preprocess lief evtl. erneut) -> alten Banner verwerfen
+    var gs=[],gl=[],gm=[];
+    g.wines.forEach(function(w){
+      var c=volClass(w.vol);
+      if(c=='large')gl.push(w);else if(c=='small')gm.push(w);else gs.push(w);
+    });
+    if(gs.length)std.push({name:g.name,co:g.co,wines:gs});
+    if(gl.length)large.push({name:g.name,co:g.co,wines:gl});
+    if(gm.length)small.push({name:g.name,co:g.co,wines:gm});
+  });
+  var out=std.slice();
+  if(large.length){out.push({banner:true,label:'Magnums & Large Formats',co:'__large__',name:'Magnums & Large Formats',wines:[]});large.forEach(function(g){out.push(g);});}
+  if(small.length){out.push({banner:true,label:'Half Bottles',co:'__small__',name:'Half Bottles',wines:[]});small.forEach(function(g){out.push(g);});}
+  return out;
+}
 function preprocess(){
   ALLW=[];uid=0;
   DATA.categories.forEach(function(cat,ci){
     cat.id="cat-"+ci;cat.rn=roman(ci+1);cat.count=0;cat.display=pretty(cat.name);
+    cat.groups=splitFormats(cat);
     cat.countryOrder=[];var _seen={};
     cat.groups.forEach(function(g){
+      if(g.banner)return; // Sektions-Banner zaehlt nicht als Land
       cat.count+=g.wines.length;
       if(!_seen[g.co]){_seen[g.co]={name:g.co,count:0};cat.countryOrder.push(_seen[g.co]);}
       _seen[g.co].count+=g.wines.length;
@@ -504,7 +534,7 @@ function wineHTML(w,q,hideProd,runHead,stag){
       '</div>'+
       '<div class="x-right">'+
         '<div class="x-r1"><span class="x-year">'+(w.v?w.v:'NV')+'</span>'+
-          '<span class="x-cur">Chf</span><span class="x-price">'+fmtPrice(w.pr)+'</span></div>'+
+          '<span class="x-price">'+fmtPrice(w.pr)+'</span></div>'+
         (classif?'<div class="x-class">'+classif+'</div>':'')+
       '</div>'+
       '</li>';
@@ -520,7 +550,7 @@ function wineHTML(w,q,hideProd,runHead,stag){
     innerProd+
     (name?'<div class="w-name">'+name+'</div>':'')+
     '<div class="w-meta">'+vint+region+badge+'</div></div>'+
-    '<div class="w-right"><div class="w-price"><span class="cur">CHF</span>'+fmtPrice(w.pr)+'</div>'+
+    '<div class="w-right"><div class="w-price">'+fmtPrice(w.pr)+'</div>'+
     (w.code?'<div class="w-code">Art. '+esc(w.code)+'</div>':'')+'</div></li>';
 }
 function wineNode(w,hideProd,runHead,stag){return el('<ul class="wines" style="margin:0">'+wineHTML(w,null,hideProd,runHead,stag)+'</ul>').firstElementChild;}
@@ -559,8 +589,7 @@ function openWineDetail(w){
       '<h2 class="wd-house">'+esc(f.house)+'</h2>'+
       '<p class="wd-cuvee">'+esc(f.cuvee)+'</p>'+
       '<p class="wd-sub">'+esc(f.sub)+'</p>'+
-      '<p class="wd-price"><span class="cur">CHF</span>'+fmtPrice(f.price)+'</p>'+
-      '<div class="wd-fleuron"><span>&#10086;</span></div>'+
+      '<p class="wd-price">'+fmtPrice(f.price)+'</p>'+
     '</div>'+
     '<div class="wd-sections">'+
       '<div class="wd-sec"><p class="wd-label">The House</p><p class="wd-text">'+esc(f.story)+'</p></div>'+
@@ -577,6 +606,10 @@ function closeWineDetail(){var ov=document.getElementById('wineDetail');ov.class
 function groupHeadNode(g,cont){
   return el('<div class="grp-head"><span class="reg">'+esc(g.name)+(cont?' <span class="cont">(cont.)</span>':'')+'</span><span class="hr"></span></div>');
 }
+/* Sektions-Banner fuer Sondergroessen (Magnums / Half Bottles) am Ende eines Kapitels */
+function sectionHeadNode(label){
+  return el('<div class="section-head"><span>'+esc(label)+'</span></div>');
+}
 function hl(text,q){if(!q)return text;var f=fold(text),i=f.indexOf(fold(q));if(i<0)return text;return text.slice(0,i)+'<mark>'+text.slice(i,i+q.length)+'</mark>'+text.slice(i+q.length);}
 
 /* ---------- static front-matter pages ---------- */
@@ -585,9 +618,9 @@ function coverPage(){
   var f=el('<div class="cover-frame"></div>');
   f.innerHTML='<p class="est">Since 1856</p>'+
     '<span class="crest" role="img" aria-label="Kulm Hotel St. Moritz">'+CREST_SVG+'</span>'+
+    /* decorative fleuron removed per Marketing styleguide */
     '<h1>Wine List</h1>'+
     '<p class="place">Kulm Hotel &middot; St. Moritz</p>'+
-    '<div class="fleuron"><span>&#10022;</span></div>'+
     '<p class="tagline">Seven hundred references from the world&rsquo;s great cellars</p>';
   p.querySelector('.cover-inner').appendChild(f);
   p.querySelector('.cover-inner').insertAdjacentHTML('beforeend','<div class="turn-hint">Swipe to turn the page</div>');
@@ -596,9 +629,9 @@ function coverPage(){
 function contentsPage(){
   var p=el('<div class="page"><div class="page-inner contents-inner">'+
     '<p class="sec-eyebrow">The Cellar</p><h2 class="ct-h">Contents</h2>'+
-    '<div class="contents-rule"><span>&#10022;</span></div>'+
+    '<div class="contents-rule"><span></span></div>'+
     '<ol class="toc" id="toc"></ol>'+
-    '<div class="ct-foot">All prices in CHF &middot; VAT included &middot; <span style="text-transform:none;letter-spacing:0">*</span> only 1&ndash;2 bottles available</div></div></div>');
+    '<div class="ct-foot"><span style="text-transform:none;letter-spacing:0">*</span> only 1&ndash;2 bottles available</div></div></div>');
   var toc=p.querySelector('#toc');
   DATA.categories.forEach(function(cat){
     var row=el('<a class="toc-row" data-cat="'+cat.id+'"><span class="rn">'+cat.rn+'</span>'+
@@ -606,6 +639,16 @@ function contentsPage(){
     toc.appendChild(row);
   });
   return p;
+}
+/* Schluss-Seite mit dem Preis-/Service-Hinweis (Wortlaut Marketing). Die
+   Fleisch-Zeile (cl-meat) steht noch unter Vorbehalt — zum Entfernen einfach die
+   Zeile loeschen. */
+function closingPage(){
+  return el('<div class="page"><div class="page-inner closing-inner">'+
+    '<div class="closing-block">'+
+      '<p class="cl-line">Alle Preise in CHF inklusive MwSt. Service und Taxen inbegriffen.</p>'+
+      '<p class="cl-line cl-en">All prices in CHF including VAT. Service charge and taxes are included.</p>'+
+    '</div></div></div>');
 }
 function openerPage(cat){
   return el('<div class="page" data-chapter="'+esc(cat.display)+'"><div class="page-inner opener-inner">'+
@@ -617,14 +660,14 @@ function countryIndexPage(cat){
   return el('<div class="page" data-chapter="'+esc(cat.display)+'"><div class="page-inner contents-inner">'+
     '<p class="sec-eyebrow">Chapter '+cat.rn+' &middot; '+esc(cat.display)+'</p>'+
     '<h2 class="ct-h">By Country</h2>'+
-    '<div class="contents-rule"><span>&#10022;</span></div>'+
+    '<div class="contents-rule"><span></span></div>'+
     '<ol class="toc cidx-list'+(cat.countryOrder.length>6?' two':'')+'"></ol>'+
     '<div class="ct-foot">Tap a country to jump</div></div></div>');
 }
 function winePageShell(chapter,folio){
   var p=el('<div class="page" data-chapter="'+esc(chapter)+'"><div class="page-inner">'+
     '<div class="run-head"></div><div class="page-body"></div>'+
-    '<div class="run-foot"><span class="orn">&#10022;</span><span class="folio"></span></div></div></div>');
+    '<div class="run-foot"><span class="orn"></span><span class="folio"></span></div></div></div>');
   p.querySelector('.run-head').textContent=chapter;
   p.querySelector('.folio').textContent=folio;
   return p;
@@ -672,13 +715,23 @@ function paginate(){
     if(cat.countryOrder.length>=2){ var ci=countryIndexPage(cat); cidxRecs.push({el:ci,cat:cat}); built.push(ci); }
     runhead.textContent=cat.display;
     var curCountry=null;
+    var inSpecial=false,afterBanner=false;
     cat.groups.forEach(function(g){
-      if(g.co!==curCountry){ /* every new country starts on a fresh page */
+      if(g.banner){ /* Magnums / Half Bottles: eigene Sektion auf frischer Seite */
         if(pbody.firstChild)flush(cat.display);
-        curCountry=g.co;
-        countryFirst[cat.id][g.co]=2+built.length;
-        countryFirstFolio[cat.id][g.co]=folio+1; // printed page number of this country's first page
+        pbody.appendChild(sectionHeadNode(g.label));
+        inSpecial=true;afterBanner=true;curCountry=null;
+        return;
       }
+      if(g.co!==curCountry){ /* every new country starts on a fresh page (but keep the first region with its section banner) */
+        if(pbody.firstChild&&!afterBanner)flush(cat.display);
+        curCountry=g.co;
+        if(!inSpecial){ /* Sondergroessen-Bloecke nicht als Land-Sprungziel registrieren */
+          countryFirst[cat.id][g.co]=2+built.length;
+          countryFirstFolio[cat.id][g.co]=folio+1; // printed page number of this country's first page
+        }
+      }
+      afterBanner=false;
       var head=groupHeadNode(g,false);
       pbody.appendChild(head);
       if(pbody.scrollHeight>pbody.clientHeight+1){pbody.removeChild(head);flush(cat.display);pbody.appendChild(head);}
@@ -729,6 +782,7 @@ function paginate(){
   });
 
   built.forEach(function(pg){pages.push(pg);});
+  pages.push(closingPage()); // Schluss-Seite: Preis-/MwSt-Hinweis (ersetzt das "CHF" am Einzelpreis)
   pages.forEach(function(pg,i){pg.dataset.idx=i;book.appendChild(pg);});
   N=pages.length;
   if(cur>=N)cur=N-1;
@@ -865,7 +919,7 @@ function runSearch(){
     return '<div class="res" data-uid="'+w.uid+'"><div><div class="rp">'+esc(w.p||'')+'</div>'+
       (w.n?'<div class="rn">'+esc(w.n)+'</div>':'')+
       '<div class="rtag">'+esc(w.catDisplay)+' &middot; '+esc(w.co||'')+(w.v?(' &middot; '+w.v):'')+(w.code?(' &middot; Art. '+esc(w.code)):'')+'</div></div>'+
-      '<div class="rpr"><span class="cur">CHF</span>'+fmtPrice(w.pr)+'</div></div>';
+      '<div class="rpr">'+fmtPrice(w.pr)+'</div></div>';
   }).join("")+(matches.length>cap.length?'<div class="res-more">Showing first '+cap.length+' of '+matches.length+' &mdash; refine your search.</div>':'');
 }
 function openSearch(){document.getElementById('overlay').classList.add('show');setTimeout(function(){document.getElementById('search').focus();},50);}
