@@ -109,8 +109,10 @@
     padding:clamp(30px,4.6vw,52px) clamp(26px,4.6vw,50px)}
 
   /* running head / foot for wine pages */
-  .run-head{font-family:var(--serif);text-align:left;font-size:clamp(34px,5vw,44px);letter-spacing:0;text-transform:none;
-    color:var(--ink);padding-bottom:2px;margin-bottom:20px;flex:none}
+  /* Running-Head: auf Folgeseiten klein/grau; auf der ersten Kapitelseite gross (Sektionstitel) */
+  .run-head{font-family:var(--serif);text-align:left;font-size:17px;letter-spacing:0;text-transform:none;
+    color:var(--faint);padding-bottom:2px;margin-bottom:14px;flex:none}
+  .chap-first .run-head{font-size:clamp(34px,5vw,44px);color:var(--ink);margin-bottom:20px}
   .page-body{flex:1;overflow:hidden;min-height:0}
   .run-foot{flex:none;display:flex;align-items:center;justify-content:center;gap:12px;padding-top:12px;color:var(--gold-soft)}
   .run-foot .orn{font-size:12px;opacity:.8;padding:12px 22px;margin:-12px -22px;position:relative;z-index:6;cursor:default;-webkit-tap-highlight-color:transparent}
@@ -883,6 +885,7 @@ function paginate(){
   var pbody=probe.querySelector('.page-body');
   var runhead=probe.querySelector('.run-head');
   var folio=0;
+  var chapStart=false; // markiert die erste Inhaltsseite eines Kapitels (grosser Titel; danach kleiner Running-Head)
   var built=[]; // content page descriptors after front matter
   var cidxRecs=[]; // {el,cat} country-index pages to fill after pagination
   countryFirst={}; // cat.id -> {country -> absolute page index} (global for the menu overlay)
@@ -892,6 +895,7 @@ function paginate(){
     folio++;
     var shell=winePageShell(chapter,folio);
     if(folio===1)shell.classList.add('page-1'); // first content page — larger headers (test)
+    if(chapStart){shell.classList.add('chap-first');chapStart=false;} // grosser Sektionstitel nur auf der ersten Kapitelseite
     var body=shell.querySelector('.page-body');
     while(pbody.firstChild)body.appendChild(pbody.firstChild);
     built.push(shell);
@@ -903,6 +907,7 @@ function paginate(){
     countryFirst[cat.id]={};
     countryFirstFolio[cat.id]={};
     runhead.textContent=cat.display;
+    chapStart=true;
     var curCountry=null;
     var inSpecial=false,afterBanner=false;
     cat.groups.forEach(function(g){
