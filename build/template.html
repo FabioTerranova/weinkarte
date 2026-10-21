@@ -96,7 +96,7 @@
   .page{position:absolute;inset:0;background:var(--paper);border-radius:2px 7px 7px 2px;
     box-shadow:var(--shadow);transform-origin:left center;backface-visibility:hidden;
     transition:transform 1.1s cubic-bezier(.28,.08,.20,1);overflow:hidden;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
     background-blend-mode:multiply;
   }
   @media (prefers-color-scheme:dark){:root:not([data-theme]) .page{background-blend-mode:screen}}
@@ -222,16 +222,19 @@
   .wine-stag .x-left{grid-column:1;min-width:0}
   .wine-stag .x-right{grid-column:2}
   .wine-stag .x-l1{display:flex;align-items:baseline;gap:10px}
-  .wine-stag .x-art{font-family:var(--sans);font-size:12px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.03em;flex:none;min-width:2.6em}
+  .wine-stag .x-art{font-family:var(--sans);font-size:12px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.03em;flex:none;min-width:34px}
   .wine-stag .nl{font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink)}
-  .wine-stag .x-detail{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink);margin-top:2px;padding-left:calc(2.6em + 10px)}
-  .wine-stag .x-desc{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink);margin-top:0;padding-left:calc(2.6em + 10px)}
+  .wine-stag .x-detail{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink);margin-top:2px;padding-left:44px}
+  .wine-stag .x-desc{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink);margin-top:0;padding-left:44px}
   .wine-stag .x-r1{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
   .wine-stag .x-year{flex:none;width:2.8em;text-align:right;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:.03em}
   .wine-stag .x-cur{flex:none;margin-left:auto;font-family:var(--sans);font-size:11px;font-style:italic;color:var(--faint)}
   .wine-stag .x-price{flex:none;width:3.4em;margin-left:auto;text-align:right;font-family:var(--serif);font-size:18px;font-weight:500;color:rgba(0,0,0,.5);font-variant-numeric:tabular-nums}
   .wine-stag .x-class{text-align:right;font-family:var(--serif);font-style:italic;font-size:13.5px;color:var(--ink);margin-top:2px}
   .wine-stag .x-prodhead{grid-column:1 / -1;font-family:var(--serif);font-size:19px;line-height:1.3;color:var(--ink);margin-bottom:4px}
+  /* mehr Luft zwischen den Produzenten-Gruppen (wie im PDF); erste Gruppe nach dem Region-Header ohne Extra-Abstand */
+  .wine.wine-stag.prod-head{margin-top:18px}
+  .grp-head + .wine.wine-stag.prod-head{margin-top:0}
   .wine.is-feature.wine-stag .x-prodhead{display:inline-flex;align-items:center;gap:8px}
   .wine.is-feature.wine-stag .x-prodhead::after{content:none}
   /* === /Staffel === */
@@ -677,8 +680,8 @@ function paginate(){
   book.innerHTML='';pages=[];chapterFirstPage={};pageOfUid={};
   chapterFirstFolio={};countryFirstFolio={};
 
-  var cover=coverPage();
-  pages.push(cover);
+  var cover=coverPage(),contents=contentsPage();
+  pages.push(cover);pages.push(contents);
 
   var probe=winePageShell('Sample','0');probe.style.visibility='hidden';book.appendChild(probe);
   var pbody=probe.querySelector('.page-body');
@@ -701,7 +704,7 @@ function paginate(){
   }
 
   DATA.categories.forEach(function(cat){
-    chapterFirstPage[cat.id]=1+built.length; // first content page index (flat layout: kein Opener/Inhaltsverzeichnis)
+    chapterFirstPage[cat.id]=2+built.length; // first content page index (flat layout: kein Opener/Inhaltsverzeichnis)
     chapterFirstFolio[cat.id]=folio+1;       // printed page number of the chapter's first content page
     countryFirst[cat.id]={};
     countryFirstFolio[cat.id]={};
@@ -720,7 +723,7 @@ function paginate(){
         if(pbody.firstChild&&!afterBanner)flush(cat.display);
         curCountry=g.co;
         if(!inSpecial){ /* Sondergroessen-Bloecke nicht als Land-Sprungziel registrieren */
-          countryFirst[cat.id][g.co]=1+built.length;
+          countryFirst[cat.id][g.co]=2+built.length;
           countryFirstFolio[cat.id][g.co]=folio+1; // printed page number of this country's first page
         }
       }
@@ -750,13 +753,18 @@ function paginate(){
         }
         winesHere++;
         prevProd=fold(w.p||"");
-        pageOfUid[w.uid]=1+built.length; // page currently being filled
+        pageOfUid[w.uid]=2+built.length; // page currently being filled
       });
     });
     flush(cat.display);
   });
   book.removeChild(probe);
 
+  /* Inhaltsverzeichnis (Seite 2): Seitenzahlen eintragen, jetzt wo die Kapitel-Folios bekannt sind */
+  DATA.categories.forEach(function(cat){
+    var s=contents.querySelector('.toc-row[data-cat="'+cat.id+'"] .ct');
+    if(s)s.textContent=chapterFirstFolio[cat.id];
+  });
   built.forEach(function(pg){pages.push(pg);});
   pages.push(closingPage()); // Schluss-Seite: Preis-/MwSt-Hinweis (ersetzt das "CHF" am Einzelpreis)
   pages.forEach(function(pg,i){pg.dataset.idx=i;book.appendChild(pg);});
