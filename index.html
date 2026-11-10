@@ -65,7 +65,7 @@
   .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
     background:radial-gradient(130% 100% at 50% -10%,var(--paper-2),var(--paper-3) 70%);
     perspective:2400px;overflow:hidden;touch-action:none;padding-bottom:var(--bar-h)}
-  .book{position:relative;width:min(93vw,1000px);height:min(87vh,1360px);transform-style:preserve-3d}
+  .book{position:relative;width:min(93vw,1000px);height:min(calc(100vh - var(--bar-h) - 16px),1400px);transform-style:preserve-3d}
   /* ---------- Untere Navigationsleiste (Kapitel-Register) ----------
      Früher eine schmale vertikale Leiste am rechten Rand; auf Wunsch von
      Marketing jetzt eine breite, horizontale Leiste UNTEN mit großen,
