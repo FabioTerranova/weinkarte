@@ -64,8 +64,8 @@
   /* ---------- Stage & Book ---------- */
   .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
     background:radial-gradient(130% 100% at 50% -10%,var(--paper-2),var(--paper-3) 70%);
-    perspective:2400px;overflow:hidden;touch-action:none;padding-right:34px}
-  .book{position:relative;width:min(93vw,1000px);height:min(90vh,1400px);transform-style:preserve-3d}
+    perspective:2400px;overflow:hidden;touch-action:none;padding-right:calc(34px - 0.5cm)}
+  .book{position:relative;width:calc(min(93vw,1000px) + 0.5cm);height:calc(min(90vh,1400px) + 1cm);transform-style:preserve-3d}
   /* Kapitel-Register: kleines Symbol am rechten Rand, klappt die Kapitel aus */
   .tabdock{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:26;
     display:flex;flex-direction:column;align-items:flex-end;gap:6px}
