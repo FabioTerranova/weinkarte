@@ -1179,7 +1179,7 @@ document.getElementById('menuClose').addEventListener('click',closeMenu);
 document.getElementById('menuOverlay').addEventListener('click',function(e){if(e.target===this)closeMenu();});
 document.getElementById('wdClose').addEventListener('click',closeWineDetail);
 document.getElementById('wineDetail').addEventListener('click',function(e){if(e.target===this)closeWineDetail();});
-document.getElementById('contentsBtn').addEventListener('click',function(){setPage(1,true);});
+document.getElementById('contentsBtn').addEventListener('click',function(){tabLevel='chapters';renderTabs();setPage(1,true);});
 document.getElementById('tabrail').addEventListener('click',function(e){
   e.stopPropagation(); /* sonst schließt der Außen-Klick-Handler beim Neu-Rendern */
   var back=e.target.closest('.tab-back');
