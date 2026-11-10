@@ -11,13 +11,13 @@ Wein entfernen: die ganze Zeile löschen.,,,,,,,,,,,
 "SCHUTZ: Bei einer Fehleingabe (falsche Kategorie, Text in einer Zahlenspalte …) wird NICHT veröffentlicht – die Tablets behalten automatisch die letzte korrekte Version. Einfach den Fehler korrigieren.",,,,,,,,,,,
 ,,,,,,,,,,,
 Category,Country,Region,Producer,Wine,Vintage,Volume,Price,ArtCode,grapes,classification,description
-Sparkling,France,Champagne,Billecart-Salmon,"Brut ""Réserve""",,0.75,165,3081,"Pinot Meunier, Pinot Noir, Chardonnay",Brut,Test 1
-Sparkling,France,Champagne,Billecart-Salmon,"""Le Blanc de Blancs"" Extra Brut",,0.75,235,3082,Chardonnay,Blanc de Blancs – Extra Brut,Test 2
-Sparkling,France,Champagne,Billecart-Salmon,Billecart-Salmon Brut Rosé,,0.75,265,3064,"Pinot Noir, Chardonnay, Pinot Meunier",Brut Rosé,
+Sparkling,France,Champagne,Billecart-Salmon,"Brut ""Réserve""",,0.75,165,3081,"Pinot Meunier, Pinot Noir, Chardonnay",Brut,This is a Test Description
+Sparkling,France,Champagne,Billecart-Salmon,"""Le Blanc de Blancs"" Extra Brut",,0.75,235,3082,Chardonnay,Blanc de Blancs – Extra Brut,
+Sparkling,France,Champagne,Billecart-Salmon,Billecart-Salmon Brut Rosé,,0.75,265,3064,"Pinot Noir, Chardonnay, Pinot Meunier",Brut Rosé,This is a Test Description
 Sparkling,France,Champagne,Billecart-Salmon,"""Cuvée Louis Salmon"" Brut Blancs de Blancs",2012,0.75,430,3084,Chardonnay,Blanc de Blancs Grand Cru – Brut,
 Sparkling,France,Champagne,Billecart-Salmon,Elisabeth Salmon Brut Rose,2013,0.75,500,3083,"Pinot Noir, Chardonnay",Rosé – Brut,
 Sparkling,France,Champagne,Bollinger,Special Cuvée,,0.75,220,3021,"Pinot Noir, Chardonnay, Pinot Meunier",Brut,
-Sparkling,France,Champagne,Bruno Paillard,Première Cuvée Extra-Brut,,0.75,175,3030,"Pinot Noir, Chardonnay, Pinot Meunier",Extra Brut,
+Sparkling,France,Champagne,Bruno Paillard,Première Cuvée Extra-Brut,,0.75,175,3030,"Pinot Noir, Chardonnay, Pinot Meunier",Extra Brut,This is a Test Description
 Sparkling,France,Champagne,Bruno Paillard,"""Blanc des Blancs"" Grand Cru",,0.75,260,3062,Chardonnay,Blanc de Blancs Grand Cru – Extra Brut,
 Sparkling,France,Champagne,Bruno Paillard,NPU Nec Plus Ultra,2009,0.75,615,8787,"Chardonnay, Pinot Noir",Extra Brut,
 Sparkling,France,Champagne,Dom Pérignon,Dom Pérignon,2013,0.75,500,3008,"Chardonnay, Pinot Noir",Brut,

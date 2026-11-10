@@ -79,17 +79,17 @@
   .tabrail{display:none;flex-direction:column;gap:5px;align-items:flex-end;max-height:80vh;overflow:auto}
   .tabdock.open .tabrail{display:flex}
   .tab{pointer-events:auto;writing-mode:vertical-rl;text-orientation:mixed;
-    height:98px;justify-content:center;
-    font-family:var(--sans);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+    min-height:98px;height:auto;justify-content:center;
+    font-family:var(--sans);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
     color:var(--gold);background:color-mix(in srgb,var(--paper) 92%,transparent);
     border:1px solid var(--line-2);border-right:0;border-radius:6px 0 0 6px;
-    padding:8px 5px;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;
+    padding:8px 7px;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;
     box-shadow:-2px 2px 8px rgba(40,24,8,.10);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
   .tab .trn{font-family:var(--serif);font-style:italic;font-size:12px;color:var(--gold-soft)}
   .tab.on{background:var(--gold);color:var(--paper);border-color:var(--gold)}
   .tab.on .trn{color:var(--paper)}
   /* Länder-Ebene: automatische Höhe (kürzere Namen = kürzere Tabs) + Zurück-Tab */
-  .tab.ctab,.tab.tab-back{height:auto;min-height:46px;font-size:10px}
+  .tab.ctab,.tab.tab-back{height:auto;min-height:46px;font-size:11px}
   .tab-back{color:var(--gold-soft);background:color-mix(in srgb,var(--paper) 82%,transparent);letter-spacing:.06em}
   .book.no-anim .page{transition:none!important}
 
