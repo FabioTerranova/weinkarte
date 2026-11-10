@@ -35,7 +35,7 @@
     --shadow:0 2px 6px rgba(0,0,0,.07),0 24px 58px rgba(0,0,0,.13);
     --serif:"GT Alpina",Georgia,"Times New Roman",serif;
     --sans:"Euclid Circular B",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-    --ctrl-h:0px; --grain:.035; --bar-h:80px;
+    --ctrl-h:0px; --grain:.035; --bar-h:72px;
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme]){
@@ -64,8 +64,8 @@
   /* ---------- Stage & Book ---------- */
   .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
     background:radial-gradient(130% 100% at 50% -10%,var(--paper-2),var(--paper-3) 70%);
-    perspective:2400px;overflow:hidden;touch-action:none;padding-bottom:var(--bar-h)}
-  .book{position:relative;width:min(93vw,1000px);height:min(calc(100vh - var(--bar-h) - 16px),1400px);transform-style:preserve-3d}
+    perspective:2400px;overflow:hidden;touch-action:none;padding-top:0.5cm;padding-bottom:calc(0.7cm + var(--bar-h))}
+  .book{position:relative;width:min(93vw,1000px);height:min(calc(100vh - 0.5cm - 0.7cm - var(--bar-h)),1400px);transform-style:preserve-3d}
   /* ---------- Untere Navigationsleiste (Kapitel-Register) ----------
      Früher eine schmale vertikale Leiste am rechten Rand; auf Wunsch von
      Marketing jetzt eine breite, horizontale Leiste UNTEN mit großen,
