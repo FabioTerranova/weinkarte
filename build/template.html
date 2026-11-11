@@ -268,7 +268,9 @@
   .w-price .cur{font-size:11px;font-weight:600;color:var(--faint);margin-right:2px}
   /* "only 1-2 bottles" marker next to the price. width:0 so the star overhangs to
      the right and the price numbers stay column-aligned (not nudged left). */
-  .lim-star{display:inline-block;width:0;margin-left:3px;font-size:.72em;font-weight:400;color:var(--faint)}
+  /* "only 1-2 bottles" marker: appended after the wine name (same line as the
+     art code), with a ~2-space gap. See the legend on the Contents/foot. */
+  .lim-star{margin-left:.5em;color:var(--muted);font-weight:600}
   .w-code{font-family:var(--sans);font-size:11px;letter-spacing:.05em;color:var(--faint);font-variant-numeric:tabular-nums;margin-top:2px}
   mark{background:color-mix(in srgb,var(--gold-soft) 45%,transparent);color:inherit;border-radius:2px;padding:0 1px}
 
@@ -556,13 +558,13 @@ function wineHTML(w,q,hideProd,runHead,stag){
       prodHeadS+
       '<div class="x-left">'+
         '<div class="x-l1"><span class="x-art">'+(w.code?esc(w.code):'')+'</span>'+
-          '<span class="nl">'+nameLine+'</span>'+(badge?' '+badge:'')+'</div>'+
+          '<span class="nl">'+nameLine+'</span>'+(w.lim?'<span class="lim-star">*</span>':'')+(badge?' '+badge:'')+'</div>'+
         (detail?'<div class="x-detail">'+detail+'</div>':'')+
         (descr?'<div class="x-desc">'+descr+'</div>':'')+
       '</div>'+
       '<div class="x-right">'+
         '<div class="x-r1"><span class="x-year">'+(w.v?w.v:'NV')+'</span>'+
-          '<span class="x-price">'+fmtPrice(w.pr)+(w.lim?'<span class="lim-star">*</span>':'')+'</span></div>'+
+          '<span class="x-price">'+fmtPrice(w.pr)+'</span></div>'+
         (classif?'<div class="x-class">'+classif+'</div>':'')+
       '</div>'+
       '</li>';
@@ -576,9 +578,9 @@ function wineHTML(w,q,hideProd,runHead,stag){
     prodHead+
     '<div class="w-main">'+
     innerProd+
-    (name?'<div class="w-name">'+name+'</div>':'')+
+    (name?'<div class="w-name">'+name+(w.lim?'<span class="lim-star">*</span>':'')+'</div>':'')+
     '<div class="w-meta">'+vint+region+badge+'</div></div>'+
-    '<div class="w-right"><div class="w-price">'+fmtPrice(w.pr)+(w.lim?'<span class="lim-star">*</span>':'')+'</div>'+
+    '<div class="w-right"><div class="w-price">'+fmtPrice(w.pr)+'</div>'+
     (w.code?'<div class="w-code">Art. '+esc(w.code)+'</div>':'')+'</div></li>';
 }
 function wineNode(w,hideProd,runHead,stag){return el('<ul class="wines" style="margin:0">'+wineHTML(w,null,hideProd,runHead,stag)+'</ul>').firstElementChild;}
