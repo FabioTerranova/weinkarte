@@ -212,6 +212,7 @@
   .grp-head:first-child{margin-top:0}
   .grp-head .reg{font-family:var(--sans);font-weight:600;font-size:15px;text-transform:none;letter-spacing:.01em;color:var(--ink);white-space:nowrap}
   .grp-head .reg .cont{color:var(--faint);font-weight:500;font-style:italic;text-transform:none;letter-spacing:.01em}
+  .grp-head .reg .subreg{display:block;font-weight:500;font-size:12px;color:var(--faint);letter-spacing:.02em;margin-top:1px;white-space:nowrap}
   .grp-head .hr{display:none}
   /* Header-Größen (Kapitel-Kopf + Gruppen-Header) gelten jetzt für die ganze Karte (siehe .run-head / .grp-head .reg oben). */
   .grp-head .gc{font-family:var(--sans);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
@@ -466,9 +467,9 @@ function splitFormats(cat){
       var c=volClass(w.vol);
       if(c=='large')gl.push(w);else if(c=='small')gm.push(w);else gs.push(w);
     });
-    if(gs.length)std.push({name:g.name,co:g.co,wines:gs});
-    if(gl.length)large.push({name:g.name,co:g.co,wines:gl});
-    if(gm.length)small.push({name:g.name,co:g.co,wines:gm});
+    if(gs.length)std.push({name:g.name,co:g.co,sub:g.sub,wines:gs});
+    if(gl.length)large.push({name:g.name,co:g.co,sub:g.sub,wines:gl});
+    if(gm.length)small.push({name:g.name,co:g.co,sub:g.sub,wines:gm});
   });
   var out=std.slice();
   if(large.length){out.push({banner:true,label:'Magnums & Large Formats',co:'__large__',name:'Magnums & Large Formats',wines:[]});large.forEach(function(g){out.push(g);});}
@@ -631,7 +632,8 @@ function openWineDetail(w){
 }
 function closeWineDetail(){var ov=document.getElementById('wineDetail');ov.classList.remove('show');ov.setAttribute('aria-hidden','true');}
 function groupHeadNode(g,cont){
-  return el('<div class="grp-head"><span class="reg">'+esc(g.name)+(cont?' <span class="cont">(cont.)</span>':'')+'</span><span class="hr"></span></div>');
+  var sub=g.sub?'<span class="subreg">'+esc(g.sub)+'</span>':''; // Unterregion: kleine zweite Zeile
+  return el('<div class="grp-head"><span class="reg">'+esc(g.name)+(cont?' <span class="cont">(cont.)</span>':'')+sub+'</span><span class="hr"></span></div>');
 }
 /* Sektions-Banner fuer Sondergroessen (Magnums / Half Bottles) am Ende eines Kapitels */
 function sectionHeadNode(label){

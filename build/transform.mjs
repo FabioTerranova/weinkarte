@@ -107,8 +107,7 @@ function csvToData(csvText) {
   var knownCat = {};
   for (var kc = 0; kc < KNOWN_CATEGORIES.length; kc++) knownCat[KNOWN_CATEGORIES[kc]] = 1;
 
-  var categories = [], catByName = {};
-  var lastCat = null, lastGroup = null, lastKey = null;
+  var categories = [], catByName = {}, groupsByCat = {};
   var badCats = {}, badNums = []; // collected problems -> reported together
 
   for (var i = hdr + 1; i < rows.length; i++) {
@@ -133,6 +132,11 @@ function csvToData(csvText) {
     // group name was just the country. The CSV stores Region = Country in that
     // case, so collapse Region==Country back to an empty region for parity.
     var re = (region === country) ? '' : region;
+    // Optional sub-region column (absent = ''): a finer split under the region
+    // shown as a small second line in the group heading. Header name: "subregion"
+    // / "unterregion" / "sub-region". Dropped if it just repeats region/country.
+    var subregion = _clean(col(row, 'subregion')) || _clean(col(row, 'unterregion')) || _clean(col(row, 'sub-region'));
+    var sub = (subregion === re || subregion === country) ? '' : subregion;
 
     // Optional columns (sommelier may add these to the sheet later; absent = ''):
     // "grapes"/"rebsorten" and "classification"/"klassifikation".
@@ -158,20 +162,26 @@ function csvToData(csvText) {
     if (descr) wine.desc = descr;   // extra line under the grapes; absent when empty
     if (limited) wine.lim = 1;      // "*" marker: only 1-2 bottles available
 
-    if (!lastCat || lastCat.name !== catName) {
-      lastCat = catByName[catName];
-      if (!lastCat) { lastCat = { name: catName, groups: [] }; categories.push(lastCat); catByName[catName] = lastCat; }
-      lastGroup = null; lastKey = null;
-    }
+    var cat = catByName[catName];
+    if (!cat) { cat = { name: catName, groups: [] }; categories.push(cat); catByName[catName] = cat; groupsByCat[catName] = {}; }
 
+    // Group wines by country + region + sub-region. Unlike the old sequential
+    // logic (new group whenever the key changed from the PREVIOUS row), this
+    // merges rows with the same key even if they are scattered in the sheet:
+    // the first occurrence creates the group, later matching rows join it.
+    // Group order = first appearance. (Clean, already-sorted sheets render the
+    // same as before; only scattered duplicates now combine instead of splitting.)
     var groupName = re ? (country + ', ' + re) : country;
-    var key = catName + ' ' + country + ' ' + re;
-    if (!lastGroup || key !== lastKey) {
-      lastGroup = { name: groupName, co: country, wines: [] };
-      lastCat.groups.push(lastGroup);
-      lastKey = key;
+    var key = country + '' + re + '' + sub;
+    var gmap = groupsByCat[catName];
+    var group = gmap[key];
+    if (!group) {
+      group = { name: groupName, co: country, wines: [] };
+      if (sub) group.sub = sub;   // small second heading line; absent when empty
+      cat.groups.push(group);
+      gmap[key] = group;
     }
-    lastGroup.wines.push(wine);
+    group.wines.push(wine);
   }
 
   // ---- SAFETY GATE: refuse to publish structurally-broken data ----
