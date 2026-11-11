@@ -96,6 +96,24 @@
   .tab.tab-back{background:transparent;color:var(--muted)}
   .book.no-anim .page{transition:none!important}
 
+  /* ---------- Druck-/PDF-Modus (nur fuer den Headless-Chrome im Build, via ?print) ----------
+     Macht aus dem Swipe-Buch einen fortlaufenden A4-Stapel: jede Buchseite = eine
+     A4-Seite, keine Navigation/Swipe-Hinweise/Overlays. Gaeste sehen das nie. */
+  @page{size:A4;margin:0}
+  html.print-mode,html.print-mode body{height:auto!important;overflow:visible!important}
+  .print-mode .stage{position:static!important;display:block!important;overflow:visible!important;
+    perspective:none!important;padding:0!important;background:none!important}
+  .print-mode .book{position:static;width:auto;height:auto;transform:none;transform-style:flat;margin:0}
+  .print-mode .page{position:static!important;inset:auto;display:block;
+    width:210mm;height:297mm;margin:0 auto;border-radius:0;box-shadow:none;
+    transform:none!important;transition:none!important;overflow:hidden;
+    break-after:page;page-break-after:always;break-inside:avoid}
+  .print-mode .page:last-child{break-after:auto;page-break-after:auto}
+  .print-mode .page{background-image:none;background-blend-mode:normal} /* Rauschtextur weg -> kleines PDF */
+  .print-mode .page::before,.print-mode .page::after{display:none}
+  .print-mode .nav,.print-mode .turn-hint,.print-mode .navbar,.print-mode .tabrail,
+  .print-mode .toast,.print-mode .chrome,.print-mode .ovl,.print-mode #syncBtn{display:none!important}
+
   .page{position:absolute;inset:0;background:var(--paper);border-radius:2px 7px 7px 2px;
     box-shadow:var(--shadow);transform-origin:left center;backface-visibility:hidden;
     transition:transform 1.1s cubic-bezier(.28,.08,.20,1);overflow:hidden;
@@ -1189,15 +1207,25 @@ function openMenu(){buildMenu();document.getElementById('menuOverlay').classList
 function closeMenu(){document.getElementById('menuOverlay').classList.remove('show');}
 
 /* ---------- init ---------- */
+/* Druck-/PDF-Modus: via ?print in der URL (nur der Headless-Chrome im Build nutzt das). */
+var PRINT=/[?&]print(=|&|$)/.test(location.search);
+if(PRINT)document.documentElement.classList.add('print-mode');
 applyTheme('light'); /* fester heller „Papier"-Look (Dunkelmodus entfernt) */
 try{if(localStorage.getItem('kulm-hint-seen')){_hintSeen=true;document.documentElement.classList.add('hint-off');}}catch(e){}
-paginate();
-buildTabs();
-jumpTo(0);
-buildOvlFilters();runSearch();
-/* Nur Hochformat: im installierten App-Modus zusätzlich hart sperren (best effort;
-   die CSS-Aufforderung greift überall, das hier zusätzlich auf Android/Chrome). */
-try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('portrait').catch(function(){});}catch(e){}
+paginate(); /* misst jetzt gegen die A4-Seitengroesse, wenn print-mode aktiv ist */
+if(PRINT){
+  /* Alle Seiten stehen lassen (kein jumpTo, das alle bis auf eine ausblendet).
+     Auf geladene Schriften warten, dann Signal fuer den PDF-Export setzen. */
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){window.__printReady=true;});}
+  else{window.__printReady=true;}
+}else{
+  buildTabs();
+  jumpTo(0);
+  buildOvlFilters();runSearch();
+  /* Nur Hochformat: im installierten App-Modus zusätzlich hart sperren (best effort;
+     die CSS-Aufforderung greift überall, das hier zusätzlich auf Android/Chrome). */
+  try{if(screen.orientation&&screen.orientation.lock)screen.orientation.lock('portrait').catch(function(){});}catch(e){}
+}
 
 /* contents & country-index jumps (delegate on book) */
 document.getElementById('book').addEventListener('click',function(e){

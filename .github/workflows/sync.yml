@@ -3,8 +3,16 @@ name: Sync Weinkarte from Google Sheet
 # Runs automatically every 30 minutes, and can be started by hand from the
 # Actions tab ("Run workflow"). It re-fetches the master Google Sheet (published
 # as CSV), rebuilds index.html and — only if something actually changed —
-# commits & pushes it, which makes GitHub Pages redeploy. The sommelier never
-# touches this; he just edits wines in the Google Sheet as usual.
+# commits & pushes it (tablet update), then regenerates the printable A4 PDF
+# (weinkarte.pdf) and pushes that too. The sommelier never touches this; he just
+# edits wines in the Google Sheet as usual.
+#
+# The tablet update (index.html) is pushed FIRST and independently, so a Chrome/
+# PDF hiccup can never block it. The PDF is the PC/print copy, linked from the
+# Google Sheet and served at the fixed URL
+#   https://fabioterranova.github.io/weinkarte/weinkarte.pdf
+# It is rebuilt only when the list changed, so it is always current with no churn.
+# The tablets never use it (digital book only).
 
 on:
   schedule:
@@ -33,17 +41,44 @@ jobs:
       - name: Build index.html from Google Sheet
         run: node build/build.mjs
 
-      - name: Commit & push if changed
+      # Publish the tablet page first & independently — never blocked by the PDF.
+      - name: Commit & push page if changed
+        id: page
         run: |
           git config user.name "weinkarte-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Stage the published page AND the master backup; both only change when
-          # the sheet content actually changes, so no churn on unchanged runs.
           git add index.html build/master-latest.csv
           if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Keine Änderungen in der Weinkarte."
           else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
             git commit -m "Auto-Sync Weinkarte aus Google Sheet"
             git push
-            echo "Weinkarte aktualisiert und veröffentlicht."
+            echo "Weinkarte (Tablet) aktualisiert und veröffentlicht."
+          fi
+
+      # --- PDF (PC/print copy), only when the list changed ---
+      - name: Set up Chrome
+        if: steps.page.outputs.changed == 'true'
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Install puppeteer-core
+        if: steps.page.outputs.changed == 'true'
+        run: npm install --no-save puppeteer-core@23
+
+      - name: Generate & push printable A4 PDF
+        if: steps.page.outputs.changed == 'true'
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: |
+          node build/pdf.mjs
+          git add weinkarte.pdf
+          if git diff --cached --quiet; then
+            echo "PDF unverändert."
+          else
+            git commit -m "Auto-Sync Weinkarte: PDF (A4) aktualisiert"
+            git push
+            echo "weinkarte.pdf aktualisiert und veröffentlicht."
           fi

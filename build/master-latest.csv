@@ -11,7 +11,7 @@ Wein entfernen: die ganze Zeile löschen.,,,,,,,,,,,,,
 "SCHUTZ: Bei einer Fehleingabe (falsche Kategorie, Text in einer Zahlenspalte …) wird NICHT veröffentlicht – die Tablets behalten automatisch die letzte korrekte Version. Einfach den Fehler korrigieren.",,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 Category,Country,Region,subregion,Producer,Wine,Vintage,Volume,Price,ArtCode,grapes,classification,description,limited
-Sparkling,France,Champagne,Montagne du Reims,Billecart-Salmon,"Brut ""Réserve""",,0.75,165,3081,"Pinot Meunier, Pinot Noir, Chardonnay",Brut,This is a Test Description,TRUE
+Sparkling,France,Champagne,Montagne du Reims,Billecart-Salmon,"Brut ""Réserve"" ",,0.75,165,3081,"Pinot Meunier, Pinot Noir, Chardonnay",Brut,This is a Test Description,TRUE
 Sparkling,France,Champagne,Cote de Blancs,Billecart-Salmon,"""Le Blanc de Blancs"" Extra Brut",,0.75,235,3082,Chardonnay,Blanc de Blancs – Extra Brut,,FALSE
 Sparkling,France,Champagne,XYZ,Billecart-Salmon,Billecart-Salmon Brut Rosé,,0.75,265,3064,"Pinot Noir, Chardonnay, Pinot Meunier",Brut Rosé,This is a Test Description,FALSE
 Sparkling,France,Champagne,Montagne du Reims,Billecart-Salmon,"""Cuvée Louis Salmon"" Brut Blancs de Blancs",2012,0.75,430,3084,Chardonnay,Blanc de Blancs Grand Cru – Brut,,TRUE
