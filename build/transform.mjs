@@ -40,6 +40,13 @@ function _isNum(s) {
   s = _stripNum(s);
   return s !== '' && !isNaN(Number(s));
 }
+/* true if a cell reads as "checked". A Google-Sheet checkbox exports as
+   TRUE/FALSE, but accept the common hand-typed marks too (x, ja, yes, 1, *, ✓). */
+function _truthy(s) {
+  s = _clean(s).toLowerCase();
+  return s === 'true' || s === 'x' || s === 'ja' || s === 'yes' || s === 'y' ||
+         s === '1' || s === '*' || s === '✓' || s === '✔';
+}
 
 /* Minimal RFC-4180 CSV parser -> array of rows (each row an array of fields).
    Handles quoted fields, "" escapes, and CR/LF line endings. */
@@ -132,6 +139,9 @@ function csvToData(csvText) {
     var grapes = _clean(col(row, 'grapes')) || _clean(col(row, 'rebsorten'));
     var classif = _clean(col(row, 'classification')) || _clean(col(row, 'klassifikation'));
     var descr = _clean(col(row, 'description')) || _clean(col(row, 'beschreibung'));
+    // Checkbox column (absent = ''): wine has only 1-2 bottles left -> gets a "*"
+    // next to its price, matching the legend printed on the Contents/foot.
+    var limited = _truthy(col(row, 'limited') || col(row, 'restbestand') || col(row, 'limitiert'));
 
     var wine = {
       p: _clean(col(row, 'producer')),
@@ -146,6 +156,7 @@ function csvToData(csvText) {
     if (grapes) wine.gr = grapes;   // kept out of the object when empty to keep the inlined JSON lean
     if (classif) wine.cl = classif;
     if (descr) wine.desc = descr;   // extra line under the grapes; absent when empty
+    if (limited) wine.lim = 1;      // "*" marker: only 1-2 bottles available
 
     if (!lastCat || lastCat.name !== catName) {
       lastCat = catByName[catName];
