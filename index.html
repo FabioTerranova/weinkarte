@@ -875,7 +875,9 @@ function openWineDetail(w){
 function closeWineDetail(){var ov=document.getElementById('wineDetail');ov.classList.remove('show');ov.setAttribute('aria-hidden','true');}
 function groupHeadNode(g,cont){
   var sub=g.sub?'<span class="subreg">'+esc(g.sub)+'</span>':''; // Unterregion: kleine zweite Zeile
-  return el('<div class="grp-head"><span class="reg">'+esc(g.name)+(cont?' <span class="cont">(cont.)</span>':'')+sub+'</span><span class="hr"></span></div>');
+  // cont=true = Fortsetzung auf neuer Seite: Ueberschrift wird wiederholt, aber
+  // OHNE "(cont.)"-Zusatz (auf Wunsch entfernt).
+  return el('<div class="grp-head"><span class="reg">'+esc(g.name)+sub+'</span><span class="hr"></span></div>');
 }
 /* Sektions-Banner fuer Sondergroessen (Magnums / Half Bottles) am Ende eines Kapitels */
 function sectionHeadNode(label){
