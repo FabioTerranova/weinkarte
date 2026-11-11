@@ -535,7 +535,10 @@ function wineHTML(w,q,hideProd,runHead,stag){
   var rh=!hp&&!!runHead;       // first wine of a producer run: producer as header, cuvee indented too
   var prod=q?hl(esc(w.p||""),q):esc(w.p||""),name=(showName?(q?hl(esc(w.n),q):esc(w.n)):"");
   var badge=(w.vol&&w.vol!=0.75&&w.vol!=0.7)?'<span class="badge">'+sizeLabel(w.vol)+'</span>':'';
-  var feat=(w.code&&FEATURE[String(w.code)])?' is-feature':'';
+  // Wine-Story-Popups fuers Erste deaktiviert (Start ohne Popups). Zum
+  // Wiederaktivieren: die Zeile unten durch die auskommentierte ersetzen.
+  var feat='';
+  // var feat=(w.code&&FEATURE[String(w.code)])?' is-feature':'';
 
   if(stag){
     // Staffel-Layout nach Sommelier-Beispiel:
