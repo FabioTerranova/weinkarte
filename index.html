@@ -109,7 +109,7 @@
     transform:none!important;transition:none!important;overflow:hidden;
     break-after:page;page-break-after:always;break-inside:avoid}
   .print-mode .page:last-child{break-after:auto;page-break-after:auto}
-  .print-mode .page{background-image:none;background-blend-mode:normal} /* Rauschtextur weg -> kleines PDF */
+  .print-mode .page{background:#fff!important} /* PDF: weisser Hintergrund + Rauschtextur weg (cremefarben bleibt nur am Tablet) */
   .print-mode .page::before,.print-mode .page::after{display:none}
   .print-mode .nav,.print-mode .turn-hint,.print-mode .navbar,.print-mode .tabrail,
   .print-mode .toast,.print-mode .chrome,.print-mode .ovl,.print-mode #syncBtn{display:none!important}
@@ -230,7 +230,7 @@
   .grp-head:first-child{margin-top:0}
   .grp-head .reg{font-family:var(--sans);font-weight:600;font-size:15px;text-transform:none;letter-spacing:.01em;color:var(--ink);white-space:nowrap}
   .grp-head .reg .cont{color:var(--faint);font-weight:500;font-style:italic;text-transform:none;letter-spacing:.01em}
-  .grp-head .reg .subreg{display:block;font-weight:500;font-size:12px;color:var(--faint);letter-spacing:.02em;margin-top:1px;white-space:nowrap}
+  .grp-head .reg .subreg{display:block;font-weight:500;font-size:15px;color:var(--faint);letter-spacing:.02em;margin-top:1px;white-space:nowrap}
   .grp-head .hr{display:none}
   /* Header-Größen (Kapitel-Kopf + Gruppen-Header) gelten jetzt für die ganze Karte (siehe .run-head / .grp-head .reg oben). */
   .grp-head .gc{font-family:var(--sans);font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
