@@ -11,21 +11,21 @@ Wein entfernen: die ganze Zeile löschen.,,,,,,,,,,,,,
 "SCHUTZ: Bei einer Fehleingabe (falsche Kategorie, Text in einer Zahlenspalte …) wird NICHT veröffentlicht – die Tablets behalten automatisch die letzte korrekte Version. Einfach den Fehler korrigieren.",,,,,,,,,,,,,
 ,,,,,,,,,,,,,
 Category,Country,Region,subregion,Producer,Wine,Vintage,Volume,Price,ArtCode,grapes,classification,description,limited
-Sparkling,France,Champagne,,Billecart-Salmon,"Brut ""Réserve""",,0.75,165,3081,"Pinot Meunier, Pinot Noir, Chardonnay",Brut,This is a Test Description,TRUE
-Sparkling,France,Champagne,,Billecart-Salmon,"""Le Blanc de Blancs"" Extra Brut",,0.75,235,3082,Chardonnay,Blanc de Blancs – Extra Brut,,FALSE
-Sparkling,France,Champagne,,Billecart-Salmon,Billecart-Salmon Brut Rosé,,0.75,265,3064,"Pinot Noir, Chardonnay, Pinot Meunier",Brut Rosé,This is a Test Description,FALSE
-Sparkling,France,Champagne,,Billecart-Salmon,"""Cuvée Louis Salmon"" Brut Blancs de Blancs",2012,0.75,430,3084,Chardonnay,Blanc de Blancs Grand Cru – Brut,,TRUE
-Sparkling,France,Champagne,,Billecart-Salmon,Elisabeth Salmon Brut Rose,2013,0.75,500,3083,"Pinot Noir, Chardonnay",Rosé – Brut,,TRUE
-Sparkling,France,Champagne,,Bollinger,Special Cuvée,,0.75,220,3021,"Pinot Noir, Chardonnay, Pinot Meunier",Brut,,FALSE
-Sparkling,France,Champagne,,Bruno Paillard,Première Cuvée Extra-Brut,,0.75,175,3030,"Pinot Noir, Chardonnay, Pinot Meunier",Extra Brut,This is a Test Description,FALSE
-Sparkling,France,Champagne,,Bruno Paillard,"""Blanc des Blancs"" Grand Cru",,0.75,260,3062,Chardonnay,Blanc de Blancs Grand Cru – Extra Brut,,FALSE
-Sparkling,France,Champagne,,Bruno Paillard,NPU Nec Plus Ultra,2009,0.75,615,8787,"Chardonnay, Pinot Noir",Extra Brut,,FALSE
-Sparkling,France,Champagne,,Dom Pérignon,Dom Pérignon,2013,0.75,500,3008,"Chardonnay, Pinot Noir",Brut,,FALSE
-Sparkling,France,Champagne,,Dom Pérignon,Rosé,2008,0.75,750,3011,"Pinot Noir, Chardonnay",Rosé – Brut,,FALSE
-Sparkling,France,Champagne,,Dom Pérignon,Dom Pérignon - MAGNUM,2010,1.5,1250,3009,"Chardonnay, Pinot Noir",Brut,,FALSE
-Sparkling,France,Champagne,,Dom Pérignon,Plénitude P3,1993,0.75,6370,8568,"Chardonnay, Pinot Noir",Brut,,FALSE
-Sparkling,France,Champagne,,Dom Ruinart,Dom Ruinart Rosé,2009,0.75,585,8566,"Chardonnay, Pinot Noir",Rosé – Brut,,FALSE
-Sparkling,France,Champagne,,G.H. Mumm,Cuvée R. Lalou Prestige Brut,1999,0.75,450,3027,"Pinot Noir, Chardonnay",Brut,,FALSE
+Sparkling,France,Champagne,Montagne du Reims,Billecart-Salmon,"Brut ""Réserve""",,0.75,165,3081,"Pinot Meunier, Pinot Noir, Chardonnay",Brut,This is a Test Description,TRUE
+Sparkling,France,Champagne,Cote de Blancs,Billecart-Salmon,"""Le Blanc de Blancs"" Extra Brut",,0.75,235,3082,Chardonnay,Blanc de Blancs – Extra Brut,,FALSE
+Sparkling,France,Champagne,XYZ,Billecart-Salmon,Billecart-Salmon Brut Rosé,,0.75,265,3064,"Pinot Noir, Chardonnay, Pinot Meunier",Brut Rosé,This is a Test Description,FALSE
+Sparkling,France,Champagne,Montagne du Reims,Billecart-Salmon,"""Cuvée Louis Salmon"" Brut Blancs de Blancs",2012,0.75,430,3084,Chardonnay,Blanc de Blancs Grand Cru – Brut,,TRUE
+Sparkling,France,Champagne,Cote de Blancs,Billecart-Salmon,Elisabeth Salmon Brut Rose,2013,0.75,500,3083,"Pinot Noir, Chardonnay",Rosé – Brut,,TRUE
+Sparkling,France,Champagne,XYZ,Bollinger,Special Cuvée,,0.75,220,3021,"Pinot Noir, Chardonnay, Pinot Meunier",Brut,,FALSE
+Sparkling,France,Champagne,Montagne du Reims,Bruno Paillard,Première Cuvée Extra-Brut,,0.75,175,3030,"Pinot Noir, Chardonnay, Pinot Meunier",Extra Brut,This is a Test Description,FALSE
+Sparkling,France,Champagne,Cote de Blancs,Bruno Paillard,"""Blanc des Blancs"" Grand Cru",,0.75,260,3062,Chardonnay,Blanc de Blancs Grand Cru – Extra Brut,,FALSE
+Sparkling,France,Champagne,XYZ,Bruno Paillard,NPU Nec Plus Ultra,2009,0.75,615,8787,"Chardonnay, Pinot Noir",Extra Brut,,FALSE
+Sparkling,France,Champagne,Montagne du Reims,Dom Pérignon,Dom Pérignon,2013,0.75,500,3008,"Chardonnay, Pinot Noir",Brut,,FALSE
+Sparkling,France,Champagne,Cote de Blancs,Dom Pérignon,Rosé,2008,0.75,750,3011,"Pinot Noir, Chardonnay",Rosé – Brut,,FALSE
+Sparkling,France,Champagne,XYZ,Dom Pérignon,Dom Pérignon - MAGNUM,2010,1.5,1250,3009,"Chardonnay, Pinot Noir",Brut,,FALSE
+Sparkling,France,Champagne,Montagne du Reims,Dom Pérignon,Plénitude P3,1993,0.75,6370,8568,"Chardonnay, Pinot Noir",Brut,,FALSE
+Sparkling,France,Champagne,Cote de Blancs,Dom Ruinart,Dom Ruinart Rosé,2009,0.75,585,8566,"Chardonnay, Pinot Noir",Rosé – Brut,,FALSE
+Sparkling,France,Champagne,XYZ,G.H. Mumm,Cuvée R. Lalou Prestige Brut,1999,0.75,450,3027,"Pinot Noir, Chardonnay",Brut,,FALSE
 Sparkling,France,Champagne,,Gosset,Grand Réserve Brut,,0.75,165,8788,"Chardonnay, Pinot Noir, Pinot Meunier",Brut,,FALSE
 Sparkling,France,Champagne,,Gosset,Grand Rosé Brut,,0.75,175,3054,"Pinot Noir, Chardonnay",Brut Rosé,,FALSE
 Sparkling,France,Champagne,,Gosset,Grand Blanc de Blancs Brut,,0.75,205,8789,Chardonnay,Blanc de Blancs – Brut,,FALSE
