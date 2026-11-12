@@ -370,7 +370,6 @@ Red wine,France,Burgundy,,Domaine Confuron-Cotétidot,Vosne-Romanée,2021,0.75,2
 Red wine,France,Burgundy,,Domaine Confuron-Cotétidot,Vosne-Romanée,2020,0.75,250,2458,Pinot Noir,Village,,FALSE
 Red wine,France,Burgundy,,Domaine Confuron-Cotétidot,Clos de Vougeot Grand Cru,2021,0.75,645,8931,Pinot Noir,Grand Cru,,FALSE
 Red wine,France,Burgundy,,Domaine Cornu,"Corton Grand Cru ""Le Rognet et Corton""",2021,0.75,290,8970,Pinot Noir,Grand Cru,,FALSE
-Red wine,France,Burgundy,,Domaine Jean Tardy & Fils,"Nuits-Saint-Georges ""Au Bas de Combe"" Vieilles Vignes",2023,0.75,290,8932,Pinot Noir,Village,,FALSE
 Red wine,France,Burgundy,,Domaine Rossignol-Trapet,Gevrey-Chambertin Vieilles Vignes,2022,0.75,190,2518,Pinot Noir,Village,,FALSE
 Red wine,France,Burgundy,,Domaine Trapet Père Et Fils,"Gevrey-Chambertin ""Ostrea""",2017,0.75,290,2470,Pinot Noir,Village,,FALSE
 Red wine,France,Burgundy,,Domaine Trapet Père Et Fils,"Gevrey-Chambertin ""Ostrea""",2015,0.75,335,8916,Pinot Noir,Village,,FALSE
@@ -450,7 +449,6 @@ Red wine,France,Bordeaux,,Chateau Lafleur,Château Grand Village Rouge,2023,0.75
 Red wine,France,Bordeaux,,Château Angelus,"Château Angelus - Premier Grand Cru Classé ""A"" Saint-Émilion",2015,0.75,1250,2497,"Merlot, Cabernet Franc",Premier Grand Cru Classé,,FALSE
 Red wine,France,Bordeaux,,Château Batailley,Château Batailley - 5ème Cru Classé Pauillac,2018,0.75,270,2417,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Cinquième Cru Classé,,FALSE
 Red wine,France,Bordeaux,,Château Beychevelle,Château Beychevelle - 4ème Cru Classé - Saint-Julien,2022,0.75,295,2567,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Quatrième Cru Classé,,FALSE
-Red wine,France,Bordeaux,,Château Branaire-Ducru,Château Branaire-Ducru – 4e grand cru classé,2009,0.75,350,2536,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Quatrième Cru Classé,,FALSE
 Red wine,France,Bordeaux,,Château Brane-Cantenac,Baron de Brane - Margaux,2020,0.75,130,2508,"Cabernet Sauvignon, Merlot, Cabernet Franc",Second Wine (Margaux),,FALSE
 Red wine,France,Bordeaux,,Château Calon Ségur,Le Marquis de Calon Ségur - Saint-Estèphe,2018,0.75,150,2401,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Second Wine (Saint-Estèphe),,FALSE
 Red wine,France,Bordeaux,,Château Calon Ségur,Château Calon Ségur - 3ᵉ Grand Cru Classé Saint-Estèphe,2017,0.75,450,2516,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Troisième Cru Classé,,FALSE
@@ -580,7 +578,7 @@ Red wine,Italy,Veneto,,Quintarelli Giuseppe,Amarone della Valpolicella DOCG Clas
 Red wine,Italy,Veneto,,Quintarelli Giuseppe,Amarone della Valpolicella DOCG Classico Riserva *,2011,0.75,1410,8709,"Corvina, Rondinella",DOCG Riserva,,FALSE
 Red wine,Italy,Veneto,,Tommasi,Valpolicella Ripasso Classico Superiore DOC,2022,0.75,85,9009,"Corvina, Rondinella",DOC,,FALSE
 Red wine,Italy,Veneto,,Tommasi,Amarone della Valpolicella Classico DOCG,2021,0.75,145,9010,"Corvina, Rondinella",DOCG,,FALSE
-Red wine,Italy,Veneto,,Tommasi,Valpolicella Ripasso - MAGNUM,2020,0.75,160,7606,"Corvina, Rondinella",DOC,,FALSE
+Red wine,Italy,Veneto,,Tommasi,Valpolicella Ripasso - MAGNUM,2020,1.5,160,7606,"Corvina, Rondinella",DOC,,FALSE
 Red wine,Italy,Veneto,,Zymè,"""Kairos"" - Veneto Rosso IGP - HALF bt.",2017,0.375,100,5601,"Corvina, Rondinella, Cabernet Sauvignon, Merlot, Sangiovese",IGT Veneto,,FALSE
 Red wine,Italy,Veneto,,Zymè,"""Kairos"" - Veneto Rosso IGP",2018,0.75,180,2690,"Corvina, Rondinella, Cabernet Sauvignon, Merlot, Sangiovese",IGT Veneto,,FALSE
 Red wine,Italy,Trentino Alto Adige,,Cantina Terlan,"Alto Adige DOC Riserva - Lagrein ""Gries""",2022,0.75,105,9222,Lagrein,DOC Riserva,,FALSE
@@ -704,7 +702,6 @@ Red wine,Spain,Castilla y León,,Raul Perez,"""Valtuille” Cepas Centenarias - 
 Red wine,Spain,Castilla y León,,Tr3smano Lagar de Proventus,Tr3smano,2020,0.75,145,9042,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE
 Red wine,Spain,Castilla y León,,Tr3smano Lagar de Proventus,Tr3smano TM - Ribera del Duero,2019,0.75,355,9043,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE
 Red wine,Spain,Castilla y León,,Viñas del Jaro,Sembro - Ribera Del Duero DO,2023,0.75,65,2809,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE
-Red wine,Spain,Castilla y León,,Viñas del Jaro,"""Sembro"" - Ribera Del Duero DO",2022,1.5,130,7616,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE
 Red wine,Spain,Ribera del Duero,,Bodegas y Viñedos Vega Sicilia,"Unico “Reserva Especial” - Ribera del Duero DO (2008, 2009, 2010)",,0.75,1500,2807,"Tempranillo (Tinto Fino), Cabernet Sauvignon",Ribera del Duero DO - Gran Reserva,,FALSE
 Red wine,Portugal,Douro,,Casa Ferreirinha,Quinta Leda - Douro DOC,2021,0.75,155,9046,"Touriga Nacional, Touriga Franca, Tinta Roriz",DOC Douro,,FALSE
 Red wine,Portugal,Douro,,Casa Ferreirinha,Barca Velha - Douro DOC,2015,0.75,1870,9047,"Touriga Nacional, Touriga Franca, Tinta Roriz",DOC Douro,,FALSE
