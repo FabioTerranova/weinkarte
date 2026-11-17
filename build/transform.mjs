@@ -196,6 +196,35 @@ function csvToData(csvText) {
   }
   if (problems.length) throw new Error('Sheet validation failed — ' + problems.join('  |  '));
 
+  // ---- Order identical wines by vintage (oldest -> youngest) ----
+  // When the SAME wine (same producer + name) appears in several vintages, cluster
+  // those rows together and sort them ascending by vintage (e.g. Sassicaia 2001,
+  // 2008, 2015). DISTINCT wines keep their sheet order (first appearance); a
+  // no-vintage (NV) entry sorts first. A manual STABLE reorder is used (insertion
+  // sort with a strict '>') so it behaves identically on older iPad Safari, where
+  // Array.prototype.sort is not guaranteed stable.
+  function sortByVintageStable(arr) {
+    for (var a = 1; a < arr.length; a++) {
+      var cur = arr[a], b = a - 1;
+      while (b >= 0 && arr[b].v > cur.v) { arr[b + 1] = arr[b]; b--; }
+      arr[b + 1] = cur;
+    }
+    return arr;
+  }
+  categories.forEach(function (c) {
+    c.groups.forEach(function (g) {
+      var order = [], buckets = {};
+      for (var wi = 0; wi < g.wines.length; wi++) {
+        var w = g.wines[wi], k = w.p + '||' + w.n;
+        if (!buckets[k]) { buckets[k] = []; order.push(k); }
+        buckets[k].push(w);
+      }
+      var out = [];
+      for (var oi = 0; oi < order.length; oi++) out = out.concat(sortByVintageStable(buckets[order[oi]]));
+      g.wines = out;
+    });
+  });
+
   // derived aggregates (countries drives the search filter; the rest are kept
   // for format parity with the original build).
   var countriesSet = {}, volumesSet = {}, prices = [];
