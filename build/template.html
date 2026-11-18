@@ -456,7 +456,7 @@ var nf=new Intl.NumberFormat('de-CH');
 function fmtPrice(p){return (p==null)?"&mdash;":nf.format(p);}
 function roman(n){var m=[["M",1000],["CM",900],["D",500],["CD",400],["C",100],["XC",90],["L",50],["XL",40],["X",10],["IX",9],["V",5],["IV",4],["I",1]],r="";for(var i=0;i<m.length;i++){while(n>=m[i][1]){r+=m[i][0];n-=m[i][1];}}return r;}
 function sizeLabel(v){if(v==0.375)return"Half 37.5cl";if(v==0.5)return"50cl";if(v==0.7)return"70cl";if(v==1.5)return"Magnum 1.5L";if(v==3)return"D. Magnum 3L";if(v==6)return"Imperial 6L";return"";}
-var CAT_DISPLAY={'Sparkling':'Sparkling Wine','White wine':'White Wine','Rose':'Rosé Wine','Red wine':'Red Wine','Sweet wine':'Sweet Wine','Cider':'Cider','Alcohol free':'Alcohol-Free'};
+var CAT_DISPLAY={'Sparkling':'Sparkling Wines','White wine':'White Wines','Rose':'Rosé Wines','Red wine':'Red Wines','Sweet wine':'Sweet Wines & Cider','Cider':'Cider','Alcohol free':'Alcohol-Free'};
 function pretty(name){return CAT_DISPLAY[name]||name;}
 function plural(n,word){return n+' '+word+(n===1?'':'s');}
 function esc(s){return (s||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}

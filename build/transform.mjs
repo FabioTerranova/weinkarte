@@ -115,6 +115,11 @@ function csvToData(csvText) {
     var catName = _clean(col(row, 'category'));
     if (catName === '') continue; // skip stray blank rows (e.g. an Anleitung spacer)
 
+    // Accept an obvious accent variant so it doesn't block publishing: the
+    // sommelier naturally types "Rosé"; the canonical category value is "Rose"
+    // (the app already displays it with the accent via CAT_DISPLAY).
+    if (catName === 'Rosé' || catName === 'Rosè') catName = 'Rose';
+
     if (!knownCat[catName]) badCats[catName] = (badCats[catName] || 0) + 1;
 
     var priceRaw = _clean(col(row, 'price'));
@@ -195,6 +200,21 @@ function csvToData(csvText) {
     problems.push('Non-numeric value in a number column (likely a shifted column): ' + badNums.slice(0, 6).join('; ') + (badNums.length > 6 ? ' … (+' + (badNums.length - 6) + ' more)' : '') + '.');
   }
   if (problems.length) throw new Error('Sheet validation failed — ' + problems.join('  |  '));
+
+  // ---- Fold the single Cider into the Sweet wine chapter ----
+  // There is only one cider, so a dedicated chapter is overkill. Append its
+  // group(s) to the Sweet wine category and drop the Cider category, so the
+  // register, contents, chapter page and PDF all show one combined chapter.
+  // The display label ("Sweet Wines & Cider") is set in template.html pretty().
+  (function () {
+    var sweet = catByName['Sweet wine'], cider = catByName['Cider'];
+    if (sweet && cider) {
+      for (var gi = 0; gi < cider.groups.length; gi++) sweet.groups.push(cider.groups[gi]);
+      var idx = categories.indexOf(cider);
+      if (idx !== -1) categories.splice(idx, 1);
+      delete catByName['Cider'];
+    }
+  })();
 
   // ---- Order identical wines by vintage (oldest -> youngest) ----
   // When the SAME wine (same producer + name) appears in several vintages, cluster
