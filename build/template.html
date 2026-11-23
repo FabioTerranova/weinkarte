@@ -722,6 +722,12 @@ function winePageShell(chapter,folio){
 }
 
 /* ---------- pagination (measured) ---------- */
+/* How full a page must already be before a NEW country is allowed to break onto a
+   fresh page. Below this fraction the next country keeps flowing on the current
+   page, so small countries/regions get merged instead of each leaving a sparse
+   one-wine page (sommelier's wish). 0.6 ≈ "half to two-thirds of a page". Raise
+   toward 1 to pack pages fuller, lower toward 0 to make countries break sooner. */
+var PAGE_FILL_MIN=0.6;
 var pages=[],chapterFirstPage={},pageOfUid={},countryFirst={};
 /* Printed page numbers (folios) where each chapter/country begins — shown in the
    indexes. Distinct from chapterFirstPage/countryFirst, which hold absolute page
@@ -772,8 +778,15 @@ function paginate(){
         inSpecial=true;afterBanner=true;curCountry=null;
         return;
       }
-      if(g.co!==curCountry){ /* every new country starts on a fresh page (but keep the first region with its section banner) */
-        if(pbody.firstChild&&!afterBanner)flush(cat.display);
+      if(g.co!==curCountry){ /* a new country normally starts on a fresh page … */
+        /* … BUT only once the current page is reasonably full. If the page so far
+           holds less than PAGE_FILL_MIN of its height, let the new country keep
+           flowing on it instead of leaving a near-empty page. This merges small
+           countries/regions together (e.g. Alcohol-Free, Half Bottles) so we never
+           get a page with a single reference. Big countries still fill a page on
+           their own and so keep breaking as before. */
+        var pageFull=pbody.scrollHeight>=pbody.clientHeight*PAGE_FILL_MIN;
+        if(pbody.firstChild&&!afterBanner&&pageFull)flush(cat.display);
         curCountry=g.co;
         if(!inSpecial){ /* Sondergroessen-Bloecke nicht als Land-Sprungziel registrieren */
           countryFirst[cat.id][g.co]=2+built.length;
