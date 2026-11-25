@@ -25,6 +25,18 @@ function _clean(s) {
   return (s === null || s === undefined) ? '' : String(s).trim();
 }
 
+/* normalise a grouping token so spelling variants of the SAME place collapse:
+   lower-case, strip accents, treat hyphens/dashes as spaces, squeeze blanks.
+   Used only for the group KEY (e.g. "Graubünden"/"Graubunden", "Zürich"/"Zurich",
+   "Trentino-Alto Adige"/"Trentino Alto Adige" all match) — the DISPLAYED name
+   keeps whatever spelling appeared first. */
+function _norm(s) {
+  return _clean(s).toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[-‐-―]/g, ' ')
+    .replace(/\s+/g, ' ').trim();
+}
+
 /* strip Swiss thousands separators / stray spaces so "1'500" parses as 1500 */
 function _stripNum(s) {
   return _clean(s).replace(/['’  \s]/g, '');
@@ -178,6 +190,7 @@ function csvToData(csvText) {
     // same as before; only scattered duplicates now combine instead of splitting.)
     var groupName = re ? (country + ', ' + re) : country;
     var key = country + '' + re + '' + sub;
+    key = _norm(key);   // fold accent/case/hyphen spelling variants into one group
     var gmap = groupsByCat[catName];
     var group = gmap[key];
     if (!group) {
@@ -215,6 +228,25 @@ function csvToData(csvText) {
       delete catByName['Cider'];
     }
   })();
+
+  // ---- Coarsen the "thin" chapters to ONE group per country ----
+  // Sweet Wines & Cider and Alcohol-Free hold few wines spread over many small
+  // regions, which reads as scattered (sommelier feedback 2026-11-25). In THESE
+  // chapters only, merge every region of a country into a single country-level
+  // group and drop the region sub-line; the big chapters keep their region
+  // detail. Country order = first appearance; the small-format (Half Bottles)
+  // split later in template.html then inherits these country-level groups.
+  var COARSE_CATS = { 'Sweet wine': 1, 'Alcohol free': 1 };
+  categories.forEach(function (c) {
+    if (!COARSE_CATS[c.name]) return;
+    var order = [], map = {};
+    c.groups.forEach(function (g) {
+      var k = _norm(g.co);
+      if (!map[k]) { map[k] = { name: g.co, co: g.co, wines: [] }; order.push(k); }
+      for (var wi = 0; wi < g.wines.length; wi++) map[k].wines.push(g.wines[wi]);
+    });
+    c.groups = order.map(function (k) { return map[k]; });
+  });
 
   // ---- Order identical wines by vintage (oldest -> youngest) ----
   // When the SAME wine (same producer + name) appears in several vintages, cluster

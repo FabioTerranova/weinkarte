@@ -478,6 +478,20 @@ function volClass(v){
   if(v==0.375||v==0.5)return 'small';
   return 'std';
 }
+/* Innerhalb der Magnum-/Half-Bottle-Bloecke werden die Herkuenfte pro NATION
+   zusammengefasst (eine Ueberschrift je Land statt vieler kleiner Regionen) –
+   diese Sektionen sind sonst sehr zerstreut (Wunsch Sommelier 2026-11-25). Der
+   normale Fluss (std) behaelt die Regions-Ueberschriften. Reihenfolge = erstes
+   Auftreten des Landes. */
+function mergeByCountry(groups){
+  var order=[],map={};
+  groups.forEach(function(g){
+    var k=fold(g.co||'');
+    if(!map[k]){map[k]={name:g.co,co:g.co,wines:[]};order.push(k);}
+    g.wines.forEach(function(w){map[k].wines.push(w);});
+  });
+  return order.map(function(k){return map[k];});
+}
 function splitFormats(cat){
   var std=[],large=[],small=[];
   cat.groups.forEach(function(g){
@@ -491,6 +505,7 @@ function splitFormats(cat){
     if(gl.length)large.push({name:g.name,co:g.co,sub:g.sub,wines:gl});
     if(gm.length)small.push({name:g.name,co:g.co,sub:g.sub,wines:gm});
   });
+  large=mergeByCountry(large);small=mergeByCountry(small);
   var out=std.slice();
   if(large.length){out.push({banner:true,label:'Magnums & Large Formats',co:'__large__',name:'Magnums & Large Formats',wines:[]});large.forEach(function(g){out.push(g);});}
   if(small.length){out.push({banner:true,label:'Half Bottles',co:'__small__',name:'Half Bottles',wines:[]});small.forEach(function(g){out.push(g);});}
