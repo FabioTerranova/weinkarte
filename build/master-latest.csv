@@ -5,7 +5,7 @@ Category = genau EINER dieser 7 Werte: Sparkling | White wine | Rose | Red wine 
 "Volume (in Liter, mit Punkt schreiben): 0.375 | 0.5 | 0.7 | 0.75 | 1.5 | 3 | 6",,,,,,,,,,,,,,
 "Price = nur die Zahl in CHF, ohne Währungszeichen und ohne Hochkomma (z. B. 165). Leer lassen = kein Preis.",,,,,,,,,,,,,,
 Vintage = Jahr (z. B. 2019) oder leer lassen (ohne Jahrgang).,,,,,,,,,,,,,,
-Neuen Wein hinzufügen: neue Zeile in der passenden Sektion einfügen (gleiches Category / Country / Region wie die Nachbarzeilen).,,,,,,,,,,,,,,
+Neuen Wein hinzufügen: neue Zeile in der passenden Sektion einfügen (gleiches Category / Country / Region wie die Nachbarzeilen).,,,,,,,,,,,,,TRUE,
 Wein entfernen: die ganze Zeile löschen.,,,,,,,,,,,,,,
 Änderungen erscheinen automatisch auf den Tablets – spätestens nach ca. 30 Minuten.,,,,,,,,,,,,,,
 "SCHUTZ: Bei einer Fehleingabe (falsche Kategorie, Text in einer Zahlenspalte …) wird NICHT veröffentlicht – die Tablets behalten automatisch die letzte korrekte Version. Einfach den Fehler korrigieren.",,,,,,,,,,,,,,
@@ -24,9 +24,9 @@ Sparkling,France,Champagne,Montagne de Reims,Bruno Paillard,NPU Nec Plus Ultra,2
 Sparkling,France,Champagne,Côte des Blancs,Bruno Paillard,"Coteaux Champenois Blanc ""Oger""",2020,0.75,235,8795,Chardonnay,Coteaux Champenois AOC,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,Dom Pérignon,2015,0.75,500,3008,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,"Dom Pérignon ""Luminous""",2013,0.75,585,3013,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,Rosé,2008,0.75,750,3011,"Pinot Noir, Chardonnay",Champagne AOC – Brut Rosé,,TRUE,2
-Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,Plénitude P2,2006,0.75,965,3080,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,Dom Pérignon - MAGNUM,2010,1.5,1250,3009,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,TRUE,1
+Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,Rosé,2008,0.75,750,3011,"Pinot Noir, Chardonnay",Champagne AOC – Brut Rosé,,FALSE,
+Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,Plénitude P2,2006,0.75,965,3080,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,TRUE,2
+Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,Dom Pérignon - MAGNUM,2010,1.5,1250,3009,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Dom Pérignon,Plénitude P3,1993,0.75,6370,8568,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,TRUE,1
 Sparkling,France,Champagne,Montagne de Reims,Dom Ruinart,Dom Ruinart Rosé,2009,0.75,585,8566,"Chardonnay, Pinot Noir",Champagne AOC – Brut Rosé,,TRUE,2
 Sparkling,France,Champagne,Montagne de Reims,Dom Ruinart,Dom Ruinart Blanc de Blancs,2013,0.75,590,3079,Chardonnay,Champagne AOC – Grand Cru – Blanc de Blancs – Brut,,FALSE,
@@ -41,58 +41,61 @@ Sparkling,France,Champagne,Montagne de Reims,Krug,"""Grande Cuvée"" - HALF bt."
 Sparkling,France,Champagne,Montagne de Reims,Krug,"""Grande Cuvée"" 172ème Édition",,0.75,480,3024,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Krug,Brut Rosé - 27ème Édition,,0.75,720,3026,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut Rosé,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Krug,"""Grande Cuvée"" 169ème Édition - MAGNUM",,1.5,1050,3037,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Côte des Blancs,Krug,Clos du Mesnil,2008,0.75,4235,3078,Chardonnay,Champagne AOC – Grand Cru – Blanc de Blancs – Brut,,TRUE,1
-Sparkling,France,Champagne,Montagne de Reims,Krug,Clos d'Ambonnay,2006,0.75,5640,8567,Pinot Noir,Champagne AOC – Grand Cru – Blanc de Noirs – Brut,,TRUE,2
-Sparkling,France,Champagne,Montagne de Reims,Laurent-Perrier,"""La Cuvée""",,0.75,180,3048,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,TRUE,1
+Sparkling,France,Champagne,Côte des Blancs,Krug,Clos du Mesnil,2008,0.75,4235,3078,Chardonnay,Champagne AOC – Grand Cru – Blanc de Blancs – Brut,,TRUE,2
+Sparkling,France,Champagne,Montagne de Reims,Krug,Clos d'Ambonnay,2006,0.75,5640,8567,Pinot Noir,Champagne AOC – Grand Cru – Blanc de Noirs – Brut,,TRUE,1
+Sparkling,France,Champagne,Montagne de Reims,Laurent-Perrier,"""La Cuvée""",,0.75,180,3048,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Laurent-Perrier,Cuvée Rosé,,0.75,260,3049,Pinot Noir,Champagne AOC – Brut Rosé,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Laurent-Perrier,"""La Cuvée"" - MAGNUM",,1.5,360,3031,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Laurent-Perrier,"""Grand Siècle"" Itération N°26",,0.75,380,3050,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Laurent-Perrier,Cuvée Rosé - MAGNUM,,1.5,520,3028,Pinot Noir,Champagne AOC – Brut Rosé,,FALSE,
-Sparkling,France,Champagne,Montagne de Reims,Louis Roederer,Brut,,0.75,180,3034,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,FALSE,
+Sparkling,France,Champagne,Montagne de Reims,Louis Roederer,Brut,,0.75,180,3034,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,TRUE,2
 Sparkling,France,Champagne,Montagne de Reims,Louis Roederer,Cristal,2009,0.75,735,3036,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Montagne de Reims,Louis Roederer,Cristal Rosé,2008,0.75,1100,3053,"Pinot Noir, Chardonnay",Champagne AOC – Brut Rosé,,TRUE,2
+Sparkling,France,Champagne,Montagne de Reims,Louis Roederer,Cristal Rosé,2008,0.75,1100,3053,"Pinot Noir, Chardonnay",Champagne AOC – Brut Rosé,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Louis Roederer,Cristal - MAGNUM,2012,1.5,1815,3038,"Chardonnay, Pinot Noir",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,"""Impérial"" - HALF bt.",,0.375,80,3000,"Pinot Noir, Pinot Meunier, Chardonnay",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,"""Impérial"" Rosé",,0.75,165,3012,"Pinot Noir, Pinot Meunier, Chardonnay",Champagne AOC – Brut Rosé,,TRUE,1
+Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,"""Impérial"" - HALF bt.",,0.375,80,3000,"Pinot Noir, Pinot Meunier, Chardonnay",Champagne AOC – Brut,,TRUE,2
+Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,"""Impérial"" Rosé",,0.75,165,3012,"Pinot Noir, Pinot Meunier, Chardonnay",Champagne AOC – Brut Rosé,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,Grand Vintage,2015,0.75,210,3003,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,Rosé Grand Vintage,2013,0.75,250,3007,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut Rosé,,TRUE,1
-Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,Grand Vintage - MAGNUM,2006,1.5,440,3061,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,TRUE,2
+Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,Rosé Grand Vintage,2013,0.75,250,3007,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut Rosé,,FALSE,
+Sparkling,France,Champagne,Vallée de la Marne,Moët & Chandon,Grand Vintage - MAGNUM,2006,1.5,440,3061,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Perrier-Jouët,Grand Brut,,0.75,200,3058,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Perrier-Jouët,Blason Rosé,,0.75,220,3029,"Pinot Noir, Pinot Meunier, Chardonnay",Champagne AOC – Brut Rosé,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Perrier-Jouët,Blanc de Blancs,,0.75,260,3071,Chardonnay,Champagne AOC – Blanc de Blancs – Brut,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Perrier-Jouët,Belle Époque,2014,0.75,480,3020,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Vallée de la Marne,Perrier-Jouët,Belle Époque Rosé,2006,0.75,490,3057,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut Rosé,,FALSE,
-Sparkling,France,Champagne,Vallée de la Marne,Perrier-Jouët,Belle Époque - MAGNUM,2007,1.5,880,3041,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,TRUE,1
-Sparkling,France,Champagne,Montagne de Reims,Ruinart,"""R"" de Ruinart - HALF bt.",,0.375,95,3042,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,TRUE,1
+Sparkling,France,Champagne,Vallée de la Marne,Perrier-Jouët,Belle Époque - MAGNUM,2007,1.5,880,3041,"Chardonnay, Pinot Noir, Pinot Meunier",Champagne AOC – Brut,,FALSE,
+Sparkling,France,Champagne,Montagne de Reims,Ruinart,"""R"" de Ruinart - HALF bt.",,0.375,95,3042,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Ruinart,Brut Rosé - HALF bt.,,0.375,115,3065,"Chardonnay, Pinot Noir",Champagne AOC – Brut Rosé,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Ruinart,Blanc de Blancs - HALF bt.,,0.375,120,9098,Chardonnay,Champagne AOC – Blanc de Blancs – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Ruinart,"""R"" de Ruinart",,0.75,170,3010,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Ruinart,Rosé,,0.75,210,3066,"Chardonnay, Pinot Noir",Champagne AOC – Brut Rosé,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Ruinart,Blanc de Blancs,,0.75,220,3005,Chardonnay,Champagne AOC – Blanc de Blancs – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Ruinart,"""R"" de Ruinart - MAGNUM",,1.5,380,3033,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Montagne de Reims,Ruinart,Blanc de Blancs - MAGNUM,,1.5,450,3039,Chardonnay,Champagne AOC – Blanc de Blancs – Brut,,TRUE,1
+Sparkling,France,Champagne,Montagne de Reims,Ruinart,Blanc de Blancs - MAGNUM,,1.5,450,3039,Chardonnay,Champagne AOC – Blanc de Blancs – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Ruinart,Brut Rosé - MAGNUM,,1.5,450,3059,"Chardonnay, Pinot Noir",Champagne AOC – Brut Rosé,,FALSE,
-Sparkling,France,Champagne,Côte des Blancs,Salon,"Cuvée ""S"" Le Mesnil - Blanc de Blancs",2015,0.75,2380,8565,Chardonnay,Champagne AOC – Grand Cru – Blanc de Blancs – Brut,,FALSE,
+Sparkling,France,Champagne,Côte des Blancs,Salon,"Cuvée ""S"" Le Mesnil - Blanc de Blancs",2015,0.75,2380,8565,Chardonnay,Champagne AOC – Grand Cru – Blanc de Blancs – Brut,,TRUE,1
+Sparkling,France,Champagne,Côte de Sézanne,Ulysse Collin,"""Les Maillons""",2021,0.75,495,8791,Pinot Noir,Champagne AOC – Blanc de Noirs – Extra Brut,"Base 2021, 48 mois sur lies, dégorgement 2026",FALSE,
+Sparkling,France,Champagne,Coteaux du Petit Morin,Ulysse Collin,"""Les Pierrières"" Blanc de Blancs",2021,0.75,560,8792,Chardonnay,Champagne AOC – Blanc de Blancs – Extra Brut,"Base 2021, 48 mois sur lies, dégorgement 2026",FALSE,
+Sparkling,France,Champagne,Coteaux du Petit Morin,Ulysse Collin,"""Les Enfers""",2018,0.75,755,8794,Chardonnay,Champagne AOC – Blanc de Blancs – Extra Brut,"Base 2018, 72 mois sur lies, dégorgement 2025",TRUE,2
 Sparkling,France,Champagne,Montagne de Reims,Veuve Clicquot,"""Carte Jaune""",,0.75,160,3006,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,FALSE,
 Sparkling,France,Champagne,Montagne de Reims,Veuve Clicquot,"""Carte Jaune"" - MAGNUM",,1.5,325,3015,"Pinot Noir, Chardonnay, Pinot Meunier",Champagne AOC – Brut,,FALSE,
-Sparkling,France,Champagne,Montagne de Reims,Veuve Clicquot,La Grande Dame Rosé,1998,0.75,620,3017,"Pinot Noir, Chardonnay",Champagne AOC – Brut Rosé,,FALSE,
+Sparkling,France,Champagne,Montagne de Reims,Veuve Clicquot,La Grande Dame Rosé,1998,0.75,620,3017,"Pinot Noir, Chardonnay",Champagne AOC – Brut Rosé,,TRUE,2
 Sparkling,Italy,Lombardy,Franciacorta,Bellavista,Alma Assemblage 2,,0.75,155,3046,"Chardonnay, Pinot Nero, Pinot Bianco",Franciacorta DOCG Extra Brut,,FALSE,
 Sparkling,Italy,Lombardy,Franciacorta,Ca' del Bosco,Cuvée Prestige Edizione 46,,0.75,135,3067,"Chardonnay, Pinot Bianco, Pinot Nero",Franciacorta DOCG Extra Brut,,FALSE,
-Sparkling,Italy,Lombardy,Franciacorta,Ca' del Bosco,Cuvée Prestige Edizione 48 - MAGNUM,,1.5,275,3001,"Chardonnay, Pinot Nero, Pinot Bianco",Franciacorta DOCG Extra Brut,,TRUE,1
+Sparkling,Italy,Lombardy,Franciacorta,Ca' del Bosco,Cuvée Prestige Edizione 48 - MAGNUM,,1.5,275,3001,"Chardonnay, Pinot Nero, Pinot Bianco",Franciacorta DOCG Extra Brut,,FALSE,
 Sparkling,Italy,Lombardy,Franciacorta,Ca' del Bosco,Annamaria Clementi Dosaggio Zero,2016,0.75,365,8571,"Chardonnay, Pinot Bianco, Pinot Nero",Franciacorta DOCG Riserva Dosaggio Zero,,FALSE,
-Sparkling,Italy,Trentino-Alto Adige,Trentino,Ferrari,Maximum Blanc de Blancs,,0.75,130,3043,Chardonnay,Trento DOC Blanc de Blancs,,FALSE,
-Sparkling,Italy,Veneto,Conegliano Valdobbiadene,Antica Quercia,"""Matiú""",,0.75,105,9135,Glera,Conegliano Valdobbiadene Prosecco Superiore DOCG Brut,,TRUE,2
+Sparkling,Italy,Trentino-Alto Adige,Trentino,Ferrari,Maximum Blanc de Blancs,,0.75,130,3043,Chardonnay,Trento DOC Blanc de Blancs,,TRUE,1
+Sparkling,Italy,Veneto,Conegliano Valdobbiadene,Antica Quercia,"""Matiú""",,0.75,105,9135,Glera,Conegliano Valdobbiadene Prosecco Superiore DOCG Brut,,FALSE,
 Sparkling,Italy,Veneto,Conegliano Valdobbiadene,Sommariva,Prosecco Superiore Conegliano Valdobbiadene,,0.75,80,7969,Glera,Conegliano Valdobbiadene Prosecco Superiore DOCG Brut,,FALSE,
 Sparkling,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Eichholz,Crémant,,0.75,120,3002,,Graubünden AOC – Crémant Extra Brut,,FALSE,
 Sparkling,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Obrecht,Extra Brut Rosé,,0.75,130,8572,Pinot Noir,Graubünden AOC – Extra Brut Rosé,,FALSE,
-Sparkling,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Obrecht,Brut Nature Blanc,,0.75,185,8573,Pinot Blanc,Graubünden AOC – Brut Nature Blanc de Blancs,,TRUE,2
+Sparkling,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Obrecht,Brut Nature Blanc,,0.75,185,8573,Pinot Blanc,Graubünden AOC – Brut Nature Blanc de Blancs,,FALSE,
 Sparkling,England,Sussex,,Nyetimber Limited,Nyetimber Classic Cuvée,,0.75,160,3068,"Chardonnay, Pinot Noir, Pinot Meunier",English Sparkling Wine – Classic Cuvée Brut,,FALSE,
 Sparkling,England,Sussex,,Nyetimber Limited,Rosé,,0.75,195,3072,"Pinot Noir, Chardonnay, Pinot Meunier",English Sparkling Wine – Brut Rosé,,FALSE,
 White wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Andrea Lauber,Freisamer,2019,0.75,95,1216,Freisamer,Graubünden AOC,,FALSE,
 White wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Chardonnay - HALF bt.,2024,0.375,75,4202,Chardonnay,Graubünden AOC,,FALSE,
 White wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Chardonnay,2024,0.75,90,1217,Chardonnay,Graubünden AOC,,FALSE,
 White wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Riesling,2022,0.75,110,1206,Riesling,Graubünden AOC,,FALSE,
-White wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Chardonnay - MAGNUM,2022,1.5,285,6202,Chardonnay,Graubünden AOC,,TRUE,1
+White wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Chardonnay - MAGNUM,2022,1.5,285,6202,Chardonnay,Graubünden AOC,,FALSE,
 White wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Donatsch,"Chardonnay ""Passion""",2021,0.75,185,1245,Chardonnay,Graubünden AOC,,FALSE,
 White wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Donatsch,"Completer ""Malanserrebe""",2024,0.75,290,1211,Completer,Graubünden AOC,,FALSE,
 White wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Donatsch,"""Unique"" Chardonnay Malans",2020,0.75,320,1240,Chardonnay,Graubünden AOC (Malans),,FALSE,
@@ -132,7 +135,7 @@ White wine,Switzerland,Valais,Vétroz,Jean-René Germanier,"""Clos de la Couta""
 White wine,Switzerland,Valais,Fully,Marie-Thérèse Chappaz,Grain Arvine de Fully,2022,0.75,200,8807,Petite Arvine,Valais AOC (Fully),,FALSE,
 White wine,Switzerland,Valais,Fully,Marie-Thérèse Chappaz,Assemblage Blanc,2023,0.75,215,8806,"Petite Arvine, Ermitage, Marsanne",Valais AOC Assemblage Blanc,,FALSE,
 White wine,Switzerland,Valais,Fully,Marie-Thérèse Chappaz,Grain Ermitage,2023,0.75,265,9093,Marsanne (Ermitage),Valais AOC (Fully),,FALSE,
-White wine,Switzerland,Valais,,Provins Valais Mundi,Eclat,2015,0.75,219,1238,"Petite Arvine, Ermitage, Heida",Valais AOC Assemblage,,FALSE,
+White wine,Switzerland,Valais,,Provins Valais Mundi,Eclat,2015,0.75,219,1238,"Petite Arvine, Ermitage, Heida",Valais AOC Assemblage,,TRUE,2
 White wine,Austria,Niederösterreich,Kamptal,Weingut Bründlmayer,Grüner Veltliner,2023,0.75,90,8877,Grüner Veltliner,Kamptal DAC,,FALSE,
 White wine,Austria,Niederösterreich,Kamptal,Weingut Bründlmayer,Grüner Veltliner Ried Lamm 1ÖTW,2022,0.75,190,8878,Grüner Veltliner,Kamptal DAC Reserve – Erste Lage (1ÖTW),,FALSE,
 White wine,Austria,Niederösterreich,Wachau,Weingut Franz Hirtzberger,Weißburgunder Smaragd Steinporz,2023,0.75,235,8610,Pinot Blanc,Wachau DAC – Smaragd (Vinea Wachau),,FALSE,
@@ -149,17 +152,17 @@ White wine,Germany,Rheingau,Kiedrich,Weingut Robert Weil,Kiedrich Gräfenberg Ri
 White wine,Germany,Rheingau,Kiedrich,Weingut Robert Weil,Monte Nostrum Riesling,2022,0.75,260,8875,Riesling,Rheingau – Qualitätswein trocken,,FALSE,
 White wine,Germany,Rheingau,Kiedrich,Weingut Robert Weil,Monte Vacano Riesling,2021,0.75,645,8876,Riesling,Rheingau – Qualitätswein trocken,,FALSE,
 White wine,Germany,Mosel,Ruwer,Karthäuserhof,"""Bruno"" Riesling",2023,0.75,80,9220,Riesling,Mosel – Qualitätswein trocken,,FALSE,
-White wine,Germany,Mosel,Ruwer,Maximin Grünhaus,"""Maximin Grünhäuser Abtsberg"" - Spätlese Riesling",2019,0.75,95,1808,Riesling,Mosel – Prädikatswein Spätlese,,TRUE,2
-White wine,Germany,Mosel,Ruwer,Maximin Grünhaus,Abtsberg Kabinett Nr. 50,2022,0.75,350,8870,Riesling,Mosel – Prädikatswein Kabinett,,FALSE,
-White wine,Germany,Mosel,Ruwer,Maximin Grünhaus,Abtsberg Riesling Auslese 64 - HALF bt.,2018,0.375,465,8871,Riesling,Mosel – Prädikatswein Auslese,,FALSE,
+White wine,Germany,Mosel,Ruwer,Maximin Grünhaus,"""Maximin Grünhäuser Abtsberg"" - Spätlese Riesling",2019,0.75,95,1808,Riesling,Mosel – Prädikatswein Spätlese,,FALSE,
+White wine,Germany,Mosel,Ruwer,Maximin Grünhaus,Abtsberg Kabinett Nr. 50,2022,0.75,350,8870,Riesling,Mosel – Prädikatswein Kabinett,,TRUE,2
+White wine,Germany,Mosel,Ruwer,Maximin Grünhaus,Abtsberg Riesling Auslese 64 - HALF bt.,2018,0.375,465,8871,Riesling,Mosel – Prädikatswein Auslese,,TRUE,2
 White wine,Germany,Mosel,Ruwer,Maximin Grünhaus,Riesling Abtsberg Großes Gewächs,2022,0.75,140,8869,Riesling,Mosel – VDP.Grosses Gewächs (Qualitätswein trocken),,FALSE,
 White wine,Germany,Mosel,Saar,Van Volxem,Riesling Alte Reben,2023,0.75,90,1822,Riesling,Mosel – Qualitätswein trocken,,FALSE,
 White wine,Germany,Nahe,Schlossböckelheim,Dönnhoff,"""Felsenberg"" - Riesling",2019,0.75,180,1816,Riesling,Nahe – VDP.Grosses Gewächs (Qualitätswein trocken),,FALSE,
 White wine,France,Alsace,Haut-Rhin,Domaine Trapet,Beblenheim Gewürztraminer,2022,0.75,80,8849,Gewürztraminer,Alsace AOC,,FALSE,
 White wine,France,Alsace,Haut-Rhin,Domaine Trapet,Schoenenbourg Riesling,2016,0.75,175,8850,Riesling,Alsace Grand Cru Schoenenbourg AOC,,FALSE,
-White wine,France,Alsace,Haut-Rhin,Domaine Trimbach,"""Clos Ste Hune"" - Riesling",2011,0.75,440,1462,Riesling,Alsace AOC,,FALSE,
+White wine,France,Alsace,Haut-Rhin,Domaine Trimbach,"""Clos Ste Hune"" - Riesling",2011,0.75,440,1462,Riesling,Alsace AOC,,TRUE,1
 White wine,France,Loire,Anjou-Saumur,Domaine Guiberteau,"""Brézé""",2018,0.75,170,1450,Chenin Blanc,Saumur AOC,,FALSE,
-White wine,France,Loire,Touraine,Domaine Huet,Vouvray Le Mont - Moelleux Première Trie,2016,0.75,210,3808,Chenin Blanc,Vouvray AOC – Moelleux,,FALSE,
+White wine,France,Loire,Touraine,Domaine Huet,Vouvray Le Mont - Moelleux Première Trie,2016,0.75,210,3808,Chenin Blanc,Vouvray AOC – Moelleux,,TRUE,2
 White wine,France,Loire,Touraine,Domaine Huet,Vouvray Le Mont - Moelleux Première Trie,2003,0.75,370,9071,Chenin Blanc,Vouvray AOC – Moelleux,,FALSE,
 White wine,France,Loire,Touraine,Domaine Huet,"Vouvray ""Le Mont"" Sec",2023,0.75,140,8853,Chenin Blanc,Vouvray AOC – Sec,,FALSE,
 White wine,France,Loire,Centre-Loire,Domaine Roc de l'Abbaye,Sancerre,2024,0.75,95,8855,Sauvignon Blanc,Sancerre AOC,,FALSE,
@@ -169,48 +172,48 @@ White wine,France,Loire,Centre-Loire,Domaine Vacheron,"Sancerre ""Les Romains"""
 White wine,France,Loire,Centre-Loire,Domaine Vacheron,"Sancerre ""Les Romains""",2021,0.75,160,1448,Sauvignon Blanc,Sancerre AOC,,FALSE,
 White wine,France,Loire,Centre-Loire,J. de Villebois,"Sancerre ""Silex""",2022,0.75,130,9123,Sauvignon Blanc,Sancerre AOC,,FALSE,
 White wine,France,Loire,Centre-Loire,Ladoucette,Pouilly-Fumé,2022,0.75,125,1417,Sauvignon Blanc,Pouilly-Fumé AOC,,FALSE,
-White wine,France,Loire,Centre-Loire,Ladoucette,"Pouilly-Fumé ""Baron de L""",2020,0.75,255,1412,Sauvignon Blanc,Pouilly-Fumé AOC,,TRUE,2
-White wine,France,Loire,Centre-Loire,Ladoucette,Pouilly-Fumé - MAGNUM,2022,1.5,290,6533,Sauvignon Blanc,Pouilly-Fumé AOC,,TRUE,2
+White wine,France,Loire,Centre-Loire,Ladoucette,"Pouilly-Fumé ""Baron de L""",2020,0.75,255,1412,Sauvignon Blanc,Pouilly-Fumé AOC,,FALSE,
+White wine,France,Loire,Centre-Loire,Ladoucette,Pouilly-Fumé - MAGNUM,2022,1.5,290,6533,Sauvignon Blanc,Pouilly-Fumé AOC,,FALSE,
 White wine,France,Loire,Centre-Loire,Ladoucette,"Pouilly-Fumé ""Baron de L"" - MAGNUM",2019,1.5,480,6401,Sauvignon Blanc,Pouilly-Fumé AOC,,FALSE,
 White wine,France,Loire,Anjou-Saumur,Nicolas Joly,Les Vieux Clos,2023,0.75,145,8851,Chenin Blanc,Savennières AOC,,FALSE,
 White wine,France,Loire,Anjou-Saumur,Nicolas Joly,Clos de La Coulée de Serrant,2023,0.75,255,8852,Chenin Blanc,Savennières-Coulée de Serrant AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Albert Grivault,"Meursault ""Clos du Murger""",2018,0.75,250,1428,Chardonnay,Meursault AOC,,TRUE,1
+White wine,France,Burgundy,Côte de Beaune,Albert Grivault,"Meursault ""Clos du Murger""",2018,0.75,250,1428,Chardonnay,Meursault AOC,,TRUE,2
 White wine,France,Burgundy,Côte de Beaune,Arnaud Baillot,Chassagne-Montrachet,2023,0.75,245,8835,Chardonnay,Chassagne-Montrachet AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Arnaud Baillot,Meursault,2023,0.75,245,8836,Chardonnay,Meursault AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Arnaud Baillot,Puligny-Montrachet,2023,0.75,310,8837,Chardonnay,Puligny-Montrachet AOC,,TRUE,1
-White wine,France,Burgundy,Côte de Beaune,Bonneau du Martray,Corton-Charlemagne,1997,0.75,720,1431,Chardonnay,Corton-Charlemagne Grand Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte Chalonnaise,Domaine A. & P. de Villaine,Bouzeron Aligoté,2023,0.75,130,1416,Aligoté,Bouzeron AOC,,TRUE,2
-White wine,France,Burgundy,Côte Chalonnaise,Domaine A. & P. de Villaine,"Bourgogne Côte Chalonnaise ""Les Clous Aimé""",2021,0.75,140,8843,Chardonnay,Bourgogne Côte Chalonnaise AOC,,FALSE,
-White wine,France,Burgundy,Côte Chalonnaise,Domaine A. & P. de Villaine,"Rully 1er Cru ""Raclot""",2018,0.75,200,1446,Chardonnay,Rully Premier Cru AOC,,FALSE,
+White wine,France,Burgundy,Côte de Beaune,Arnaud Baillot,Puligny-Montrachet,2023,0.75,310,8837,Chardonnay,Puligny-Montrachet AOC,,FALSE,
+White wine,France,Burgundy,Côte de Beaune,Bonneau du Martray,Corton-Charlemagne,1997,0.75,720,1431,Chardonnay,Corton-Charlemagne Grand Cru AOC,,TRUE,2
+White wine,France,Burgundy,Côte Chalonnaise,Domaine A. & P. de Villaine,Bouzeron Aligoté,2023,0.75,130,1416,Aligoté,Bouzeron AOC,,FALSE,
+White wine,France,Burgundy,Côte Chalonnaise,Domaine A. & P. de Villaine,"Bourgogne Côte Chalonnaise ""Les Clous Aimé""",2021,0.75,140,8843,Chardonnay,Bourgogne Côte Chalonnaise AOC,,TRUE,2
+White wine,France,Burgundy,Côte Chalonnaise,Domaine A. & P. de Villaine,"Rully 1er Cru ""Raclot""",2018,0.75,200,1446,Chardonnay,Rully Premier Cru AOC,,TRUE,2
 White wine,France,Burgundy,Côte Chalonnaise,Domaine A. & P. de Villaine,"Rully 1er Cru ""Rabourcé""",2019,0.75,225,1467,Chardonnay,Rully Premier Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,Musigny Blanc,2020,0.75,2200,1471,Chardonnay,Musigny Grand Cru AOC,,FALSE,
+White wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,Musigny Blanc,2020,0.75,2200,1471,Chardonnay,Musigny Grand Cru AOC,,TRUE,1
 White wine,France,Burgundy,Côte de Beaune,Domaine François Carillon,Bourgogne Côte d'Or Chardonnay,2022,0.75,120,8814,Chardonnay,Bourgogne Côte d'Or AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine François Carillon,Puligny-Montrachet,2022,0.75,235,1442,Chardonnay,Puligny-Montrachet AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine François Carillon,"Puligny-Montrachet 1er Cru ""Les Champs Gain""",2023,0.75,370,8817,Chardonnay,Puligny-Montrachet Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine François Carillon,Puligny-Montrachet - MAGNUM,2023,1.5,490,8816,Chardonnay,Puligny-Montrachet AOC,,FALSE,
 White wine,France,Burgundy,Chablis,Domaine Gérard Duplessis,"Chablis Premier Cru ""Fourchaume""",2020,0.75,185,8578,Chardonnay,Chablis Premier Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine Guy Amiot et Fils,"Chassagne-Montrachet 1er Cru ""Les Vergers""",2020,0.75,260,1468,Chardonnay,Chassagne-Montrachet Premier Cru AOC,,FALSE,
+White wine,France,Burgundy,Côte de Beaune,Domaine Guy Amiot et Fils,"Chassagne-Montrachet 1er Cru ""Les Vergers""",2020,0.75,260,1468,Chardonnay,Chassagne-Montrachet Premier Cru AOC,,TRUE,2
 White wine,France,Burgundy,Côte de Beaune,Domaine Jacques Prieur,"Meursault ""Clos de Mazeray"" Monopole",2023,0.75,355,2732,Chardonnay,Meursault AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine Jacques Prieur,"Puligny-Montrachet 1er Cru ""Les Combettes""",2023,0.75,455,2733,Chardonnay,Puligny-Montrachet Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Chablis,Domaine Jean Collet & Fils,"Chablis 1er Cru ""Montée de Tonnerre""",2023,0.75,195,8579,Chardonnay,Chablis Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Mâconnais,Domaine Leflaive,Mâcon-Igé,2021,0.75,140,1414,Chardonnay,Mâcon-Igé AOC,,FALSE,
 White wine,France,Burgundy,Mâconnais,Domaine Leflaive,Mâcon-Verzé,2023,0.75,155,1478,Chardonnay,Mâcon-Verzé AOC,,FALSE,
-White wine,France,Burgundy,Mâconnais,Domaine Leflaive,Pouilly-Fuissé,2019,0.75,200,1455,Chardonnay,Pouilly-Fuissé AOC,,TRUE,2
+White wine,France,Burgundy,Mâconnais,Domaine Leflaive,Pouilly-Fuissé,2019,0.75,200,1455,Chardonnay,Pouilly-Fuissé AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Auxey-Duresses,2023,0.75,205,8819,Chardonnay,Auxey-Duresses AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Bourgogne Blanc,2023,0.75,250,8820,Chardonnay,Bourgogne AOC,,FALSE,
 White wine,France,Burgundy,Mâconnais,Domaine Leflaive,"Pouilly-Fuissé ""Sur La Roche""",2021,0.75,260,8844,Chardonnay,Pouilly-Fuissé Premier Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Puligny-Montrachet,2020,0.75,490,8821,Chardonnay,Puligny-Montrachet AOC,,TRUE,2
-White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,"Puligny-Montrachet 1er Cru ""Les Folatières""",2022,0.75,860,8824,Chardonnay,Puligny-Montrachet Premier Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,"Puligny-Montrachet 1er Cru ""Les Pucelles""",2018,0.75,900,1436,Chardonnay,Puligny-Montrachet Premier Cru AOC,,TRUE,2
-White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,"Puligny-Montrachet 1er Cru ""Les Pucelles""",2022,0.75,1260,8823,Chardonnay,Puligny-Montrachet Premier Cru AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Puligny-Montrachet,2020,0.75,490,8821,Chardonnay,Puligny-Montrachet AOC,,FALSE,
+White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,"Puligny-Montrachet 1er Cru ""Les Folatières""",2022,0.75,860,8824,Chardonnay,Puligny-Montrachet Premier Cru AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,"Puligny-Montrachet 1er Cru ""Les Pucelles""",2018,0.75,900,1436,Chardonnay,Puligny-Montrachet Premier Cru AOC,,FALSE,
+White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,"Puligny-Montrachet 1er Cru ""Les Pucelles""",2022,0.75,1260,8823,Chardonnay,Puligny-Montrachet Premier Cru AOC,,TRUE,1
 White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Bienvenues-Bâtard-Montrachet,2018,0.75,1550,1402,Chardonnay,Bienvenues-Bâtard-Montrachet Grand Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Bâtard-Montrachet,2019,0.75,1950,1438,Chardonnay,Bâtard-Montrachet Grand Cru AOC,,TRUE,1
-White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Bâtard-Montrachet,2002,0.75,2450,1451,Chardonnay,Bâtard-Montrachet Grand Cru AOC,,FALSE,
+White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Bâtard-Montrachet,2019,0.75,1950,1438,Chardonnay,Bâtard-Montrachet Grand Cru AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Bâtard-Montrachet,2002,0.75,2450,1451,Chardonnay,Bâtard-Montrachet Grand Cru AOC,,TRUE,1
 White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Bâtard-Montrachet,2023,0.75,2525,8826,Chardonnay,Bâtard-Montrachet Grand Cru AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine Leflaive,Chevalier-Montrachet,2022,0.75,2775,8825,Chardonnay,Chevalier-Montrachet Grand Cru AOC,,FALSE,
 White wine,France,Burgundy,Mâconnais,Domaine Mathias,"Pouilly-Fuissé ""Aux Quarts""",2023,0.75,160,2736,Chardonnay,Pouilly-Fuissé Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine Rémi Jobard,Bourgogne Blanc Vieilles Vignes,2023,0.75,135,8827,Chardonnay,Bourgogne AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine Rémi Jobard,"Meursault ""Les Chevalières""",2023,0.75,265,8829,Chardonnay,Meursault AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Beaune,Domaine Rémi Jobard,"Meursault ""Les Chevalières""",2023,0.75,265,8829,Chardonnay,Meursault AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine Rémi Jobard,Meursault Les Narvaux Blanc,2023,0.75,275,9105,Chardonnay,Meursault AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine Rémi Jobard,"Meursault 1er Cru ""Le Poruzot Dessus""",2022,0.75,370,8828,Chardonnay,Meursault Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Chablis,Domaine William Fèvre,Chablis Champs Royaux - HALF bt.,2023,0.375,65,4401,Chardonnay,Chablis AOC,,FALSE,
@@ -218,18 +221,18 @@ White wine,France,Burgundy,Chablis,Domaine William Fèvre,Chablis Champs Royaux,
 White wine,France,Burgundy,Chablis,Domaine William Fèvre,"Chablis 1er Cru ""Vaulorent""",2022,0.75,240,8812,Chardonnay,Chablis Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Chablis,Domaine William Fèvre,"Chablis ""Bougros""",2013,0.75,260,1409,Chardonnay,Chablis Grand Cru AOC,,FALSE,
 White wine,France,Burgundy,Chablis,Domaine William Fèvre,"Chablis ""Les Clos""",2022,0.75,355,8813,Chardonnay,Chablis Grand Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton-Charlemagne,2023,0.75,3800,9106,Chardonnay,Corton-Charlemagne Grand Cru AOC,,FALSE,
+White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton-Charlemagne,2023,0.75,3800,9106,Chardonnay,Corton-Charlemagne Grand Cru AOC,,TRUE,2
 White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton-Charlemagne,2022,0.75,4000,8841,Chardonnay,Corton-Charlemagne Grand Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton-Charlemagne,2020,0.75,4500,1473,Chardonnay,Corton-Charlemagne Grand Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Montrachet,2022,0.75,11500,8842,Chardonnay,Montrachet Grand Cru AOC,,TRUE,2
-White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Montrachet,2020,0.75,11900,1474,Chardonnay,Montrachet Grand Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Nuits,Domaine de l'Arlot,"Nuits-Saint-Georges 1er Cru ""Clos de l'Arlot""",2018,0.75,290,1429,Chardonnay,Nuits-Saint-Georges Premier Cru AOC,,TRUE,1
+White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton-Charlemagne,2020,0.75,4500,1473,Chardonnay,Corton-Charlemagne Grand Cru AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Montrachet,2022,0.75,11500,8842,Chardonnay,Montrachet Grand Cru AOC,,FALSE,
+White wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Montrachet,2020,0.75,11900,1474,Chardonnay,Montrachet Grand Cru AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Nuits,Domaine de l'Arlot,"Nuits-Saint-Georges 1er Cru ""Clos de l'Arlot""",2018,0.75,290,1429,Chardonnay,Nuits-Saint-Georges Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Domaine des Lambrays,"Puligny-Montrachet 1er Cru ""Les Folatières""",2023,0.75,595,8834,Chardonnay,Puligny-Montrachet Premier Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Domaine des Lambrays,"Puligny-Montrachet 1er Cru ""Clos du Cailleret""",2023,0.75,670,8833,Chardonnay,Puligny-Montrachet Premier Cru AOC,,TRUE,2
-White wine,France,Burgundy,Chablis,Gilbert Picq et ses Fils,Chablis,2023,0.75,100,1475,Chardonnay,Chablis AOC,,TRUE,1
+White wine,France,Burgundy,Côte de Beaune,Domaine des Lambrays,"Puligny-Montrachet 1er Cru ""Clos du Cailleret""",2023,0.75,670,8833,Chardonnay,Puligny-Montrachet Premier Cru AOC,,FALSE,
+White wine,France,Burgundy,Chablis,Gilbert Picq et ses Fils,Chablis,2023,0.75,100,1475,Chardonnay,Chablis AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Jean-Louis Chavy,"Puligny-Montrachet 1er Cru ""Clavoillon"" - HALF bt.",2018,0.375,115,4404,Chardonnay,Puligny-Montrachet Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Jean-Louis Chavy,"Puligny-Montrachet 1er Cru ""Clavoillon""",2022,0.75,250,1403,Chardonnay,Puligny-Montrachet Premier Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Jean-Marie Fourrier,"Meursault ""Vieilles Vignes"" - Vigne Comte de Chapelle",2022,0.75,335,8838,Chardonnay,Meursault AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Beaune,Jean-Marie Fourrier,"Meursault ""Vieilles Vignes"" - Vigne Comte de Chapelle",2022,0.75,335,8838,Chardonnay,Meursault AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Jean-Marie Fourrier,"Chassagne-Montrachet 1er Cru ""Morgeot"" Vieilles Vignes",2022,0.75,790,1458,Chardonnay,Chassagne-Montrachet Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Jean-Marie Fourrier,Corton-Charlemagne,2022,0.75,1525,8839,Chardonnay,Corton-Charlemagne Grand Cru AOC,,FALSE,
 White wine,France,Burgundy,Chablis,Jean-Paul & Benoît Droin,Chablis,2023,0.75,105,1445,Chardonnay,Chablis AOC,,FALSE,
@@ -239,27 +242,27 @@ White wine,France,Burgundy,Côte de Beaune,Justin Girardin,"Chassagne-Montrachet
 White wine,France,Burgundy,Chablis,La Chablisienne,"Chablis 1er Cru ""Fourchaume""",2023,0.75,165,2735,Chardonnay,Chablis Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Laurent Ponsot,"Meursault ""Cuvée du Pandoréa""",2018,0.75,270,1413,Chardonnay,Meursault AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Lucien Le Moine,"Chassagne-Montrachet 1er Cru ""Morgeot""",2022,0.75,365,8830,Chardonnay,Chassagne-Montrachet Premier Cru AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Lucien Le Moine,"Chassagne-Montrachet 1er Cru ""La Romanée""",2022,0.75,370,8832,Chardonnay,Chassagne-Montrachet Premier Cru AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Beaune,Lucien Le Moine,"Chassagne-Montrachet 1er Cru ""La Romanée""",2022,0.75,370,8832,Chardonnay,Chassagne-Montrachet Premier Cru AOC,,FALSE,
 White wine,France,Burgundy,Mâconnais,Manoir du Capucin,"Pouilly-Fuissé ""Clos de la Maison"" Monopole",2022,0.75,100,1443,Chardonnay,Pouilly-Fuissé AOC,,FALSE,
-White wine,France,Burgundy,Côte de Beaune,Philippe Pacalet,Meursault - Limozin,2019,0.75,260,1469,Chardonnay,Meursault AOC,,TRUE,2
+White wine,France,Burgundy,Côte de Beaune,Philippe Pacalet,Meursault - Limozin,2019,0.75,260,1469,Chardonnay,Meursault AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Philippe Pacalet,Meursault,2023,0.75,335,8840,Chardonnay,Meursault AOC,,FALSE,
 White wine,France,Burgundy,Côte de Beaune,Pierre-Yves Colin-Morey,"Saint-Aubin ""Hommage à Marguerite""",2020,0.75,270,1401,Chardonnay,Saint-Aubin AOC,,TRUE,2
-White wine,France,Burgundy,Chablis,René & Vincent Dauvissat,Chablis,2022,0.75,275,8580,Chardonnay,Chablis AOC,,FALSE,
+White wine,France,Burgundy,Chablis,René & Vincent Dauvissat,Chablis,2022,0.75,275,8580,Chardonnay,Chablis AOC,,TRUE,2
 White wine,France,Burgundy,Chablis,René & Vincent Dauvissat,"Chablis 1er Cru ""La Forest""",2022,0.75,370,8581,Chardonnay,Chablis Premier Cru AOC,,FALSE,
-White wine,France,Burgundy,Chablis,René & Vincent Dauvissat,"Chablis ""Les Clos""",2022,0.75,930,8582,Chardonnay,Chablis Grand Cru AOC,,FALSE,
+White wine,France,Burgundy,Chablis,René & Vincent Dauvissat,"Chablis ""Les Clos""",2022,0.75,930,8582,Chardonnay,Chablis Grand Cru AOC,,TRUE,1
 White wine,France,Bordeaux,Saint-Estèphe,Château Cos d'Estournel,Château Cos d'Estournel Blanc,2021,0.75,430,2741,"Sauvignon Blanc, Sémillon",Bordeaux Blanc AOC,,FALSE,
 White wine,France,Bordeaux,Pessac-Léognan,Château Lespault-Martillac,Château Lespault-Martillac Blanc,2020,0.75,110,8845,"Sauvignon Blanc, Sémillon",Pessac-Léognan AOC,,FALSE,
-White wine,France,Bordeaux,Pauillac,Château Lynch-Bages,Blanc de Lynch-Bages,2017,0.75,240,1460,"Sauvignon Blanc, Sémillon",Bordeaux Blanc AOC,,FALSE,
+White wine,France,Bordeaux,Pauillac,Château Lynch-Bages,Blanc de Lynch-Bages,2017,0.75,240,1460,"Sauvignon Blanc, Sémillon",Bordeaux Blanc AOC,,TRUE,2
 White wine,France,Bordeaux,Entre-Deux-Mers,Château Paradis Casseuil,Château Paradis Casseuil Blanc,2024,0.75,80,2737,"Sauvignon Blanc, Sémillon",Bordeaux Blanc AOC,,FALSE,
 White wine,France,Bordeaux,Entre-Deux-Mers,Château Thieuley,Château Thieuley Blanc,2023,0.75,75,1479,"Sauvignon Blanc, Sémillon",Bordeaux Blanc AOC,,FALSE,
 White wine,France,Bordeaux,Sauternes,Château d'Yquem,"""Y"" Ygrec de Château d'Yquem",2022,0.75,445,2739,"Sauvignon Blanc, Sémillon",Bordeaux Blanc AOC,,FALSE,
-White wine,France,Rhône,Rhône Septentrionale,Alain Voge,"Saint-Péray ""Terres Boisées""",2014,0.75,120,1437,Marsanne,Saint-Péray AOC,,FALSE,
-White wine,France,Rhône,Rhône Septentrionale,Domaine Bernard Gripa,"Saint-Joseph ""Le Berceau"" Blanc",2016,0.75,190,1456,Marsanne,Saint-Joseph AOC,,FALSE,
+White wine,France,Rhône,Rhône Septentrionale,Alain Voge,"Saint-Péray ""Terres Boisées""",2014,0.75,120,1437,Marsanne,Saint-Péray AOC,,TRUE,1
+White wine,France,Rhône,Rhône Septentrionale,Domaine Bernard Gripa,"Saint-Joseph ""Le Berceau"" Blanc",2016,0.75,190,1456,Marsanne,Saint-Joseph AOC,,TRUE,2
 White wine,France,Rhône,Rhône Septentrionale,Domaine Jean-Louis Chave,"""Blanche"" Hermitage Blanc",2020,0.75,190,8848,"Marsanne, Roussanne",Hermitage AOC,,FALSE,
-White wine,France,Rhône,Rhône Septentrionale,Domaine Jean-Louis Chave,L'Hermitage Blanc,2019,0.75,580,1424,"Marsanne, Roussanne",Hermitage AOC,,TRUE,1
+White wine,France,Rhône,Rhône Septentrionale,Domaine Jean-Louis Chave,L'Hermitage Blanc,2019,0.75,580,1424,"Marsanne, Roussanne",Hermitage AOC,,FALSE,
 White wine,France,Rhône,Rhône Septentrionale,Domaine René Rostaing,"Condrieu ""La Bonnette""",2022,0.75,195,8847,Viognier,Condrieu AOC,,FALSE,
 White wine,France,Rhône,Rhône Septentrionale,Domaine René Rostaing,"Condrieu ""La Bonnette""",2020,0.75,230,1410,Viognier,Condrieu AOC,,FALSE,
-White wine,France,Rhône,,Les Vignerons Ardéchois,Viognier,2020,0.75,60,1406,Viognier,Ardèche IGP,,TRUE,2
+White wine,France,Rhône,,Les Vignerons Ardéchois,Viognier,2020,0.75,60,1406,Viognier,Ardèche IGP,,FALSE,
 White wine,France,Rhône,Rhône Méridionale,Rotem & Mounir Saouma,"Châteauneuf-du-Pape ""Magis"" Blanc",2020,0.75,250,8846,"Grenache Blanc, Clairette, Roussanne, Bourboulenc",Châteauneuf-du-Pape AOC,,FALSE,
 White wine,Italy,Piedmont,Roero,Bruno Giacosa,Roero Arneis,2024,0.75,90,1627,Arneis,Roero Arneis DOCG,,FALSE,
 White wine,Italy,Piedmont,Langhe,Gaja,Rossj-Bass,2022,0.75,240,1612,"Chardonnay, Sauvignon Blanc",Langhe DOC,,FALSE,
@@ -268,19 +271,19 @@ White wine,Italy,Piedmont,Roero,Monchiero Carbone,"""Recit""",2022,0.75,70,1640,
 White wine,Italy,Piedmont,Langhe,Poderi Aldo Conterno,Chardonnay Bussiador,2022,0.75,245,8592,Chardonnay,Langhe DOC,,FALSE,
 White wine,Italy,Piedmont,Roero,Vietti,Roero Arneis,2022,0.75,90,1616,Arneis,Roero Arneis DOCG,,FALSE,
 White wine,Italy,Piedmont,Colli Tortonesi,Vigneti Massa,Derthona - Timorasso,2023,0.75,95,1624,Timorasso,Colli Tortonesi DOC,,FALSE,
-White wine,Italy,Lombardy,Franciacorta,Ca' del Bosco,Corte del Lupo,2024,0.75,105,1631,"Chardonnay, Pinot Bianco",Curtefranca DOC,,TRUE,2
-White wine,Italy,Lombardy,Franciacorta,Ca' del Bosco,Selva della Tesa - Chardonnay,2020,0.75,270,8593,Chardonnay,Sebino IGT,,TRUE,2
+White wine,Italy,Lombardy,Franciacorta,Ca' del Bosco,Corte del Lupo,2024,0.75,105,1631,"Chardonnay, Pinot Bianco",Curtefranca DOC,,FALSE,
+White wine,Italy,Lombardy,Franciacorta,Ca' del Bosco,Selva della Tesa - Chardonnay,2020,0.75,270,8593,Chardonnay,Sebino IGT,,FALSE,
 White wine,Italy,Lombardy,Lugana,Ca' Lojera,Lugana,2024,0.75,65,1607,Turbiana,Lugana DOC,,FALSE,
-White wine,Italy,Lombardy,,Strata,Bianco,2025,0.75,70,1606,,,,TRUE,1
+White wine,Italy,Lombardy,,Strata,Bianco,2025,0.75,70,1606,,,,FALSE,
 White wine,Italy,Lombardy,Lugana,Tommasi,Le Fornaci,2024,0.75,60,1691,Turbiana,Lugana DOC,,FALSE,
-White wine,Italy,Trentino-Alto Adige,Bassa Atesina (Magrè),Alois Lageder,Pinot Grigio,2024,0.75,65,1626,Pinot Grigio,Alto Adige DOC,,TRUE,1
+White wine,Italy,Trentino-Alto Adige,Bassa Atesina (Magrè),Alois Lageder,Pinot Grigio,2024,0.75,65,1626,Pinot Grigio,Alto Adige DOC,,FALSE,
 White wine,Italy,Trentino-Alto Adige,Bassa Atesina (Magrè),Alois Lageder,"Pinot Grigio ""Porer""",2023,0.75,80,1635,Pinot Grigio,Vigneti delle Dolomiti IGT,,FALSE,
-White wine,Italy,Trentino-Alto Adige,Terlano,Cantina Terlan,"Pinot Bianco ""Vorberg""",2022,0.75,135,8594,Pinot Bianco,Alto Adige DOC Riserva,,TRUE,2
+White wine,Italy,Trentino-Alto Adige,Terlano,Cantina Terlan,"Pinot Bianco ""Vorberg""",2022,0.75,135,8594,Pinot Bianco,Alto Adige DOC Riserva,,FALSE,
 White wine,Italy,Trentino-Alto Adige,Terlano,Cantina Terlan,"""Quarz""",2021,0.75,180,1608,Sauvignon Blanc,Alto Adige Terlano DOC,,FALSE,
 White wine,Italy,Trentino-Alto Adige,Oltradige (Appiano),St. Michael-Eppan,"""Fallwind"" - Sauvignon Blanc",2024,0.75,65,1638,Sauvignon Blanc,Alto Adige DOC,,FALSE,
 White wine,Italy,Trentino-Alto Adige,Bolzano (Gries),Weingut & Klosterkellerei Muri Gries,Abtei Muri Weissburgunder,2022,0.75,115,8860,Pinot Bianco,Alto Adige DOC Riserva,,FALSE,
-White wine,Italy,Veneto,Soave,Roccolo Grassi,"""La Broia""",2023,0.75,65,8859,Garganega,Soave DOC,,FALSE,1
-White wine,Italy,Friuli Venezia Giulia,Collio,Borgo del Tiglio - Manferrari,Collio Chardonnay Etichetta Scura,2022,0.75,230,8595,Chardonnay,Collio DOC,,FALSE,2
+White wine,Italy,Veneto,Soave,Roccolo Grassi,"""La Broia""",2023,0.75,65,8859,Garganega,Soave DOC,,FALSE,
+White wine,Italy,Friuli Venezia Giulia,Collio,Borgo del Tiglio - Manferrari,Collio Chardonnay Etichetta Scura,2022,0.75,230,8595,Chardonnay,Collio DOC,,FALSE,
 White wine,Italy,Friuli Venezia Giulia,Isonzo,Jermann,Sauvignon Blanc,2022,0.75,110,8596,Sauvignon Blanc,Venezia Giulia IGT,,FALSE,
 White wine,Italy,Friuli Venezia Giulia,Isonzo,Jermann,Vintage Tunina,2022,0.75,180,1605,"Sauvignon Blanc, Chardonnay, Ribolla Gialla, Malvasia, Picolit",Venezia Giulia IGT,,FALSE,
 White wine,Italy,Friuli Venezia Giulia,Collio,Venica & Venica,"""Primarûl"" Friulano",2022,0.75,75,1637,Friulano,Collio DOC,,FALSE,
@@ -290,7 +293,7 @@ White wine,Italy,Tuscany,Bolgheri,Caccia al Piano,"""Lungocosta""",2022,0.75,125
 White wine,Italy,Tuscany,Bolgheri,Le Macchiole,Paleo Bianco,2023,0.75,235,8597,"Chardonnay, Sauvignon Blanc",Toscana IGT,,FALSE,
 White wine,Italy,Tuscany,Maremma,Mazzei,"Belguardo ""V"" - Vermentino Superiore",2023,0.75,100,9125,Vermentino,Maremma Toscana DOC,,FALSE,
 White wine,Italy,Tuscany,Chianti Classico,Tenuta Gagliole,Il Bianco,2024,0.75,90,1611,"Chardonnay, Sauvignon Blanc",Toscana IGT,,FALSE,
-White wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Ornellaia Bianco,2020,0.75,565,1625,"Sauvignon Blanc, Viognier",Toscana IGT,,FALSE,
+White wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Ornellaia Bianco,2020,0.75,565,1625,"Sauvignon Blanc, Viognier",Toscana IGT,,TRUE,1
 White wine,Italy,Tuscany,Bibbona,Tenuta di Biserno,"""Occhione""",2025,0.75,85,2710,Vermentino,Toscana IGT,,FALSE,
 White wine,Italy,Umbria,Orvieto,Marchesi Antinori,Cervaro della Sala,2023,0.75,240,1632,"Chardonnay, Grechetto",Umbria IGT,,FALSE,
 White wine,Italy,Marche,Matelica,Bisci,"""Vigneto Fogliano""",2020,0.75,90,9124,Verdicchio,Verdicchio di Matelica DOC,,FALSE,
@@ -309,26 +312,26 @@ White wine,Spain,Galicia,Val do Salnés,Pazo Señorans,Albariño,2024,0.75,75,18
 White wine,US,California,Sta. Rita Hills,Au Bon Climat,Chardonnay Sanford & Benedict Vineyard,2020,0.75,155,8881,Chardonnay,Sta. Rita Hills AVA,,FALSE,
 White wine,US,California,Napa Valley (Calistoga),Eisele Vineyard,Sauvignon Blanc,2021,0.75,320,8883,Sauvignon Blanc,Napa Valley AVA,,FALSE,
 White wine,US,California,Sonoma Coast,Kistler,"""Les Noisetiers"" - Chardonnay",2023,0.75,240,8884,Chardonnay,Sonoma Coast AVA,,FALSE,
-White wine,US,California,Santa Cruz Mountains,Mount Eden Vineyards,Chardonnay,2018,0.75,210,1901,Chardonnay,Santa Cruz Mountains AVA,,FALSE,
+White wine,US,California,Santa Cruz Mountains,Mount Eden Vineyards,Chardonnay,2018,0.75,210,1901,Chardonnay,Santa Cruz Mountains AVA,,TRUE,2
 White wine,US,California,Russian River Valley,Ramey,Chardonnay,2023,0.75,160,1903,Chardonnay,Russian River Valley AVA,,FALSE,
 White wine,US,California,Carneros,Shafer,"""Red Shoulder Ranch"" - Chardonnay",2019,0.75,200,1902,Chardonnay,Carneros AVA,,FALSE,
 White wine,US,California,Carneros,Shafer,"""Red Shoulder Ranch"" - Chardonnay",2022,0.75,215,8882,Chardonnay,Carneros AVA,,FALSE,
 White wine,Argentina,Mendoza,Valle de Uco (Tupungato),Achaval Ferrer,Quimera Blanco,2022,0.75,130,8885,"Chardonnay, Sémillon, Viognier, Sauvignon Blanc",Mendoza IG,,FALSE,
 White wine,Argentina,Mendoza,Valle de Uco (Gualtallary),Finca Ambrosía de Tupungato,"""Viña Única"" - Chardonnay",2020,0.75,95,9102,Chardonnay,Valle de Uco IG,,FALSE,
 White wine,Argentina,Mendoza,Valle de Uco,Susana Balbo,Barrel Fermented Torrontés,2022,0.75,105,1906,Torrontés,Mendoza IG,,FALSE,
-White wine,Argentina,Salta,Valle Calchaquí (Cafayate),Bodega Amalaya,Blanco de Corte - Torrontés/Riesling,2023,0.75,60,1905,"Torrontés, Riesling",Valle Calchaquí IG,,FALSE,
+White wine,Argentina,Salta,Valle Calchaquí (Cafayate),Bodega Amalaya,Blanco de Corte - Torrontés/Riesling,2023,0.75,60,1905,"Torrontés, Riesling",Valle Calchaquí IG,,TRUE,1
 White wine,Australia,South Australia,Barossa Valley,Rockford,Semillon,2016,0.75,100,8032,Semillon,Barossa Valley GI (South Australia),,FALSE,
-Rosé,Switzerland,Neuchâtel,Auvernier,Château d'Auvernier,Œil-de-Perdrix - HALF bt.,2023,0.375,40,3501,Pinot Noir,Neuchâtel AOC,,FALSE,
+Rosé,Switzerland,Neuchâtel,Auvernier,Château d'Auvernier,Œil-de-Perdrix - HALF bt.,2023,0.375,40,3501,Pinot Noir,Neuchâtel AOC,,TRUE,2
 Rosé,Switzerland,Neuchâtel,Auvernier,Château d'Auvernier,Œil-de-Perdrix,2024,0.75,70,3502,Pinot Noir,Neuchâtel AOC,,FALSE,
 Rosé,France,Provence,Bandol,Château de Pibarnon,Château de Pibarnon Rosé,2023,0.75,85,3505,"Mourvèdre, Cinsault",Bandol AOC,,FALSE,
 Rosé,France,Provence,Bandol,Château de Pibarnon,Nuances Rosé,2021,0.75,145,8886,Mourvèdre,Bandol AOC,,FALSE,
-Rosé,France,Provence,,Château d'Esclans,Whispering Angel,2025,0.75,70,3508,"Grenache, Cinsault, Rolle, Syrah",Côtes de Provence AOC,,TRUE,1
+Rosé,France,Provence,,Château d'Esclans,Whispering Angel,2025,0.75,70,3508,"Grenache, Cinsault, Rolle, Syrah",Côtes de Provence AOC,,FALSE,
 Rosé,France,Provence,,Château d'Esclans,Les Clans,2018,0.75,150,3515,"Grenache, Rolle",Côtes de Provence AOC,,FALSE,
 Rosé,France,Provence,,Domaines Ott,Château de Selle Rosé,2025,0.75,130,8615,"Grenache, Cinsault, Mourvèdre, Syrah",Côtes de Provence AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Pinot Noir - HALF bt.,2024,0.375,55,5206,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Fläscher Pinot Noir,2024,0.75,100,2201,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,"Pinot Noir ""H""",2022,0.75,210,2248,Pinot Noir,Graubünden AOC,,FALSE,
-Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Fläscher Pinot Noir - MAGNUM,2018,1.5,230,7201,Pinot Noir,Graubünden AOC,,FALSE,
+Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Christian Hermann,Fläscher Pinot Noir - MAGNUM,2018,1.5,230,7201,Pinot Noir,Graubünden AOC,,TRUE,1
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Donatsch,"""Passion"" - Pinot Noir - HALF bt.",2018,0.375,90,5203,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Donatsch,"""Passion"" - Pinot Noir",2022,0.75,175,8890,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Donatsch,"""Unique"" - Pinot Noir Malans",2015,0.75,320,2244,Pinot Noir,Graubünden AOC,,FALSE,
@@ -341,19 +344,19 @@ Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Fromm,"""Selvenen"
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Fromm,"""Selvenen"" Malanser Pinot Noir",2019,0.75,160,2245,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Fromm,"""Benvenuto"" Malanser Pinot Noir - Single Cask",2023,0.75,185,8898,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Fromm,"""Michel"" Malanser Pinot Noir",2022,0.75,220,8899,Pinot Noir,Graubünden AOC,,FALSE,
-Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Fromm,"""Selvenen"" Malanser Pinot Noir - MAGNUM",2022,1.5,280,8896,Pinot Noir,Graubünden AOC,,TRUE,1
+Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Fromm,"""Selvenen"" Malanser Pinot Noir - MAGNUM",2022,1.5,280,8896,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Fromm,"""Schöpfi"" Malanser Pinot Noir",2022,0.75,300,8900,Pinot Noir,Graubünden AOC,,TRUE,2
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Gantenbein,Pinot Noir,2021,0.75,380,8889,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Georg Schlegel,Jeninser Pinot Noir,2023,0.75,90,2228,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Georg Schlegel,"""Pradafant"" - Jeninser Pinot Noir",2020,0.75,140,2203,Pinot Noir,Graubünden AOC,,FALSE,
-Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Georg Schlegel,"""Classic"" - Pinot Noir - MAGNUM",2024,1.5,140,7207,Pinot Noir,Graubünden AOC,,FALSE,
+Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Georg Schlegel,"""Classic"" - Pinot Noir - MAGNUM",2024,1.5,140,7207,Pinot Noir,Graubünden AOC,,TRUE,1
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Georg Schlegel,"""Saliser"" - Pinot Noir",2018,0.75,190,2234,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Liesch,Malanser Merlot,2022,0.75,140,2236,Merlot,Graubünden AOC,,FALSE,
-Red wine,Switzerland,Graubünden,Bündner Herrschaft (Maienfeld),Martina Hermann & Silas Hörler,"""Carsilias"" - Pinot Noir",2020,0.75,180,2241,Pinot Noir,Graubünden AOC,,FALSE,
-Red wine,Switzerland,Graubünden,Bündner Herrschaft (Maienfeld),Möhr-Niggli,"""Pilgrim"" - Pinot Noir",2019,0.75,160,2217,Pinot Noir,Graubünden AOC,,TRUE,1
+Red wine,Switzerland,Graubünden,Bündner Herrschaft (Maienfeld),Martina Hermann & Silas Hörler,"""Carsilias"" - Pinot Noir",2020,0.75,180,2241,Pinot Noir,Graubünden AOC,,TRUE,2
+Red wine,Switzerland,Graubünden,Bündner Herrschaft (Maienfeld),Möhr-Niggli,"""Pilgrim"" - Pinot Noir",2019,0.75,160,2217,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Obrecht,Trocla Nera,2023,0.75,105,2207,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Obrecht,Monolith,2022,0.75,185,2220,Pinot Noir,Graubünden AOC,,FALSE,
-Red wine,Switzerland,Graubünden,Bündner Herrschaft (Maienfeld),Schloss Salenegg,Blauburgunder Schloss Salenegg,2021,0.75,110,2202,Pinot Noir,Graubünden AOC,,TRUE,2
+Red wine,Switzerland,Graubünden,Bündner Herrschaft (Maienfeld),Schloss Salenegg,Blauburgunder Schloss Salenegg,2021,0.75,110,2202,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Maienfeld),Schloss Salenegg,Blauburgunder Schloss Salenegg - MAGNUM,2020,1.5,215,7205,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Sprecher von Bernegg,"""Vom Lindenwingert"" - Pinot Noir",2019,0.75,120,2249,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Sprecher von Bernegg,"""Vom Pfaffen/Calander"" - Pinot Noir",2020,0.75,155,2233,Pinot Noir,Graubünden AOC,,FALSE,
@@ -363,28 +366,28 @@ Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Thomas Studach,Pin
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Thürer Weine,Pinot Noir Selection,2024,0.75,120,2368,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Thürer Weine,Le Grand Pinot Noir Barrique,2023,0.75,220,2369,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Vinigma,Aspermont,2022,0.75,100,2370,Pinot Noir,Graubünden AOC,,FALSE,
-Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Vinigma,"""Jeninser"" - Pinot Noir",,0.75,150,9226,Pinot Noir,Graubünden AOC,,TRUE,1
+Red wine,Switzerland,Graubünden,Bündner Herrschaft (Jenins),Vinigma,"""Jeninser"" - Pinot Noir",,0.75,150,9226,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Wegelin,"""Bothmarhalde"" Blauburgunder",2021,0.75,145,8902,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Wegelin,"""Weisstorkel"" Blauburgunder",2020,0.75,145,8901,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Malans),Wegelin,"""Scadena"" Blauburgunder",2021,0.75,200,8903,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Weingut Daniel & Monika Marugg,"""Bovel"" - Pinot Noir",2022,0.75,120,2265,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Weingut Davaz,"""Classic"" - Pinot Noir",2024,0.75,85,2211,Pinot Noir,Graubünden AOC,,FALSE,
 Red wine,Switzerland,Graubünden,Bündner Herrschaft (Fläsch),Weingut Davaz,"""Uris"" - Pinot Noir",2021,0.75,115,2227,Pinot Noir,Graubünden AOC,,FALSE,
-Red wine,Switzerland,Ticino,Sottoceneri,Castello Luigi,Castello Luigi Rosso - Merlot,2012,0.75,350,2264,Merlot,Ticino DOC,,FALSE,
+Red wine,Switzerland,Ticino,Sottoceneri,Castello Luigi,Castello Luigi Rosso - Merlot,2012,0.75,350,2264,Merlot,Ticino DOC,,TRUE,2
 Red wine,Switzerland,Ticino,Sottoceneri,Cantina Settemaggio,"""Gamedio"" - Galotta",2020,0.75,95,2263,Galotta,Ticino DOC,,FALSE,
 Red wine,Switzerland,Ticino,Sottoceneri,Guido Brivio,"""Riflessi d'Epoca"" - Merlot - HALF bt.",2022,0.375,80,5201,Merlot,Ticino DOC,,FALSE,
 Red wine,Switzerland,Ticino,Sottoceneri,Guido Brivio,"""Riflessi d'Epoca"" - Merlot",2022,0.75,155,2215,Merlot,Ticino DOC,,FALSE,
 Red wine,Switzerland,Ticino,,Quattromani,Merlot Cuvée,2022,0.75,200,8905,Merlot,Ticino DOC,,FALSE,
 Red wine,Switzerland,Ticino,,Quattromani,Merlot Cuvée - MAGNUM,2019,1.5,335,8906,Merlot,Ticino DOC,,FALSE,
 Red wine,Switzerland,Ticino,Sopraceneri,Tamborini,"""Terre di Gudo""",2023,0.75,80,2371,Merlot,Ticino DOC,,FALSE,
-Red wine,Switzerland,Ticino,Sottoceneri,Tenuta Agricola Luigina,"""Rosso del Principe"" - Merlot",2018,0.75,140,2226,Merlot,Ticino DOC,,TRUE,2
+Red wine,Switzerland,Ticino,Sottoceneri,Tenuta Agricola Luigina,"""Rosso del Principe"" - Merlot",2018,0.75,140,2226,Merlot,Ticino DOC,,FALSE,
 Red wine,Switzerland,Ticino,Sottoceneri,Tenuta Agricola Luigina,Gemma dell'Est - Merlot,2019,0.75,225,8904,Merlot,Ticino DOC,,FALSE,
 Red wine,Switzerland,Ticino,Sopraceneri,Terreni alla Maggia,Melodia,2019,0.75,115,2266,Merlot,Ticino DOC,,FALSE,
 Red wine,Switzerland,Neuchâtel,Saint-Blaise,Domaine Saint-Sébaste,Clos de la Perrière,2019,0.75,160,2238,Pinot Noir,Neuchâtel AOC,,FALSE,
-Red wine,Switzerland,Neuchâtel,Cressier,Domaine de la Rochette - Jacques Tatasciore,Les Margiles,2018,0.75,310,2223,Pinot Noir,Neuchâtel AOC,,TRUE,1
+Red wine,Switzerland,Neuchâtel,Cressier,Domaine de la Rochette - Jacques Tatasciore,Les Margiles,2018,0.75,310,2223,Pinot Noir,Neuchâtel AOC,,FALSE,
 Red wine,Switzerland,Neuchâtel,Cortaillod,Domaine des Landions,Les Cailloutis,2022,0.75,125,8912,Pinot Noir,Neuchâtel AOC,,FALSE,
 Red wine,Switzerland,Neuchâtel,Cortaillod,Domaine des Landions,Les Landions Cortaillod,2023,0.75,175,8913,Pinot Noir,Neuchâtel AOC,,FALSE,
-Red wine,Switzerland,Neuchâtel,Cortaillod,Domaine des Landions,Clos du Château,2023,0.75,230,8914,Pinot Noir,Neuchâtel AOC,,TRUE,2
+Red wine,Switzerland,Neuchâtel,Cortaillod,Domaine des Landions,Clos du Château,2023,0.75,230,8914,Pinot Noir,Neuchâtel AOC,,FALSE,
 Red wine,Switzerland,Vaud,Lavaux,Louis Bovard,Dézaley Grand Cru - Syrah/Merlot,2018,0.75,130,2210,"Syrah, Merlot",Dézaley Grand Cru – Lavaux AOC,,FALSE,
 Red wine,Switzerland,Valais,Sierre,Histoire d'Enfer,"""L'Enfer du Calcaire"" - Cornalin",2016,0.75,200,2243,Cornalin,Valais AOC,,FALSE,
 Red wine,Switzerland,Valais,Sierre,Histoire d'Enfer,"""L'Enfer du Calcaire"" - Cornalin",2020,0.75,220,8908,Cornalin,Valais AOC,,FALSE,
@@ -406,13 +409,13 @@ Red wine,France,Burgundy,Côte de Nuits,Arnaud Baillot,Vosne-Romanée,2023,0.75,
 Red wine,France,Burgundy,Côte de Beaune,Arnaud Baillot,"Volnay 1er Cru ""Les Mitans""",2022,0.75,255,8941,Pinot Noir,Volnay Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Chanson Père & Fils,"Pernand-Vergelesses 1er Cru ""Les Vergelesses""",2016,0.75,135,2473,Pinot Noir,Pernand-Vergelesses Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Chanson Père & Fils,"Beaune 1er Cru ""Clos des Fèves"" Monopole",2017,0.75,280,2456,Pinot Noir,Beaune Premier Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Beaune,Clos du Moulin aux Moines,"Bourgogne ""Clos de la Perrière"" Monopole",2022,0.75,120,2445,Pinot Noir,Bourgogne AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Beaune,Clos du Moulin aux Moines,"Bourgogne ""Clos de la Perrière"" Monopole",2022,0.75,120,2445,Pinot Noir,Bourgogne AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,Chambolle-Musigny,2022,0.75,990,8926,Pinot Noir,Chambolle-Musigny AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,"Musigny ""Cuvée Vieilles Vignes""",2017,0.75,1880,8928,Pinot Noir,Musigny Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,"Musigny ""Cuvée Vieilles Vignes""",2020,0.75,2000,2430,Pinot Noir,Musigny Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,Musigny,2022,0.75,2120,8929,Pinot Noir,Musigny Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,"Musigny ""Cuvée Vieilles Vignes""",2020,0.75,2000,2430,Pinot Noir,Musigny Grand Cru AOC,,TRUE,1
+Red wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,Musigny,2022,0.75,2120,8929,Pinot Noir,Musigny Grand Cru AOC,,TRUE,2
 Red wine,France,Burgundy,Côte de Nuits,Domaine Comte Georges de Vogüé,Bonnes-Mares,2022,0.75,4615,8927,Pinot Noir,Bonnes-Mares Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine Confuron-Cotétidot,Vosne-Romanée,2021,0.75,225,8930,Pinot Noir,Vosne-Romanée AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Domaine Confuron-Cotétidot,Vosne-Romanée,2021,0.75,225,8930,Pinot Noir,Vosne-Romanée AOC,,TRUE,2
 Red wine,France,Burgundy,Côte de Nuits,Domaine Confuron-Cotétidot,Vosne-Romanée,2020,0.75,250,2458,Pinot Noir,Vosne-Romanée AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine Confuron-Cotétidot,Clos de Vougeot,2021,0.75,645,8931,Pinot Noir,Clos de Vougeot Grand Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Domaine Cornu,"Corton Grand Cru ""Le Rognet et Corton""",2021,0.75,290,8970,Pinot Noir,Corton Grand Cru AOC,,FALSE,
@@ -420,42 +423,42 @@ Red wine,France,Burgundy,Côte de Beaune,Domaine Jacques Prieur,"Beaune 1er Cru 
 Red wine,France,Burgundy,Côte de Nuits,Domaine Jean Tardy & Fils,"Nuits-Saint-Georges ""Au Bas de Combe"" Vieilles Vignes",2022,0.75,290,8932,Pinot Noir,Nuits-Saint-Georges AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine Rossignol-Trapet,Gevrey-Chambertin Vieilles Vignes,2022,0.75,190,2518,Pinot Noir,Gevrey-Chambertin AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine Trapet Père et Fils,"Gevrey-Chambertin ""Ostrea""",2017,0.75,290,2470,Pinot Noir,Gevrey-Chambertin AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine Trapet Père et Fils,"Gevrey-Chambertin ""Ostrea""",2015,0.75,335,8916,Pinot Noir,Gevrey-Chambertin AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Beaune,Domaine de Courcel,"Pommard 1er Cru ""Grand Clos des Épenots""",2016,0.75,380,2444,Pinot Noir,Pommard Premier Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Domaine Trapet Père et Fils,"Gevrey-Chambertin ""Ostrea""",2015,0.75,335,8916,Pinot Noir,Gevrey-Chambertin AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Beaune,Domaine de Courcel,"Pommard 1er Cru ""Grand Clos des Épenots""",2016,0.75,380,2444,Pinot Noir,Pommard Premier Cru AOC,,TRUE,2
 Red wine,France,Burgundy,Côte de Nuits,Domaine de la Pousse d'Or,Chambolle-Musigny - HALF bt.,2019,0.375,135,5408,Pinot Noir,Chambolle-Musigny AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine de la Pousse d'Or,Chambolle-Musigny,2022,0.75,260,8921,Pinot Noir,Chambolle-Musigny AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Domaine de la Pousse d'Or,"Volnay 1er Cru ""Les Caillerets""",2022,0.75,270,8922,Pinot Noir,Volnay Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine de la Pousse d'Or,Chambolle-Musigny,2020,0.75,290,2410,Pinot Noir,Chambolle-Musigny AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Domaine de la Pousse d'Or,"Volnay 1er Cru ""Clos des 60 Ouvrées"" Monopole",2022,0.75,310,8923,Pinot Noir,Volnay Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Domaine de la Pousse d'Or,"Volnay 1er Cru ""Clos des 60 Ouvrées"" Monopole",2016,0.75,330,2491,Pinot Noir,Volnay Premier Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,"Vosne-Romanée 1er Cru ""Cuvée Duvault-Blochet""",2023,0.75,1800,9107,Pinot Noir,Vosne-Romanée Premier Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton,2023,0.75,1900,9108,Pinot Noir,Corton Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,"Vosne-Romanée 1er Cru ""Cuvée Duvault-Blochet""",2022,0.75,1900,9077,Pinot Noir,Vosne-Romanée Premier Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Échézeaux,2023,0.75,2000,9109,Pinot Noir,Échézeaux Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton,2022,0.75,2000,9078,Pinot Noir,Corton Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Échézeaux,2022,0.75,2100,9079,Pinot Noir,Échézeaux Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Grands Échézeaux,2023,0.75,2700,9110,Pinot Noir,Grands Échézeaux Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Grands Échézeaux,2022,0.75,2800,9080,Pinot Noir,Grands Échézeaux Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Richebourg,2023,0.75,3400,9111,Pinot Noir,Richebourg Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Saint-Vivant,2022,0.75,3450,9082,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Richebourg,2022,0.75,3500,9081,Pinot Noir,Richebourg Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Richebourg,2020,0.75,3500,2461,Pinot Noir,Richebourg Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Saint-Vivant,2020,0.75,3600,2453,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Richebourg,2019,0.75,3900,2524,Pinot Noir,Richebourg Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Saint-Vivant,2019,0.75,3900,2522,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,La Tâche,2023,0.75,4800,9112,Pinot Noir,La Tâche Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,La Tâche,2022,0.75,4900,9083,Pinot Noir,La Tâche Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,La Tâche,2019,0.75,5200,2454,Pinot Noir,La Tâche Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Saint-Vivant - MAGNUM,2022,1.5,6950,9085,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Conti,2023,0.75,19000,9113,Pinot Noir,Romanée-Conti Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,"Vosne-Romanée 1er Cru ""Cuvée Duvault-Blochet""",2023,0.75,1800,9107,Pinot Noir,Vosne-Romanée Premier Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton,2023,0.75,1900,9108,Pinot Noir,Corton Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,"Vosne-Romanée 1er Cru ""Cuvée Duvault-Blochet""",2022,0.75,1900,9077,Pinot Noir,Vosne-Romanée Premier Cru AOC,,TRUE,1
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Échézeaux,2023,0.75,2000,9109,Pinot Noir,Échézeaux Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Beaune,Domaine de la Romanée-Conti,Corton,2022,0.75,2000,9078,Pinot Noir,Corton Grand Cru AOC,,TRUE,1
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Échézeaux,2022,0.75,2100,9079,Pinot Noir,Échézeaux Grand Cru AOC,,TRUE,1
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Grands Échézeaux,2023,0.75,2700,9110,Pinot Noir,Grands Échézeaux Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Grands Échézeaux,2022,0.75,2800,9080,Pinot Noir,Grands Échézeaux Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Richebourg,2023,0.75,3400,9111,Pinot Noir,Richebourg Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Saint-Vivant,2022,0.75,3450,9082,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Richebourg,2022,0.75,3500,9081,Pinot Noir,Richebourg Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Richebourg,2020,0.75,3500,2461,Pinot Noir,Richebourg Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Saint-Vivant,2020,0.75,3600,2453,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Richebourg,2019,0.75,3900,2524,Pinot Noir,Richebourg Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Saint-Vivant,2019,0.75,3900,2522,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,TRUE,1
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,La Tâche,2023,0.75,4800,9112,Pinot Noir,La Tâche Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,La Tâche,2022,0.75,4900,9083,Pinot Noir,La Tâche Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,La Tâche,2019,0.75,5200,2454,Pinot Noir,La Tâche Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Saint-Vivant - MAGNUM,2022,1.5,6950,9085,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,TRUE,1
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Conti,2023,0.75,19000,9113,Pinot Noir,Romanée-Conti Grand Cru AOC,,TRUE,1
 Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Conti,2022,0.75,19500,9084,Pinot Noir,Romanée-Conti Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Conti,2020,0.75,20000,2449,Pinot Noir,Romanée-Conti Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Domaine de la Romanée-Conti,Romanée-Conti,2020,0.75,20000,2449,Pinot Noir,Romanée-Conti Grand Cru AOC,,TRUE,1
 Red wine,France,Burgundy,Côte de Nuits,Domaine des Lambrays,"Morey-Saint-Denis 1er Cru ""Les Loups""",2021,0.75,460,8936,Pinot Noir,Morey-Saint-Denis Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine des Lambrays,Clos des Lambrays,2022,0.75,1350,2474,Pinot Noir,Clos des Lambrays Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine des Lambrays,Clos des Lambrays,2019,0.75,1445,8937,Pinot Noir,Clos des Lambrays Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Domaine du Clos de Tart,"""Clos de Tart"" Grand Cru Monopole",2021,0.75,1725,8919,Pinot Noir,Clos de Tart Grand Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine des Lambrays,Clos des Lambrays,2019,0.75,1445,8937,Pinot Noir,Clos des Lambrays Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Domaine du Clos de Tart,"""Clos de Tart"" Grand Cru Monopole",2021,0.75,1725,8919,Pinot Noir,Clos de Tart Grand Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Domaine du Clos de Tart,"""Clos de Tart"" Grand Cru Monopole - MAGNUM",2021,1.5,3225,8920,Pinot Noir,Clos de Tart Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Domaine du Clos de Tart,"Morey-Saint-Denis 1er Cru ""La Forge de Tart""",2019,0.75,655,8918,Pinot Noir,Morey-Saint-Denis Premier Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Domaine du Clos de Tart,"Morey-Saint-Denis 1er Cru ""La Forge de Tart""",2019,0.75,655,8918,Pinot Noir,Morey-Saint-Denis Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Jean-Luc & Eric Burguet,"Gevrey-Chambertin - ""Mes Favorites"" Vieilles Vignes",2021,0.75,210,8915,Pinot Noir,Gevrey-Chambertin AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Jean-Marie Fourrier,Bourgogne Rouge Vieilles Vignes,2022,0.75,225,8968,Pinot Noir,Bourgogne AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Jean-Marie Fourrier,"Pommard 1er Cru ""Les Rugiens"" Vieilles Vignes",2022,0.75,520,2467,Pinot Noir,Pommard Premier Cru AOC,,FALSE,
@@ -463,35 +466,35 @@ Red wine,France,Burgundy,Côte de Beaune,Jean-Marie Fourrier,"Pommard 1er Cru ""
 Red wine,France,Burgundy,Côte de Beaune,Justin Girardin,"Santenay 1er Cru ""Clos Rousseau""",2021,0.75,100,2418,Pinot Noir,Santenay Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Laurent Ponsot,"Beaune 1er Cru ""Cuvée du Noyer""",2021,0.75,225,2480,Pinot Noir,Beaune Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Laurent Ponsot,"Beaune 1er Cru ""Cuvée du Noyer""",2020,0.75,230,8964,Pinot Noir,Beaune Premier Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Laurent Ponsot,"Chambolle-Musigny ""Cuvée de la Violette""",2022,0.75,290,8965,Pinot Noir,Chambolle-Musigny AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Laurent Ponsot,"Chambolle-Musigny ""Cuvée de la Violette""",2022,0.75,290,8965,Pinot Noir,Chambolle-Musigny AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Laurent Ponsot,"Chambolle-Musigny 1er Cru Les Charmes ""Cuvée du Tilleul""",2020,0.75,475,8966,Pinot Noir,Chambolle-Musigny Premier Cru AOC,,TRUE,2
 Red wine,France,Burgundy,Côte de Nuits,Laurent Ponsot,"Griotte-Chambertin Grand Cru ""Cuvée du Saule""",2021,0.75,1505,8967,Pinot Noir,Griotte-Chambertin Grand Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Beaune,Lucien Le Moine,Bourgogne Rouge,2022,0.75,430,8933,Pinot Noir,Bourgogne AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Lucien Le Moine,Clos de la Roche,2022,0.75,4440,8934,Pinot Noir,Clos de la Roche Grand Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Lucien Le Moine,Romanée-Saint-Vivant,2022,0.75,5965,8935,Pinot Noir,Romanée-Saint-Vivant Grand Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Chambolle-Musigny 1er Cru ""Les Lavrottes""",2015,0.75,230,8942,Pinot Noir,Chambolle-Musigny Premier Cru AOC,,FALSE,
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2017,0.75,685,8943,Pinot Noir,Gevrey-Chambertin Premier Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Cazetiers""",2017,0.75,750,8946,Pinot Noir,Gevrey-Chambertin Premier Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2019,0.75,770,8944,Pinot Noir,Gevrey-Chambertin Premier Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2020,0.75,990,8945,Pinot Noir,Gevrey-Chambertin Premier Cru AOC,,TRUE,2
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Chambolle-Musigny 1er Cru ""Les Lavrottes""",2015,0.75,230,8942,Pinot Noir,Chambolle-Musigny Premier Cru AOC,,TRUE,1
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2017,0.75,685,8943,Pinot Noir,Gevrey-Chambertin Premier Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Cazetiers""",2017,0.75,750,8946,Pinot Noir,Gevrey-Chambertin Premier Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2019,0.75,770,8944,Pinot Noir,Gevrey-Chambertin Premier Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,"Gevrey-Chambertin 1er Cru ""Les Champeaux""",2020,0.75,990,8945,Pinot Noir,Gevrey-Chambertin Premier Cru AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Charmes-Chambertin,2014,0.75,1015,8947,Pinot Noir,Charmes-Chambertin Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Charmes-Chambertin,2017,0.75,1240,8948,Pinot Noir,Charmes-Chambertin Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Clos de Vougeot,2017,0.75,1240,8950,Pinot Noir,Clos de Vougeot Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Charmes-Chambertin,2020,0.75,1455,8949,Pinot Noir,Charmes-Chambertin Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Clos de Vougeot,2020,0.75,1455,8951,Pinot Noir,Clos de Vougeot Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Clos de la Roche,2017,0.75,1455,8952,Pinot Noir,Clos de la Roche Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Bonnes-Mares,2017,0.75,1730,8954,Pinot Noir,Bonnes-Mares Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Mazis-Chambertin,2017,0.75,1730,8956,Pinot Noir,Mazis-Chambertin Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Clos de la Roche,2020,0.75,1805,8953,Pinot Noir,Clos de la Roche Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Bonnes-Mares,2020,0.75,2305,8955,Pinot Noir,Bonnes-Mares Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Mazis-Chambertin,2020,0.75,2305,8957,Pinot Noir,Mazis-Chambertin Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin,2016,0.75,2355,8961,Pinot Noir,Chambertin Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin Clos de Bèze,2017,0.75,2605,8958,Pinot Noir,Chambertin-Clos de Bèze Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin,2017,0.75,2605,8962,Pinot Noir,Chambertin Grand Cru AOC,,TRUE,2
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin Clos de Bèze,2019,0.75,2775,8959,Pinot Noir,Chambertin-Clos de Bèze Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin Clos de Bèze,2020,0.75,3020,8960,Pinot Noir,Chambertin-Clos de Bèze Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin,2020,0.75,3020,8963,Pinot Noir,Chambertin Grand Cru AOC,,TRUE,1
-Red wine,France,Burgundy,Côte de Nuits,Philippe Pacalet,Gevrey-Chambertin,2019,0.75,255,8924,Pinot Noir,Gevrey-Chambertin AOC,,TRUE,1
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Charmes-Chambertin,2017,0.75,1240,8948,Pinot Noir,Charmes-Chambertin Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Clos de Vougeot,2017,0.75,1240,8950,Pinot Noir,Clos de Vougeot Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Charmes-Chambertin,2020,0.75,1455,8949,Pinot Noir,Charmes-Chambertin Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Clos de Vougeot,2020,0.75,1455,8951,Pinot Noir,Clos de Vougeot Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Clos de la Roche,2017,0.75,1455,8952,Pinot Noir,Clos de la Roche Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Bonnes-Mares,2017,0.75,1730,8954,Pinot Noir,Bonnes-Mares Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Mazis-Chambertin,2017,0.75,1730,8956,Pinot Noir,Mazis-Chambertin Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Clos de la Roche,2020,0.75,1805,8953,Pinot Noir,Clos de la Roche Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Bonnes-Mares,2020,0.75,2305,8955,Pinot Noir,Bonnes-Mares Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Mazis-Chambertin,2020,0.75,2305,8957,Pinot Noir,Mazis-Chambertin Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin,2016,0.75,2355,8961,Pinot Noir,Chambertin Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin Clos de Bèze,2017,0.75,2605,8958,Pinot Noir,Chambertin-Clos de Bèze Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin,2017,0.75,2605,8962,Pinot Noir,Chambertin Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin Clos de Bèze,2019,0.75,2775,8959,Pinot Noir,Chambertin-Clos de Bèze Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin Clos de Bèze,2020,0.75,3020,8960,Pinot Noir,Chambertin-Clos de Bèze Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Olivier Bernstein,Chambertin,2020,0.75,3020,8963,Pinot Noir,Chambertin Grand Cru AOC,,FALSE,
+Red wine,France,Burgundy,Côte de Nuits,Philippe Pacalet,Gevrey-Chambertin,2019,0.75,255,8924,Pinot Noir,Gevrey-Chambertin AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Philippe Pacalet,Chambolle-Musigny,2018,0.75,340,2441,Pinot Noir,Chambolle-Musigny AOC,,FALSE,
 Red wine,France,Burgundy,Côte de Nuits,Philippe Pacalet,Chambolle-Musigny,2019,0.75,440,8925,Pinot Noir,Chambolle-Musigny AOC,,FALSE,
 Red wine,France,Burgundy,Auxerrois (Irancy),René & Vincent Dauvissat,Irancy,2022,0.75,155,8622,Pinot Noir,Irancy AOC,,FALSE,
@@ -500,7 +503,7 @@ Red wine,France,Bordeaux,Pomerol,Château La Conseillante,Château La Conseillan
 Red wine,France,Bordeaux,Saint-Estèphe,Château Montrose,Château Montrose,2015,0.75,445,2566,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Estèphe AOC",,FALSE,
 Red wine,France,Bordeaux,Saint-Estèphe,Château Montrose,Château Montrose,2018,0.75,530,2568,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Estèphe AOC",,FALSE,
 Red wine,France,Bordeaux,Saint-Émilion,Château Angélus,Château Angélus,2015,0.75,1250,2497,"Merlot, Cabernet Franc","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Batailley,Château Batailley,2018,0.75,270,2417,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cinquième Cru Classé, Pauillac AOC",,FALSE,
+Red wine,France,Bordeaux,Pauillac,Château Batailley,Château Batailley,2018,0.75,270,2417,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cinquième Cru Classé, Pauillac AOC",,TRUE,2
 Red wine,France,Bordeaux,Saint-Julien,Château Beychevelle,Château Beychevelle,2022,0.75,295,2567,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Quatrième Cru Classé, Saint-Julien AOC",,FALSE,
 Red wine,France,Bordeaux,Saint-Julien,Château Branaire-Ducru,Château Branaire-Ducru,2009,0.75,350,2536,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Quatrième Cru Classé, Saint-Julien AOC",,FALSE,
 Red wine,France,Bordeaux,Margaux,Château Brane-Cantenac,Baron de Brane,2020,0.75,130,2508,"Cabernet Sauvignon, Merlot, Cabernet Franc","Second vin, Margaux AOC",,FALSE,
@@ -510,22 +513,22 @@ Red wine,France,Bordeaux,Margaux,Château Cantenac Brown,BriO de Cantenac Brown,
 Red wine,France,Bordeaux,Saint-Émilion,Château Cheval Blanc,Château Cheval Blanc,2018,0.75,2350,2446,"Cabernet Franc, Merlot","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,FALSE,
 Red wine,France,Bordeaux,Saint-Émilion,Château Cheval Blanc,Château Cheval Blanc,2019,0.75,2350,2563,"Cabernet Franc, Merlot","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,FALSE,
 Red wine,France,Bordeaux,Saint-Émilion,Château Cheval Blanc,Château Cheval Blanc,2010,0.75,2750,2562,"Cabernet Franc, Merlot","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,FALSE,
-Red wine,France,Bordeaux,Saint-Émilion,Château Cheval Blanc,Château Cheval Blanc - MAGNUM,2015,1.5,4000,6864,"Cabernet Franc, Merlot","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,TRUE,1
-Red wine,France,Bordeaux,Saint-Émilion,Château Cheval Blanc,Château Cheval Blanc - MAGNUM,2005,1.5,6375,6863,"Cabernet Franc, Merlot","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,FALSE,
+Red wine,France,Bordeaux,Saint-Émilion,Château Cheval Blanc,Château Cheval Blanc - MAGNUM,2015,1.5,4000,6864,"Cabernet Franc, Merlot","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,TRUE,2
+Red wine,France,Bordeaux,Saint-Émilion,Château Cheval Blanc,Château Cheval Blanc - MAGNUM,2005,1.5,6375,6863,"Cabernet Franc, Merlot","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,TRUE,1
 Red wine,France,Bordeaux,Saint-Estèphe,Château Cos d'Estournel,Château Cos d'Estournel,2010,0.75,655,2565,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Estèphe AOC",,FALSE,
 Red wine,France,Bordeaux,Saint-Estèphe,Château Cos d'Estournel,Château Cos d'Estournel,2012,0.75,1200,2425,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Estèphe AOC",,FALSE,
-Red wine,France,Bordeaux,Saint-Julien,Château Ducru-Beaucaillou,Château Ducru-Beaucaillou,2018,0.75,630,2439,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Julien AOC",,FALSE,
-Red wine,France,Bordeaux,Moulis-en-Médoc,Château Dutruch Grand Poujeaux,Château Dutruch Grand Poujeaux,2016,0.75,90,2538,"Cabernet Sauvignon, Merlot, Petit Verdot",Moulis-en-Médoc AOC,,TRUE,1
+Red wine,France,Bordeaux,Saint-Julien,Château Ducru-Beaucaillou,Château Ducru-Beaucaillou,2018,0.75,630,2439,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Julien AOC",,TRUE,1
+Red wine,France,Bordeaux,Moulis-en-Médoc,Château Dutruch Grand Poujeaux,Château Dutruch Grand Poujeaux,2016,0.75,90,2538,"Cabernet Sauvignon, Merlot, Petit Verdot",Moulis-en-Médoc AOC,,FALSE,
 Red wine,France,Bordeaux,Saint-Émilion,Château Figeac,Château Figeac,2018,0.75,680,2447,"Cabernet Sauvignon, Cabernet Franc, Merlot","Premier Grand Cru Classé B, Saint-Émilion Grand Cru AOC",,FALSE,
 Red wine,France,Bordeaux,Pomerol,Château Gazin,Château Gazin,2017,0.75,270,2500,"Merlot, Cabernet Sauvignon, Cabernet Franc",Pomerol AOC,,FALSE,
 Red wine,France,Bordeaux,Margaux,Château Giscours,Château Giscours - HALF bt.,2018,0.375,170,5412,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Troisième Cru Classé, Margaux AOC",,FALSE,
 Red wine,France,Bordeaux,Margaux,Château Giscours,Château Giscours,2020,0.75,300,2478,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Troisième Cru Classé, Margaux AOC",,FALSE,
-Red wine,France,Bordeaux,Margaux,Château Giscours,Château Giscours,2009,0.75,360,2547,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Troisième Cru Classé, Margaux AOC",,FALSE,
+Red wine,France,Bordeaux,Margaux,Château Giscours,Château Giscours,2009,0.75,360,2547,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Troisième Cru Classé, Margaux AOC",,TRUE,2
 Red wine,France,Bordeaux,Pauillac,Château Grand-Puy-Lacoste,Château Grand-Puy-Lacoste,2018,0.75,340,2503,"Cabernet Sauvignon, Merlot, Cabernet Franc","Cinquième Cru Classé, Pauillac AOC",,FALSE,
 Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Bailly,Château Haut-Bailly,2018,0.75,365,2539,"Cabernet Sauvignon, Merlot, Cabernet Franc","Cru Classé de Graves, Pessac-Léognan AOC",,FALSE,
-Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Brion,Château Haut-Brion,2018,0.75,1430,2543,"Cabernet Sauvignon, Merlot, Cabernet Franc","Premier Cru Classé, Pessac-Léognan AOC",,FALSE,
-Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Brion,Château Haut-Brion,2015,0.75,1470,2542,"Cabernet Sauvignon, Merlot, Cabernet Franc","Premier Cru Classé, Pessac-Léognan AOC",,FALSE,
-Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Brion,Château Haut-Brion,2010,0.75,2025,2541,"Cabernet Sauvignon, Merlot, Cabernet Franc","Premier Cru Classé, Pessac-Léognan AOC",,FALSE,
+Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Brion,Château Haut-Brion,2018,0.75,1430,2543,"Cabernet Sauvignon, Merlot, Cabernet Franc","Premier Cru Classé, Pessac-Léognan AOC",,TRUE,2
+Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Brion,Château Haut-Brion,2015,0.75,1470,2542,"Cabernet Sauvignon, Merlot, Cabernet Franc","Premier Cru Classé, Pessac-Léognan AOC",,TRUE,2
+Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Brion,Château Haut-Brion,2010,0.75,2025,2541,"Cabernet Sauvignon, Merlot, Cabernet Franc","Premier Cru Classé, Pessac-Léognan AOC",,TRUE,2
 Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Brion,Château Haut-Brion,2016,0.75,2350,2437,"Cabernet Sauvignon, Merlot, Cabernet Franc","Premier Cru Classé, Pessac-Léognan AOC",,FALSE,
 Red wine,France,Bordeaux,Pessac-Léognan,Château Haut-Brion,Château Haut-Brion,2009,0.75,2950,2432,"Cabernet Sauvignon, Merlot, Cabernet Franc","Premier Cru Classé, Pessac-Léognan AOC",,FALSE,
 Red wine,France,Bordeaux,Saint-Estèphe,Château Haut-Marbuzet,Château Haut-Marbuzet,2016,0.75,220,2537,"Merlot, Cabernet Sauvignon, Cabernet Franc",Saint-Estèphe AOC,,FALSE,
@@ -533,76 +536,76 @@ Red wine,France,Bordeaux,Pomerol,Château La Fleur de Gay,Château La Fleur de G
 Red wine,France,Bordeaux,Pessac-Léognan,Château La Mission Haut-Brion,Château La Mission Haut-Brion,2021,0.75,480,8656,"Merlot, Cabernet Sauvignon, Cabernet Franc","Cru Classé de Graves, Pessac-Léognan AOC",,FALSE,
 Red wine,France,Bordeaux,Pessac-Léognan,Château La Mission Haut-Brion,Château La Mission Haut-Brion,2016,0.75,785,2544,"Merlot, Cabernet Sauvignon, Cabernet Franc","Cru Classé de Graves, Pessac-Léognan AOC",,FALSE,
 Red wine,France,Bordeaux,Pauillac,Château Lafite Rothschild,Château Lafite Rothschild,2015,0.75,1875,2551,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Lafite Rothschild,Château Lafite Rothschild,1998,0.75,1900,2463,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Lafite Rothschild,Château Lafite Rothschild,2003,0.75,2000,2529,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
+Red wine,France,Bordeaux,Pauillac,Château Lafite Rothschild,Château Lafite Rothschild,1998,0.75,1900,2463,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,2
+Red wine,France,Bordeaux,Pauillac,Château Lafite Rothschild,Château Lafite Rothschild,2003,0.75,2000,2529,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,1
 Red wine,France,Bordeaux,Pauillac,Château Lafite Rothschild,Château Lafite Rothschild,2009,0.75,2295,2550,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
 Red wine,France,Bordeaux,Pauillac,Château Lafite Rothschild,Château Lafite Rothschild - MAGNUM,2020,1.5,3500,6862,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
 Red wine,France,Bordeaux,Fronsadais,Château Lafleur,Château Grand Village Rouge,2022,0.75,85,8974,"Merlot, Cabernet Franc",Bordeaux Supérieur AOC,,FALSE,
 Red wine,France,Bordeaux,Fronsadais,Château Lafleur,"Château Lafleur ""Les Perrières""",2020,0.75,275,8975,"Merlot, Cabernet Franc",Bordeaux Supérieur AOC,,FALSE,
-Red wine,France,Bordeaux,Pomerol,Château Lafleur,Château Lafleur,2004,0.75,1200,2421,"Merlot, Cabernet Franc",Pomerol AOC,,FALSE,
+Red wine,France,Bordeaux,Pomerol,Château Lafleur,Château Lafleur,2004,0.75,1200,2421,"Merlot, Cabernet Franc",Pomerol AOC,,TRUE,2
 Red wine,France,Bordeaux,Pomerol,Château Lafleur,Château Lafleur,2015,0.75,3275,8976,"Merlot, Cabernet Franc",Pomerol AOC,,FALSE,
 Red wine,France,Bordeaux,Saint-Estèphe,Château Lafon-Rochet,Château Lafon-Rochet,2014,0.75,180,2408,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Quatrième Cru Classé, Saint-Estèphe AOC",,FALSE,
-Red wine,France,Bordeaux,Saint-Julien,Château Langoa Barton,Château Langoa Barton,2014,0.75,195,2510,"Cabernet Sauvignon, Merlot, Cabernet Franc","Troisième Cru Classé, Saint-Julien AOC",,TRUE,2
-Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,1999,0.75,1485,2570,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
+Red wine,France,Bordeaux,Saint-Julien,Château Langoa Barton,Château Langoa Barton,2014,0.75,195,2510,"Cabernet Sauvignon, Merlot, Cabernet Franc","Troisième Cru Classé, Saint-Julien AOC",,FALSE,
+Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,1999,0.75,1485,2570,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,1
 Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,2016,0.75,1580,2554,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,2008,0.75,1600,2451,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,1995,0.75,1610,2464,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,2015,0.75,1660,2553,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,2
+Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,2008,0.75,1600,2451,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,2
+Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,1995,0.75,1610,2464,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,2
+Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,2015,0.75,1660,2553,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
 Red wine,France,Bordeaux,Pauillac,Château Latour,Château Latour,2009,0.75,2695,2552,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pomerol,Château Le Pin,Château Le Pin,2006,0.75,5300,2527,Merlot,Pomerol AOC,,FALSE,
+Red wine,France,Bordeaux,Pomerol,Château Le Pin,Château Le Pin,2006,0.75,5300,2527,Merlot,Pomerol AOC,,TRUE,1
 Red wine,France,Bordeaux,Pessac-Léognan,Château Lespault-Martillac,Château Lespault-Martillac Rouge,2019,0.75,100,2482,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Pessac-Léognan AOC,,FALSE,
 Red wine,France,Bordeaux,Pauillac,Château Lynch-Bages,Echo de Lynch-Bages,2017,0.75,190,2499,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Second vin, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Lynch-Bages,Château Lynch-Bages,2015,0.75,415,2555,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cinquième Cru Classé, Pauillac AOC",,TRUE,2
-Red wine,France,Bordeaux,Pauillac,Château Lynch-Bages,Château Lynch-Bages - MAGNUM,2016,1.5,855,6865,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cinquième Cru Classé, Pauillac AOC",,TRUE,1
+Red wine,France,Bordeaux,Pauillac,Château Lynch-Bages,Château Lynch-Bages,2015,0.75,415,2555,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cinquième Cru Classé, Pauillac AOC",,TRUE,1
+Red wine,France,Bordeaux,Pauillac,Château Lynch-Bages,Château Lynch-Bages - MAGNUM,2016,1.5,855,6865,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cinquième Cru Classé, Pauillac AOC",,TRUE,2
 Red wine,France,Bordeaux,Saint-Julien,Château Léoville Las Cases,Château Léoville Las Cases,2016,0.75,755,2569,"Cabernet Sauvignon, Merlot, Cabernet Franc","Deuxième Cru Classé, Saint-Julien AOC",,FALSE,
-Red wine,France,Bordeaux,Saint-Julien,Château Léoville Las Cases,Château Léoville Las Cases,1996,0.75,840,2488,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Julien AOC",,FALSE,
-Red wine,France,Bordeaux,Saint-Julien,Château Léoville-Poyferré,Château Léoville-Poyferré,2017,0.75,360,2493,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Julien AOC",,TRUE,1
-Red wine,France,Bordeaux,Saint-Julien,Château Léoville-Poyferré,Château Léoville-Poyferré,1995,0.75,390,2492,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Julien AOC",,FALSE,
+Red wine,France,Bordeaux,Saint-Julien,Château Léoville Las Cases,Château Léoville Las Cases,1996,0.75,840,2488,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Julien AOC",,TRUE,1
+Red wine,France,Bordeaux,Saint-Julien,Château Léoville-Poyferré,Château Léoville-Poyferré,2017,0.75,360,2493,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Julien AOC",,FALSE,
+Red wine,France,Bordeaux,Saint-Julien,Château Léoville-Poyferré,Château Léoville-Poyferré,1995,0.75,390,2492,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Deuxième Cru Classé, Saint-Julien AOC",,TRUE,1
 Red wine,France,Bordeaux,Pessac-Léognan,Château Malartic Lagravière,Château Malartic Lagravière Rouge,2019,0.75,150,2545,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cru Classé de Graves, Pessac-Léognan AOC",,FALSE,
 Red wine,France,Bordeaux,Margaux,Château Margaux,Château Margaux,2016,0.75,1595,2548,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Margaux AOC",,FALSE,
-Red wine,France,Bordeaux,Margaux,Château Margaux,Château Margaux,2008,0.75,1650,2507,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Margaux AOC",,FALSE,
+Red wine,France,Bordeaux,Margaux,Château Margaux,Château Margaux,2008,0.75,1650,2507,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Margaux AOC",,TRUE,1
 Red wine,France,Bordeaux,Saint-Estèphe,Château Meyney,Château Meyney,2009,0.75,150,2402,"Cabernet Sauvignon, Merlot, Petit Verdot, Cabernet Franc",Saint-Estèphe AOC,,FALSE,
-Red wine,France,Bordeaux,Lalande-de-Pomerol,Château Moncets,Château Moncets,2016,0.75,95,2455,"Merlot, Cabernet Franc",Lalande-de-Pomerol AOC,,TRUE,2
+Red wine,France,Bordeaux,Lalande-de-Pomerol,Château Moncets,Château Moncets,2016,0.75,95,2455,"Merlot, Cabernet Franc",Lalande-de-Pomerol AOC,,FALSE,
 Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2015,0.75,1275,2558,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2019,0.75,1750,2486,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2018,0.75,1780,2559,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,2
-Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2009,0.75,1875,2556,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,2
-Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2010,0.75,2095,2557,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,2
-Red wine,France,Bordeaux,Margaux,Château Palmer,Château Palmer,1995,0.75,1050,2511,"Cabernet Sauvignon, Merlot, Petit Verdot","Troisième Cru Classé, Margaux AOC",,FALSE,
+Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2019,0.75,1750,2486,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,TRUE,1
+Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2018,0.75,1780,2559,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
+Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2009,0.75,1875,2556,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
+Red wine,France,Bordeaux,Pauillac,Château Mouton Rothschild,Château Mouton Rothschild,2010,0.75,2095,2557,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Premier Cru Classé, Pauillac AOC",,FALSE,
+Red wine,France,Bordeaux,Margaux,Château Palmer,Château Palmer,1995,0.75,1050,2511,"Cabernet Sauvignon, Merlot, Petit Verdot","Troisième Cru Classé, Margaux AOC",,TRUE,1
 Red wine,France,Bordeaux,Margaux,Château Palmer,Château Palmer,2005,0.75,1145,2549,"Cabernet Sauvignon, Merlot, Petit Verdot","Troisième Cru Classé, Margaux AOC",,FALSE,
 Red wine,France,Bordeaux,Pessac-Léognan,Château Pape Clément,Château Pape Clément,2015,0.75,335,2450,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cru Classé de Graves, Pessac-Léognan AOC",,FALSE,
 Red wine,France,Bordeaux,Entre-Deux-Mers,Château Paradis Casseuil,Château Paradis Casseuil,2022,0.75,80,2540,"Merlot, Cabernet Sauvignon",Bordeaux AOC,,FALSE,
-Red wine,France,Bordeaux,Saint-Émilion,Château Pavie,Château Pavie,2016,0.75,755,2564,"Merlot, Cabernet Franc, Cabernet Sauvignon","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,FALSE,
+Red wine,France,Bordeaux,Saint-Émilion,Château Pavie,Château Pavie,2016,0.75,755,2564,"Merlot, Cabernet Franc, Cabernet Sauvignon","Premier Grand Cru Classé A, Saint-Émilion Grand Cru AOC",,TRUE,2
 Red wine,France,Bordeaux,Saint-Estèphe,Château Phélan Ségur,Frank Phélan,2018,0.75,115,2407,"Cabernet Sauvignon, Merlot","Second vin, Saint-Estèphe AOC",,FALSE,
 Red wine,France,Bordeaux,Saint-Estèphe,Château Phélan Ségur,Château Phélan Ségur - MAGNUM,2018,1.5,400,7402,"Cabernet Sauvignon, Merlot, Petit Verdot",Saint-Estèphe AOC,,FALSE,
-Red wine,France,Bordeaux,Pauillac,Château Pichon Longueville Comtesse de Lalande,Pichon Comtesse Réserve,2022,0.75,220,2427,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Second vin, Pauillac AOC",,TRUE,2
-Red wine,France,Bordeaux,Pauillac,Château Pichon-Longueville Baron,Château Pichon-Longueville Baron,2020,0.75,510,2440,"Cabernet Sauvignon, Merlot","Deuxième Cru Classé, Pauillac AOC",,TRUE,1
+Red wine,France,Bordeaux,Pauillac,Château Pichon Longueville Comtesse de Lalande,Pichon Comtesse Réserve,2022,0.75,220,2427,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Second vin, Pauillac AOC",,FALSE,
+Red wine,France,Bordeaux,Pauillac,Château Pichon-Longueville Baron,Château Pichon-Longueville Baron,2020,0.75,510,2440,"Cabernet Sauvignon, Merlot","Deuxième Cru Classé, Pauillac AOC",,FALSE,
 Red wine,France,Bordeaux,Pauillac,Château Pichon-Longueville Baron,Château Pichon-Longueville Baron - MAGNUM,2015,1.5,1150,7408,"Cabernet Sauvignon, Merlot","Deuxième Cru Classé, Pauillac AOC",,FALSE,
 Red wine,France,Bordeaux,Pauillac,Château Pontet-Canet,Château Pontet-Canet,2020,0.75,400,2501,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cinquième Cru Classé, Pauillac AOC",,FALSE,
 Red wine,France,Bordeaux,Margaux,Château Prieuré-Lichine,Château Prieuré-Lichine,2016,0.75,210,2512,"Cabernet Sauvignon, Merlot, Petit Verdot","Quatrième Cru Classé, Margaux AOC",,FALSE,
-Red wine,France,Bordeaux,Margaux,Château Rauzan-Ségla,Château Rauzan-Ségla,2005,0.75,420,2457,"Cabernet Sauvignon, Merlot, Petit Verdot, Cabernet Franc","Deuxième Cru Classé, Margaux AOC",,TRUE,2
-Red wine,France,Bordeaux,Pessac-Léognan,Château Smith Haut Lafitte,Château Smith Haut Lafitte Rouge - MAGNUM,2018,1.5,610,6861,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cru Classé de Graves, Pessac-Léognan AOC",,FALSE,
+Red wine,France,Bordeaux,Margaux,Château Rauzan-Ségla,Château Rauzan-Ségla,2005,0.75,420,2457,"Cabernet Sauvignon, Merlot, Petit Verdot, Cabernet Franc","Deuxième Cru Classé, Margaux AOC",,TRUE,1
+Red wine,France,Bordeaux,Pessac-Léognan,Château Smith Haut Lafitte,Château Smith Haut Lafitte Rouge - MAGNUM,2018,1.5,610,6861,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cru Classé de Graves, Pessac-Léognan AOC",,TRUE,2
 Red wine,France,Bordeaux,Haut-Médoc,Château Sociando-Mallet,Château Sociando-Mallet,2017,0.75,165,2494,"Cabernet Sauvignon, Merlot, Cabernet Franc",Haut-Médoc AOC,,FALSE,
 Red wine,France,Bordeaux,Pomerol,Château de Beauregard,Château de Beauregard,2018,0.75,210,2535,"Merlot, Cabernet Franc",Pomerol AOC,,FALSE,
-Red wine,France,Bordeaux,Lalande-de-Pomerol,Château de Chambrun,Château de Chambrun,2020,0.75,135,8978,"Merlot, Cabernet Franc",Lalande-de-Pomerol AOC,,TRUE,1
+Red wine,France,Bordeaux,Lalande-de-Pomerol,Château de Chambrun,Château de Chambrun,2020,0.75,135,8978,"Merlot, Cabernet Franc",Lalande-de-Pomerol AOC,,FALSE,
 Red wine,France,Bordeaux,Lalande-de-Pomerol,Château de Chambrun,"Château de Chambrun ""Le Bourg""",2019,0.75,290,8979,"Merlot, Cabernet Franc",Lalande-de-Pomerol AOC,,FALSE,
-Red wine,France,Bordeaux,Saint-Émilion,Château de Valandraud,Château de Valandraud,2018,0.75,550,2428,"Merlot, Cabernet Franc, Cabernet Sauvignon","Premier Grand Cru Classé B, Saint-Émilion Grand Cru AOC",,TRUE,2
-Red wine,France,Bordeaux,Médoc,Château de la Croix,Château de la Croix,2017,0.75,85,2442,"Cabernet Sauvignon, Merlot","Cru Bourgeois, Médoc AOC",,TRUE,2
+Red wine,France,Bordeaux,Saint-Émilion,Château de Valandraud,Château de Valandraud,2018,0.75,550,2428,"Merlot, Cabernet Franc, Cabernet Sauvignon","Premier Grand Cru Classé B, Saint-Émilion Grand Cru AOC",,FALSE,
+Red wine,France,Bordeaux,Médoc,Château de la Croix,Château de la Croix,2017,0.75,85,2442,"Cabernet Sauvignon, Merlot","Cru Bourgeois, Médoc AOC",,FALSE,
 Red wine,France,Bordeaux,Médoc,Château l'Eden,Château l'Eden,2016,0.75,70,2452,"Cabernet Sauvignon, Merlot",Médoc AOC,,FALSE,
 Red wine,France,Bordeaux,Francs Côtes de Bordeaux,Château Le Puy,"Château Le Puy ""Emilien""",2019,0.75,125,2115,"Merlot, Cabernet Sauvignon, Cabernet Franc",Francs Côtes de Bordeaux AOC,,FALSE,
-Red wine,France,Bordeaux,Pessac-Léognan,Domaine de Chevalier,Domaine de Chevalier,2005,0.75,330,2546,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cru Classé de Graves, Pessac-Léognan AOC",,TRUE,1
-Red wine,France,Bordeaux,Pomerol,Pétrus,Pétrus,2015,0.75,12375,2561,Merlot,Pomerol AOC,,FALSE,
+Red wine,France,Bordeaux,Pessac-Léognan,Domaine de Chevalier,Domaine de Chevalier,2005,0.75,330,2546,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot","Cru Classé de Graves, Pessac-Léognan AOC",,FALSE,
+Red wine,France,Bordeaux,Pomerol,Pétrus,Pétrus,2015,0.75,12375,2561,Merlot,Pomerol AOC,,TRUE,1
 Red wine,France,Rhône,Rhône Méridionale,Château de Beaucastel,Châteauneuf-du-Pape,2020,0.75,270,2514,"Grenache, Mourvèdre, Syrah, Counoise",Châteauneuf-du-Pape AOC,,FALSE,
-Red wine,France,Rhône,Rhône Méridionale,Domaine André Mathieu,Châteauneuf-du-Pape - HALF bt.,2019,0.375,75,5411,"Grenache, Syrah, Mourvèdre",Châteauneuf-du-Pape AOC,,TRUE,1
-Red wine,France,Rhône,Rhône Septentrionale,Domaine Jean-Louis Chave,Saint-Joseph,2019,0.75,200,2523,Syrah,Saint-Joseph AOC,,TRUE,2
+Red wine,France,Rhône,Rhône Méridionale,Domaine André Mathieu,Châteauneuf-du-Pape - HALF bt.,2019,0.375,75,5411,"Grenache, Syrah, Mourvèdre",Châteauneuf-du-Pape AOC,,FALSE,
+Red wine,France,Rhône,Rhône Septentrionale,Domaine Jean-Louis Chave,Saint-Joseph,2019,0.75,200,2523,Syrah,Saint-Joseph AOC,,FALSE,
 Red wine,France,Rhône,Rhône Septentrionale,Domaine Jean-Louis Chave,L'Hermitage,2019,0.75,725,8987,Syrah,Hermitage AOC,,FALSE,
-Red wine,France,Rhône,Rhône Septentrionale,Domaine Jean-Louis Chave,Hermitage Rouge,2001,0.75,1235,9525,Syrah,Hermitage AOC,,TRUE,1
+Red wine,France,Rhône,Rhône Septentrionale,Domaine Jean-Louis Chave,Hermitage Rouge,2001,0.75,1235,9525,Syrah,Hermitage AOC,,FALSE,
 Red wine,France,Rhône,Rhône Méridionale,Domaine Les Pallières – Famille Brunier & K. Lynch,Terrasse du Diable,2021,0.75,125,8988,"Grenache, Syrah, Mourvèdre",Gigondas AOC,,FALSE,
-Red wine,France,Rhône,Rhône Septentrionale,Domaine Pichon,"""Allégorie""",2017,0.75,140,2403,Syrah,Cornas AOC,,TRUE,1
+Red wine,France,Rhône,Rhône Septentrionale,Domaine Pichon,"""Allégorie""",2017,0.75,140,2403,Syrah,Cornas AOC,,FALSE,
 Red wine,France,Rhône,Rhône Septentrionale,Domaine Pichon,"Côte-Rôtie - ""La Comtesse en Côte Blonde""",2017,0.75,280,2404,Syrah,Côte-Rôtie AOC,,FALSE,
 Red wine,France,Rhône,Rhône Septentrionale,Domaine René Rostaing,"Côte-Rôtie ""Ampodium""",2022,0.75,220,8980,Syrah,Côte-Rôtie AOC,,FALSE,
-Red wine,France,Rhône,Rhône Septentrionale,Domaine René Rostaing,"Côte-Rôtie ""La Landonne""",2022,0.75,425,8981,Syrah,Côte-Rôtie AOC,,TRUE,1
-Red wine,France,Rhône,Rhône Septentrionale,Domaine René Rostaing,"Côte-Rôtie ""Côte Blonde""",2022,0.75,490,8982,Syrah,Côte-Rôtie AOC,,TRUE,1
+Red wine,France,Rhône,Rhône Septentrionale,Domaine René Rostaing,"Côte-Rôtie ""La Landonne""",2022,0.75,425,8981,Syrah,Côte-Rôtie AOC,,FALSE,
+Red wine,France,Rhône,Rhône Septentrionale,Domaine René Rostaing,"Côte-Rôtie ""Côte Blonde""",2022,0.75,490,8982,Syrah,Côte-Rôtie AOC,,FALSE,
 Red wine,France,Rhône,Rhône Septentrionale,Domaine René Rostaing,"Côte-Rôtie ""Côte Brune""",2022,0.75,695,8983,Syrah,Côte-Rôtie AOC,,FALSE,
 Red wine,France,Rhône,Rhône Méridionale,Domaine du Vieux Télégraphe,"""Télégramme"" Châteauneuf-du-Pape",2022,0.75,145,2443,"Grenache, Syrah, Mourvèdre, Cinsault",Châteauneuf-du-Pape AOC,,FALSE,
 Red wine,France,Rhône,Rhône Méridionale,Domaine du Vieux Télégraphe,"""La Crau"" Châteauneuf-du-Pape",2021,0.75,235,8990,"Grenache, Mourvèdre, Syrah, Cinsault",Châteauneuf-du-Pape AOC,,FALSE,
@@ -610,34 +613,34 @@ Red wine,France,Rhône,Rhône Méridionale,Domaine du Vieux Télégraphe,"""La C
 Red wine,France,Rhône,Rhône Méridionale,Domaine du Vieux Télégraphe,"""La Crau"" Châteauneuf-du-Pape",2009,0.75,335,2571,"Grenache, Mourvèdre, Syrah, Cinsault",Châteauneuf-du-Pape AOC,,FALSE,
 Red wine,France,Rhône,,J.L. Chave Sélection,"Côtes-du-Rhône ""Mon Cœur""",2023,0.75,55,2475,"Grenache, Syrah",Côtes-du-Rhône AOC,,FALSE,
 Red wine,France,Rhône,Rhône Septentrionale,J.L. Chave Sélection,"""Offerus"" Saint-Joseph",2022,0.75,95,8985,Syrah,Saint-Joseph AOC,,FALSE,
-Red wine,France,Rhône,Rhône Septentrionale,J.L. Chave Sélection,"Hermitage ""Farconnet""",2021,0.75,190,8986,Syrah,Hermitage AOC,,TRUE,1
-Red wine,France,Rhône,Rhône Méridionale,Rotem & Mounir Saouma,"""Omnia"" Châteauneuf-du-Pape",2019,0.75,245,8991,"Grenache, Syrah, Mourvèdre",Châteauneuf-du-Pape AOC,,TRUE,1
+Red wine,France,Rhône,Rhône Septentrionale,J.L. Chave Sélection,"Hermitage ""Farconnet""",2021,0.75,190,8986,Syrah,Hermitage AOC,,FALSE,
+Red wine,France,Rhône,Rhône Méridionale,Rotem & Mounir Saouma,"""Omnia"" Châteauneuf-du-Pape",2019,0.75,245,8991,"Grenache, Syrah, Mourvèdre",Châteauneuf-du-Pape AOC,,FALSE,
 Red wine,France,Rhône,Rhône Méridionale,Rotem & Mounir Saouma,"""Arioso"" Châteauneuf-du-Pape",2018,0.75,370,8992,"Grenache, Syrah, Mourvèdre",Châteauneuf-du-Pape AOC,,FALSE,
 Red wine,France,Rhône,Rhône Septentrionale,Vidal-Fleury,Crozes-Hermitage Rouge,2022,0.75,80,2573,Syrah,Crozes-Hermitage AOC,,FALSE,
-Red wine,France,Languedoc,Terrasses du Larzac,La Pèira,"""Les Obriers""",2022,0.75,90,8996,"Cinsault, Carignan",Terrasses du Larzac AOC,,TRUE,2
+Red wine,France,Languedoc,Terrasses du Larzac,La Pèira,"""Les Obriers""",2022,0.75,90,8996,"Cinsault, Carignan",Terrasses du Larzac AOC,,FALSE,
 Red wine,France,Languedoc,Terrasses du Larzac,La Pèira,"""La Pèira""",2019,0.75,245,8997,"Syrah, Grenache, Mourvèdre",Terrasses du Larzac AOC,,FALSE,
-Red wine,France,Languedoc,Minervois,Thierry Rodriguez,"""Impec!""",2020,0.75,48,2525,"Syrah, Grenache, Carignan, Mourvèdre",Minervois AOC,,TRUE,2
+Red wine,France,Languedoc,Minervois,Thierry Rodriguez,"""Impec!""",2020,0.75,48,2525,"Syrah, Grenache, Carignan, Mourvèdre",Minervois AOC,,FALSE,
 Red wine,France,Provence,Bandol,Château de Pibarnon,Château de Pibarnon,2019,0.75,165,8993,"Mourvèdre, Grenache",Bandol AOC,,FALSE,
 Red wine,France,Sud Ouest,Madiran,Château d'Aydie,Château d'Aydie - Famille Laplace,2017,0.75,110,8995,Tannat,Madiran AOC,,FALSE,
 Red wine,France,Sud Ouest,Cahors,Clos Triguedina,Clos Triguedina,2019,0.75,100,8994,"Malbec, Merlot, Tannat",Cahors AOC,,FALSE,
-Red wine,Italy,Piedmont,Barolo,Azelia di Luigi Scavino,Barolo,2021,0.75,155,8699,Nebbiolo,Barolo DOCG,,TRUE,1
+Red wine,Italy,Piedmont,Barolo,Azelia di Luigi Scavino,Barolo,2021,0.75,155,8699,Nebbiolo,Barolo DOCG,,FALSE,
 Red wine,Italy,Piedmont,Monferrato,Braida,"Barbera d'Asti ""Bricco dell'Uccellone""",2021,0.75,200,8706,Barbera,Barbera d'Asti DOCG,,FALSE,
 Red wine,Italy,Piedmont,Monferrato,Braida,"Barbera d'Asti ""Bricco dell'Uccellone""",2018,0.75,230,2623,Barbera,Barbera d'Asti DOCG,,FALSE,
 Red wine,Italy,Piedmont,Barbaresco,Bruno Giacosa,Barbaresco Rabajà,2020,0.75,675,8701,Nebbiolo,Barbaresco DOCG,,FALSE,
-Red wine,Italy,Piedmont,Barolo,Domenico Clerico,Barolo del Comune di Monforte d'Alba,2021,0.75,160,8694,Nebbiolo,Barolo DOCG,,TRUE,1
+Red wine,Italy,Piedmont,Barolo,Domenico Clerico,Barolo del Comune di Monforte d'Alba,2021,0.75,160,8694,Nebbiolo,Barolo DOCG,,FALSE,
 Red wine,Italy,Piedmont,Barolo,Domenico Clerico,Barolo Ginestra Ciabot Mentin,2019,0.75,300,8695,Nebbiolo,Barolo DOCG,,TRUE,2
 Red wine,Italy,Piedmont,Barbaresco,Elvio Cogno,Barbaresco Bordini,2021,0.75,155,9005,Nebbiolo,Barbaresco DOCG,,FALSE,
-Red wine,Italy,Piedmont,Langhe,Elvio Cogno,"Barbera d'Alba ""Pre-Phylloxera""",2023,0.75,160,9092,Barbera,Barbera d'Alba DOC,,TRUE,1
+Red wine,Italy,Piedmont,Langhe,Elvio Cogno,"Barbera d'Alba ""Pre-Phylloxera""",2023,0.75,160,9092,Barbera,Barbera d'Alba DOC,,FALSE,
 Red wine,Italy,Piedmont,Barolo,Elvio Cogno,"Barolo ""Ravera""",2017,0.75,220,2648,Nebbiolo,Barolo DOCG,,FALSE,
 Red wine,Italy,Piedmont,Barolo,Elvio Cogno,"Barolo ""Ravera""",2018,0.75,235,9006,Nebbiolo,Barolo DOCG,,FALSE,
 Red wine,Italy,Piedmont,Barbaresco,F.lli Giacosa,Barbaresco,2020,0.75,100,2618,Nebbiolo,Barbaresco DOCG,,FALSE,
 Red wine,Italy,Piedmont,Barolo,F.lli Giacosa,Barolo,2020,0.75,110,2632,Nebbiolo,Barolo DOCG,,FALSE,
-Red wine,Italy,Piedmont,Barbaresco,F.lli Giacosa,"Barbaresco Riserva Basarin ""Vigna Gianmatè""",2019,0.75,140,8700,Nebbiolo,Barbaresco DOCG Riserva,,FALSE,
+Red wine,Italy,Piedmont,Barbaresco,F.lli Giacosa,"Barbaresco Riserva Basarin ""Vigna Gianmatè""",2019,0.75,140,8700,Nebbiolo,Barbaresco DOCG Riserva,,TRUE,2
 Red wine,Italy,Piedmont,Langhe,Gaja,"""Sito Moresco""",2020,0.75,180,2625,"Nebbiolo, Merlot, Cabernet Sauvignon",Langhe DOC,,FALSE,
 Red wine,Italy,Piedmont,Langhe,Gaja,"""Sito Moresco"" - MAGNUM",2019,1.5,400,7613,"Nebbiolo, Merlot, Cabernet Sauvignon",Langhe DOC,,FALSE,
 Red wine,Italy,Piedmont,Barbaresco,Gaja,Barbaresco,2019,0.75,550,2615,Nebbiolo,Barbaresco DOCG,,FALSE,
 Red wine,Italy,Piedmont,Langhe,Giacomo Conterno,"Barbera d'Alba ""Vigna Francia"" Serralunga",2022,0.75,255,8682,Barbera,Barbera d'Alba DOC,,FALSE,
-Red wine,Italy,Piedmont,Barolo,Giacomo Conterno,Barolo Francia Serralunga,2020,0.75,710,8678,Nebbiolo,Barolo DOCG,,TRUE,1
+Red wine,Italy,Piedmont,Barolo,Giacomo Conterno,Barolo Francia Serralunga,2020,0.75,710,8678,Nebbiolo,Barolo DOCG,,FALSE,
 Red wine,Italy,Piedmont,Barolo,Giacomo Conterno,Barolo Monfortino,2019,0.75,2185,8679,Nebbiolo,Barolo DOCG Riserva,,FALSE,
 Red wine,Italy,Piedmont,Langhe,Gianmarco Ghisolfi,"Barbera d'Alba Superiore ""La Lisi""",2021,0.75,95,2660,Barbera,Barbera d'Alba Superiore DOC,,FALSE,
 Red wine,Italy,Piedmont,Barbaresco,Giuseppe Cortese,"Barbaresco ""Rabajà""",2017,0.75,235,2609,Nebbiolo,Barbaresco DOCG,,FALSE,
@@ -651,10 +654,10 @@ Red wine,Italy,Piedmont,Barbaresco,Oddero,Barbaresco Gallina,2020,0.75,200,8999,
 Red wine,Italy,Piedmont,Barolo,Oddero,Barolo Riserva Bussia Vigna Mondoca,2017,0.75,340,9001,Nebbiolo,Barolo DOCG Riserva,,FALSE,
 Red wine,Italy,Piedmont,Barolo,Oddero,Barolo Vignarionda,2016,0.75,645,9002,Nebbiolo,Barolo DOCG Riserva,,FALSE,
 Red wine,Italy,Piedmont,Barbaresco,Paitin di Pasquero-Elia,"Barbaresco ""Sorì Paitin"" Vecchie Vigne",2015,0.75,300,2668,Nebbiolo,Barbaresco DOCG Riserva,,FALSE,
-Red wine,Italy,Piedmont,Langhe,Poderi Aldo Conterno,"""Quartetto""",2022,0.75,140,8702,"Nebbiolo, Barbera, Cabernet Sauvignon, Merlot",Langhe Rosso DOC,,TRUE,1
+Red wine,Italy,Piedmont,Langhe,Poderi Aldo Conterno,"""Quartetto""",2022,0.75,140,8702,"Nebbiolo, Barbera, Cabernet Sauvignon, Merlot",Langhe Rosso DOC,,FALSE,
 Red wine,Italy,Piedmont,Langhe,Poderi Aldo Conterno,Barbera d'Alba Conca Tre Pile,2022,0.75,140,8704,Barbera,Barbera d'Alba DOC,,FALSE,
 Red wine,Italy,Piedmont,Langhe,Poderi Aldo Conterno,"""Il Favot""",2022,0.75,165,8705,Nebbiolo,Langhe Nebbiolo DOC,,FALSE,
-Red wine,Italy,Piedmont,Barolo,Poderi Aldo Conterno,Barolo Bussia,2020,0.75,275,8684,Nebbiolo,Barolo DOCG,,FALSE,
+Red wine,Italy,Piedmont,Barolo,Poderi Aldo Conterno,Barolo Bussia,2020,0.75,275,8684,Nebbiolo,Barolo DOCG,,TRUE,1
 Red wine,Italy,Piedmont,Barbaresco,Produttori del Barbaresco,Barbaresco,2020,0.75,120,2610,Nebbiolo,Barbaresco DOCG,,FALSE,
 Red wine,Italy,Piedmont,Barolo,Rocche Costamagna,"Barolo ""Rocche dell'Annunziata""",2017,0.75,175,2647,Nebbiolo,Barolo DOCG,,FALSE,
 Red wine,Italy,Piedmont,Langhe,Vietti,"Barbera d'Alba ""Trevìe""",2023,0.75,80,2691,Barbera,Barbera d'Alba DOC,,FALSE,
@@ -668,17 +671,17 @@ Red wine,Italy,Trentino-Alto Adige,Bolzano (Gries),Weingut & Klosterkellerei Mur
 Red wine,Italy,Veneto,Valpolicella,Bertani,Amarone della Valpolicella Classico,2008,0.75,485,1744,"Corvina, Rondinella",Amarone della Valpolicella Classico DOCG,,FALSE,
 Red wine,Italy,Veneto,Valpolicella,Dal Forno Romano,"Valpolicella Superiore ""Vigneto di Monte Lodoletta""",2013,0.75,240,2698,"Corvina, Corvinone, Rondinella, Croatina, Oseleta",Valpolicella Superiore DOC,,FALSE,
 Red wine,Italy,Veneto,Valpolicella,Dal Forno Romano,"Amarone della Valpolicella ""Monte Lodoletta""",2017,0.75,700,8710,"Corvina, Corvinone, Rondinella, Croatina, Oseleta",Amarone della Valpolicella DOCG,,FALSE,
-Red wine,Italy,Veneto,Valpolicella,Quintarelli Giuseppe,Amarone della Valpolicella Classico,2017,0.75,720,8707,"Corvina, Corvinone, Rondinella, Cabernet Sauvignon, Nebbiolo, Croatina, Sangiovese",Amarone della Valpolicella Classico DOCG,,FALSE,
-Red wine,Italy,Veneto,Valpolicella,Quintarelli Giuseppe,Amarone della Valpolicella Classico Riserva,2011,0.75,1410,8709,"Corvina, Corvinone, Rondinella",Amarone della Valpolicella Classico DOCG Riserva,,FALSE,
+Red wine,Italy,Veneto,Valpolicella,Quintarelli Giuseppe,Amarone della Valpolicella Classico,2017,0.75,720,8707,"Corvina, Corvinone, Rondinella, Cabernet Sauvignon, Nebbiolo, Croatina, Sangiovese",Amarone della Valpolicella Classico DOCG,,TRUE,1
+Red wine,Italy,Veneto,Valpolicella,Quintarelli Giuseppe,Amarone della Valpolicella Classico Riserva,2011,0.75,1410,8709,"Corvina, Corvinone, Rondinella",Amarone della Valpolicella Classico DOCG Riserva,,TRUE,1
 Red wine,Italy,Veneto,Valpolicella,Tommasi,Valpolicella Ripasso Classico Superiore,2020,0.75,100,9009,"Corvina, Rondinella, Corvinone",Valpolicella Ripasso Classico Superiore DOC,,FALSE,
-Red wine,Italy,Veneto,Valpolicella,Tommasi,Amarone della Valpolicella Classico,2021,0.75,165,9010,"Corvina, Corvinone, Rondinella, Oseleta",Amarone della Valpolicella Classico DOCG,,TRUE,2
+Red wine,Italy,Veneto,Valpolicella,Tommasi,Amarone della Valpolicella Classico,2021,0.75,165,9010,"Corvina, Corvinone, Rondinella, Oseleta",Amarone della Valpolicella Classico DOCG,,FALSE,
 Red wine,Italy,Veneto,Valpolicella,Tommasi,Valpolicella Ripasso - MAGNUM,2020,1.5,160,7606,"Corvina, Rondinella, Corvinone",Valpolicella Ripasso Classico Superiore DOC,,FALSE,
 Red wine,Italy,Veneto,Valpolicella,Zymè,"""Kairos"" - HALF bt.",2017,0.375,100,5601,"Corvina, Corvinone, Rondinella, Cabernet Sauvignon, Cabernet Franc, Merlot, Syrah, Teroldego, Croatina, Oseleta, Sangiovese, Marzemino, Garganega, Trebbiano, Sauvignon Blanc",Veneto IGT,,FALSE,
 Red wine,Italy,Veneto,Valpolicella,Zymè,"""Kairos""",2018,0.75,200,2690,"Corvina, Corvinone, Rondinella, Cabernet Sauvignon, Cabernet Franc, Merlot, Syrah, Teroldego, Croatina, Oseleta, Sangiovese, Marzemino, Garganega, Trebbiano, Sauvignon Blanc",Veneto IGT,,FALSE,
 Red wine,Italy,Tuscany,Montepulciano,Avignonesi,Grandi Annate,2016,0.75,260,2673,Sangiovese,Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Colline Fiesolane,Bibi Graetz,Testamatta,2021,0.75,220,9114,Sangiovese,Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Caccia al Piano,Ruit Hora,2021,0.75,100,9015,"Cabernet Sauvignon, Merlot, Syrah",Bolgheri DOC,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Caccia al Piano,Caccia al Piano - Bolgheri Superiore,2021,0.75,235,9016,"Cabernet Sauvignon, Merlot, Cabernet Franc",Bolgheri Superiore DOC,,TRUE,2
+Red wine,Italy,Tuscany,Bolgheri,Caccia al Piano,Caccia al Piano - Bolgheri Superiore,2021,0.75,235,9016,"Cabernet Sauvignon, Merlot, Cabernet Franc",Bolgheri Superiore DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Campo alla Sughera,"""Adèo""",2023,0.75,140,2622,"Merlot, Cabernet Sauvignon, Cabernet Franc, Petit Verdot",Bolgheri DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Campo alla Sughera,"""Arnione""",2021,0.75,225,9096,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Campo alla Sughera,Campo alla Sughera,2019,0.75,330,9097,"Cabernet Sauvignon, Merlot, Cabernet Franc",Toscana IGT,,FALSE,
@@ -701,33 +704,33 @@ Red wine,Italy,Tuscany,Bolgheri,Gaja,Promis,2022,0.75,140,2616,"Merlot, Syrah, S
 Red wine,Italy,Tuscany,Chianti Classico,Isole e Olena,Cepparello,2020,0.75,335,8721,Sangiovese,Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Le Macchiole,Le Macchiole - Bolgheri Rosso,2024,0.75,90,2601,"Merlot, Cabernet Franc, Cabernet Sauvignon, Syrah",Bolgheri DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Le Macchiole,"""Paleo""",2021,0.75,270,2635,Cabernet Franc,Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Le Macchiole,Messorio,2020,0.75,425,8717,Merlot,Toscana IGT,,TRUE,1
+Red wine,Italy,Tuscany,Bolgheri,Le Macchiole,Messorio,2020,0.75,425,8717,Merlot,Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,"""Badia a Passignano""",2021,0.75,175,2707,Sangiovese,Chianti Classico Gran Selezione DOCG,,FALSE,
 Red wine,Italy,Tuscany,Montalcino,Marchesi Antinori,"Brunello di Montalcino ""Pian delle Vigne""",2020,0.75,190,2724,Sangiovese,Brunello di Montalcino DOCG,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Tignanello - HALF bt.,2021,0.375,220,5607,"Sangiovese, Cabernet Sauvignon, Cabernet Franc",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Marchesi Antinori,Guado al Tasso,2019,0.75,380,2712,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Tignanello,2018,0.75,395,2728,"Sangiovese, Cabernet Sauvignon, Cabernet Franc",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Tignanello,2021,0.75,420,2640,"Sangiovese, Cabernet Sauvignon, Cabernet Franc",Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Marchesi Antinori,Guado al Tasso - MAGNUM,2019,1.5,655,2738,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,FALSE,
+Red wine,Italy,Tuscany,Bolgheri,Marchesi Antinori,Guado al Tasso - MAGNUM,2019,1.5,655,2738,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,TRUE,2
 Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Solaia,2021,0.75,810,2731,"Cabernet Sauvignon, Sangiovese, Cabernet Franc",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Solaia,2020,0.75,840,2730,"Cabernet Sauvignon, Sangiovese, Cabernet Franc",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Tignanello - MAGNUM,2020,1.5,850,7605,"Sangiovese, Cabernet Sauvignon, Cabernet Franc",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Solaia,2015,0.75,1000,2729,"Cabernet Sauvignon, Sangiovese, Cabernet Franc",Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Solaia,2018,0.75,1100,2624,"Cabernet Sauvignon, Sangiovese, Cabernet Franc",Toscana IGT,,TRUE,1
-Red wine,Italy,Tuscany,Bolgheri,Marchesi Antinori,Matarocchio - Tenuta Guado al Tasso,2021,0.75,1155,2714,Cabernet Franc,Bolgheri Superiore DOC,,TRUE,1
+Red wine,Italy,Tuscany,Chianti Classico,Marchesi Antinori,Solaia,2018,0.75,1100,2624,"Cabernet Sauvignon, Sangiovese, Cabernet Franc",Toscana IGT,,FALSE,
+Red wine,Italy,Tuscany,Bolgheri,Marchesi Antinori,Matarocchio - Tenuta Guado al Tasso,2021,0.75,1155,2714,Cabernet Franc,Bolgheri Superiore DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Masseto,Massetino,2022,0.75,655,2717,Merlot,Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Masseto,Masseto,2019,0.75,2800,2651,Merlot,Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Masseto,Masseto,2020,0.75,2900,2659,Merlot,Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Masseto,Masseto - MAGNUM,2014,1.5,4800,2612,Merlot,Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Masseto,Masseto - JEROBOAM,2005,3,9150,7614,Merlot,Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Masseto,Masseto - MATHUSALEM,2005,6,21500,7617,Merlot,Toscana IGT,,FALSE,
+Red wine,Italy,Tuscany,Bolgheri,Masseto,Masseto - MAGNUM,2014,1.5,4800,2612,Merlot,Toscana IGT,,TRUE,2
+Red wine,Italy,Tuscany,Bolgheri,Masseto,Masseto - JEROBOAM,2005,3,9150,7614,Merlot,Toscana IGT,,TRUE,1
+Red wine,Italy,Tuscany,Bolgheri,Masseto,Masseto - MATHUSALEM,2005,6,21500,7617,Merlot,Toscana IGT,,TRUE,1
 Red wine,Italy,Tuscany,Montalcino,Mastrojanni,Rosso di Montalcino,2024,0.75,95,2699,Sangiovese,Rosso di Montalcino DOC,,FALSE,
 Red wine,Italy,Tuscany,Montalcino,Mastrojanni,Brunello di Montalcino,2019,0.75,175,2683,Sangiovese,Brunello di Montalcino DOCG,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Mazzei – Castello di Fonterutoli,Chianti Classico,2019,0.75,120,9131,"Sangiovese, Malvasia Nera, Colorino",Chianti Classico Gran Selezione DOCG,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Montevertine,"""Pian del Ciampolo""",2023,0.75,135,8731,"Sangiovese, Canaiolo",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Montevertine,Montevertine,2018,0.75,180,2664,"Sangiovese, Canaiolo, Colorino",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Montevertine,"""Le Pergole Torte""",2022,0.75,480,8785,Sangiovese,Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Val di Cornia (Suvereto),Petra,Toscana Hebo,2022,0.75,70,2695,"Sangiovese, Merlot, Cabernet Sauvignon",Toscana IGT,,FALSE,
+Red wine,Italy,Tuscany,Val di Cornia (Suvereto),Petra,Toscana Hebo,2022,0.75,70,2695,"Sangiovese, Merlot, Cabernet Sauvignon",Toscana IGT,,TRUE,1
 Red wine,Italy,Tuscany,Val di Cornia (Suvereto),Petra,Quercegobbe - Merlot,2023,0.75,100,8712,Merlot,Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Val di Cornia (Suvereto),Petra,Toscana Hebo - MAGNUM,2023,1.5,140,7607,"Sangiovese, Merlot, Cabernet Sauvignon",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Montalcino,Poggio Antico,Rosso di Montalcino,2020,0.75,120,8733,Sangiovese,Rosso di Montalcino DOC,,FALSE,
@@ -756,35 +759,35 @@ Red wine,Italy,Tuscany,Chianti Classico,Tenuta La Massa,Giorgio Primo,2020,0.75,
 Red wine,Italy,Tuscany,Chianti Classico,Tenuta La Massa,Giorgio Primo - MAGNUM,2020,1.5,500,9013,"Merlot, Cabernet Sauvignon",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Chianti Classico,Tenuta La Massa,Asiram,2019,0.75,830,9014,"Cabernet Sauvignon, Merlot",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Tenuta San Guido,Guidalberto,2022,0.75,130,2613,"Cabernet Sauvignon, Merlot",Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Tenuta San Guido,Sassicaia - HALF bt.,2020,0.375,460,5602,"Cabernet Sauvignon, Cabernet Franc",Bolgheri Sassicaia DOC,,TRUE,2
+Red wine,Italy,Tuscany,Bolgheri,Tenuta San Guido,Sassicaia - HALF bt.,2020,0.375,460,5602,"Cabernet Sauvignon, Cabernet Franc",Bolgheri Sassicaia DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Tenuta San Guido,Sassicaia,2015,0.75,730,2725,"Cabernet Sauvignon, Cabernet Franc",Bolgheri Sassicaia DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Tenuta San Guido,Sassicaia,2021,0.75,800,2727,"Cabernet Sauvignon, Cabernet Franc",Bolgheri Sassicaia DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Tenuta San Guido,Sassicaia,2019,0.75,850,2649,"Cabernet Sauvignon, Cabernet Franc",Bolgheri Sassicaia DOC,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Tenuta San Guido,Sassicaia - MAGNUM,2019,1.5,1750,7615,"Cabernet Sauvignon, Cabernet Franc",Bolgheri Sassicaia DOC,,FALSE,
-Red wine,Italy,Tuscany,Bibbona,Tenuta di Biserno,"""Il Pino di Biserno""",2023,0.75,170,2697,"Cabernet Franc, Merlot, Cabernet Sauvignon, Petit Verdot",Toscana IGT,,TRUE,1
+Red wine,Italy,Tuscany,Bolgheri,Tenuta San Guido,Sassicaia - MAGNUM,2019,1.5,1750,7615,"Cabernet Sauvignon, Cabernet Franc",Bolgheri Sassicaia DOC,,TRUE,2
+Red wine,Italy,Tuscany,Bibbona,Tenuta di Biserno,"""Il Pino di Biserno""",2023,0.75,170,2697,"Cabernet Franc, Merlot, Cabernet Sauvignon, Petit Verdot",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bibbona,Tenuta di Biserno,Biserno,2021,0.75,395,2638,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bibbona,Tenuta di Biserno,"""ColleMezzano"" di Biserno",2023,0.75,545,2711,"Cabernet Franc, Merlot, Cabernet Sauvignon",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Bibbona,Tenuta di Biserno,Lodovico,2018,0.75,1045,2720,"Cabernet Franc, Merlot, Petit Verdot",Toscana IGT,,FALSE,
-Red wine,Italy,Tuscany,Bibbona,Tenuta di Biserno,Lodovico,2016,0.75,1145,2719,"Cabernet Franc, Petit Verdot",Toscana IGT,,FALSE,
+Red wine,Italy,Tuscany,Bibbona,Tenuta di Biserno,Lodovico,2016,0.75,1145,2719,"Cabernet Franc, Petit Verdot",Toscana IGT,,TRUE,2
 Red wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Le Serre Nuove dell'Ornellaia,2023,0.75,195,2662,"Merlot, Cabernet Sauvignon, Cabernet Franc, Petit Verdot",Bolgheri DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Ornellaia - HALF bt.,2021,0.375,310,5610,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,FALSE,
 Red wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Le Serre Nuove dell'Ornellaia - MAGNUM,2021,1.5,390,7612,"Merlot, Cabernet Sauvignon, Cabernet Franc, Petit Verdot",Bolgheri DOC,,FALSE,
-Red wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Ornellaia,2022,0.75,610,2723,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,TRUE,2
-Red wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Ornellaia,2020,0.75,750,2652,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,TRUE,1
-Red wine,Italy,Tuscany,Maremma,Tommasi,Poggio al Tufo - Rompicollo,2021,0.75,70,9008,"Sangiovese, Cabernet Sauvignon",Toscana IGT,,TRUE,1
+Red wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Ornellaia,2022,0.75,610,2723,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,FALSE,
+Red wine,Italy,Tuscany,Bolgheri,Tenuta dell'Ornellaia,Ornellaia,2020,0.75,750,2652,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Bolgheri Superiore DOC,,FALSE,
+Red wine,Italy,Tuscany,Maremma,Tommasi,Poggio al Tufo - Rompicollo,2021,0.75,70,9008,"Sangiovese, Cabernet Sauvignon",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Val di Cornia (Suvereto),Tua Rita,"""Giusto di Notri""",2021,0.75,210,8719,"Cabernet Sauvignon, Merlot, Cabernet Franc",Toscana IGT,,FALSE,
 Red wine,Italy,Tuscany,Val di Cornia (Suvereto),Tua Rita,"""Redigaffi""",2021,0.75,530,8720,Merlot,Toscana IGT,,FALSE,
 Red wine,Italy,Umbria,Montefalco,Cantina Briziarelli,Montefalco Sagrantino,2016,0.75,145,8736,Sagrantino,Montefalco Sagrantino DOCG,,FALSE,
 Red wine,Italy,Abruzzo,Colline Teramane,Emidio Pepe,Montepulciano d'Abruzzo - bio,2021,0.75,335,9028,Montepulciano,Montepulciano d'Abruzzo DOC,,FALSE,
-Red wine,Italy,Abruzzo,Colline Teramane,Emidio Pepe,Montepulciano d'Abruzzo - bio,2020,0.75,335,9027,Montepulciano,Montepulciano d'Abruzzo DOC,,FALSE,
+Red wine,Italy,Abruzzo,Colline Teramane,Emidio Pepe,Montepulciano d'Abruzzo - bio,2020,0.75,335,9027,Montepulciano,Montepulciano d'Abruzzo DOC,,TRUE,2
 Red wine,Italy,Abruzzo,Colline Teramane,Emidio Pepe,Montepulciano d'Abruzzo - bio,2010,0.75,520,9031,Montepulciano,Montepulciano d'Abruzzo DOC,,FALSE,
-Red wine,Italy,Abruzzo,Colline Teramane,Emidio Pepe,Montepulciano d'Abruzzo - bio,2000,0.75,645,9029,Montepulciano,Montepulciano d'Abruzzo DOC,,TRUE,1
+Red wine,Italy,Abruzzo,Colline Teramane,Emidio Pepe,Montepulciano d'Abruzzo - bio,2000,0.75,645,9029,Montepulciano,Montepulciano d'Abruzzo DOC,,FALSE,
 Red wine,Italy,Campania,Colli di Salerno,Silvia Imparato,Montevetrano,2018,0.75,150,9025,"Aglianico, Cabernet Sauvignon, Merlot",Colli di Salerno IGT,,FALSE,
 Red wine,Italy,Campania,Colli di Salerno,Silvia Imparato,Montevetrano,2008,0.75,185,9026,"Aglianico, Cabernet Sauvignon, Merlot",Colli di Salerno IGT,,FALSE,
 Red wine,Italy,Campania,Colli di Salerno,Silvia Imparato,Montevetrano,2005,0.75,230,9024,"Aglianico, Cabernet Sauvignon, Merlot",Colli di Salerno IGT,,FALSE,
 Red wine,Italy,Puglia,Salento (Manduria),Varvaglione,Papale,2023,0.75,70,2628,Primitivo,Primitivo di Manduria DOC,,FALSE,
 Red wine,Italy,Puglia,Salento (Manduria),Varvaglione,1921 Riserva,2014,0.75,130,9033,Primitivo,Primitivo di Manduria DOC Riserva,,FALSE,
-Red wine,Italy,Sicily,Camporeale,Alessandro di Camporeale,"""Kaid"" - Syrah Contrada Mandranova",2018,0.75,110,2696,Syrah,Sicilia DOC,,FALSE,
+Red wine,Italy,Sicily,Camporeale,Alessandro di Camporeale,"""Kaid"" - Syrah Contrada Mandranova",2018,0.75,110,2696,Syrah,Sicilia DOC,,TRUE,1
 Red wine,Italy,Sicily,Etna,Benanti,Nerello Cappuccio,2021,0.75,135,8741,Nerello Cappuccio,Terre Siciliane IGT,,FALSE,
 Red wine,Italy,Sicily,Etna,Benanti,Contrada Monte Serra,2022,0.75,160,8743,"Nerello Mascalese, Nerello Cappuccio",Etna Rosso DOC,,FALSE,
 Red wine,Italy,Sicily,Etna,Benanti,Serra della Contessa Riserva,2017,0.75,355,8742,"Nerello Mascalese, Nerello Cappuccio",Etna Rosso DOC,,FALSE,
@@ -797,13 +800,13 @@ Red wine,Italy,Sardinia,Parteolla,Argiolas,Korem,2022,0.75,130,8738,"Bovale Sard
 Red wine,Italy,Sardinia,Sulcis,Cantina Santadi,"""Rocca Rubia"" - MAGNUM",2018,1.5,150,7611,Carignano,Carignano del Sulcis DOC,,FALSE,
 Red wine,Spain,Catalonia,Priorat (Poboleda),Mas Doix,Les Crestes,2023,0.75,90,9044,"Garnacha, Cariñena",Priorat DOQ,,FALSE,
 Red wine,Spain,Catalonia,Priorat (Poboleda),Mas Doix,Doix Costers de Vinyes Velles,2022,0.75,275,9045,"Cariñena, Garnacha",Priorat DOQ,,FALSE,
-Red wine,Spain,Catalonia,Priorat (Poboleda),Mas Doix,1902 Tossal D'en Bou Gran Vinya - Gran Vinya Classificada,2021,0.75,645,9099,"Cariñena, Garnacha",Priorat DOQ,,FALSE,
+Red wine,Spain,Catalonia,Priorat (Poboleda),Mas Doix,1902 Tossal D'en Bou Gran Vinya - Gran Vinya Classificada,2021,0.75,645,9099,"Cariñena, Garnacha",Priorat DOQ,,TRUE,2
 Red wine,Spain,Rioja,Rioja Alta (San Vicente de la Sonsierra),Abel Mendoza,Grano a Grano - Graciano,2016,0.75,190,2813,Graciano,Rioja DOCa,,FALSE,
 Red wine,Spain,Rioja,Rioja Alta (Haro),Bodegas Roda S.A.,Sela,2022,0.75,80,9036,"Tempranillo, Garnacha",Rioja DOCa,,FALSE,
 Red wine,Spain,Rioja,Rioja Alta (Haro),Bodegas Roda S.A.,Roda,2022,0.75,115,9037,"Tempranillo, Garnacha, Graciano",Rioja DOCa – Reserva,,FALSE,
 Red wine,Spain,Rioja,Rioja Alta (Haro),Bodegas Roda S.A.,Roda I,2019,0.75,170,9038,Tempranillo,Rioja DOCa – Reserva,,FALSE,
 Red wine,Spain,Rioja,Rioja Alta (Haro),Bodegas Roda S.A.,Cirsión,2020,0.75,485,9039,Tempranillo,Rioja DOCa,,FALSE,
-Red wine,Spain,Rioja,Rioja Alta (Haro),R. López de Heredia Viña Tondonia,Tondonia Tinto,2012,0.75,160,9040,"Tempranillo, Garnacha, Graciano, Mazuelo",Rioja DOCa – Reserva,,FALSE,
+Red wine,Spain,Rioja,Rioja Alta (Haro),R. López de Heredia Viña Tondonia,Tondonia Tinto,2012,0.75,160,9040,"Tempranillo, Garnacha, Graciano, Mazuelo",Rioja DOCa – Reserva,,TRUE,2
 Red wine,Spain,Rioja,Rioja Alavesa (Labastida),Remelluri,Reserva,2017,0.75,100,2810,"Tempranillo, Garnacha, Graciano",Rioja DOCa – Reserva,,FALSE,
 Red wine,Spain,Castilla y León,Ribera del Duero,Bodegas García Figuero,"""Figuero 12""",2021,0.75,95,2826,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE,
 Red wine,Spain,Castilla y León,Toro,Bodegas Vatan,Tritón,2022,0.75,75,9034,Tinta de Toro (Tempranillo),Toro DO,,FALSE,
@@ -816,19 +819,19 @@ Red wine,Spain,Castilla y León,Ribera del Duero,Bodegas y Viñedos Vega Sicilia
 Red wine,Spain,Castilla y León,Ribera del Duero,Bodegas y Viñedos Vega Sicilia,"Unico ""Reserva Especial"" (2008, 2009, 2010)",,0.75,1500,2807,"Tempranillo (Tinto Fino), Cabernet Sauvignon",Ribera del Duero DO – Gran Reserva,,FALSE,
 Red wine,Spain,Castilla y León,Bierzo,Castro Ventosa,"""Valtuille"" Cepas Centenarias",2008,0.75,150,2812,Mencía,Bierzo DO,,FALSE,
 Red wine,Spain,Castilla y León,Ribera del Duero,Dominio de Pingus,"""Flor de Pingus""",2021,0.75,325,8748,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE,
-Red wine,Spain,Castilla y León,Ribera del Duero,Dominio de Pingus,"""Pingus""",2017,0.75,1825,8749,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE,
-Red wine,Spain,Castilla y León,Ribera del Duero,Tr3smano Lagar de Proventus,Tr3smano,2020,0.75,145,9042,Tempranillo (Tinto Fino),Ribera del Duero DO,,TRUE,2
+Red wine,Spain,Castilla y León,Ribera del Duero,Dominio de Pingus,"""Pingus""",2017,0.75,1825,8749,Tempranillo (Tinto Fino),Ribera del Duero DO,,TRUE,2
+Red wine,Spain,Castilla y León,Ribera del Duero,Tr3smano Lagar de Proventus,Tr3smano,2020,0.75,145,9042,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE,
 Red wine,Spain,Castilla y León,Ribera del Duero,Tr3smano Lagar de Proventus,Tr3smano TM,2021,0.75,355,9043,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE,
 Red wine,Spain,Castilla y León,Ribera del Duero,Viñas del Jaro,Sembro,2023,0.75,65,2809,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE,
 Red wine,Spain,Castilla y León,Ribera del Duero,Viñas del Jaro,"""Sembro"" - MAGNUM",2022,1.5,130,7616,Tempranillo (Tinto Fino),Ribera del Duero DO,,FALSE,
 Red wine,Portugal,Douro,Douro Superior,Casa Ferreirinha,Quinta Leda,2021,0.75,155,9046,"Touriga Nacional, Touriga Franca, Tinta Roriz",Douro DOC,,FALSE,
 Red wine,Portugal,Douro,Douro Superior,Casa Ferreirinha,Barca Velha,2015,0.75,1870,9047,"Touriga Nacional, Touriga Franca, Tinta Roriz",Douro DOC,,FALSE,
-Red wine,Portugal,Douro,Douro Superior,Casa Ferreirinha,Reserva Especial,2014,0.75,670,9100,"Touriga Nacional, Touriga Franca, Tinta Roriz",Douro DOC – Reserva Especial,,FALSE,
+Red wine,Portugal,Douro,Douro Superior,Casa Ferreirinha,Reserva Especial,2014,0.75,670,9100,"Touriga Nacional, Touriga Franca, Tinta Roriz",Douro DOC – Reserva Especial,,TRUE,2
 Red wine,Portugal,Douro,Cima Corgo,Niepoort,Batuta,2022,0.75,225,8750,"Touriga Nacional, Touriga Franca, Tinta Roriz",Douro DOC,,FALSE,
 Red wine,Portugal,Douro,Cima Corgo,Quinta de la Rosa,Quinta de la Rosa,2019,0.75,85,2824,"Touriga Nacional, Touriga Franca, Tinta Roriz",Douro DOC,,FALSE,
 Red wine,Portugal,Douro,Cima Corgo,Quinta de la Rosa,Quinta de la Rosa Reserva,2018,0.75,160,2825,"Touriga Nacional, Touriga Franca, Tinta Roriz",Douro DOC – Reserva,,FALSE,
 Red wine,Lebanon,Bekaa Valley,,Ixsir,El Ixsir,2015,0.75,160,2904,"Cabernet Sauvignon, Syrah",Bekaa Valley,,FALSE,
-Red wine,US,California,Napa Valley,Bond,"""Vecina""",2017,0.75,1575,9064,Cabernet Sauvignon,Napa Valley AVA,,TRUE,2
+Red wine,US,California,Napa Valley,Bond,"""Vecina""",2017,0.75,1575,9064,Cabernet Sauvignon,Napa Valley AVA,,FALSE,
 Red wine,US,California,Napa Valley,Bond,"""Quella""",2020,0.75,1595,9065,Cabernet Sauvignon,Napa Valley AVA,,FALSE,
 Red wine,US,California,Napa Valley,Corison Winery,Cabernet Sauvignon,2019,0.75,355,9062,Cabernet Sauvignon,Napa Valley AVA,,FALSE,
 Red wine,US,California,Napa Valley (St. Helena),Corison Winery,Sunbasket Vineyard - Cabernet Sauvignon,2019,0.75,565,9063,Cabernet Sauvignon,St. Helena AVA (Napa Valley),,FALSE,
@@ -836,11 +839,11 @@ Red wine,US,California,Napa Valley (Calistoga),Eisele Vineyard,"""Altagracia"" -
 Red wine,US,California,Napa Valley (Calistoga),Eisele Vineyard,Cabernet Sauvignon,2014,0.75,970,9061,Cabernet Sauvignon,Napa Valley AVA,,FALSE,
 Red wine,US,California,Napa Valley (Oakville),Harlan Estate,"""The Mascot"" - Cabernet Sauvignon",2020,0.75,345,9055,Cabernet Sauvignon,Napa Valley AVA,,FALSE,
 Red wine,US,California,Napa Valley (Oakville),Harlan Estate,Harlan Estate,2019,0.75,2750,9056,"Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",Napa Valley AVA,,FALSE,
-Red wine,US,California,Napa Valley,Heitz Cellar,Cabernet Sauvignon,2018,0.75,245,9057,Cabernet Sauvignon,Napa Valley AVA,,TRUE,1
+Red wine,US,California,Napa Valley,Heitz Cellar,Cabernet Sauvignon,2018,0.75,245,9057,Cabernet Sauvignon,Napa Valley AVA,,FALSE,
 Red wine,US,California,Napa Valley (Rutherford),Heitz Cellar,Trailside Vineyard - Cabernet Sauvignon,2018,0.75,445,9058,Cabernet Sauvignon,Napa Valley AVA,,FALSE,
 Red wine,US,California,Napa Valley (Oakville),Heitz Cellar,Martha's Vineyard - Cabernet Sauvignon,2017,0.75,775,9059,Cabernet Sauvignon,Napa Valley AVA,,FALSE,
 Red wine,US,California,Sonoma Coast,Occidental - S. & C. Kistler,"Bodega Headlands Vineyard ""Cuvée Elizabeth""",2022,0.75,240,9049,Pinot Noir,Sonoma Coast AVA,,FALSE,
-Red wine,US,California,Dry Creek Valley,Ridge Vineyards,"""East Bench"" Zinfandel",2019,0.75,125,2913,Zinfandel,Dry Creek Valley AVA (Sonoma County),,FALSE,
+Red wine,US,California,Dry Creek Valley,Ridge Vineyards,"""East Bench"" Zinfandel",2019,0.75,125,2913,Zinfandel,Dry Creek Valley AVA (Sonoma County),,TRUE,1
 Red wine,US,California,Alexander Valley,Ridge Vineyards,Geyserville,2021,0.75,145,9050,"Zinfandel, Carignane, Petite Sirah",Alexander Valley AVA (Sonoma County),,FALSE,
 Red wine,US,California,Santa Cruz Mountains,Ridge Vineyards,Monte Bello,2022,0.75,750,9051,"Cabernet Sauvignon, Merlot, Petit Verdot",Santa Cruz Mountains AVA,,FALSE,
 Red wine,US,California,Napa Valley,Shafer,TD-9,2021,0.75,205,9052,"Cabernet Sauvignon, Merlot",Napa Valley AVA,,FALSE,
@@ -849,69 +852,34 @@ Red wine,US,California,Napa Valley (Stags Leap District),Shafer,Hillside Select,
 Red wine,US,Oregon,Willamette Valley (Ribbon Ridge),Beaux Frères,The Beaux Frères Vineyard Pinot Noir,2022,0.75,230,9048,Pinot Noir,"Ribbon Ridge AVA (Willamette Valley, Oregon)",,FALSE,
 Red wine,Argentina,Mendoza,Luján de Cuyo (Perdriel),Achaval Ferrer,Finca Bella Vista,2019,0.75,255,9066,Malbec,Mendoza IG,,FALSE,
 Red wine,Argentina,Mendoza,Valle de Uco (Gualtallary),Finca Ambrosía de Tupungato,"Pavillon Top - Ambrosia ""Viña Única"" - Malbec",2022,0.75,85,2915,Malbec,"Tupungato IG (Valle de Uco, Mendoza)",,FALSE,
-Red wine,Argentina,Mendoza,Valle de Uco (Gualtallary),Finca Ambrosía de Tupungato,"""Viña Única"" - Malbec - MAGNUM",2021,1.5,150,7035,Malbec,"Tupungato IG (Valle de Uco, Mendoza)",,TRUE,2
+Red wine,Argentina,Mendoza,Valle de Uco (Gualtallary),Finca Ambrosía de Tupungato,"""Viña Única"" - Malbec - MAGNUM",2021,1.5,150,7035,Malbec,"Tupungato IG (Valle de Uco, Mendoza)",,TRUE,1
 Red wine,Argentina,Mendoza,Valle de Uco,Susana Balbo,Malbec Signature,2022,0.75,130,1951,Malbec,Mendoza IG,,FALSE,
 Red wine,Argentina,Mendoza,Luján de Cuyo,Terrazas de los Andes,Malbec,2022,0.75,85,1950,Malbec,Mendoza IG,,FALSE,
 Red wine,Australia,South Australia,McLaren Vale,Coriole,Willunga 1920 Reserve Shiraz,2018,0.75,155,9068,Shiraz,McLaren Vale GI (South Australia),,FALSE,
 Red wine,Australia,South Australia,Coonawarra,Penfolds,Bin 128 - Shiraz,2020,0.75,140,8756,Shiraz,Coonawarra GI (South Australia),,FALSE,
-Red wine,Australia,South Australia,,Penfolds,"""Grange"" Bin 95 - Shiraz",2016,0.75,1355,8755,Shiraz,South Australia GI,,FALSE,
-Red wine,Australia,South Australia,Barossa Valley,Rockford,Basket Press Shiraz,2019,0.75,150,9067,Shiraz,Barossa Valley GI (South Australia),,TRUE,2
-Sweet wine,Switzerland,Valais,Salgesch,Adrian Mathier,"""Gemma"" - Ermitage - HALF bt.",2017,0.375,110,3806,Marsanne (Ermitage),Valais AOC Grand Cru – Flétri,,FALSE,
+Red wine,Australia,South Australia,,Penfolds,"""Grange"" Bin 95 - Shiraz",2016,0.75,1355,8755,Shiraz,South Australia GI,,TRUE,2
+Red wine,Australia,South Australia,Barossa Valley,Rockford,Basket Press Shiraz,2019,0.75,150,9067,Shiraz,Barossa Valley GI (South Australia),,FALSE,
+Sweet wine,Switzerland,Valais,Salgesch,Adrian Mathier,"""Gemma"" - Ermitage - HALF bt.",2017,0.375,110,3806,Marsanne (Ermitage),Valais AOC Grand Cru – Flétri,,TRUE,1
 Sweet wine,Switzerland,Valais,Fully,Marie-Thérèse Chappaz,"Marsanne ""Grain Noble"" - HALF bt.",,0.375,310,9070,Marsanne (Ermitage),Valais AOC – Grain Noble (surmaturazione),,FALSE,
-Sweet wine,Switzerland,Valais,Fully,Marie-Thérèse Chappaz,"""Grain par Grain"" - Petite Arvine - HALF bt.",2021,0.375,605,9094,Petite Arvine,Valais AOC – Grain Noble (surmaturazione),,FALSE,
+Sweet wine,Switzerland,Valais,Fully,Marie-Thérèse Chappaz,"""Grain par Grain"" - Petite Arvine - HALF bt.",2021,0.375,605,9094,Petite Arvine,Valais AOC – Grain Noble (surmaturazione),,TRUE,2
 Sweet wine,Germany,Mosel,Mittelmosel,Dr. Loosen,Beerenauslese - Riesling - HALF bt.,2015,0.375,125,3815,Riesling,Mosel – Prädikatswein Beerenauslese,,FALSE,
 Sweet wine,Germany,Mosel,Mittelmosel,Joh. Jos. Prüm,"""Wehlener Sonnenuhr"" Auslese - Riesling - HALF bt.",2017,0.375,90,3812,Riesling,Mosel – Prädikatswein Auslese,,FALSE,
 Sweet wine,Germany,Mosel,Mittelmosel,Joh. Jos. Prüm,"""Wehlener Sonnenuhr"" Auslese - Riesling",2020,0.75,150,3802,Riesling,Mosel – Prädikatswein Auslese,,FALSE,
 Sweet wine,Germany,Mosel,Ruwer,Maximin Grünhaus,Herrenberg Riesling Auslese Nr. 59 - HALF bt.,2018,0.375,190,9073,Riesling,Mosel – Prädikatswein Auslese,,FALSE,
 Sweet wine,France,Loire,Touraine,Domaine Huet,"Vouvray Cuvée Constance Moelleux - 0,5 l",2018,0.5,370,9072,Chenin Blanc,Vouvray AOC – Moelleux,,FALSE,
-Sweet wine,France,Bordeaux,Sauternes,Château d'Yquem,Château d'Yquem - HALF bt.,2010,0.375,750,3811,"Sémillon, Sauvignon Blanc","Premier Cru Supérieur, Sauternes AOC",,TRUE,2
+Sweet wine,France,Bordeaux,Sauternes,Château d'Yquem,Château d'Yquem - HALF bt.,2010,0.375,750,3811,"Sémillon, Sauvignon Blanc","Premier Cru Supérieur, Sauternes AOC",,TRUE,1
 Sweet wine,France,Bordeaux,Sauternes,Château d'Yquem,Château d'Yquem,2009,0.75,1500,3813,"Sémillon, Sauvignon Blanc","Premier Cru Supérieur, Sauternes AOC",,FALSE,
 Sweet wine,Hungary,Tokaj,Tokaj,Hétszőlő,"Tokaji Aszú 5 Puttonyos - 0,5 l",2013,0.5,195,3804,"Furmint, Hárslevelű, Sárgamuskotály",Tokaj OEM – Tokaji Aszú 5 Puttonyos,,FALSE,
-Cider,Sweden,Västerbotten,,Brännland Cider,Brännland Iscider - Barrel Aged,2014,0.75,70,3810,Apple,Ice Cider,,TRUE,2
+Cider,Sweden,Västerbotten,,Brännland Cider,Brännland Iscider - Barrel Aged,2014,0.75,70,3810,Apple,Ice Cider,,FALSE,
 Alcohol free,Switzerland,Zürich,,Deux Frères,La Fête Sans,,0.75,80,9118,—,Alkoholfrei,,FALSE,
 Alcohol free,Switzerland,Schaffhausen,,Essenza by Zero,Blanc de Blancs Millésime,,0.75,60,9130,—,Alkoholfrei,,FALSE,
-Alcohol free,Germany,Baden,,Saveur Drinks,Yuzu - Elderflower - HALF bt.,,0.375,60,9116,—,Alkoholfrei,,FALSE,
-Alcohol free,Germany,Baden,,Saveur Drinks,Lapsang Tea - Blackberry - HALF bt.,,0.375,60,9117,—,Alkoholfrei,,FALSE,
-Alcohol free,Germany,Baden,,Saveur Drinks,Sparkling White Tea - Bergamotte,,0.75,90,9115,—,Alkoholfrei,,FALSE,
+Alcohol free,Germany,Baden,,Saveur Drinks,Yuzu - Elderflower - HALF bt.,,0.375,60,9116,—,Alkoholfrei,,TRUE,2
+Alcohol free,Germany,Baden,,Saveur Drinks,Lapsang Tea - Blackberry - HALF bt.,,0.375,60,9117,—,Alkoholfrei,,TRUE,2
+Alcohol free,Germany,Baden,,Saveur Drinks,Sparkling White Tea - Bergamotte,,0.75,90,9115,—,Alkoholfrei,,TRUE,2
 Alcohol free,Germany,Mosel,,Winninger Sektmanufaktur C-Kloss,"Sparkling Tea Rosé ""Wildblumen-Lavendel""",,0.75,60,9119,—,Alkoholfrei,,FALSE,
 Alcohol free,Germany,Rheingau,,Domäne Schloss Johannisberg - Kolonne Null,Gelblack Alcohol-Free Riesling,,0.75,95,9126,de-alcoholised Riesling,Alkoholfrei,,FALSE,
-Alcohol free,Germany,,,Kolonne Null,Sauvignon Blanc Alkoholfreier Wein Bio,2024,0.75,60,9127,de-alcoholised Sauvignon Blanc,Alkoholfrei,,TRUE,2
+Alcohol free,Germany,,,Kolonne Null,Sauvignon Blanc Alkoholfreier Wein Bio,2024,0.75,60,9127,de-alcoholised Sauvignon Blanc,Alkoholfrei,,FALSE,
 Alcohol free,France,,,French Bloom,"""Le Blanc""",,0.75,95,3074,de-alcoholised Chardonnay,Alkoholfrei,,FALSE,
-Alcohol free,France,,,French Bloom,"""Le Rosé""",,0.75,120,3075,"de-alcoholised Chardonnay, Pinot Noir",Alkoholfrei,,FALSE,
+Alcohol free,France,,,French Bloom,"""Le Rosé""",,0.75,120,3075,"de-alcoholised Chardonnay, Pinot Noir",Alkoholfrei,,TRUE,2
 Alcohol free,Italy,Trentino-Alto Adige,,Sparkling Rocco,Apfel Aperitivo Alkoholfrei,,0.75,30,9129,Apple,Alkoholfrei,,FALSE,
 Alcohol free,Denmark,Copenhagen,,MURI Drinks,Passing Clouds,,0.75,90,9128,—,Alkoholfrei,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,TRUE,1
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,TRUE,1
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,TRUE,2
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,TRUE,1
-,,,,,,,,,,,,,FALSE,
-,,,,,,,,,,,,,TRUE,2
